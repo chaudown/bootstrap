@@ -1,0 +1,470 @@
+/* ////////////////////////////////////////////// */
+// VARIABLES
+/* ////////////////////////////////////////////// */
+
+@colorWhite: #fff;
+@colorShadowLight: #bbbec3;
+
+@baseFontSize: 16px; // also defined in bootstrap/less/variables.less
+@baseLineHeight: 24px; // also defined in bootstrap/less/variables.less
+@defaultMargin: 4px;
+@borderRadius: 3px; // also defined in bootstrap/less/variables.less
+
+@bodyBackground: #dfe4ea; // also defined in bootstrap/less/variables.less
+@inputBorder: #bfc5c8; // also defined in bootstrap/less/variables.less
+
+@textColor: #575c61;
+
+@black:                 #000;	// also defined in bootstrap/less/variables.less
+@grayDarker:            #222;	// also defined in bootstrap/less/variables.less
+@grayDark:              #333;	// also defined in bootstrap/less/variables.less
+@gray:                  #555;	// also defined in bootstrap/less/variables.less
+@grayLight:             #999;	// also defined in bootstrap/less/variables.less
+@grayLighter:           #eee;	// also defined in bootstrap/less/variables.less
+@white:                 #fff;	// also defined in bootstrap/less/variables.less
+
+/* ////////////////////////////////////////////// */
+// MIXINS
+/* ////////////////////////////////////////////// */
+
+// retina.less
+// A helper mixin for applying high-resolution background images (http://www.retinajs.com)
+
+@highdpi: ~"(-webkit-min-device-pixel-ratio: 1.5), (min--moz-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 3/2), (min-resolution: 1.5dppx)";
+
+.at2x(@path, @w: auto, @h: auto) {
+	background-image: url(@path);
+	@at2x_path: ~`@{path}.replace(/\.\w+$/, function(match) { return "@2x" + match; })`;
+	background-size: @w @h;
+
+	@media @highdpi {
+		background-image: url("@{at2x_path}");
+		background-size: @w @h;
+	}
+}
+
+// Font-face mixin with brower prefixes
+
+.font-face (@family, @file-base, @weight: normal, @style: normal) {
+	@font-face {
+		font-family: @family;
+		src: 	url("@{file-base}.eot");
+		src: 	url("@{file-base}.eot?#iefix") format("embedded-opentype"),
+				url("@{file-base}.woff") format("woff"),
+				url("@{file-base}.ttf") format("truetype");
+		font-weight: @weight;
+		font-style: @style;
+	}
+}
+
+// Font-face definitions
+
+.font-face("ProximaNova", "../fonts/proximanova-light", normal);
+.font-face("ProximaNova", "../fonts/proximanova-bold", bold);
+//.font-face("Avenir", "../fonts/avenir")
+
+// Gradient mixin with browser prefixes
+
+.gradient(@startColor: #20416A, @endColor: #3D69A5) {
+	background: @endColor;
+	background: -webkit-gradient(linear, left top, left bottom, from(@startColor),  to(@endColor));
+	background: -webkit-linear-gradient(top, @startColor, @endColor);
+	background: -moz-linear-gradient(top, @startColor, @endColor);
+	background: -o-linear-gradient(top, @startColor, @endColor);
+	background: -ms-linear-gradient(top, @startColor, @endColor);
+	background: linear-gradient(top, @startColor, @endColor);
+}
+
+// Inner-shadow
+
+.box-shadow (@input) {
+	-webkit-box-shadow:	@input;
+	-moz-box-shadow:	@input;
+	-ms-box-shadow:		@input;
+	-o-box-shadow:		@input;
+	box-shadow:			@input;
+}
+
+.transition (@input) {
+	-webkit-transition: @input;
+	-moz-transition: 	@input;
+	-ms-transition: 	@input;
+	-o-transition: 		@input;
+	transition: 		@input;
+}
+
+
+/* ////////////////////////////////////////////// */
+// HELPER CLASSES
+/* ////////////////////////////////////////////// */
+
+.center { text-align: center; }
+.floatleft { float: left; }
+.floatright { float: right; }
+
+.margintop { margin-top: (@defaultMargin * 10); }
+.marginbottom { margin-bottom: (@defaultMargin * 10); }
+.paddingtop { padding-top: (@defaultMargin * 10); }
+.paddingbottom { padding-bottom: (@defaultMargin * 10); }
+
+.margintop-small { margin-top: (@defaultMargin * 5); }
+.marginbottom-small { margin-bottom: (@defaultMargin * 5); }
+.paddingtop-small { padding-top: (@defaultMargin * 5); }
+.paddingbottom-small { padding-top: (@defaultMargin * 5); }
+
+.fullwidth { width:100%; }
+
+.box-shadow-light { .box-shadow(0px 1px (@borderRadius * 2) @colorShadowLight); }
+.box-shadow-btn-press { .box-shadow(0 1px 4px rgba(0,0,0,0.3) inset, 0 1px 0 0 rgba(255, 255, 255, 0.0);) }
+
+.bold { font-weight: bold; }
+
+/* ////////////////////////////////////////////// */
+// BOOTSTRAP OVERRIDES
+/* ////////////////////////////////////////////// */
+
+body {
+	padding: 0px;
+	line-height: @baseLineHeight;
+}
+
+.btn {
+	padding: @defaultMargin*1.8 @defaultMargin*5 ;
+	font-size: @baseFontSize*.95;
+	font-weight:bold;
+	.box-shadow (0 1px 0px 0px rgba(255,255,255,0.25) inset, 0 1px 0px 0 rgba(255,255,255, 0.85););
+	transition: background, box-shadow, 0.1s;
+	text-shadow: 0px -1px rgba(0,0,0,0.5);
+	border-radius: @borderRadius;
+
+	&:hover, &:focus {	
+		background-position: 0; // bootstrap override
+		.box-shadow (0 1px 0px 0px rgba(255,255,255,0.6) inset, 0 1px 0px 0 rgba(0, 0, 0, 0.1););
+		transition: background, box-shadow, 0.1s;
+		outline: 0;
+  		outline: thin dotted \9; // IE6-9
+	}
+
+	&:active {
+		background-position: 0;
+		.box-shadow (0 1px 3px 0px rgba(0,0,0,0.25) inset, 0 1px 0 0 rgba(255, 255, 255, 0.4););
+		transition: background, box-shadow, 0.0s;
+	}
+}
+
+.btn-large {
+	font-weight:bold;
+	.box-shadow (0 1px 0px 0px rgba(255,255,255,0.35) inset, 0 1px 0px 0 rgba(255,255,255, 1););
+	transition: background, box-shadow, 0.1s;
+	text-shadow: 0px -1px rgba(0,0,0,0.5);
+	border-radius: @borderRadius;
+
+	&:hover, &:focus {	
+		background-position: 0; // bootstrap override
+		.box-shadow (0 1px 0px 0px rgba(255,255,255,0.4) inset, 0 1px 1px 0 rgba(0, 0, 0, 0.35););
+		transition: background, box-shadow, 0.1s;
+		outline: 0;
+  		outline: thin dotted \9; // IE6-9
+	}
+
+	&:active {
+		background-position: 0;
+		.box-shadow (0 1px 6px 0px rgba(0,0,0,0.5) inset, 0 1px 0 0 rgba(255, 255, 255, 1););
+		transition: background, box-shadow, 0.0s;
+	}
+}
+
+.btn-primary {
+	color: white;
+	.gradient (#1489d4, #0d69b8);
+  	border: 1px solid darken(#0d69b8, 15%);
+
+  	&:hover, &:focus {
+		.gradient (lighten(#1489d4, 6%), lighten(#0d69b8, 4%));
+		border: 1px solid darken(#0d69b8, 30%);
+  	}
+
+  	&:active {
+		.gradient (darken(#1489d4, 6%), darken(#0d69b8, 4%));
+		border: 1px solid #002a7f;
+  	}
+}
+
+.btn-success {
+	color: white;
+	.gradient (#31c15c, #129A41);
+  	border: 1px solid darken(#129A41, 13%);
+
+  	&:hover, &:focus {
+		.gradient (lighten(#31c15c, 6%), lighten(#129A41, 4%));
+		border: 1px solid darken(#129A41, 20%);
+  	}
+
+  	&:active {
+		.gradient (darken(#31c15c, 6%), darken(#129A41, 4%));
+		border: 1px solid #002a7f;
+  	}
+}
+
+.btn-grey {
+	color: darken(@textColor, 5%);
+	.gradient (#e4e6ea, #d2d5db);
+	border: 1px solid darken(@inputBorder,15%);
+	text-shadow: 0px 1px rgba(255,255,255,1); // .btn, .btn-large override
+
+	&:hover, &:focus {
+		.gradient (lighten(#e4e6ea, 2%), lighten(#d2d5db, 1%));
+		border-color: darken(@inputBorder, 25%);
+	}
+
+	&:active {
+		.gradient (darken(#e4e6ea, 5%), darken(#d2d5db, 6%));
+		border-color: darken(@inputBorder, 25%);
+	}
+}
+
+
+select, textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], .uneditable-input {
+	font-size: @baseFontSize*1.25;
+	line-height: @baseLineHeight*1.3;
+	.transition(box-shadow border-color 0.1s ease-out);
+	//cursor: pointer; // Seems nicer but could be an incorrect use.
+
+	&:hover {
+		border-color: darken(@inputBorder, 25%);
+	}
+
+	&:focus {
+		border-color: rgba(82,168,236,.8); // color from bootstrap/less/forms.less:line 127	
+	}
+}
+
+select, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], .uneditable-input {
+	height: 40px;
+}
+
+
+hr {
+	border:0;
+	border-top: 1px solid lighten(@inputBorder, 10%);
+	border-bottom: 0;
+}
+
+p.body { font-size: @baseFontSize; }
+p.body-large { font-size: @baseFontSize*1.25;}
+
+.nav-tabs {
+	li {
+		a {
+			outline: none;
+		}
+	}
+}
+
+.navbar {
+	.navbar-inner {
+		padding:0;
+		margin:0;
+		border:0;
+		.box-shadow-light;
+
+		.nav-tabs{
+			li {
+    			a {
+    				margin: 0;
+    				border:none; // override!
+    				border-right: 1px solid @inputBorder;
+    				border-radius: 0;
+    			}
+    		}
+		}
+	}
+}
+
+.navbar.fullwidth {
+    .nav {
+    	margin: 0;
+    	width: 100%;
+    	display: table;
+    	table-layout: fixed; /* optional, for equal spacing */
+    	border-collapse: collapse;
+
+		li {
+			width:100%;
+			margin:0;
+			text-align: center;
+    	    display: table-cell;
+    	    vertical-align: middle;
+    	    float: none;
+    	    border-radius: 0;
+    	}
+    	li:last-child {
+    		a {
+    			border-right: none;
+    		}
+    	}
+    }
+
+    .nav-tabs {
+    	
+    }
+}
+
+
+
+/* ////////////////////////////////////////////// */
+// CUSTOM CLASSES
+/* ////////////////////////////////////////////// */
+
+.ac-header-top {
+	background: #23314b;
+	color: #fff;
+}
+
+#ac-logo {
+	.at2x('../img/logo.png', 260px, 110px);
+	width: 260px;
+	height: 55px;
+	margin: 12px 0 12px -20px;
+
+	background-repeat: no-repeat;
+	background-position: top;
+	float: left; 
+
+	&:hover {
+		background-position: bottom;
+	}
+}
+
+#ac-logo-grey {
+	.at2x('../img/logo-grey.jpg', 275px, 54px);
+	width: 275px;
+	height: 54px;
+	margin: 12px auto 12px auto;
+	opacity: 0.7;
+	display: block;
+	transition: opacity .2s ease-out;
+
+	&:hover {
+		opacity: 1;
+	}
+}
+
+#ac-logo span, 
+#ac-logo-grey span {
+	display: none; 
+}
+
+#ac-navbar {
+	.gradient(#387bc1, #2964a7);
+	border-top: 1px solid #6c9dd1;
+	border-bottom: 1px solid #242831;
+	padding: 8px 0px;
+	font-family: ProximaNova, 'Helvetica Neue', Helvetica, Arial, Sans-serif;
+}
+
+.ac-navbar-link {
+	text-transform: uppercase;
+	font-weight: bold;
+	font-size: 16px;
+
+	color: @colorWhite;
+
+	padding: 12px 16px;
+	margin-right: 20px;
+	display: block;
+	border-radius: @borderRadius;
+
+	text-shadow: 0px -1px #091828;
+}
+
+.ac-navbar-link:hover {
+	color: @colorWhite;
+	text-decoration: none;
+	background: #1f5897;
+	.box-shadow(0px 0px 1px 1px #19487a inset);
+}
+
+#ac-navbar ul {
+	margin: 0;
+}
+
+#ac-navbar li {
+	list-style-type: none;
+	float: left;
+}
+
+
+.ac-headline {
+	font-size: @baseFontSize*1.75;
+}
+
+/* ////////////////////////////////////////////// */
+// CONTAINERS
+/* ////////////////////////////////////////////// */
+
+#ac-content-container {
+	background: @colorWhite;
+	border-radius: @borderRadius;
+	margin: 0px 8px;
+
+	.box-shadow(0px 0px 8px #bbbec3);
+}
+
+// .ac-login-container {
+// 	&:extend(.ac-login-container);
+// 	max-width: 350px;
+// 	padding: (@defaultMargin * 5);
+// 	margin-right: auto;
+// 	margin-left: auto;
+// 	border-radius: (@borderRadius * 1);
+// }
+
+// EXTEND is not supported in LESS v1.3.3 :(
+
+.ac-signup-container-default {
+	//&:extend(.ac-login-container);
+	
+	max-width: 425px;
+	padding: (@defaultMargin * 5);
+	margin-right: auto;
+	margin-left: auto;
+	border-radius: (@borderRadius * 1.5);
+	.box-shadow-light;
+
+	.gradient (#fcfcfc, #f4f6f7);
+	border: 1px solid rgba(0,0,0,0.25);
+}
+
+.ac-login-container-default {
+	//&:extend(.ac-login-container);
+	
+	max-width: 350px;
+	padding: (@defaultMargin * 5);
+	margin-right: auto;
+	margin-left: auto;
+	border-radius: (@borderRadius * 1.5);
+	.box-shadow-light;
+
+	.gradient (#fcfcfc, #f4f6f7);
+	border: 1px solid rgba(0,0,0,0.25);
+}
+
+.ac-login-container-well {
+	//&:extend(.ac-login-container);
+	
+	max-width: 350px;
+	padding: (@defaultMargin * 5);
+	margin-right: auto;
+	margin-left: auto;
+	border-radius: (@borderRadius * 1);
+
+	.box-shadow(0px 1px 1px rgba(255,255,255,0.5));
+	
+	background: darken(@bodyBackground, 5%);
+	border: 1px solid darken(@bodyBackground, 12%);
+
+	span {
+		color: lighten(@textColor, 3%);
+	}
+}
