@@ -2,6 +2,8 @@ BOOTSTRAP = ./docs/assets/css/bootstrap.css
 BOOTSTRAP_LESS = ./less/bootstrap.less
 BOOTSTRAP_RESPONSIVE = ./docs/assets/css/bootstrap-responsive.css
 BOOTSTRAP_RESPONSIVE_LESS = ./less/responsive.less
+ADCOLONY_LESS = ./adcolony/less/adcolony-bootstrap.less
+ADCOLONY = ./docs/assets/css/adcolony.css
 DATE=$(shell date +%I:%M%p)
 CHECK=\033[32m✔\033[39m
 HR=\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#
@@ -20,6 +22,7 @@ build:
 	@echo "Running JSHint on javascript...             ${CHECK} Done"
 	@./node_modules/.bin/recess --compile ${BOOTSTRAP_LESS} > ${BOOTSTRAP}
 	@./node_modules/.bin/recess --compile ${BOOTSTRAP_RESPONSIVE_LESS} > ${BOOTSTRAP_RESPONSIVE}
+	@./node_modules/.bin/recess --compile ${ADCOLONY_LESS} > ${ADCOLONY}
 	@echo "Compiling LESS with Recess...               ${CHECK} Done"
 	@node docs/build
 	@cp img/* docs/assets/img/
