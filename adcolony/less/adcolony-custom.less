@@ -3,11 +3,11 @@
 /* ////////////////////////////////////////////// */
 
 @colorWhite: #fff;
-@colorShadowLight: #bbbec3;
+@colorShadowLight: #d5d8dc;
 
 @baseFontSize: 16px; // also defined in bootstrap/less/variables.less
 @baseLineHeight: 24px; // also defined in bootstrap/less/variables.less
-@defaultMargin: 4px;
+@gutter: 4px;
 @borderRadius: 3px; // also defined in bootstrap/less/variables.less
 
 @bodyBackground: #dfe4ea; // also defined in bootstrap/less/variables.less
@@ -102,123 +102,141 @@
 .floatleft { float: left; }
 .floatright { float: right; }
 
-.margintop { margin-top: (@defaultMargin * 10); }
-.marginbottom { margin-bottom: (@defaultMargin * 10); }
-.paddingtop { padding-top: (@defaultMargin * 10); }
-.paddingbottom { padding-bottom: (@defaultMargin * 10); }
+.margintop { margin-top: (@gutter * 10); }
+.marginbottom { margin-bottom: (@gutter * 10); }
+.paddingtop { padding-top: (@gutter * 10); }
+.paddingbottom { padding-bottom: (@gutter * 10); }
 
-.margintop-small { margin-top: (@defaultMargin * 5); }
-.marginbottom-small { margin-bottom: (@defaultMargin * 5); }
-.paddingtop-small { padding-top: (@defaultMargin * 5); }
-.paddingbottom-small { padding-top: (@defaultMargin * 5); }
+.margintop-small { margin-top: (@gutter * 5); }
+.marginbottom-small { margin-bottom: (@gutter * 5); }
+.paddingtop-small { padding-top: (@gutter * 5); }
+.paddingbottom-small { padding-top: (@gutter * 5); }
+
+.container-padded { padding: 0 @gutter*5;}
 
 .fullwidth { width:100%; }
+//.btn-large.fullwidth { max-width: 100px; text-align: center;}
 
 .box-shadow-light { .box-shadow(0px 1px (@borderRadius * 2) @colorShadowLight); }
 .box-shadow-btn-press { .box-shadow(0 1px 4px rgba(0,0,0,0.3) inset, 0 1px 0 0 rgba(255, 255, 255, 0.0);) }
 
 .bold { font-weight: bold; }
+.uppercase { text-transform: uppercase; }
 
 /* ////////////////////////////////////////////// */
 // BOOTSTRAP OVERRIDES
 /* ////////////////////////////////////////////// */
 
+html {
+	/*Disable default grey box on touch*/
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+	tap-highlight-color: rgba(0,0,0,0);
+}
+
+.tab-content {
+	overflow: visible;
+}
+
 body {
-	padding: 0px;
+	padding: 0 0 @baseLineHeight 0;
 	line-height: @baseLineHeight;
 }
 
+.container {
+
+}
+
 .btn {
-	padding: @defaultMargin*1.8 @defaultMargin*5 ;
+	padding: @gutter*1.8 @gutter*5 ;
 	font-size: @baseFontSize*.95;
 	font-weight:bold;
 	.box-shadow (0 1px 0px 0px rgba(255,255,255,0.25) inset, 0 1px 0px 0 rgba(255,255,255, 0.85););
-	transition: background, box-shadow, 0.1s;
+	.transition (box-shadow 0.1s);
 	text-shadow: 0px -1px rgba(0,0,0,0.5);
 	border-radius: @borderRadius;
 
 	&:hover, &:focus {	
 		background-position: 0; // bootstrap override
 		.box-shadow (0 1px 0px 0px rgba(255,255,255,0.6) inset, 0 1px 0px 0 rgba(0, 0, 0, 0.1););
-		transition: background, box-shadow, 0.1s;
+		.transition (box-shadow 0.1s);
 		outline: 0;
   		outline: thin dotted \9; // IE6-9
 	}
 
 	&:active {
 		background-position: 0;
-		.box-shadow (0 1px 3px 0px rgba(0,0,0,0.25) inset, 0 1px 0 0 rgba(255, 255, 255, 0.4););
-		transition: background, box-shadow, 0.0s;
+		.box-shadow (0 1px 4px 0px rgba(0,0,0,0.25) inset, 0 1px 0 0 rgba(255, 255, 255, 0.4););
+		.transition (box-shadow 0.0s);
 	}
 }
 
 .btn-large {
 	font-weight:bold;
-	.box-shadow (0 1px 0px 0px rgba(255,255,255,0.35) inset, 0 1px 0px 0 rgba(255,255,255, 1););
-	transition: background, box-shadow, 0.1s;
+	.box-shadow (0 1px 0px 0px rgba(255,255,255,0.25) inset, 0 1px 0px 0 rgba(255,255,255, 1););
+	.transition (box-shadow 0.1s);
 	text-shadow: 0px -1px rgba(0,0,0,0.5);
 	border-radius: @borderRadius;
 
 	&:hover, &:focus {	
 		background-position: 0; // bootstrap override
 		.box-shadow (0 1px 0px 0px rgba(255,255,255,0.4) inset, 0 1px 1px 0 rgba(0, 0, 0, 0.35););
-		transition: background, box-shadow, 0.1s;
+		.transition (box-shadow 0.1s);
 		outline: 0;
   		outline: thin dotted \9; // IE6-9
 	}
 
 	&:active {
 		background-position: 0;
-		.box-shadow (0 1px 6px 0px rgba(0,0,0,0.5) inset, 0 1px 0 0 rgba(255, 255, 255, 1););
-		transition: background, box-shadow, 0.0s;
+		.box-shadow (0 1px 10px 0px rgba(0,0,0,0.3) inset, 0 1px 0 0 rgba(255, 255, 255, 1););
+		.transition (box-shadow 0.0s);
 	}
 }
 
 .btn-primary {
 	color: white;
-	.gradient (#1489d4, #0d69b8);
-  	border: 1px solid darken(#0d69b8, 15%);
+	.gradient (#1489d4, #1076b8);
+  	border: 1px solid darken(#1076b8, 10%);
 
   	&:hover, &:focus {
-		.gradient (lighten(#1489d4, 6%), lighten(#0d69b8, 4%));
-		border: 1px solid darken(#0d69b8, 30%);
+		.gradient (lighten(#1489d4, 6%), lighten(#1076b8, 4%));
+		border: 1px solid darken(#1076b8, 20%);
   	}
 
   	&:active {
-		.gradient (darken(#1489d4, 6%), darken(#0d69b8, 4%));
-		border: 1px solid #002a7f;
+		.gradient (darken(#1489d4, 6%), darken(#1076b8, 4%));
+		border: 1px solid darken(#1076b8, 20%);
   	}
 }
 
 .btn-success {
 	color: white;
-	.gradient (#31c15c, #129A41);
-  	border: 1px solid darken(#129A41, 13%);
+	.gradient (#31c15c, #28a64e);
+  	border: 1px solid darken(#28a64e, 15%);
 
   	&:hover, &:focus {
-		.gradient (lighten(#31c15c, 6%), lighten(#129A41, 4%));
-		border: 1px solid darken(#129A41, 20%);
+		.gradient (lighten(#31c15c, 6%), lighten(#28a64e, 4%));
+		border: 1px solid darken(#28a64e, 20%);
   	}
 
   	&:active {
-		.gradient (darken(#31c15c, 6%), darken(#129A41, 4%));
-		border: 1px solid #002a7f;
+		.gradient (darken(#31c15c, 6%), darken(#28a64e, 4%));
+		border: 1px solid darken(#28a64e, 20%);
   	}
 }
 
 .btn-grey {
 	color: darken(@textColor, 5%);
-	.gradient (#e4e6ea, #d2d5db);
+	.gradient (#e4e6ea, #dcdfe5);
 	border: 1px solid darken(@inputBorder,15%);
 	text-shadow: 0px 1px rgba(255,255,255,1); // .btn, .btn-large override
 
 	&:hover, &:focus {
-		.gradient (lighten(#e4e6ea, 2%), lighten(#d2d5db, 1%));
+		.gradient (lighten(#e4e6ea, 2%), lighten(#dcdfe5, 1%));
 		border-color: darken(@inputBorder, 25%);
 	}
 
 	&:active {
-		.gradient (darken(#e4e6ea, 5%), darken(#d2d5db, 6%));
+		.gradient (darken(#e4e6ea, 4%), darken(#dcdfe5, 5%));
 		border-color: darken(@inputBorder, 25%);
 	}
 }
@@ -226,12 +244,12 @@ body {
 
 select, textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], .uneditable-input {
 	font-size: @baseFontSize*1.25;
-	line-height: @baseLineHeight*1.3;
+	line-height: @baseLineHeight*1.1;
 	.transition(box-shadow border-color 0.1s ease-out);
 	//cursor: pointer; // Seems nicer but could be an incorrect use.
 
 	&:hover {
-		border-color: darken(@inputBorder, 25%);
+		border-color: darken(@inputBorder, 15%);
 	}
 
 	&:focus {
@@ -261,6 +279,8 @@ p.body-large { font-size: @baseFontSize*1.25;}
 	}
 }
 
+
+
 .navbar {
 	.navbar-inner {
 		padding:0;
@@ -268,53 +288,200 @@ p.body-large { font-size: @baseFontSize*1.25;}
 		border:0;
 		.box-shadow-light;
 
-		.nav-tabs{
+		.nav{
 			li {
     			a {
     				margin: 0;
-    				border:none; // override!
     				border-right: 1px solid @inputBorder;
+    				//border-right: 0; // override!
     				border-radius: 0;
+
+    				&:hover, &:focus {
+    					.box-shadow (inset 0 8px 10px #ebebeb,inset 0px 25px 45px 5px rgba(242,242,242,0.9););
+    					.transition (0.1s);
+    				}
+    				&:active {
+    					.box-shadow (inset 0 5px 10px 0 rgba(0,0,25,0.1),inset 0px 25px 15px 2px rgba(0,0,25,0.08););
+    					.transition (0.0s);
+    					background-color: @navbarLinkBackgroundActive;
+    				}
+    			}
+    		}
+    		li.active {
+    			a {
+    				color: @navbarLinkColorActive;
+    				text-decoration: none;
+    				background-color: @navbarLinkBackgroundActive;
+    				.box-shadow(inset 0 3px 8px rgba(0,0,0,.125));
+    				.transition (0.1s);
+
+    			}
+    		}
+    		li:first-child {
+    			a {
+    				border-left: 0px;
+    			}
+    		}
+    		li:last-child {
+    			a {
+    				//border-right: 1px solid @inputBorder;
+    			}
+    		}
+    		li:active {
+    			a {
+    				color: @gray;
     			}
     		}
 		}
 	}
 }
 
-.navbar {
+
+#signup-container-custom {
+	//border: 1px solid @inputBorder;
+
 	.navbar-inner {
+		//margin: 0 -1em -@gutter * 11 -1em;
+
+		.nav-tabs {
+		margin: 0;
+		display: table;
+		table-layout: fixed;
+		width: 100%;
+		li {
+			display: table-cell;
+			width: 34%;
+			float: none;
+			a {
+				text-align: center;
+				border-left: 1px solid @inputBorder;
+				border-radius: 0;
+				line-height: @baseLineHeight*2;
+			}
+		}
+		li:first-child {
+				a {
+					border-left: 0px;
+				}
+		}
+	}
 
 	}
 }
+//
 
-      /* Customize the navbar links to be fill the entire space of the .navbar */
-      .navbar .navbar-inner {
-        padding: 0;
-      }
-      .navbar .nav {
-        margin: 0;
-        display: table;
-        table-layout: fixed;
-        width: 100%;
-      }
-      .navbar .nav li {
-        display: table-cell;
-        width: 1%;
-        float: none;
-      }
-      .navbar .nav li a {
-        font-weight: bold;
-        text-align: center;
-        border-right: 1px solid rgba(0,0,0,.1);
-      }
-      .navbar .nav li:first-child a {
-        border-left: 0;
-        border-radius: 3px 0 0 3px;
-      }
-      .navbar .nav li:last-child a {
-        border-right: 0;
-        border-radius: 0 3px 3px 0;
-      }
+
+// TABS
+
+#signup-customer-tabs {
+	margin: 0 -1em -(@baseLineHeight*1.5) -1em;
+
+	ul {
+		list-style-type: none;
+		margin:0;
+		display: table;
+		width: 100%;
+		table-layout:fixed;
+
+		.box-shadow (0px 0px 1px darken(@inputBorder, 20%));
+		//border-radius: (@borderRadius * 1.5 @borderRadius * 1.5 0 0);
+
+		li {
+			display: table-cell;
+			text-align: center;
+			overflow:hidden;
+			border-left: 1px solid @inputBorder;
+
+			a {	
+				display:block;
+				.gradient(@navbarBackgroundHighlight, @navbarBackground);
+				height: @baseLineHeight*2.5;
+				line-height: @baseLineHeight*2.5;
+				font-weight: bold;
+				text-transform: uppercase;
+
+				&:hover, &:focus {
+    					.box-shadow (inset 0 8px 10px #ebebeb,inset 0px 25px 45px 5px rgba(242,242,242,0.9););
+    					.transition (0.1s);
+    					text-decoration: none;
+    				}
+    			&:active {
+    				.box-shadow (inset 0 5px 10px 0 rgba(0,0,25,0.1),inset 0px 25px 15px 2px rgba(0,0,25,0.08););
+    				.transition (0.0s);
+    				background-color: @navbarLinkBackgroundActive;
+    			}
+			}
+		}
+		li:first-child {
+			border-left: 0px;
+		}
+	}
+}
+
+
+
+/* ////////////////////////////////////////////// */
+// RESPONSIVE
+/* ////////////////////////////////////////////// */
+
+@media (max-width: 767px) {
+
+// Padding to set content in a bit
+body {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.margintop { margin-top: (@gutter * 5); }
+.marginbottom { margin-bottom: (@gutter * 5); }
+.paddingtop { padding-top: (@gutter * 5); }
+.paddingbottom { padding-bottom: (@gutter * 5); }
+
+.margintop-small { margin-top: (@gutter * 5); }
+.marginbottom-small { margin-bottom: (@gutter * 5); }
+.paddingtop-small { padding-top: (@gutter * 5); }
+.paddingbottom-small { padding-top: (@gutter * 5); }
+
+.container-padded { padding: 0 @gutter*3;}
+
+#signup-container-custom {
+	.navbar-inner {
+		//margin: 0 -@gutter * 3 -@gutter * 11 -@gutter * 3;
+
+		.nav-tabs {
+			li {
+				display:block;
+				width: 100%;
+				float: none;
+				clear:both;
+			}
+			li:after {
+				clear: both;
+			}
+		}
+	}
+}
+
+#signup-customer-tabs {
+	margin: 0 * 3 -@gutter * 3 -(@baseLineHeight*1.5) -@gutter * 3;
+	ul {
+		li {
+			display: block;
+			width: 100%;
+			clear: both;
+			float: none;
+			border: 0px;
+			border-top: 1px solid @inputBorder;
+		}
+		li:first-child {
+			border: 0px;
+		}
+	}
+}
+
+
+
+}
 
 /* ////////////////////////////////////////////// */
 // CUSTOM CLASSES
@@ -344,10 +511,10 @@ p.body-large { font-size: @baseFontSize*1.25;}
 	.at2x('../img/logo-grey.jpg', 275px, 54px);
 	width: 275px;
 	height: 54px;
-	margin: 12px auto 12px auto;
+	margin: 0 auto;
 	opacity: 0.7;
 	display: block;
-	transition: opacity .2s ease-out;
+	.transition (opacity .2s ease-out);
 
 	&:hover {
 		opacity: 1;
@@ -418,7 +585,7 @@ p.body-large { font-size: @baseFontSize*1.25;}
 // .ac-login-container {
 // 	&:extend(.ac-login-container);
 // 	max-width: 350px;
-// 	padding: (@defaultMargin * 5);
+// 	padding: (@gutter * 5);
 // 	margin-right: auto;
 // 	margin-left: auto;
 // 	border-radius: (@borderRadius * 1);
@@ -426,41 +593,40 @@ p.body-large { font-size: @baseFontSize*1.25;}
 
 // EXTEND is not supported in LESS v1.3.3 :(
 
-.ac-signup-container-default {
+.ac-login-container-base {
+	margin-left: -2em; // BC: lesson learned. bootstrap cannot responsively handle centered containers with padding
+
+	@media (max-width: 767px) {
+		margin-left:0;
+	}
+}
+
+.ac-login-container {
 	//&:extend(.ac-login-container);
 	
-	max-width: 425px;
-	padding: (@defaultMargin * 5);
-	margin-right: auto;
-	margin-left: auto;
-	border-radius: (@borderRadius * 1.5);
+	//max-width: 350px;
+	padding: 1em;
+	//margin-right: auto;
+	//margin-left: auto;
+	//border-radius: (0 0 @borderRadius * 1.5 @borderRadius * 1.5);
 	.box-shadow-light;
 
 	.gradient (#fcfcfc, #f4f6f7);
-	border: 1px solid rgba(0,0,0,0.25);
+	border: 1px solid @inputBorder;
+
+
+	@media (max-width: 767px) {
+		padding: @gutter*3 @gutter*3 1em @gutter*3;
+	}
 }
 
-.ac-login-container-default {
+.ac-login-well {
 	//&:extend(.ac-login-container);
 	
-	max-width: 350px;
-	padding: (@defaultMargin * 5);
-	margin-right: auto;
-	margin-left: auto;
-	border-radius: (@borderRadius * 1.5);
-	.box-shadow-light;
-
-	.gradient (#fcfcfc, #f4f6f7);
-	border: 1px solid rgba(0,0,0,0.25);
-}
-
-.ac-login-container-well {
-	//&:extend(.ac-login-container);
-	
-	max-width: 350px;
-	padding: (@defaultMargin * 5);
-	margin-right: auto;
-	margin-left: auto;
+	//max-width: 350px;
+	padding: 1em;
+	//margin-right: auto;
+	//margin-left: auto;
 	border-radius: (@borderRadius * 1);
 
 	.box-shadow(0px 1px 1px rgba(255,255,255,0.5));
@@ -471,4 +637,9 @@ p.body-large { font-size: @baseFontSize*1.25;}
 	span {
 		color: lighten(@textColor, 3%);
 	}
+
+	@media (max-width: 767px) {
+		padding: (@gutter * 3);
+	}
 }
+
