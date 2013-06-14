@@ -9147,6 +9147,66 @@ a.badge:focus {
   src: url("../fonts/avenir-bold.eot?#iefix") format("embedded-opentype"), url("../fonts/avenir-bold.woff") format("woff"), url("../fonts/avenir-bold.ttf") format("truetype");
 }
 
+.black {
+  color: #000000;
+}
+
+.graydarker {
+  color: #222222;
+}
+
+.graydark {
+  color: #333333;
+}
+
+.gray {
+  color: #555555;
+}
+
+.graylight {
+  color: #999999;
+}
+
+.graylighter {
+  color: #eeeeee;
+}
+
+.white {
+  color: #ffffff;
+}
+
+.blue {
+  color: #049cdb;
+}
+
+.blueDark {
+  color: #0064cd;
+}
+
+.green {
+  color: #46a546;
+}
+
+.red {
+  color: #9d261d;
+}
+
+.yellow {
+  color: #ffc40d;
+}
+
+.orange {
+  color: #f89406;
+}
+
+.pink {
+  color: #c3325f;
+}
+
+.purple {
+  color: #7a43b6;
+}
+
 /* ////////////////////////////////////////////// */
 
 /* ////////////////////////////////////////////// */
@@ -9217,6 +9277,11 @@ a.badge:focus {
 
 .paddingbottom {
   padding-bottom: 40px;
+}
+
+.padding-wide {
+  padding-right: 40px;
+  padding-left: 40px;
 }
 
 .margintop-small {
@@ -9723,6 +9788,11 @@ p.body-large {
   background: -o-linear-gradient(top, #fbfcfd, #f2f4f7);
   background: -ms-linear-gradient(top, #fbfcfd, #f2f4f7);
   background: linear-gradient(top, #fbfcfd, #f2f4f7);
+  -webkit-transition: 0.1s;
+     -moz-transition: 0.1s;
+      -ms-transition: 0.1s;
+       -o-transition: 0.1s;
+          transition: 0.1s;
 }
 
 #signup-customer-tabs ul li a:hover,
@@ -9743,7 +9813,7 @@ p.body-large {
 
 #signup-customer-tabs ul li a:active {
   color: #555555;
-  background-color: #e2e7ed;
+  background: #e2e7ed;
   -webkit-box-shadow: inset 0 5px 10px 0 rgba(0, 0, 25, 0.1), inset 0 20px 15px 2px rgba(0, 0, 25, 0.08);
      -moz-box-shadow: inset 0 5px 10px 0 rgba(0, 0, 25, 0.1), inset 0 20px 15px 2px rgba(0, 0, 25, 0.08);
       -ms-box-shadow: inset 0 5px 10px 0 rgba(0, 0, 25, 0.1), inset 0 20px 15px 2px rgba(0, 0, 25, 0.08);
@@ -9781,7 +9851,7 @@ p.body-large {
 /* ////////////////////////////////////////////// */
 
 @media (max-width: 767px) {
-  body {
+  .container {
     padding-right: 5px;
     padding-left: 5px;
   }
@@ -9808,6 +9878,10 @@ p.body-large {
   }
   .paddingbottom-small {
     padding-top: 20px;
+  }
+  .padding-wide {
+    padding-right: 20px;
+    padding-left: 20px;
   }
   .container-padded {
     padding: 0 12px;
@@ -9984,6 +10058,7 @@ p.body-large {
   background: -ms-linear-gradient(top, #fcfcfc, #f4f6f7);
   background: linear-gradient(top, #fcfcfc, #f4f6f7);
   border: 1px solid #bfc5c8;
+  border-radius: 3px;
   -webkit-box-shadow: 0px 1px 6px #d5d8dc;
      -moz-box-shadow: 0px 1px 6px #d5d8dc;
       -ms-box-shadow: 0px 1px 6px #d5d8dc;
