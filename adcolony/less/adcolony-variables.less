@@ -15,11 +15,6 @@
 .font-face("ProximaNova", 	"../fonts/proximanova-bold", bold);
 .font-face("Avenir", 		"../fonts/avenir-bold", bold);
 
-//
-// Variables
-// --------------------------------------------------
-
-
 // Global values
 // --------------------------------------------------
 
@@ -66,7 +61,7 @@
 // Scaffolding
 // -------------------------
 @bodyBackground:        #dfe4ea; //AC: slightly darker blue-grey background to encourage;;
-@textColor:             @grayDark;
+@textColor: #575c61; // AC: not darkGray
 
 
 // Links
@@ -81,9 +76,9 @@
 @serifFontFamily:       Georgia, "Times New Roman", Times, serif;
 @monoFontFamily:        Monaco, Menlo, Consolas, "Courier New", monospace;
 
-@baseFontSize:          14px;
+@baseFontSize:          16px; // AC: slightly larger (up from 14)
 @baseFontFamily:        @sansFontFamily;
-@baseLineHeight:        20px;
+@baseLineHeight:        24px; // AC: slightly larget (up from 20)
 @altFontFamily:         @serifFontFamily;
 
 @headingsFontFamily:    inherit; // empty to use BS default, @baseFontFamily
@@ -106,6 +101,10 @@
 @baseBorderRadius:      3px;  // AC - @baseBorderRadius: 4px
 @borderRadiusLarge:     3px;  // AC - @borderRadiusLarge: 6px;
 @borderRadiusSmall:     3px;
+
+@acBaseBorderRadius:    3px;
+@acBorderRadiusLarge:   @acBaseBorderRadius * 2;
+
 
 
 // Tables
@@ -143,7 +142,7 @@
 // Forms
 // -------------------------
 @inputBackground:               @white;
-@inputBorder:                   #bcc7ce; // AC - @inputBorder: #ccc; 
+@inputBorder:                   #bfc5c8; // AC - @inputBorder: #ccc;
 @inputBorderRadius:             @baseBorderRadius;
 @inputDisabledBackground:       @grayLighter;
 @formActionsBackground:         #f5f5f5;
@@ -332,3 +331,27 @@
 // 768px-979px
 @fluidGridColumnWidth768:      percentage(@gridColumnWidth768/@gridRowWidth768);
 @fluidGridGutterWidth768:      percentage(@gridGutterWidth768/@gridRowWidth768);
+
+//
+// Additional Custom AdColony Variables
+// --------------------------------------------------
+
+@colorShadowLight: #d5d8dc;
+
+@baseGutter: 4px;
+@gutterXLarge: @baseGutter * 10;
+@gutterLarge: @baseGutter * 5;
+@gutterSmall: @baseGutter * 3;
+
+@btnPadding: (@baseGutter * 1.8) @gutterLarge;
+
+@btnFontSize: @baseFontSize * 0.95;
+@adcFontSizeMedium: @baseFontSize * 1.25;
+@adcFontSizeLarge: @baseFontSize * 1.75;
+
+@baseInputHeight: 40px;
+
+@inputLineHeight: @baseLineHeight * 1.1;
+@adcLineHeightSmall: @baseLineHeight * 1.5;
+@adcLineHeightMedium: @baseLineHeight * 2;
+@adcLineHeightLarge: @baseLineHeight * 2.5;

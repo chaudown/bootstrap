@@ -34,4 +34,5 @@ nbproject
 .CVS
 .idea
 node_modules
+docs
 dist

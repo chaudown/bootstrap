@@ -1,29 +1,4 @@
 /* ////////////////////////////////////////////// */
-// VARIABLES
-/* ////////////////////////////////////////////// */
-
-@colorWhite: #fff;
-@colorShadowLight: #d5d8dc;
-
-@baseFontSize: 16px; // also defined in bootstrap/less/variables.less
-@baseLineHeight: 24px; // also defined in bootstrap/less/variables.less
-@gutter: 4px;
-@borderRadius: 3px; // also defined in bootstrap/less/variables.less
-
-@bodyBackground: #dfe4ea; // also defined in bootstrap/less/variables.less
-@inputBorder: #bfc5c8; // also defined in bootstrap/less/variables.less
-
-@textColor: #575c61;
-
-@black:                 #000;	// also defined in bootstrap/less/variables.less
-@grayDarker:            #222;	// also defined in bootstrap/less/variables.less
-@grayDark:              #333;	// also defined in bootstrap/less/variables.less
-@gray:                  #555;	// also defined in bootstrap/less/variables.less
-@grayLight:             #999;	// also defined in bootstrap/less/variables.less
-@grayLighter:           #eee;	// also defined in bootstrap/less/variables.less
-@white:                 #fff;	// also defined in bootstrap/less/variables.less
-
-/* ////////////////////////////////////////////// */
 // MIXINS
 /* ////////////////////////////////////////////// */
 
@@ -102,24 +77,24 @@
 .floatleft { float: left; }
 .floatright { float: right; }
 
-.margintop { margin-top: (@gutter * 10); }
-.marginbottom { margin-bottom: (@gutter * 10); }
-.paddingtop { padding-top: (@gutter * 10); }
-.paddingbottom { padding-bottom: (@gutter * 10); }
+.margintop { margin-top: (@gutterXLarge); }
+.marginbottom { margin-bottom: (@gutterXLarge); }
+.paddingtop { padding-top: (@gutterXLarge); }
+.paddingbottom { padding-bottom: (@gutterXLarge); }
 
-.padding-wide { padding-left: (@gutter * 10); padding-right: (@gutter * 10);}
+.padding-wide { padding-left: (@gutterXLarge); padding-right: (@gutterXLarge);}
 
-.margintop-small { margin-top: (@gutter * 5); }
-.marginbottom-small { margin-bottom: (@gutter * 5); }
-.paddingtop-small { padding-top: (@gutter * 5); }
-.paddingbottom-small { padding-top: (@gutter * 5); }
+.margintop-small { margin-top: (@gutterLarge); }
+.marginbottom-small { margin-bottom: (@gutterLarge); }
+.paddingtop-small { padding-top: (@gutterLarge); }
+.paddingbottom-small { padding-top: (@gutterLarge); }
 
-.container-padded { padding: 0 @gutter*5;}
+.container-padded { padding: 0 @gutterLarge;}
 
 .fullwidth { width:100%; }
 //.btn-large.fullwidth { max-width: 100px; text-align: center;}
 
-.box-shadow-light { .box-shadow(0px 1px (@borderRadius * 2) @colorShadowLight); }
+.box-shadow-light { .box-shadow(0px 1px (@acBorderRadiusLarge) @colorShadowLight); }
 .box-shadow-btn-press { .box-shadow(0 1px 4px rgba(0,0,0,0.3) inset, 0 1px 0 0 rgba(255, 255, 255, 0.0);) }
 
 .bold { font-weight: bold; }
@@ -144,18 +119,23 @@ body {
 	line-height: @baseLineHeight;
 }
 
+html, body {
+  height: 100%;
+}
+
 .container {
 
 }
 
 .btn {
-	padding: @gutter*1.8 @gutter*5 ;
-	font-size: @baseFontSize*.95;
+	padding: @btnPadding;
+    line-height: @baseLineHeight;
+	font-size: @btnFontSize;
 	font-weight:bold;
 	.box-shadow (0 1px 0px 0px rgba(255,255,255,0.25) inset, 0 1px 0px 0 rgba(255,255,255, 0.85););
 	.transition (box-shadow 0.1s);
 	text-shadow: 0px -1px rgba(0,0,0,0.5);
-	border-radius: @borderRadius;
+	border-radius: @acBaseBorderRadius;
 
 	&:hover, &:focus {	
 		background-position: 0; // bootstrap override
@@ -177,7 +157,7 @@ body {
 	.box-shadow (0 1px 0px 0px rgba(255,255,255,0.25) inset, 0 1px 0px 0 rgba(255,255,255, 1););
 	.transition (box-shadow 0.1s);
 	text-shadow: 0px -1px rgba(0,0,0,0.5);
-	border-radius: @borderRadius;
+	border-radius: @acBaseBorderRadius;
 
 	&:hover, &:focus {	
 		background-position: 0; // bootstrap override
@@ -245,8 +225,8 @@ body {
 
 
 select, textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], .uneditable-input {
-	font-size: @baseFontSize*1.25;
-	line-height: @baseLineHeight*1.1;
+	font-size: @adcFontSizeMedium;
+	line-height: @inputLineHeight;
 	.transition(box-shadow border-color 0.1s ease-out);
 	//cursor: pointer; // Seems nicer but could be an incorrect use.
 
@@ -259,10 +239,26 @@ select, textarea, input[type="text"], input[type="password"], input[type="dateti
 	}
 }
 
-select, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], .uneditable-input {
-	height: 40px;
+input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], .uneditable-input {
+	height: @baseInputHeight;
 }
 
+select {
+  height: @baseInputHeight + (@baseGutter * 2); // AC: Select elements don't get the padding like input elements so we need to add that to the height
+  line-height: @baseInputHeight + (@baseGutter * 2);
+}
+
+.input-append, .input-prepend {
+  .btn {
+    line-height: @baseInputHeight;
+    padding: @baseGutter @gutterXLarge; // Adjust padding to match the input elements in this case
+  }
+
+  .add-on {
+      height: @baseInputHeight;
+      line-height: @baseInputHeight;
+  }
+}
 
 hr {
 	border:0;
@@ -271,7 +267,7 @@ hr {
 }
 
 p.body { font-size: @baseFontSize; }
-p.body-large { font-size: @baseFontSize*1.25;}
+p.body-large { font-size: @adcFontSizeMedium;}
 
 .nav-tabs {
 	li {
@@ -358,7 +354,7 @@ p.body-large { font-size: @baseFontSize*1.25;}
 				text-align: center;
 				border-left: 1px solid @inputBorder;
 				border-radius: 0;
-				line-height: @baseLineHeight*2;
+				line-height: @adcLineHeightMedium;
 			}
 		}
 		li:first-child {
@@ -376,7 +372,7 @@ p.body-large { font-size: @baseFontSize*1.25;}
 // TABS
 
 #signup-customer-tabs {
-	margin: 0 -1em -(@baseLineHeight*3) -1em;
+	margin: 0 -1em -(@adcLineHeightLarge + @gutterSmall) -1em;
 
 	ul {
 		list-style-type: none;
@@ -386,7 +382,7 @@ p.body-large { font-size: @baseFontSize*1.25;}
 		table-layout:fixed;
 
 		.box-shadow (0px 0px 1px darken(@inputBorder, 20%));
-		//border-radius: (@borderRadius * 1.5 @borderRadius * 1.5 0 0);
+		//border-radius: (@acBaseBorderRadius * 1.5 @acBaseBorderRadius * 1.5 0 0);
 
 		li {
 			display: table-cell;
@@ -397,8 +393,8 @@ p.body-large { font-size: @baseFontSize*1.25;}
 			a {	
 				display:block;
 				.gradient(@navbarBackgroundHighlight, @navbarBackground);
-				height: @baseLineHeight*2.5;
-				line-height: @baseLineHeight*2.5;
+				height: @adcLineHeightLarge;
+				line-height: @adcLineHeightLarge;
 				font-weight: bold;
 				text-transform: uppercase;
 				.transition (0.1s);
@@ -447,19 +443,19 @@ p.body-large { font-size: @baseFontSize*1.25;}
   padding-right: 5px;
 }
 
-.margintop { margin-top: (@gutter * 5); }
-.marginbottom { margin-bottom: (@gutter * 5); }
-.paddingtop { padding-top: (@gutter * 5); }
-.paddingbottom { padding-bottom: (@gutter * 5); }
+.margintop { margin-top: (@gutterLarge); }
+.marginbottom { margin-bottom: (@gutterLarge); }
+.paddingtop { padding-top: (@gutterLarge); }
+.paddingbottom { padding-bottom: (@gutterLarge); }
 
-.margintop-small { margin-top: (@gutter * 5); }
-.marginbottom-small { margin-bottom: (@gutter * 5); }
-.paddingtop-small { padding-top: (@gutter * 5); }
-.paddingbottom-small { padding-top: (@gutter * 5); }
+.margintop-small { margin-top: (@gutterLarge); }
+.marginbottom-small { margin-bottom: (@gutterLarge); }
+.paddingtop-small { padding-top: (@gutterLarge); }
+.paddingbottom-small { padding-top: (@gutterLarge); }
 
-.padding-wide { padding-left: (@gutter * 5); padding-right: (@gutter * 5);}
+.padding-wide { padding-left: (@gutterLarge); padding-right: (@gutterLarge);}
 
-.container-padded { padding: 0 @gutter*3;}
+.container-padded { padding: 0 @gutterSmall;}
 
 #signup-container-custom {
 	.navbar-inner {
@@ -480,7 +476,7 @@ p.body-large { font-size: @baseFontSize*1.25;}
 }
 
 #signup-customer-tabs {
-	margin: 0 * 3 -@gutter * 3 -(@baseLineHeight*1.5) -@gutter * 3;
+	margin: 0 * 3 -@gutterSmall -(@baseLineHeight*1.5) -@gutterSmall;
 	ul {
 		li {
 			display: block;
@@ -556,18 +552,18 @@ p.body-large { font-size: @baseFontSize*1.25;}
 	font-weight: bold;
 	font-size: 16px;
 
-	color: @colorWhite;
+	color: @white;
 
 	padding: 12px 16px;
 	margin-right: 20px;
 	display: block;
-	border-radius: @borderRadius;
+	border-radius: @acBaseBorderRadius;
 
 	text-shadow: 0px -1px #091828;
 }
 
 .ac-navbar-link:hover {
-	color: @colorWhite;
+	color: @white;
 	text-decoration: none;
 	background: #1f5897;
 	.box-shadow(0px 0px 1px 1px #19487a inset);
@@ -584,16 +580,43 @@ p.body-large { font-size: @baseFontSize*1.25;}
 
 
 .ac-headline {
-	font-size: @baseFontSize*1.75;
+	font-size: @adcFontSizeLarge;
 }
 
 /* ////////////////////////////////////////////// */
 // CONTAINERS
 /* ////////////////////////////////////////////// */
 
+/* ---- For the Reports filter view ----- */
+.filter-container {
+  height: 400px;  // Completely arbitrary for now..
+}
+
+.filter-selection-container {
+  padding: 4px 8px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.filter-full-container {
+  overflow: hidden;
+  max-height: 400px;
+}
+
+.filter-list-container {
+  padding: 4px 8px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  height: 250px;
+}
+
+.filter-list-header {
+  padding: 4px 8px;
+}
+
 #ac-content-container {
-	background: @colorWhite;
-	border-radius: @borderRadius;
+	background: @white;
+	border-radius: @acBaseBorderRadius;
 	margin: 0px 8px;
 
 	.box-shadow(0px 0px 8px #bbbec3);
@@ -605,7 +628,7 @@ p.body-large { font-size: @baseFontSize*1.25;}
 // 	padding: (@gutter * 5);
 // 	margin-right: auto;
 // 	margin-left: auto;
-// 	border-radius: (@borderRadius * 1);
+// 	border-radius: (@acBaseBorderRadius * 1);
 // }
 
 // EXTEND is not supported in LESS v1.3.3 :(
@@ -625,7 +648,7 @@ p.body-large { font-size: @baseFontSize*1.25;}
 	padding: 1em;
 	//margin-right: auto;
 	//margin-left: auto;
-	border-radius: (@borderRadius * 1);
+	border-radius: (@acBaseBorderRadius);
 	.box-shadow-light;
 
 	.gradient (#fcfcfc, #f4f6f7);
@@ -633,7 +656,7 @@ p.body-large { font-size: @baseFontSize*1.25;}
 
 
 	@media (max-width: 767px) {
-		padding: @gutter*3 @gutter*3 1em @gutter*3;
+		padding: @gutterSmall @gutterSmall 1em @gutterSmall;
 	}
 }
 
@@ -644,7 +667,7 @@ p.body-large { font-size: @baseFontSize*1.25;}
 	padding: 1em;
 	//margin-right: auto;
 	//margin-left: auto;
-	border-radius: (@borderRadius * 1);
+	border-radius: (@acBaseBorderRadius);
 
 	.box-shadow(0px 1px 1px rgba(255,255,255,0.5));
 	
@@ -656,7 +679,7 @@ p.body-large { font-size: @baseFontSize*1.25;}
 	}
 
 	@media (max-width: 767px) {
-		padding: (@gutter * 3);
+		padding: (@gutterSmall);
 	}
 }
 
