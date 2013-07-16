@@ -243,6 +243,16 @@ input[type="text"], input[type="password"], input[type="datetime"], input[type="
 	height: @baseInputHeight;
 }
 
+.input-large,
+.input-xlarge,
+.input-xxlarge,
+input[class*="span"],
+select[class*="span"],
+textarea[class*="span"],
+.uneditable-input {
+  min-height: @baseInputHeight;
+}
+
 select {
   height: @baseInputHeight + (@baseGutter * 2); // AC: Select elements don't get the padding like input elements so we need to add that to the height
   line-height: @baseInputHeight + (@baseGutter * 2);
@@ -290,8 +300,8 @@ p.body-large { font-size: @adcFontSizeMedium;}
 			li {
     			a {
     				margin: 0;
-    				border-right: 1px solid @inputBorder;
-    				//border-right: 0; // override!
+    				/*border-right: 1px solid @inputBorder;*/
+    				border-right: 0; // override!
     				border-radius: 0;
 
     				&:hover, &:focus {
@@ -685,5 +695,29 @@ p.body-large { font-size: @adcFontSizeMedium;}
 	@media (max-width: 767px) {
 		padding: (@gutterSmall);
 	}
+}
+
+.ac-error-box .error {
+  border: 1px solid #b94a48;
+}
+
+.ac-form-well {
+//  background-color: #f5f5f5;
+//  border: 1px solid #ddd;
+//  margin-top: 10px;
+//  margin-bottom: 10px;
+  padding: @baseLineHeight 0 0 0;
+}
+
+// Used for inline forms
+.ac-inline-block {
+  float: left;
+  margin-right: @baseGutter;
+}
+
+.ac-inline-block .btn {
+  margin-top: @baseLineHeight + 5px;
+  line-height: @baseInputHeight;
+  padding: @baseGutter @gutterXLarge; // Adjust padding to match the input elements in this case
 }
 
