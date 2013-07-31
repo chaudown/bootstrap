@@ -274,7 +274,12 @@ hr {
 	border:0;
 	border-top: 1px solid lighten(@inputBorder, 10%);
 	border-bottom: 0;
+    margin: @baseLineHeight / 2 0;
 }
+
+h1,
+h2,
+h3 { line-height: @baseLineHeight; }
 
 p.body { font-size: @baseFontSize; }
 p.body-large { font-size: @adcFontSizeMedium;}
@@ -596,6 +601,11 @@ p.body-large { font-size: @adcFontSizeMedium;}
 #ac-navbar .dropdown-menu {
   left: 0;
   right: 20px;
+  min-width: 240px;
+}
+
+#ac-navbar .dropdown-menu:after {
+  clear: both;
 }
 
 // Fixing up dropdown menu in navbar
@@ -609,6 +619,15 @@ p.body-large { font-size: @adcFontSizeMedium;}
 
 .table td {
   vertical-align: middle;
+}
+
+// User dropdown in the navbar
+#login_control {
+  color: #ddd;
+}
+
+#login_control a {
+  line-height: 32px;
 }
 
 /* ////////////////////////////////////////////// */
@@ -834,3 +853,404 @@ p.body-large { font-size: @adcFontSizeMedium;}
   margin-left:@baseGutter;
 }
 
+
+
+// --- PULLED FROM index.css which was partially adapted from the original site ---
+.tooltip-trigger {
+  cursor: pointer;
+}
+
+/* A sans href */
+a:not(.btn) { cursor: pointer; }
+a:hover,a.hover { text-decoration: underline; }
+
+/** Set a line to be the height of a row **/
+/** @todo Consult creative team, have them tell us how silly this is **/
+.row-line {
+  line-height:30px; /* Same height as minimum twitter row */
+}
+
+/** We need padding within a column sometimes **/
+/** @todo Consult creative team, have them tell us how silly this is **/
+.column-pad {
+  padding-right: 20px;
+}
+
+.platform-icon {
+  height: 21px;
+}
+
+/**
+ * Get vertical lines through the use of borders
+ */
+.ac-border-left {
+  border-left: 1px solid #ddd;
+}
+.ac-border-right {
+  border-right: 1px solid #ddd;
+}
+
+/** TABLES **/
+
+/** Give some horizontal space **/
+.h-space-left {
+  margin-left: 10px;
+}
+.h-space-right {
+  margin-right: 10px;
+}
+.h-space-left-large {
+  margin-left: 20px;
+}
+.h-space-right-large {
+  margin-right: 20px;
+}
+.h-space-left-xlarge {
+  margin-left: 40px;
+}
+.h-space-right-xlarge {
+  margin-right: 40px;
+}
+/** Give some vertical space **/
+.v-space-top {
+  margin-top: 10px;
+}
+.v-space-bottom {
+  margin-bottom: 10px;
+}
+.v-space-top-large {
+  margin-top: 20px;
+}
+.v-space-bottom-large {
+  margin-bottom: 20px;
+}
+.v-space-top-xlarge {
+  margin-top: 40px;
+}
+.v-space-bottom-xlarge {
+  margin-bottom: 40px;
+}
+
+/** Charts **/
+.chart-container {
+    width:100%;
+    margin: 0 auto;
+    height:280px;
+    border:1px solid #DFDFDF;
+    position:relative;
+    overflow:hidden;
+}
+
+.chart-controls {
+  position:relative;
+  width:100%;
+  height:24px;
+  border-bottom:1px solid #DFDFDF;
+  background-color:#f3f3f3;
+}
+
+.chart-utilities {
+  position:absolute;
+  right:0;
+  margin-right:10px;
+  height:100%;
+  line-height:24px;
+  z-index:6;
+}
+
+.chart-views {
+  position:relative;
+  text-align:center;
+  height:100%;
+  width:100%;
+  line-height:24px;
+  z-index:5;
+}
+
+.chart-axis {
+  position:absolute;
+  width:100%;
+  height:21px;
+  bottom:0;
+  left:0;
+  background-color:#ddd;
+  z-index:0
+}
+
+.chart-inner {
+  width:100%;
+  height:256px;
+  position:relative;
+  background-color:transparent;
+  z-index:1;
+}
+
+.summary-container {
+  border-bottom:1px solid #ccc;
+  border-right:1px solid #ccc;
+  border-left:1px solid #ccc;
+  border-top:1px solid #ccc;
+}
+
+/** Form stuff **/
+/** Show a search icon in right sector of element **/
+.input-search {
+  /** Change image url **/
+  background:url("http://clients.adcolony.com/images/icons/search-dark.png") no-repeat 98% center;
+  padding-right:30px;
+}
+
+/** App search results **/
+.app-search-container {
+  position: absolute;
+  background-color:#eee;
+  min-height:20px;
+  max-height:250px;
+  min-width:320px;
+  overflow:auto;
+  z-index:10;
+}
+
+.app-search-icon-container {
+  width: 30px;
+  height: 30px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.app-search-result {
+  width: 100%;
+  height: 40px;
+  border-top-width: 1px;
+  border-top-style: solid;
+  border-top-color: rgb(170, 170, 170);
+}
+
+.app-search-result:hover {
+  background-color: #D6E5D5;
+  cursor:pointer;
+}
+
+.app-search-result-description {
+  color: #777;
+}
+
+.app-market-box {
+  position:relative;
+  -moz-box-shadow:inset 0px 0px 5px #888;
+  -webkit-box-shadow:inset 0px 0px 5px #888;
+  box-shadow:inset 0px 0px 5px #888;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
+  background-color:#eee;
+  width: 550px;
+  height: 69px;
+  z-index: 1;
+}
+
+.app-market-box-icon {
+  margin-top: 6px;
+  width:57px;
+  height:57px;
+}
+
+/** Sortable fields should be clickable **/
+.field-sort {
+  cursor: pointer;
+}
+
+/**
+ * Box selectable items
+ */
+.box-selectable {
+  vertical-align:middle;
+  text-align:center;
+  cursor:pointer;
+}
+.box-selectable-platform {
+  height:135px;
+  width:160px;
+}
+.box-selectable-traffic {
+  height: 80px;
+  width:140px;
+}
+/* Give a nice selection box */
+.box-selected {
+  -moz-box-shadow:inset 0px 0px 5px #888;
+  -webkit-box-shadow:inset 0px 0px 5px #888;
+  box-shadow:inset 0px 0px 5px #888;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
+  background-color:#eee;
+}
+
+/** targeting selection **/
+.target-select {
+  cursor: pointer;
+}
+
+/** Global faded class **/
+.faded {
+  opacity: 0.4;
+}
+
+/** Override bootstrap horizontal form controls for a 'minified' version **/
+.form-horizontal .control-label-min {
+  width: 40px;
+}
+
+.form-horizontal .controls-min {
+  margin-left: 0px;
+}
+
+/** Overlay classes **/
+.ac-overlay-container .modal-backdrop {
+  z-index: 19;
+  opacity: 0.0;
+}
+
+.ac-overlay-container {
+  position: absolute;
+  z-index: 20;
+}
+
+.ac-overlay-container.left {
+  left: 0;
+}
+
+.ac-overlay-container.right {
+  right: 0;
+}
+
+.ac-overlay-container.fade.in {
+  opacity: 1;
+}
+
+.ac-overlay-container.fade {
+  opacity: 0;
+  -webkit-transition: opacity 0.15s linear;
+  -moz-transition: opacity 0.15s linear;
+  -o-transition: opacity 0.15s linear;
+  transition: opacity 0.15s linear;
+}
+
+/** Fix container to side on mobile */
+
+@media (max-width: 767px) {
+  .ac-overlay-container {
+    left: 50%;
+  }
+  .ac-overlay {
+    left: -50%;
+  }
+  .ac-overlay-container.left {
+    left: 50%;
+  }
+  .ac-overlay-container.right {
+    left: 50%;
+  }
+}
+
+.ac-overlay {
+  position: relative;
+  z-index: 20;
+  white-space: nowrap;
+  background-color: #FFF;
+  border: 1px solid #555;
+  -webkit-box-shadow: 2px 2px 4px rgba(50, 50, 50, 0.5);
+  -moz-box-shadow: 2px 2px 4px rgba(50, 50, 50, 0.5);
+}
+
+/** Date Picker overlay **/
+
+.date-picker-calendar {
+  width: 228px;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.ac-overlay-date-picker {
+  padding: 15px;
+}
+
+.ac-overlay-date-picker .header {
+  padding: 0;
+  margin: 0;
+  font-size: 12px;
+  color: #555;
+  text-align: left;
+}
+
+.ac-overlay-date-picker .field {
+  padding-top: 0;
+  padding-bottom: 15px;
+  padding-left: 0;
+  margin-top: 0;
+  font-size: 12px;
+  color: #555;
+  text-align: left;
+}
+
+/** Zone targeting **/
+
+.ac-overlay-filter-zone {
+  padding: 15px;
+  background-color: #eee;
+}
+
+.ac-overlay-filter-zone .region-summary {
+  background-color: #ddd;
+  border-right: 2px solid #ddd;
+}
+
+.ac-overlay-filter-zone .summary-header {
+  width: 100%;
+  height: 21px;
+  padding: 0;
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 21px;
+  color: white;
+  text-align: center;
+  background-color: #589BCB;
+  border: 0;
+  border-top: 1px solid #377AAA;
+  border-right: 1px solid #377AAA;
+  border-bottom: 1px solid #377AAA;
+}
+
+.ac-overlay-filter-zone .textarea-selected-zones {
+  width: 90%;
+  margin: 0 0px 2px;
+  font-size: 11px;
+  color: #333333;
+}
+
+/** CSV Targeting **/
+
+.ac-overlay-filter-csv {
+  padding: 15px;
+}
+
+.ac-overlay-filter-csv textarea {
+  width: 400px;
+  height: 200px;
+}
+
+/** Basic targeting **/
+
+.ac-overlay-filter-basic-left {
+  height: 400px;
+  padding: 15px;
+  overflow-y: scroll;
+  background-color: #FFF;
+  border-right: 1px solid #555;
+}
+
+.ac-overlay-filter-basic-right {
+  height: 400px;
+  padding: 15px;
+  overflow: scroll;
+  background-color: #eee;
+}
