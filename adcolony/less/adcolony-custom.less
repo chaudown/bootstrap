@@ -599,7 +599,7 @@ p.body-large { font-size: @adcFontSizeMedium;}
 
 // Fixing up dropdown menu in navbar
 #ac-navbar .dropdown-menu {
-  left: 0;
+//  left: 0;
   right: 20px;
   min-width: 240px;
 }
@@ -619,6 +619,10 @@ p.body-large { font-size: @adcFontSizeMedium;}
 
 .table td {
   vertical-align: middle;
+}
+
+.nomargin {
+  margin-bottom: 0px;
 }
 
 // User dropdown in the navbar
@@ -894,41 +898,41 @@ a:hover,a.hover { text-decoration: underline; }
 
 /** Give some horizontal space **/
 .h-space-left {
-  margin-left: 10px;
+  margin-left: @gutterSmall;
 }
 .h-space-right {
-  margin-right: 10px;
+  margin-right: @gutterSmall;
 }
 .h-space-left-large {
-  margin-left: 20px;
+  margin-left: @gutterLarge;
 }
 .h-space-right-large {
-  margin-right: 20px;
+  margin-right: @gutterLarge;
 }
 .h-space-left-xlarge {
-  margin-left: 40px;
+  margin-left: @gutterXLarge;
 }
 .h-space-right-xlarge {
-  margin-right: 40px;
+  margin-right: @gutterXLarge;
 }
 /** Give some vertical space **/
 .v-space-top {
-  margin-top: 10px;
+  margin-top: @gutterSmall;
 }
 .v-space-bottom {
-  margin-bottom: 10px;
+  margin-bottom: @gutterSmall;
 }
 .v-space-top-large {
-  margin-top: 20px;
+  margin-top: @gutterLarge;
 }
 .v-space-bottom-large {
-  margin-bottom: 20px;
+  margin-bottom: @gutterLarge;
 }
 .v-space-top-xlarge {
-  margin-top: 40px;
+  margin-top: @gutterXLarge;
 }
 .v-space-bottom-xlarge {
-  margin-bottom: 40px;
+  margin-bottom: @gutterXLarge;
 }
 
 /** Charts **/
