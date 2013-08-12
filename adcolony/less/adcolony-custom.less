@@ -1076,8 +1076,15 @@ a:hover,a.hover { text-decoration: underline; }
   width:160px;
 }
 .box-selectable-traffic {
-  height: 80px;
+  padding-bottom: @gutterSmall;
   width:140px;
+}
+
+.box-selectable-traffic .details {
+  height:@adcLineHeightSmall;
+  line-height:@adcLineHeightSmall;
+  vertical-align:middle;
+  padding-top: @gutterSmall;
 }
 /* Give a nice selection box */
 .box-selected {
