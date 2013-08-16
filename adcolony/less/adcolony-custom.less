@@ -115,7 +115,7 @@ html {
 }
 
 body {
-	padding: 0 0 @baseLineHeight 0;
+//	padding: 0 0 @baseLineHeight 0;
 	line-height: @baseLineHeight;
 }
 
@@ -134,7 +134,6 @@ html, body {
 	font-weight:bold;
 	.box-shadow (0 1px 0px 0px rgba(255,255,255,0.25) inset, 0 1px 0px 0 rgba(255,255,255, 0.85););
 	.transition (box-shadow 0.1s);
-	text-shadow: 0px -1px rgba(0,0,0,0.5);
 	border-radius: @acBaseBorderRadius;
 
 	&:hover, &:focus {	
@@ -152,11 +151,16 @@ html, body {
 	}
 }
 
+.btn-uploadify {
+  margin-bottom: 0px;
+  padding: 0;
+}
+
 .btn-large {
 	font-weight:bold;
 	.box-shadow (0 1px 0px 0px rgba(255,255,255,0.25) inset, 0 1px 0px 0 rgba(255,255,255, 1););
 	.transition (box-shadow 0.1s);
-	text-shadow: 0px -1px rgba(0,0,0,0.5);
+//	text-shadow: 0px -1px rgba(0,0,0,0.5);
 	border-radius: @acBaseBorderRadius;
 
 	&:hover, &:focus {	
@@ -178,6 +182,7 @@ html, body {
 	color: white;
 	.gradient (#1489d4, #1076b8);
   	border: 1px solid darken(#1076b8, 10%);
+    text-shadow: 0px -1px rgba(0,0,0,0.5);
 
   	&:hover, &:focus {
 		.gradient (lighten(#1489d4, 6%), lighten(#1076b8, 4%));
@@ -194,6 +199,7 @@ html, body {
 	color: white;
 	.gradient (#31c15c, #28a64e);
   	border: 1px solid darken(#28a64e, 15%);
+    text-shadow: 0px -1px rgba(0,0,0,0.5);
 
   	&:hover, &:focus {
 		.gradient (lighten(#31c15c, 6%), lighten(#28a64e, 4%));
@@ -444,73 +450,6 @@ p.body-large { font-size: @adcFontSizeMedium;}
 	}
 }
 
-
-
-/* ////////////////////////////////////////////// */
-// RESPONSIVE
-/* ////////////////////////////////////////////// */
-
-@media (max-width: 767px) {
-
-// Padding to set content in a bit
-.container {
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-.margintop { margin-top: (@gutterLarge); }
-.marginbottom { margin-bottom: (@gutterLarge); }
-.paddingtop { padding-top: (@gutterLarge); }
-.paddingbottom { padding-bottom: (@gutterLarge); }
-
-.margintop-small { margin-top: (@gutterLarge); }
-.marginbottom-small { margin-bottom: (@gutterLarge); }
-.paddingtop-small { padding-top: (@gutterLarge); }
-.paddingbottom-small { padding-top: (@gutterLarge); }
-
-.padding-wide { padding-left: (@gutterLarge); padding-right: (@gutterLarge);}
-
-.container-padded { padding: 0 @gutterSmall;}
-
-#signup-container-custom {
-	.navbar-inner {
-		//margin: 0 -@gutter * 3 -@gutter * 11 -@gutter * 3;
-
-		.nav-tabs {
-			li {
-				display:block;
-				width: 100%;
-				float: none;
-				clear:both;
-			}
-			li:after {
-				clear: both;
-			}
-		}
-	}
-}
-
-#signup-customer-tabs {
-	margin: 0 * 3 -@gutterSmall -(@baseLineHeight*1.5) -@gutterSmall;
-	ul {
-		li {
-			display: block;
-			width: 100%;
-			clear: both;
-			float: none;
-			border: 0px;
-			border-top: 1px solid @inputBorder;
-		}
-		li:first-child {
-			border: 0px;
-		}
-	}
-}
-
-
-
-}
-
 /* ////////////////////////////////////////////// */
 // CUSTOM CLASSES
 /* ////////////////////////////////////////////// */
@@ -597,11 +536,11 @@ p.body-large { font-size: @adcFontSizeMedium;}
 	float: left;
 }
 
-// Fixing up dropdown menu in navbar
+// Fixing up dropdown menu in navbar - No longer necessary (8/15/13)
 #ac-navbar .dropdown-menu {
 //  left: 0;
-  right: 20px;
-  min-width: 240px;
+//  right: 20px;
+//  min-width: 240px;
 }
 
 #ac-navbar .dropdown-menu:after {
@@ -632,6 +571,10 @@ p.body-large { font-size: @adcFontSizeMedium;}
 
 #login_control a {
   line-height: 32px;
+}
+
+#login_container {
+  padding-top: 40px;
 }
 
 /* ////////////////////////////////////////////// */
@@ -668,9 +611,12 @@ p.body-large { font-size: @adcFontSizeMedium;}
 #ac-content-container {
 	background: @white;
 	border-radius: @acBaseBorderRadius;
-	margin: 0px 8px;
-
+//	margin: 0px 8px;
 	.box-shadow(0px 0px 8px #bbbec3);
+}
+
+.ac-inner-container {
+  padding: 0 @gutterXLarge;
 }
 
 // Default/App Icon container
@@ -1264,4 +1210,77 @@ a:hover,a.hover { text-decoration: underline; }
   padding: 15px;
   overflow: scroll;
   background-color: #eee;
+}
+
+
+
+/* ////////////////////////////////////////////// */
+// RESPONSIVE
+/* ////////////////////////////////////////////// */
+
+@media (max-width: 767px) {
+
+  body {
+    padding-right: 0px;
+    padding-left: 0px;
+  }
+
+  // Padding to set content in a bit
+  .container {
+    padding-left: @baseGutter;
+    padding-right: @baseGutter;
+  }
+
+  .ac-inner-container {
+    padding: 0 @gutterLarge;
+  }
+
+  .margintop { margin-top: (@gutterLarge); }
+  .marginbottom { margin-bottom: (@gutterLarge); }
+  .paddingtop { padding-top: (@gutterLarge); }
+  .paddingbottom { padding-bottom: (@gutterLarge); }
+
+  .margintop-small { margin-top: (@gutterLarge); }
+  .marginbottom-small { margin-bottom: (@gutterLarge); }
+  .paddingtop-small { padding-top: (@gutterLarge); }
+  .paddingbottom-small { padding-top: (@gutterLarge); }
+
+  .padding-wide { padding-left: (@gutterLarge); padding-right: (@gutterLarge);}
+
+  .container-padded { padding: 0 @gutterSmall;}
+
+  #signup-container-custom {
+    .navbar-inner {
+      //margin: 0 -@gutter * 3 -@gutter * 11 -@gutter * 3;
+
+      .nav-tabs {
+        li {
+          display:block;
+          width: 100%;
+          float: none;
+          clear:both;
+        }
+        li:after {
+          clear: both;
+        }
+      }
+    }
+  }
+
+  #signup-customer-tabs {
+    margin: 0 * 3 -@gutterSmall -(@baseLineHeight*1.5) -@gutterSmall;
+    ul {
+      li {
+        display: block;
+        width: 100%;
+        clear: both;
+        float: none;
+        border: 0px;
+        border-top: 1px solid @inputBorder;
+      }
+      li:first-child {
+        border: 0px;
+      }
+    }
+  }
 }
