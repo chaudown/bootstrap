@@ -591,8 +591,12 @@ p.body-large { font-size: @adcFontSizeMedium;}
 /* ////////////////////////////////////////////// */
 
 /* ---- For the Reports filter view ----- */
+//.row-fluid .ac-overlay-container .span6 {
+//  margin-left: 0px;
+//}
+
 .filter-container {
-  height: 400px;  // Completely arbitrary for now..
+  height: 300px;  // Completely arbitrary for now..
 }
 
 .filter-selection-container {
@@ -610,7 +614,7 @@ p.body-large { font-size: @adcFontSizeMedium;}
   padding: 0px 8px;
   overflow-y: scroll;
   overflow-x: hidden;
-  height: 250px;
+  height: 300px;
 }
 
 .filter-list-container input {
@@ -625,6 +629,7 @@ p.body-large { font-size: @adcFontSizeMedium;}
   padding: 0;
   margin: 0;
   border-bottom: 1px solid #dadee0;
+//  border-top: 1px solid #dadee0;
   min-height: @baseLineHeight;
   background-color: #ffffff;
 }
@@ -646,6 +651,18 @@ p.body-large { font-size: @adcFontSizeMedium;}
 
 .bottom-dashed-divider {
   border-bottom: 1px dotted #dadee0;
+}
+
+.compound-select {
+  cursor: pointer;
+}
+
+.sub-select {
+  cursor: pointer;
+}
+
+input[class*="mixed"] {
+  /* TODO: Some tri-state checkbox styling */
 }
 
 
