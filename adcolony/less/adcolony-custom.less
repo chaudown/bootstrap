@@ -587,7 +587,7 @@ p.body-large { font-size: @adcFontSizeMedium;}
 }
 
 .filter-selection-container {
-  padding: 4px 8px;
+  padding: 0px 8px;
   overflow-y: scroll;
   overflow-x: hidden;
 }
@@ -598,15 +598,47 @@ p.body-large { font-size: @adcFontSizeMedium;}
 }
 
 .filter-list-container {
-  padding: 4px 8px;
+  padding: 0px 8px;
   overflow-y: scroll;
   overflow-x: hidden;
   height: 250px;
 }
 
+.filter-list-container input {
+  margin: 0;
+}
+
 .filter-list-header {
   padding: 4px 8px;
 }
+
+.filter-list-floating-header {
+  padding: 0;
+  margin: 0;
+  border-bottom: 1px solid #dadee0;
+  min-height: @baseLineHeight;
+  background-color: #ffffff;
+}
+
+.filter-list-floating-header:before {
+  display: table;
+}
+
+.filter-list-floating-header:after {
+  display: table;
+}
+
+/* Id Filter Layout specific styles */
+
+.left-vertical-divider {
+  border-left: 1px solid #dadee0;
+  padding-left: @gutterSmall;
+}
+
+.bottom-dashed-divider {
+  border-bottom: 1px dotted #dadee0;
+}
+
 
 #ac-content-container {
 	background: @white;
@@ -1211,7 +1243,6 @@ a:hover,a.hover { text-decoration: underline; }
   overflow: scroll;
   background-color: #eee;
 }
-
 
 
 /* ////////////////////////////////////////////// */
