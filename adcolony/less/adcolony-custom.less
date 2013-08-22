@@ -591,12 +591,16 @@ p.body-large { font-size: @adcFontSizeMedium;}
 /* ////////////////////////////////////////////// */
 
 /* ---- For the Reports filter view ----- */
+//.row-fluid .ac-overlay-container .span6 {
+//  margin-left: 0px;
+//}
+
 .filter-container {
-  height: 400px;  // Completely arbitrary for now..
+  height: 300px;  // Completely arbitrary for now..
 }
 
 .filter-selection-container {
-  padding: 4px 8px;
+  padding: 0px 8px;
   overflow-y: scroll;
   overflow-x: hidden;
 }
@@ -607,15 +611,60 @@ p.body-large { font-size: @adcFontSizeMedium;}
 }
 
 .filter-list-container {
-  padding: 4px 8px;
+  padding: 0px 8px;
   overflow-y: scroll;
   overflow-x: hidden;
-  height: 250px;
+  height: 300px;
+}
+
+.filter-list-container input {
+  margin: 0;
 }
 
 .filter-list-header {
   padding: 4px 8px;
 }
+
+.filter-list-floating-header {
+  padding: 0;
+  margin: 0;
+  border-bottom: 1px solid #dadee0;
+//  border-top: 1px solid #dadee0;
+  min-height: @baseLineHeight;
+  background-color: #ffffff;
+}
+
+.filter-list-floating-header:before {
+  display: table;
+}
+
+.filter-list-floating-header:after {
+  display: table;
+}
+
+/* Id Filter Layout specific styles */
+
+.left-vertical-divider {
+  border-left: 1px solid #dadee0;
+  padding-left: @gutterSmall;
+}
+
+.bottom-dashed-divider {
+  border-bottom: 1px dotted #dadee0;
+}
+
+.compound-select {
+  cursor: pointer;
+}
+
+.sub-select {
+  cursor: pointer;
+}
+
+input[class*="mixed"] {
+  /* TODO: Some tri-state checkbox styling */
+}
+
 
 #ac-content-container {
 	background: @white;
@@ -1231,7 +1280,6 @@ th.field-sort:hover .no-sort {
   overflow: scroll;
   background-color: #eee;
 }
-
 
 
 /* ////////////////////////////////////////////// */
