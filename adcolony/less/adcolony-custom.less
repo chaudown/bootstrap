@@ -850,6 +850,17 @@ a:hover,a.hover { text-decoration: underline; }
 }
 
 /** TABLES **/
+/* Sortable th shouldn't wrap text, and should only show hidden sort icons on hover */
+th.field-sort {
+	font-size: 14px;
+	white-space:nowrap;
+}
+th.field-sort .no-sort {
+	visibility: hidden;
+}
+th.field-sort:hover .no-sort {
+	visibility: visible;
+}
 
 /** Give some horizontal space **/
 .h-space-left {
