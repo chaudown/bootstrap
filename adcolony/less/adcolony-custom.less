@@ -459,6 +459,10 @@ p.body-large { font-size: @adcFontSizeMedium;}
 	}
 }
 
+.pagination {
+  margin: @gutterLarge;
+}
+
 /* ////////////////////////////////////////////// */
 // CUSTOM CLASSES
 /* ////////////////////////////////////////////// */
@@ -693,6 +697,9 @@ input[class*="mixed"] {
 //  padding-top: @baseGutter;
 }
 
+.navbar {
+  margin-bottom: 0px;
+}
 
 #ac-content-container {
 	background: @white;
@@ -702,7 +709,40 @@ input[class*="mixed"] {
 }
 
 .ac-inner-container {
-  padding: 0 @gutterXLarge;
+  padding: 0;
+}
+
+.ac-inner-container-element {
+  padding: @gutterLarge;
+}
+
+.ac-dark {
+  background-color: #E8EBF0;
+}
+
+.ac-layout-well {
+  background-color: @layoutWellBG;
+  padding: @gutterLarge;
+}
+
+.ac-layout-well-inner {
+  background-color: @white;
+  border-radius: 3px;
+  -webkit-box-shadow: 0px 0px 8px #bbbec3;
+  -moz-box-shadow: 0px 0px 8px #bbbec3;
+  -ms-box-shadow: 0px 0px 8px #bbbec3;
+  -o-box-shadow: 0px 0px 8px #bbbec3;
+  box-shadow: 0px 0px 8px #bbbec3;
+}
+
+.ac-layout-well-inner-upper {
+  padding: @gutterLarge;
+}
+
+.ac-layout-well-inner-lower {
+  padding: @gutterLarge;
+  background-color: @lowerLayoutWellBG;
+  border-top: 1px solid #dadee0;
 }
 
 // Default/App Icon container
@@ -986,7 +1026,7 @@ td {
     width:100%;
     margin: 0 auto;
     height:280px;
-    border:1px solid #DFDFDF;
+    border-top:1px solid #DFDFDF;
     position:relative;
     overflow:hidden;
 }
@@ -1037,8 +1077,8 @@ td {
 
 .summary-container {
   border-bottom:1px solid #ccc;
-  border-right:1px solid #ccc;
-  border-left:1px solid #ccc;
+//  border-right:1px solid #ccc;
+//  border-left:1px solid #ccc;
   border-top:1px solid #ccc;
 }
 
@@ -1334,7 +1374,7 @@ td {
   }
 
   .ac-inner-container {
-    padding: 0 @gutterLarge;
+    padding: 0;
   }
 
   .margintop { margin-top: (@gutterLarge); }
