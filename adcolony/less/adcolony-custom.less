@@ -875,6 +875,18 @@ input[class*="mixed"] {
   padding: @baseGutter @gutterXLarge; // Adjust padding to match the input elements in this case
 }
 
+.fixed-filter-block {
+
+}
+
+.floating-block {
+  z-index: 100;
+  -moz-box-shadow:inset 0px 0px 5px #888;
+  -webkit-box-shadow:inset 0px 0px 5px #888;
+  box-shadow:inset 0px 0px 5px #888;
+}
+
+
 // Loading classes
 .loader-icon {
   display: inline-block;
@@ -1057,6 +1069,16 @@ td {
   z-index:5;
 }
 
+.chart-views {
+  .brand {
+    margin-left: 0px;
+  }
+}
+
+.chart-field-select {
+//  min-width: 100px;
+}
+
 .chart-axis {
   position:absolute;
   width:100%;
@@ -1076,7 +1098,9 @@ td {
 }
 
 .summary-container {
-  border-bottom:1px solid #ccc;
+  background-color: #23314b;
+  color: @white;
+//  border-bottom:1px solid #ccc;
 //  border-right:1px solid #ccc;
 //  border-left:1px solid #ccc;
   border-top:1px solid #ccc;
