@@ -127,6 +127,12 @@ html, body {
 
 }
 
+a.muted,
+a.muted:hover,
+a.muted:focus,{
+  color: @grayLight;
+}
+
 .btn {
 	padding: @btnPadding;
     line-height: @baseLineHeight;
@@ -150,6 +156,12 @@ html, body {
 		.transition (box-shadow 0.0s);
 	}
 }
+
+//.dropdown-toggle {
+//  @media (min-width: 767px) {
+//    padding: @gutterSmall @gutterLarge;
+//  }
+//}
 
 .btn-small {
 	padding: @baseGutter/2 @gutterLarge/2;
@@ -467,6 +479,10 @@ p.body-large { font-size: @adcFontSizeMedium;}
 // CUSTOM CLASSES
 /* ////////////////////////////////////////////// */
 
+.number-font {
+  font-family: "Avenir", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
 .ac-breadcrumb-container {
 }
 
@@ -492,6 +508,17 @@ p.body-large { font-size: @adcFontSizeMedium;}
 	color: #fff;
 }
 
+.compact-header {
+  margin-top: @gutterSmall;
+  text-align: right;
+}
+
+.compact-header {
+  h3 {
+    margin: 0px;
+  }
+}
+
 #ac-logo {
 	.at2x('../img/logo.png', 260px, 110px);
 	width: 260px;
@@ -500,7 +527,7 @@ p.body-large { font-size: @adcFontSizeMedium;}
 
 	background-repeat: no-repeat;
 	background-position: top;
-	float: left; 
+	float: left;
 
 	&:hover {
 		background-position: bottom;
@@ -521,9 +548,9 @@ p.body-large { font-size: @adcFontSizeMedium;}
 	}
 }
 
-#ac-logo span, 
+#ac-logo span,
 #ac-logo-grey span {
-	display: none; 
+	display: none;
 }
 
 #ac-navbar {
@@ -666,6 +693,42 @@ p.body-large { font-size: @adcFontSizeMedium;}
   display: table;
 }
 
+.floating-filter-block {
+  .input-xlarge {
+    @media (max-width:500px) {
+      width: 150px;
+    }
+  }
+
+  label {
+    @media (max-width: 500px) {
+      max-width: 150px;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+  }
+
+  .btn {
+    @media (max-width: 500px) {
+      padding: 7.2px 6px;
+    }
+  }
+}
+
+.side-blocker {
+  margin-left: -115px;
+  width: 100px;
+  height: 132px;
+  background-color: @bodyBackground;
+  position: static;
+  float: left;
+  
+  @media (max-width:767px) {
+    width: 0px;
+    height: 0px;
+  }
+}
+
 /* Id Filter Layout specific styles */
 
 .left-vertical-divider {
@@ -675,6 +738,10 @@ p.body-large { font-size: @adcFontSizeMedium;}
 
 .bottom-dashed-divider {
   border-bottom: 1px dotted #dadee0;
+}
+
+.bottom-solid-divider {
+  border-bottom: 1px solid #dadee0;
 }
 
 .compound-select {
@@ -714,6 +781,14 @@ input[class*="mixed"] {
 
 .ac-inner-container-element {
   padding: @gutterLarge;
+}
+
+.ac-inner-narrow-container-element {
+  padding: @baseGutter @gutterLarge;
+}
+
+.ac-form-container-element {
+  padding: @gutterXLarge;
 }
 
 .ac-dark {
