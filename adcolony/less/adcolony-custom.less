@@ -1121,7 +1121,7 @@ td {
 .chart-controls {
   position:relative;
   width:100%;
-  height:24px;
+//  height:24px;
   border-bottom:1px solid #DFDFDF;
   background-color:#f3f3f3;
 }
@@ -1372,6 +1372,26 @@ td {
 
 .ac-overlay-date-picker {
   padding: 15px;
+  max-height: 500px;
+  @media (max-width: 979px) {
+    overflow-y: scroll;
+  }
+}
+
+ul.ac-compact-list {
+  @media(min-width:979px) {
+    list-style: none;
+  }
+  @media(max-width:979px) {
+    list-style-type: disc;
+  }
+}
+
+.ac-compact-list li {
+  @media(max-width:979px) {
+    float: left;
+    margin-left: @gutterLarge;
+  }
 }
 
 .ac-overlay-date-picker .header {
