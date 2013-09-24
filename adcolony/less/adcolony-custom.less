@@ -834,6 +834,18 @@ input[class*="mixed"] {
   height:100%;
 }
 
+.ac-entry-number {
+  position:relative;
+  left: -125px;
+  width:100px;
+  text-align:right;
+}
+
+// This is used to counter the extra width added by the .ac-entry-number class
+.ac-entry-number-adjustment {
+  margin-right: -100px;
+}
+
 // Ad Icon container
 .ac-ad-icon-container {
   width: @adIconWidth;
@@ -850,14 +862,16 @@ input[class*="mixed"] {
 }
 
 .ac-app-progress {
-  margin-top: ((@baseLineHeight * 2 + 1) - @progressHeight) / 2;
+  margin-top: (@baseLineHeight - @progressHeight) / 2; //((@baseLineHeight * 2 + 1) - @progressHeight) / 2;
   margin-bottom: 0px;
-  width: @progressWidth;
+//  width: @progressWidth;
   height: @progressHeight;
 }
 
 .ac-app-status-icon {
-  margin-top: ((@baseLineHeight * 2 + 1) - 14px) / 2;
+  // (The content size(base line height * 2 + 1) - icon height) / 2
+//  margin-top: ((@baseLineHeight * 2 + 1) - 14px) / 2;
+  vertical-align: middle;
 }
 
 // Rounded corners
@@ -948,6 +962,19 @@ input[class*="mixed"] {
   margin-top: @baseLineHeight + 5px;
   line-height: @baseInputHeight;
   padding: @baseGutter @gutterXLarge; // Adjust padding to match the input elements in this case
+}
+
+.ac-inline-centered {
+  .checkbox {
+    height: @baseInputHeight;
+    line-height: @baseInputHeight;
+    vertical-align: middle;
+  }
+
+  input {
+    height: @baseInputHeight;
+    margin-top: 0px;
+  }
 }
 
 .fixed-filter-block {
