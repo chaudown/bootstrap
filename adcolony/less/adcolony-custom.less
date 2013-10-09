@@ -20,23 +20,23 @@
 
 // Font-face mixin with brower prefixes
 
-.font-face (@family, @file-base, @weight: normal, @style: normal) {
-	@font-face {
-		font-family: @family;
-		src: 	url("@{file-base}.eot");
-		src: 	url("@{file-base}.eot?#iefix") format("embedded-opentype"),
-				url("@{file-base}.woff") format("woff"),
-				url("@{file-base}.ttf") format("truetype");
-		font-weight: @weight;
-		font-style: @style;
-	}
-}
+//.font-face (@family, @file-base, @weight: normal, @style: normal) {
+//	@font-face {
+//		font-family: @family;
+//		src: 	url("@{file-base}.eot");
+//		src: 	url("@{file-base}.eot?#iefix") format("embedded-opentype"),
+//				url("@{file-base}.woff") format("woff"),
+//				url("@{file-base}.ttf") format("truetype");
+//		font-weight: @weight;
+//		font-style: @style;
+//	}
+//}
 
 // Font-face definitions
 
-.font-face("ProximaNova", "../fonts/proximanova-light", normal);
-.font-face("ProximaNova", "../fonts/proximanova-bold", bold);
-.font-face("Avenir", "../fonts/AvenirLTStd-Black");
+//.font-face("ProximaNova", "../fonts/proximanova-light", normal);
+//.font-face("ProximaNova", "../fonts/proximanova-bold", bold);
+//.font-face("Avenir", "../fonts/AvenirLTStd-Black", bold);
 
 // Gradient mixin with browser prefixes
 
@@ -1147,6 +1147,7 @@ td {
 
 .tabbed-chart {
   height: 290px;
+  border: 0px;
   border-top:1px solid #DFDFDF;
 }
 
