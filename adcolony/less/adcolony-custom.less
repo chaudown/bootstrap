@@ -622,10 +622,6 @@ p.body-large { font-size: @adcFontSizeMedium;}
 	font-size: @adcFontSizeLarge;
 }
 
-.table td {
-  vertical-align: middle;
-}
-
 .nomargin {
   margin-bottom: 0px;
 }
@@ -1100,6 +1096,16 @@ th.field-sort:hover .no-sort {
 }
 td {
 	white-space: nowrap;
+}
+.table td {
+  vertical-align: middle;
+}
+/* Date pickers should have a fixed layout */
+.datepicker-months > table {
+  table-layout: fixed;
+}
+.datepicker-years > table {
+  table-layout: fixed;
 }
 
 /** Give some horizontal space **/
