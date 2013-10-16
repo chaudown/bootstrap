@@ -280,6 +280,12 @@ textarea[class*="span"],
   min-height: @baseInputHeight;
 }
 
+.input-xxlarge {
+  @media (max-width: 979px) {
+    width: 100%;
+  }
+}
+
 select {
   height: @baseInputHeight + (@baseGutter * 2); // AC: Select elements don't get the padding like input elements so we need to add that to the height
   line-height: @baseInputHeight + (@baseGutter * 2);
