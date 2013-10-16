@@ -303,6 +303,12 @@ select {
   }
 }
 
+.help-compact {
+  padding: @gutterSmall;
+  white-space: normal;
+  display: block;
+}
+
 hr {
 	border:0;
 	border-top: 1px solid lighten(@inputBorder, 10%);
@@ -1240,7 +1246,11 @@ td {
 
 /* Class for asset show pages */
 .region-info {
-  overflow: auto;
+  td {
+    display: block;
+    white-space: normal;
+  }
+//  overflow: auto;
 }
 
 /** Form stuff **/
