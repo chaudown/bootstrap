@@ -280,6 +280,12 @@ textarea[class*="span"],
   min-height: @baseInputHeight;
 }
 
+.input-xxlarge {
+  @media (max-width: 979px) {
+    width: 100%;
+  }
+}
+
 select {
   height: @baseInputHeight + (@baseGutter * 2); // AC: Select elements don't get the padding like input elements so we need to add that to the height
   line-height: @baseInputHeight + (@baseGutter * 2);
@@ -295,6 +301,12 @@ select {
       height: @baseInputHeight;
       line-height: @baseInputHeight;
   }
+}
+
+.help-compact {
+  padding: @gutterSmall;
+  white-space: normal;
+  display: block;
 }
 
 hr {
@@ -614,10 +626,6 @@ p.body-large { font-size: @adcFontSizeMedium;}
 
 .ac-headline {
 	font-size: @adcFontSizeLarge;
-}
-
-.table td {
-  vertical-align: middle;
 }
 
 .nomargin {
@@ -1095,6 +1103,18 @@ th.field-sort:hover .no-sort {
 td {
 	white-space: nowrap;
 }
+.table td {
+  vertical-align: middle;
+}
+/* Date pickers should have a fixed layout */
+.datepicker-months > table {
+  table-layout: fixed;
+  width: 100% !important;
+}
+.datepicker-years > table {
+  table-layout: fixed;
+  width: 100% !important;
+}
 
 /** Give some horizontal space **/
 .h-space-left {
@@ -1226,11 +1246,26 @@ td {
   background-color: #facccc;
 }
 
+.table-striped tbody {
+  tr.adc-highlighted:nth-child(odd) td {
+    background-color: #facccc;
+  }
+}
+
+/* Class for asset show pages */
+.region-info {
+  td {
+    display: block;
+    white-space: normal;
+  }
+//  overflow: auto;
+}
+
 /** Form stuff **/
 /** Show a search icon in right sector of element **/
 .input-search {
   /** Change image url **/
-  background:url("http://clients.adcolony.com/images/icons/search-dark.png") no-repeat 98% center;
+  background:url("/img/search-dark.png") no-repeat 98% center;
   padding-right:30px;
 }
 
