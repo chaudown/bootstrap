@@ -772,6 +772,10 @@ input[class*="mixed"] {
 //  padding-top: @baseGutter;
 }
 
+.table-top {
+  border-top: 1px solid #dadee0;
+}
+
 .navbar {
   margin-bottom: 0px;
 }
@@ -1285,11 +1289,19 @@ td {
 }
 
 .adc-highlighted-column {
-  background-color: #ccfacc
+//  background-color: #ccfacc
+  background: rgb(35, 49, 75); /* Fall-back for browsers that don't
+                                    support rgba */
+  background: rgba(35, 49, 75, .05);
+//  color: white;
 }
 .table-striped tbody {
   tr:nth-child(odd) td.adc-highlighted-column {
-    background-color: #ccfacc
+//    background-color: #ccfacc
+    background: rgb(35, 49, 75); /* Fall-back for browsers that don't
+                                    support rgba */
+    background: rgba(35, 49, 75, .15);
+//    color: white;
   }
 }
 
