@@ -250,6 +250,21 @@ a.muted:focus,{
 	}
 }
 
+/* styles for a muted gray that turns blue when hovering */
+.muted-hover {
+  color: @grayLight;
+}
+
+.muted-hover:hover {
+  color: @blueDark;
+}
+
+.btn:hover {
+  .muted-hover {
+    color: @blueDark;
+  }
+}
+
 
 select, textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], .uneditable-input {
 	font-size: @adcFontSizeMedium;
@@ -721,6 +736,17 @@ p.body-large { font-size: @adcFontSizeMedium;}
       padding: 7.2px 6px;
     }
   }
+}
+
+.central-filter-block {
+  line-height: @baseInputHeight;
+  vertical-align: middle;
+  padding: 0 @gutterLarge;
+}
+
+.central-container {
+  padding: @gutterSmall 0;
+  border-top: 1px solid #dadee0;
 }
 
 .side-blocker {
@@ -1507,6 +1533,7 @@ td {
 .ac-overlay-date-picker {
   padding: 15px;
   max-height: 500px;
+  line-height: @baseLineHeight;
   @media (max-width: 979px) {
     overflow-y: scroll;
   }
