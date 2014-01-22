@@ -1208,7 +1208,29 @@ input[class*="mixed"] {
   margin-left:@baseGutter;
 }
 
+.zone-status-tooltip {
+  margin-right:@baseGutter;
+  margin-left:@baseGutter;
+  margin-top:0px;
+  margin-bottom: 0px;
+  font-size: 14px;
 
+  hr {
+    margin: 0px;
+  }
+}
+
+.zone-status-progress {
+  height: 10px;
+  max-width: 60px;
+  background-color: @bodyBackground;
+  background-image: linear-gradient(to bottom,#666666,#999999);
+  margin-bottom: 0px;
+}
+
+.tooltip-inner {
+  max-width: 300px;
+}
 
 // --- PULLED FROM index.css which was partially adapted from the original site ---
 .tooltip-trigger {
