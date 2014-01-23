@@ -1209,20 +1209,25 @@ input[class*="mixed"] {
 }
 
 .zone-status-tooltip {
-  margin-right:@baseGutter;
-  margin-left:@baseGutter;
-  margin-top:0px;
-  margin-bottom: 0px;
+//  margin-right:@baseGutter;
+//  margin-left:@baseGutter;
+//  margin-top:0px;
+//  margin-bottom: 0px;
+//  margin 0 auto;
   cursor: pointer;
 }
 
 .zone-warning-tooltip {
-  background-image:url('/img/campaign_statuses/status-missing.png');
+  background-image:url('/img/app_statuses/status-warning.png');
   width:25px;
   height:25px;
   display:block;
   background-size:25px;
   cursor: pointer;
+}
+
+.zone-warning-tooltip:hover {
+  background-image:url('/img/app_statuses/status-warning-on.png');
 }
 
 .zone-status-progress {
