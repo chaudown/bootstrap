@@ -1213,11 +1213,16 @@ input[class*="mixed"] {
   margin-left:@baseGutter;
   margin-top:0px;
   margin-bottom: 0px;
-//  font-size: 14px;
+  cursor: pointer;
+}
 
-  hr {
-    margin: 0px;
-  }
+.zone-warning-tooltip {
+  background-image:url('/img/campaign_statuses/status-missing.png');
+  width:25px;
+  height:25px;
+  display:block;
+  background-size:25px;
+  cursor: pointer;
 }
 
 .zone-status-progress {
@@ -1226,6 +1231,10 @@ input[class*="mixed"] {
   background-color: @bodyBackground;
   background-image: linear-gradient(to bottom,#666666,#999999);
   margin-bottom: 0px;
+}
+
+.tooltip-pointer {
+  cursor: pointer;
 }
 
 // Tooltip style overrides For ADC Clients site
