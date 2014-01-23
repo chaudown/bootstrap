@@ -1202,7 +1202,7 @@ input[class*="mixed"] {
   }
 }
 
-// Tooltip styling
+// Custom Tooltip styling
 .status-tooltip {
   margin-right:@baseGutter;
   margin-left:@baseGutter;
@@ -1213,7 +1213,7 @@ input[class*="mixed"] {
   margin-left:@baseGutter;
   margin-top:0px;
   margin-bottom: 0px;
-  font-size: 14px;
+//  font-size: 14px;
 
   hr {
     margin: 0px;
@@ -1226,6 +1226,11 @@ input[class*="mixed"] {
   background-color: @bodyBackground;
   background-image: linear-gradient(to bottom,#666666,#999999);
   margin-bottom: 0px;
+}
+
+// Tooltip style overrides For ADC Clients site
+.tooltip {
+  &.in     { .opacity(90); }
 }
 
 .tooltip-inner {
