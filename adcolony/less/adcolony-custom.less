@@ -2081,3 +2081,33 @@ ul.ac-compact-list {
 .chosen-container-single .chosen-single abbr {
     top: 16px;
 }
+
+/** Custom control group stylings **/
+// Warning
+.custom-control-group.warning {
+  .formFieldState(@warningText, @warningText, @warningBackground);
+}
+ul.custom-control-group.tagit.warning {
+  border-color: @warningText
+}
+// Error
+.custom-control-group.error {
+  .formFieldState(@errorText, @errorText, @errorBackground);
+}
+ul.custom-control-group.tagit.error {
+  border-color: @errorText
+}
+// Success
+.custom-control-group.success {
+  .formFieldState(@successText, @successText, @successBackground);
+}
+ul.custom-control-group.tagit.success {
+  border-color: @successText
+}
+// Success
+.custom-control-group.info {
+  .formFieldState(@infoText, @infoText, @infoBackground);
+}
+ul.custom-control-group.tagit.info {
+  border-color: @infoText
+}
