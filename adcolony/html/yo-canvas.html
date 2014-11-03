@@ -1,0 +1,5277 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Y/O Canvas</title>
+
+	<link rel="stylesheet" type="text/css" href="../css/adcolony.css">
+</head>
+<body>
+    
+
+
+
+<!-- Layout container should be all that's needed, rest taken care of declaratively -->
+<div id="layout_container">
+
+<div class="ac-header-top">
+    <div class="container">
+        <div class="row">
+            <a id="ac-logo" href="/home">
+                <span>AdColony</span>
+            </a>
+            <div class="pull-right">
+                <div id="user_balance" style="min-width: 300px;"><div><div class="compact-header">
+    <div class="pull-left h-space-right adc-header-block">
+        <small class="muted">Advertising Balance</small><br>
+        <h3 class="number-font">$10.00</h3>
+    </div>
+    <div class="pull-left adc-header-block">
+        <small class="muted">Pending Earnings</small><br>
+        <h3 class="number-font">$0.00</h3>
+    </div>
+</div>
+</div></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div id="ac-navbar">
+    <div class="container">
+        <ul>
+            <li class="">
+                <a href="/home" class="ac-navbar-link">Home</a>
+            </li>
+            <li class="">
+                <a href="/apps" class="ac-navbar-link">Monetization</a>
+            </li>
+            <li class="active">
+                <a href="/campaigns" class="ac-navbar-link">Advertising</a>
+            </li>
+            
+            <li class="">
+                <a href="/admin/ad_approval" class="ac-navbar-link">Admin</a>
+            </li>
+            
+            <li><a class="ac-navbar-link" target="_blank" href="http://support.adcolony.com/">Support</a></li>
+        </ul>
+        <div id="login_control" class="btn-group pull-right">
+            <a class="btn btn-danger dropdown-toggle" data-toggle="dropdown" href="#">
+                <strong class="entypo center user"></strong>
+
+                <strong class="entypo center triangle-down"></strong>
+            </a>
+            <ul class="dropdown-menu pull-right">
+                <li>
+                    <a href="/users/edit">brandon@adcolony.com<br><small>Account Settings</small></a>
+                </li>
+                
+                
+                <li>
+                    <a class="link-admin-mode-off">Turn Off Admin Mode</a>
+                </li>
+                
+                
+                <hr>
+                <li>
+                    <a href="/logout">Logout</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+<div class="container">
+    <div id="ac-content-container">
+
+
+        <div class="navbar ">
+            <div class="navbar-inner">
+                    
+                    
+<ul class="nav">
+    <li class="active">
+        <a href="/campaigns">
+            Campaigns
+        </a>
+    </li>
+    <li class="">
+        <a href="/reports/campaigns">
+            Campaign Reports
+        </a>
+    </li>
+    <li class="">
+        <a href="/ads">
+            Creatives
+        </a>
+    </li>
+    <li class="">
+        <a href="/reports/ads">
+            Creative Reports
+        </a>
+    </li>
+    
+    <li class="">
+      <a href="/insertion_orders">
+        I/O Management
+      </a>
+    </li>
+    <li class="">
+      <a href="/invoices">
+        Invoice Management (DO NOT USE)
+      </a>
+    </li>
+    
+    <li class="">
+        <a href="/segments">
+            Segments
+        </a>
+    </li>
+    <li class="">
+        <a href="/reports/segments">
+            Segment Reports (DO NOT USE)
+        </a>
+    </li>
+    
+    
+</ul>
+
+                    
+                    
+
+
+            </div>
+        </div>
+
+
+        <div class="row-fluid v-space-bottom">
+            <div class="ac-inner-container">
+                <span id="flash_container"></span>
+                
+                <div id="content"><div><!-- Filter bar -->
+<div class="region-filter"><div><div class="row-fluid floating-filter-block ac-dark floating-block" style="position: relative; top: 406px;">
+    <div class="side-blocker"></div>
+    <div class="ac-inner-narrow-container-element">
+        <div class="bottom-solid-divider v-space-bottom">
+            <span>
+                <strong class="entypo center search"></strong>
+                Search Filter
+            </span>
+            <div class="pull-right">
+                <small><a href="#" class="muted">Back to Top</a></small>
+                <strong class="entypo center triangle-up muted"></strong>
+            </div>
+        </div>
+        <!-- Search -->
+        <div class="pull-left">
+            <div id="name_filter" class="region-left-slot-1"><div><label><small>Search by Campaign Name or Company</small></label>
+<input style="padding-right: 20px;" class="text-filter input-search input-xlarge" type="text" placeholder="">
+<div class="loader-icon loader-input loader-placeholder hide">
+    <div class=" ui-spinner">
+    <span class="side side-left">
+      <span class="fill"></span>
+    </span>
+    <span class="side side-right">
+      <span class="fill"></span>
+    </span>
+</div>
+
+
+</div></div></div>
+        </div>
+        <!-- Platform filter -->
+        <div class="pull-left h-space-left">
+            <div id="platform_filter" class="region-platform-dropdown region-left-slot-2"></div>
+        </div>
+        
+        <!-- Status filter -->
+        <div class="pull-left h-space-left">
+            <div id="status_filter" class="region-status-dropdown region-admin-slot-1"><div><label><small>Status</small></label>
+<div class="dropdown">
+    <a class="btn dropdown-toggle" data-toggle="dropdown">
+        
+        
+        All
+        
+        <strong class="muted-hover entypo center chevron-down"></strong>
+    </a>
+    <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+        
+        <li><a class="dropdown-link" tabindex="-1" data-value="active">
+            <img src="/img/campaign_statuses/status-active.png" style="width:25px; height:25px;" class="h-space-right">
+            <span class="" style="line-height: 25px; vertical-align: middle;">Active</span>
+        </a></li>
+        
+        <li><a class="dropdown-link" tabindex="-1" data-value="view_limits">
+            <img src="/img/campaign_statuses/status-dailylimit.png" style="width:25px; height:25px;" class="h-space-right">
+            <span class="" style="line-height: 25px; vertical-align: middle;">Capped</span>
+        </a></li>
+        
+        <li><a class="dropdown-link" tabindex="-1" data-value="paused">
+            <img src="/img/campaign_statuses/status-paused.png" style="width:25px; height:25px;" class="h-space-right">
+            <span class="" style="line-height: 25px; vertical-align: middle;">Paused</span>
+        </a></li>
+        
+        <li><a class="dropdown-link" tabindex="-1" data-value="ended">
+            <img src="/img/campaign_statuses/status-complete.png" style="width:25px; height:25px;" class="h-space-right">
+            <span class="" style="line-height: 25px; vertical-align: middle;">Complete</span>
+        </a></li>
+        
+        <li><a class="dropdown-link" tabindex="-1" data-value="pending">
+            <img src="/img/campaign_statuses/status-pending.png" style="width:25px; height:25px;" class="h-space-right">
+            <span class="" style="line-height: 25px; vertical-align: middle;">Pending</span>
+        </a></li>
+        
+        <li><a class="dropdown-link" tabindex="-1" data-value="no_ads">
+            <img src="/img/campaign_statuses/status-missing.png" style="width:25px; height:25px;" class="h-space-right">
+            <span class="" style="line-height: 25px; vertical-align: middle;">No Ads</span>
+        </a></li>
+        
+        <li><a class="dropdown-link" tabindex="-1" data-value="updating">
+            <img src="/img/campaign_statuses/status-updating.gif" style="width:25px; height:25px;" class="h-space-right">
+            <span class="" style="line-height: 25px; vertical-align: middle;">Updating</span>
+        </a></li>
+        
+        <li><a class="dropdown-link" tabindex="-1" data-value="any">
+            <img src="/img/campaign_statuses/status-any.png" style="width:25px; height:25px;" class="h-space-right">
+            <span class="" style="line-height: 25px; vertical-align: middle;">All</span>
+        </a></li>
+        
+    </ul>
+</div>
+</div></div>
+        </div>
+        <!-- Campaign Class filters -->
+        <div class="pull-left h-space-left">
+            <div id="class_filter" class="region-admin-slot-2"><div>
+<label><small>Primary Class</small></label>
+<div class="dropdown">
+    <a class="btn dropdown-toggle" data-toggle="dropdown">
+        
+        All
+        
+        <strong class="muted-hover entypo center chevron-down"></strong>
+    </a>
+    <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+        
+        <li><a class="dropdown-link" tabindex="-1" data-value="ua">UA</a></li>
+        
+        <li><a class="dropdown-link" tabindex="-1" data-value="brand">Brand</a></li>
+        
+        <li><a class="dropdown-link" tabindex="-1" data-value="other">Other</a></li>
+        
+        <li><a class="dropdown-link" tabindex="-1" data-value="unknown">Unknown</a></li>
+        
+        <li><a class="dropdown-link" tabindex="-1" data-value="adcolony_express">AdColony Express</a></li>
+        
+        <li><a class="dropdown-link" tabindex="-1" data-value="any">All</a></li>
+        
+    </ul>
+</div>
+
+
+</div></div>
+        </div>
+        <div class="pull-left h-space-left">
+            <div id="second_class_filter" class="region-admin-slot-3"><div>
+<label><small>Secondary Class</small></label>
+<div class="dropdown">
+    <a class="btn dropdown-toggle" data-toggle="dropdown">
+        
+        All
+        
+        <strong class="muted-hover entypo center chevron-down"></strong>
+    </a>
+    <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+        
+        <li><a class="dropdown-link" tabindex="-1" data-value="non-horizon">Non-Horizon</a></li>
+        
+        <li><a class="dropdown-link" tabindex="-1" data-value="horizon">Horizon</a></li>
+        
+        <li><a class="dropdown-link" tabindex="-1" data-value="other">Other</a></li>
+        
+        <li><a class="dropdown-link" tabindex="-1" data-value="unknown">Unknown</a></li>
+        
+        <li><a class="dropdown-link" tabindex="-1" data-value="adcolony_express">AdColony Express</a></li>
+        
+        <li><a class="dropdown-link" tabindex="-1" data-value="any">All</a></li>
+        
+    </ul>
+</div>
+
+
+</div></div>
+        </div>
+        
+        <div class="pull-right h-space-left">
+            <label><small>&nbsp;</small></label>
+            <div class="region-right-slot-2"></div>
+        </div>
+        <!-- Create Action -->
+        
+        
+        <div class="pull-right h-space-left">
+            <label><small>&nbsp;</small></label>
+            <a href="/campaign/new" class="btn btn-success" type="button">
+                <strong class="entypo center plus"></strong>
+                Setup New Campaign
+            </a>
+        </div>
+        
+        
+        <!-- Date range -->
+        <div class="pull-right">
+            <div id="date_range" class="region-right-slot-1"><div>
+
+
+<div>
+    <label><small>Date Range</small></label>
+    <button class="btn btn-hover btn-overlay btn-link" data-target=".ac-overlay-container">
+        <strong class="muted entypo center calendar"></strong>
+        <span class="muted"> - </span>
+        <strong>This Month</strong>
+        <strong class="muted-hover entypo center chevron-down"> </strong>
+    </button>
+</div>
+
+<div class="ac-overlay-container row-fluid left
+        hide">
+    
+    <div class="span11">
+    
+    <div class="ac-overlay ac-overlay-date-picker pull-right">
+        
+        <div class="row-fluid">
+            <h4>Date Range</h4>
+        </div>
+        <hr>
+        
+        <div class="row-fluid">
+            
+            <div class="pull-left">
+                <ul class="ac-compact-list">
+                    
+                    <li><a class="select-interval" data-value="today">Today</a></li>
+                    
+                    <li><a class="select-interval" data-value="yesterday">Yesterday</a></li>
+                    
+                    <li><a class="select-interval" data-value="recent">Today and Yesterday</a></li>
+                    
+                    <li><a class="select-interval" data-value="this_week">This Week</a></li>
+                    
+                    <li><a class="select-interval" data-value="last_week">Last Week</a></li>
+                    
+                    <li><a class="select-interval" data-value="this_month">This Month</a></li>
+                    
+                    <li><a class="select-interval" data-value="last_month">Last Month</a></li>
+                    
+                    <li><a class="select-interval" data-value="last_30_days">Last 30 Days</a></li>
+                    
+                    <li><a class="select-interval" data-value="quarter_to_date">Quarter to Date</a></li>
+                    
+                    <li><a class="select-interval" data-value="this_year">This Year</a></li>
+                    
+                    <li><a class="select-interval" data-value="last_year">Last Year</a></li>
+                    
+                    <li><a class="select-interval" data-value="all_time">All Time</a></li>
+                    
+                </ul>
+            </div>
+            <div class="pull-left h-space-left ac-border-left">
+            
+                <div class="row-fluid">
+                    <div class="date-picker-calendar pull-left">
+                        <p class="header">
+                            Start Date <span style="color:#999;font-size:9px;">(MM/DD/YYYY)</span>
+                        </p>
+                        <input class="input date-picker-value-start" type="text" value="10/01/2014">
+                        <div class="date-picker-calendar-start" data-date="10/01/2014"><div class="datepicker datepicker-inline" style="display: block;"><div class="datepicker-days" style="display: block;"><table class=" table-condensed"><thead><tr><th class="prev" style="visibility: visible;"><i class="icon-arrow-left"></i></th><th colspan="5" class="switch">October 2014</th><th class="next" style="visibility: visible;"><i class="icon-arrow-right"></i></th></tr><tr><th class="dow">Su</th><th class="dow">Mo</th><th class="dow">Tu</th><th class="dow">We</th><th class="dow">Th</th><th class="dow">Fr</th><th class="dow">Sa</th></tr></thead><tbody><tr><td class="day old">28</td><td class="day old">29</td><td class="day old">30</td><td class="day active">1</td><td class="day">2</td><td class="day">3</td><td class="day">4</td></tr><tr><td class="day">5</td><td class="day">6</td><td class="day">7</td><td class="day">8</td><td class="day">9</td><td class="day">10</td><td class="day">11</td></tr><tr><td class="day">12</td><td class="day">13</td><td class="day">14</td><td class="day">15</td><td class="day">16</td><td class="day">17</td><td class="day">18</td></tr><tr><td class="day">19</td><td class="day">20</td><td class="day">21</td><td class="day">22</td><td class="day">23</td><td class="day">24</td><td class="day">25</td></tr><tr><td class="day">26</td><td class="day">27</td><td class="day">28</td><td class="day">29</td><td class="day">30</td><td class="day">31</td><td class="day new">1</td></tr><tr><td class="day new">2</td><td class="day new">3</td><td class="day new">4</td><td class="day new">5</td><td class="day new">6</td><td class="day new">7</td><td class="day new">8</td></tr></tbody><tfoot><tr><th colspan="7" class="today" style="display: none;">Today</th></tr></tfoot></table></div><div class="datepicker-months" style="display: none;"><table class="table-condensed"><thead><tr><th class="prev" style="visibility: visible;"><i class="icon-arrow-left"></i></th><th colspan="5" class="switch">2014</th><th class="next" style="visibility: visible;"><i class="icon-arrow-right"></i></th></tr></thead><tbody><tr><td colspan="7"><span class="month">Jan</span><span class="month">Feb</span><span class="month">Mar</span><span class="month">Apr</span><span class="month">May</span><span class="month">Jun</span><span class="month">Jul</span><span class="month">Aug</span><span class="month">Sep</span><span class="month active">Oct</span><span class="month">Nov</span><span class="month">Dec</span></td></tr></tbody><tfoot><tr><th colspan="7" class="today" style="display: none;">Today</th></tr></tfoot></table></div><div class="datepicker-years" style="display: none;"><table class="table-condensed"><thead><tr><th class="prev" style="visibility: visible;"><i class="icon-arrow-left"></i></th><th colspan="5" class="switch">2010-2019</th><th class="next" style="visibility: visible;"><i class="icon-arrow-right"></i></th></tr></thead><tbody><tr><td colspan="7"><span class="year old">2009</span><span class="year">2010</span><span class="year">2011</span><span class="year">2012</span><span class="year">2013</span><span class="year active">2014</span><span class="year">2015</span><span class="year">2016</span><span class="year">2017</span><span class="year">2018</span><span class="year">2019</span><span class="year old">2020</span></td></tr></tbody><tfoot><tr><th colspan="7" class="today" style="display: none;">Today</th></tr></tfoot></table></div></div></div>
+                    </div>
+                    <div class="date-picker-calendar pull-left">
+                        <p class="header">
+                            End Date <span style="color:#999;font-size:9px;">(MM/DD/YYYY)</span>
+                        </p>
+                        <input class="input date-picker-value-end" type="text" value="10/21/2014">
+                        <div class="date-picker-calendar-end" data-date="10/21/2014"><div class="datepicker datepicker-inline" style="display: block;"><div class="datepicker-days" style="display: block;"><table class=" table-condensed"><thead><tr><th class="prev" style="visibility: visible;"><i class="icon-arrow-left"></i></th><th colspan="5" class="switch">October 2014</th><th class="next" style="visibility: visible;"><i class="icon-arrow-right"></i></th></tr><tr><th class="dow">Su</th><th class="dow">Mo</th><th class="dow">Tu</th><th class="dow">We</th><th class="dow">Th</th><th class="dow">Fr</th><th class="dow">Sa</th></tr></thead><tbody><tr><td class="day old">28</td><td class="day old">29</td><td class="day old">30</td><td class="day">1</td><td class="day">2</td><td class="day">3</td><td class="day">4</td></tr><tr><td class="day">5</td><td class="day">6</td><td class="day">7</td><td class="day">8</td><td class="day">9</td><td class="day">10</td><td class="day">11</td></tr><tr><td class="day">12</td><td class="day">13</td><td class="day">14</td><td class="day">15</td><td class="day">16</td><td class="day">17</td><td class="day">18</td></tr><tr><td class="day">19</td><td class="day">20</td><td class="day active">21</td><td class="day">22</td><td class="day">23</td><td class="day">24</td><td class="day">25</td></tr><tr><td class="day">26</td><td class="day">27</td><td class="day">28</td><td class="day">29</td><td class="day">30</td><td class="day">31</td><td class="day new">1</td></tr><tr><td class="day new">2</td><td class="day new">3</td><td class="day new">4</td><td class="day new">5</td><td class="day new">6</td><td class="day new">7</td><td class="day new">8</td></tr></tbody><tfoot><tr><th colspan="7" class="today" style="display: none;">Today</th></tr></tfoot></table></div><div class="datepicker-months" style="display: none;"><table class="table-condensed"><thead><tr><th class="prev" style="visibility: visible;"><i class="icon-arrow-left"></i></th><th colspan="5" class="switch">2014</th><th class="next" style="visibility: visible;"><i class="icon-arrow-right"></i></th></tr></thead><tbody><tr><td colspan="7"><span class="month">Jan</span><span class="month">Feb</span><span class="month">Mar</span><span class="month">Apr</span><span class="month">May</span><span class="month">Jun</span><span class="month">Jul</span><span class="month">Aug</span><span class="month">Sep</span><span class="month active">Oct</span><span class="month">Nov</span><span class="month">Dec</span></td></tr></tbody><tfoot><tr><th colspan="7" class="today" style="display: none;">Today</th></tr></tfoot></table></div><div class="datepicker-years" style="display: none;"><table class="table-condensed"><thead><tr><th class="prev" style="visibility: visible;"><i class="icon-arrow-left"></i></th><th colspan="5" class="switch">2010-2019</th><th class="next" style="visibility: visible;"><i class="icon-arrow-right"></i></th></tr></thead><tbody><tr><td colspan="7"><span class="year old">2009</span><span class="year">2010</span><span class="year">2011</span><span class="year">2012</span><span class="year">2013</span><span class="year active">2014</span><span class="year">2015</span><span class="year">2016</span><span class="year">2017</span><span class="year">2018</span><span class="year">2019</span><span class="year old">2020</span></td></tr></tbody><tfoot><tr><th colspan="7" class="today" style="display: none;">Today</th></tr></tfoot></table></div></div></div>
+                    </div>
+                </div>
+                <div class="row-fluid">
+                    <span class="span4"></span>
+                    <span class="span8">
+                        
+                          <button class="btn btn-success">
+                            Okay
+                          </button>
+                        
+                        <button class="btn btn-cancel">Cancel</button>
+                    </span>
+                </div>
+            
+            </div>
+            
+        </div>
+    </div>
+    
+    </div>
+    <div class="span1"></div>
+    
+    <div class="modal-backdrop"></div>
+</div>
+</div></div>
+        </div>
+    </div>
+</div>
+</div></div>
+<!-- Charts -->
+<div class="row-fluid">
+    <div class="region-chart"><div><div class="summary-container"><div><!-- @todo Change this to generate for arbitrary report fields -->
+<div class="ac-inner-container-element ">
+    <div class="row-fluid">
+        <span class="pull-left">
+            <strong class="entypo center gauge"></strong>
+            Totals
+        </span>
+    </div>
+    <hr>
+    <div class="row-fluid">
+        <div class="span3">
+            <small class="muted">Spend</small><br>
+            <h3 class="number-font">$9,385,960.03</h3>
+        </div>
+        <div class="span3">
+            <small class="muted">Impressions</small><br>
+            <h3 class="number-font">590,203,627</h3>
+        </div>
+        <div class="span3">
+            <small class="muted">eCPI</small><br>
+            
+              <h3 class="number-font tooltip-trigger" title="" data-original-title="Unadjusted for UA spend: $3.44">
+                $2.73<sup>*</sup>
+              </h3>
+            
+        </div>
+        <div class="span3">
+            <small class="muted">Installs</small><br>
+            <h3 class="number-font">2,725,073</h3>
+        </div>
+    </div>
+</div></div></div>
+<div class="tabbed-chart chart-container">
+    <div class="chart-controls">
+        <!-- Utility/helper icons -->
+        <div class="chart-utilities pull-right">
+            <!--<a class="help-link"><i class="icon-question-sign"></i></a>-->
+        </div>
+        <!-- "Tabs", just separate text for now -->
+        <div class="navbar chart-views">
+            <div class="navbar-inner">
+            <div class="container">
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </a>
+
+            <div class="nav-collapse collapse navbar-responsive-collapse">
+                <ul class="nav">
+                    
+                    <li class="chart-field-select active" data-field="spend">
+                        <a>Spend</a>
+                    </li>
+                    
+                    <li class="chart-field-select " data-field="impressions">
+                        <a>Impressions</a>
+                    </li>
+                    
+                    <li class="chart-field-select " data-field="ecpi">
+                        <a>eCPI</a>
+                    </li>
+                    
+                    <li class="chart-field-select " data-field="all_installs">
+                        <a>Installs</a>
+                    </li>
+                    
+                </ul>
+                <ul class="nav pull-right">
+                    <li><a class="refresh-link"><strong class="entypo center cycle"></strong></a></li>
+                    <li class="region-bar-line-toggle"><a class=" toggle-line">
+    
+        <strong class="entypo center line-graph"></strong>
+    
+</a></li>
+                    <li><a class="download-link"><strong class="entypo center download"></strong></a></li>
+                </ul>
+            </div>
+            </div>
+            </div>
+        </div>
+    </div>
+    <div class="chart-axis">
+    </div>
+    <div class="chart-inner"><div><div id="chart_view92" class="reporting-chart" style="width:100%;height:100%;position:absolute;left:0;top:0;background-color:transparent;" data-highcharts-chart="6"><div class="highcharts-container" id="highcharts-12" style="position: relative; overflow: hidden; width: 1170px; height: 256px; text-align: left; line-height: normal; z-index: 0; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);"><svg version="1.1" style="font-family:&quot;Lucida Grande&quot;, &quot;Lucida Sans Unicode&quot;, Arial, Helvetica, sans-serif;font-size:12px;" xmlns="http://www.w3.org/2000/svg" width="1170" height="256"><desc>Created with Highcharts 4.0.3</desc><defs><clipPath id="highcharts-13"><rect x="0" y="0" width="1083" height="227"></rect></clipPath></defs><rect x="0" y="0" width="1170" height="256" strokeWidth="0" fill="#FFFFFF" class=" highcharts-background"></rect><g class="highcharts-grid" zIndex="1"></g><g class="highcharts-grid" zIndex="1"><path fill="none" d="M 77 -1.5 L 1160 -1.5" stroke="dddddd" stroke-width="1" zIndex="1" opacity="1"></path><path fill="none" d="M 77 56.5 L 1160 56.5" stroke="dddddd" stroke-width="1" zIndex="1" opacity="1"></path><path fill="none" d="M 77 113.5 L 1160 113.5" stroke="dddddd" stroke-width="1" zIndex="1" opacity="1"></path><path fill="none" d="M 77 169.5 L 1160 169.5" stroke="dddddd" stroke-width="1" zIndex="1" opacity="1"></path><path fill="none" d="M 77 226.5 L 1160 226.5" stroke="dddddd" stroke-width="1" zIndex="1" opacity="1"></path></g><g class="highcharts-axis" zIndex="2"><path fill="none" d="M 263.5 226 L 263.5 236" stroke="#C0D0E0" stroke-width="1" opacity="1"></path><path fill="none" d="M 364.5 226 L 364.5 236" stroke="#C0D0E0" stroke-width="1" opacity="1"></path><path fill="none" d="M 466.5 226 L 466.5 236" stroke="#C0D0E0" stroke-width="1" opacity="1"></path><path fill="none" d="M 567.5 226 L 567.5 236" stroke="#C0D0E0" stroke-width="1" opacity="1"></path><path fill="none" d="M 668.5 226 L 668.5 236" stroke="#C0D0E0" stroke-width="1" opacity="1"></path><path fill="none" d="M 769.5 226 L 769.5 236" stroke="#C0D0E0" stroke-width="1" opacity="1"></path><path fill="none" d="M 871.5 226 L 871.5 236" stroke="#C0D0E0" stroke-width="1" opacity="1"></path><path fill="none" d="M 972.5 226 L 972.5 236" stroke="#C0D0E0" stroke-width="1" opacity="1"></path><path fill="none" d="M 1073.5 226 L 1073.5 236" stroke="#C0D0E0" stroke-width="1" opacity="1"></path><path fill="none" d="M 162.5 226 L 162.5 236" stroke="#C0D0E0" stroke-width="1" opacity="1"></path><path fill="none" d="M 77 226.5 L 1160 226.5" stroke="#C0D0E0" stroke-width="1" zIndex="7" visibility="visible"></path></g><g class="highcharts-axis" zIndex="2"></g><path fill="none" d="M 820.5 -1 L 820.5 226" stroke="#C0C0C0" stroke-width="1" zIndex="2" visibility="hidden"></path><g class="highcharts-series-group" zIndex="3"><g class="highcharts-series highcharts-tracker" visibility="visible" zIndex="0.1" transform="translate(77,-1) scale(1 1)" style="cursor:pointer;" clip-path="url(#highcharts-13)"><rect x="15" y="103" width="41" height="125" fill="rgba(51,124,200,1)" rx="0" ry="0"></rect><rect x="66" y="99" width="41" height="129" fill="rgba(51,124,200,1)" rx="0" ry="0"></rect><rect x="116" y="85" width="41" height="143" fill="rgba(51,124,200,1)" rx="0" ry="0"></rect><rect x="167" y="78" width="41" height="150" fill="rgba(51,124,200,1)" rx="0" ry="0"></rect><rect x="218" y="83" width="41" height="145" fill="rgba(51,124,200,1)" rx="0" ry="0"></rect><rect x="268" y="111" width="41" height="117" fill="rgba(51,124,200,1)" rx="0" ry="0"></rect><rect x="319" y="114" width="41" height="114" fill="rgba(51,124,200,1)" rx="0" ry="0"></rect><rect x="369" y="120" width="41" height="108" fill="rgba(51,124,200,1)" rx="0" ry="0"></rect><rect x="420" y="111" width="41" height="117" fill="rgba(51,124,200,1)" rx="0" ry="0"></rect><rect x="471" y="105" width="41" height="123" fill="rgba(51,124,200,1)" rx="0" ry="0"></rect><rect x="521" y="88" width="41" height="140" fill="rgba(51,124,200,1)" rx="0" ry="0"></rect><rect x="572" y="105" width="41" height="123" fill="rgba(51,124,200,1)" rx="0" ry="0"></rect><rect x="622" y="125" width="41" height="103" fill="rgba(51,124,200,1)" rx="0" ry="0"></rect><rect x="673" y="124" width="41" height="104" fill="rgba(51,124,200,1)" rx="0" ry="0"></rect><rect x="724" y="113" width="41" height="115" fill="rgba(51,124,200,1)" rx="0" ry="0"></rect><rect x="774" y="112" width="41" height="116" fill="rgba(51,124,200,1)" rx="0" ry="0"></rect><rect x="825" y="100" width="41" height="128" fill="rgba(51,124,200,1)" rx="0" ry="0"></rect><rect x="876" y="64" width="41" height="164" fill="rgba(51,124,200,1)" rx="0" ry="0"></rect><rect x="926" y="65" width="41" height="163" fill="rgba(51,124,200,1)" rx="0" ry="0"></rect><rect x="977" y="96" width="41" height="132" fill="rgba(51,124,200,1)" rx="0" ry="0"></rect><rect x="1027" y="123" width="41" height="105" fill="rgba(51,124,200, 0.25)" rx="0" ry="0"></rect></g><g class="highcharts-markers" visibility="visible" zIndex="0.1" transform="translate(77,-1) scale(1 1)" clip-path="none"></g></g><g class="highcharts-axis-labels highcharts-xaxis-labels" zIndex="7"><text x="163.03271028037383" text-anchor="middle" style="color:#606060;cursor:default;font-size:11px;fill:#606060;" y="246" opacity="1">10/2</text><text x="264.2476635514019" text-anchor="middle" style="color:#606060;cursor:default;font-size:11px;fill:#606060;" y="246" opacity="1">10/4</text><text x="365.4626168224299" text-anchor="middle" style="color:#606060;cursor:default;font-size:11px;fill:#606060;" y="246" opacity="1">10/6</text><text x="466.677570093458" text-anchor="middle" style="color:#606060;cursor:default;font-size:11px;fill:#606060;" y="246" opacity="1">10/8</text><text x="567.892523364486" text-anchor="middle" style="color:#606060;cursor:default;font-size:11px;fill:#606060;" y="246" opacity="1">10/10</text><text x="669.1074766355141" text-anchor="middle" style="color:#606060;cursor:default;font-size:11px;fill:#606060;" y="246" opacity="1">10/12</text><text x="770.3224299065421" text-anchor="middle" style="color:#606060;cursor:default;font-size:11px;fill:#606060;" y="246" opacity="1">10/14</text><text x="871.5373831775702" text-anchor="middle" style="color:#606060;cursor:default;font-size:11px;fill:#606060;" y="246" opacity="1">10/16</text><text x="972.7523364485983" text-anchor="middle" style="color:#606060;cursor:default;font-size:11px;fill:#606060;" y="246" opacity="1">10/18</text><text x="1073.9672897196263" text-anchor="middle" style="color:#606060;cursor:default;font-size:11px;fill:#606060;" y="246" opacity="1">10/20</text></g><g class="highcharts-axis-labels highcharts-yaxis-labels" zIndex="7"><text x="62" text-anchor="end" style="width:366px;color:#606060;cursor:default;font-size:11px;fill:#606060;" y="221" opacity="1">$0</text><text x="62" text-anchor="end" style="width:366px;color:#606060;cursor:default;font-size:11px;fill:#606060;" y="164.25" opacity="1">$200,000</text><text x="62" text-anchor="end" style="width:366px;color:#606060;cursor:default;font-size:11px;fill:#606060;" y="107.5" opacity="1">$400,000</text><text x="62" text-anchor="end" style="width:366px;color:#606060;cursor:default;font-size:11px;fill:#606060;" y="50.75" opacity="1">$600,000</text><text x="0" text-anchor="end" style="width:366px;color:#606060;cursor:default;font-size:11px;fill:#606060;" y="-9999">$800,000</text></g><g class="highcharts-tooltip" zIndex="8" style="cursor:default;padding:0;white-space:nowrap;" transform="translate(696,75)" opacity="0" visibility="hidden"><path fill="none" d="M 3.5 0.5 L 247.5 0.5 C 250.5 0.5 250.5 0.5 250.5 3.5 L 250.5 27.5 C 250.5 30.5 250.5 30.5 247.5 30.5 L 131.5 30.5 125.5 36.5 119.5 30.5 3.5 30.5 C 0.5 30.5 0.5 30.5 0.5 27.5 L 0.5 3.5 C 0.5 0.5 0.5 0.5 3.5 0.5" isShadow="true" stroke="black" stroke-opacity="0.049999999999999996" stroke-width="5" transform="translate(1, 1)" width="250" height="30"></path><path fill="none" d="M 3.5 0.5 L 247.5 0.5 C 250.5 0.5 250.5 0.5 250.5 3.5 L 250.5 27.5 C 250.5 30.5 250.5 30.5 247.5 30.5 L 131.5 30.5 125.5 36.5 119.5 30.5 3.5 30.5 C 0.5 30.5 0.5 30.5 0.5 27.5 L 0.5 3.5 C 0.5 0.5 0.5 0.5 3.5 0.5" isShadow="true" stroke="black" stroke-opacity="0.09999999999999999" stroke-width="3" transform="translate(1, 1)" width="250" height="30"></path><path fill="none" d="M 3.5 0.5 L 247.5 0.5 C 250.5 0.5 250.5 0.5 250.5 3.5 L 250.5 27.5 C 250.5 30.5 250.5 30.5 247.5 30.5 L 131.5 30.5 125.5 36.5 119.5 30.5 3.5 30.5 C 0.5 30.5 0.5 30.5 0.5 27.5 L 0.5 3.5 C 0.5 0.5 0.5 0.5 3.5 0.5" isShadow="true" stroke="black" stroke-opacity="0.15" stroke-width="1" transform="translate(1, 1)" width="250" height="30"></path><path fill="rgba(249, 249, 249, .85)" d="M 3.5 0.5 L 247.5 0.5 C 250.5 0.5 250.5 0.5 250.5 3.5 L 250.5 27.5 C 250.5 30.5 250.5 30.5 247.5 30.5 L 131.5 30.5 125.5 36.5 119.5 30.5 3.5 30.5 C 0.5 30.5 0.5 30.5 0.5 27.5 L 0.5 3.5 C 0.5 0.5 0.5 0.5 3.5 0.5" stroke="rgba(51,124,200,1)" stroke-width="1"></path><text x="8" zIndex="1" style="font-size:12px;color:#333333;fill:#333333;" y="21"><tspan>Wednesday, Oct 15, 2014: </tspan><tspan style="font-weight:bold" dx="0">$405,949.00</tspan></text></g></svg></div></div>
+</div></div>
+</div>
+</div></div>
+</div>
+<hr>
+
+
+
+<!-- Pre-table -->
+<div class="row-fluid">
+    <div class="region-table"><div><div style="overflow-x:scroll;">
+<table class="table table-striped table-top">
+    <thead>
+    	hello
+    </thead>
+</table>
+
+</div>
+</div>
+</div>
+</div>
+
+<!-- Table -->
+<div class="row-fluid">
+    <div class="region-table"><div><div style="overflow-x:scroll;">
+<table class="table table-striped table-top">
+    <thead>
+        <tr>
+            <th class="field-sort" data-field="name">
+    <span class="sortable-field">
+                Campaign Name
+            </span>
+    <span class="sort-icon">
+        
+            <strong class="entypo center arrow-combo no-sort"></strong>
+        
+    </span>
+    <div class="loader-icon loader-small loader-placeholder hide">
+        <div class=" ui-spinner">
+    <span class="side side-left">
+      <span class="fill"></span>
+    </span>
+    <span class="side side-right">
+      <span class="fill"></span>
+    </span>
+</div>
+
+
+    </div>
+</th>
+            <th class="field-sort" data-field="aggregated_status">
+    <span class="sortable-field">
+                Status
+            </span>
+    <span class="sort-icon">
+        
+            <strong class="entypo center arrow-combo no-sort"></strong>
+        
+    </span>
+    <div class="loader-icon loader-small loader-placeholder hide">
+        <div class=" ui-spinner">
+    <span class="side side-left">
+      <span class="fill"></span>
+    </span>
+    <span class="side side-right">
+      <span class="fill"></span>
+    </span>
+</div>
+
+
+    </div>
+</th>
+            <th class="field-sort adc-highlighted-column" data-field="aggregates.spend">
+    <span class="sortable-field">
+                Spend
+            </span>
+    <span class="sort-icon">
+        
+            
+            
+                <strong class="entypo center triangle-down"></strong>
+            
+        
+    </span>
+    <div class="loader-icon loader-small loader-placeholder hide">
+        <div class=" ui-spinner">
+    <span class="side side-left">
+      <span class="fill"></span>
+    </span>
+    <span class="side side-right">
+      <span class="fill"></span>
+    </span>
+</div>
+
+
+    </div>
+</th>
+            <th class="field-sort" data-field="aggregates.ecpi">
+    <span class="sortable-field">
+                eCPI
+            </span>
+    <span class="sort-icon">
+        
+            <strong class="entypo center arrow-combo no-sort"></strong>
+        
+    </span>
+    <div class="loader-icon loader-small loader-placeholder hide">
+        <div class=" ui-spinner">
+    <span class="side side-left">
+      <span class="fill"></span>
+    </span>
+    <span class="side side-right">
+      <span class="fill"></span>
+    </span>
+</div>
+
+
+    </div>
+</th>
+            <th class="field-sort" data-field="aggregates.all_installs">
+    <span class="sortable-field">
+                Installs
+            </span>
+    <span class="sort-icon">
+        
+            <strong class="entypo center arrow-combo no-sort"></strong>
+        
+    </span>
+    <div class="loader-icon loader-small loader-placeholder hide">
+        <div class=" ui-spinner">
+    <span class="side side-left">
+      <span class="fill"></span>
+    </span>
+    <span class="side side-right">
+      <span class="fill"></span>
+    </span>
+</div>
+
+
+    </div>
+</th>
+            <th class="field-sort" data-field="aggregates.impressions">
+    <span class="sortable-field">
+                Impressions
+            </span>
+    <span class="sort-icon">
+        
+            <strong class="entypo center arrow-combo no-sort"></strong>
+        
+    </span>
+    <div class="loader-icon loader-small loader-placeholder hide">
+        <div class=" ui-spinner">
+    <span class="side side-left">
+      <span class="fill"></span>
+    </span>
+    <span class="side side-right">
+      <span class="fill"></span>
+    </span>
+</div>
+
+
+    </div>
+</th>
+            <th class="field-sort" data-field="aggregates.video_completes">
+    <span class="sortable-field">
+                CVVs
+            </span>
+    <span class="sort-icon">
+        
+            <strong class="entypo center arrow-combo no-sort"></strong>
+        
+    </span>
+    <div class="loader-icon loader-small loader-placeholder hide">
+        <div class=" ui-spinner">
+    <span class="side side-left">
+      <span class="fill"></span>
+    </span>
+    <span class="side side-right">
+      <span class="fill"></span>
+    </span>
+</div>
+
+
+    </div>
+</th>
+            <th class="field-sort" data-field="aggregates.clicks">
+    <span class="sortable-field">
+                Clicks
+            </span>
+    <span class="sort-icon">
+        
+            <strong class="entypo center arrow-combo no-sort"></strong>
+        
+    </span>
+    <div class="loader-icon loader-small loader-placeholder hide">
+        <div class=" ui-spinner">
+    <span class="side side-left">
+      <span class="fill"></span>
+    </span>
+    <span class="side side-right">
+      <span class="fill"></span>
+    </span>
+</div>
+
+
+    </div>
+</th>
+            <th class="field-sort" data-field="aggregates.ctr">
+    <span class="sortable-field">
+                CTR
+            </span>
+    <span class="sort-icon">
+        
+            <strong class="entypo center arrow-combo no-sort"></strong>
+        
+    </span>
+    <div class="loader-icon loader-small loader-placeholder hide">
+        <div class=" ui-spinner">
+    <span class="side side-left">
+      <span class="fill"></span>
+    </span>
+    <span class="side side-right">
+      <span class="fill"></span>
+    </span>
+</div>
+
+
+    </div>
+</th>
+            <th class="field-sort" data-field="updated_at">
+    <span class="sortable-field">
+                Date Modified
+            </span>
+    <span class="sort-icon">
+        
+            <strong class="entypo center arrow-combo no-sort"></strong>
+        
+    </span>
+    <div class="loader-icon loader-small loader-placeholder hide">
+        <div class=" ui-spinner">
+    <span class="side side-left">
+      <span class="fill"></span>
+    </span>
+    <span class="side side-right">
+      <span class="fill"></span>
+    </span>
+</div>
+
+
+    </div>
+</th>
+        </tr>
+    </thead>
+
+    <!-- CompositeView.itemViewContainer - see index_entry-->
+    
+    <tbody><tr>
+<td>
+    
+    
+    <div class="ac-app-centered-container pull-left">
+        
+<div style="position:absolute;width: 0px;">
+    
+    <div class="ac-entry-number ">
+        <strong>1</strong>
+    </div>
+</div>
+
+    </div>
+    
+    <a href="/campaigns/2673">Game of War - Fire Age</a>
+    <strong>(71 ads)</strong>
+    
+    <br>
+    <div>
+        <div class="pull-left">
+            <a href="/users/14435/edit" class="muted">Machine Zone</a>
+        </div>
+        <div class="pull-right h-space-right">
+            
+            <label class="label label-important label-campaign label-priority">PRIORITY</label>
+            
+            
+            <label class="label label-warning label-campaign label-yo">Y/O</label>
+            
+        </div>
+    </div>
+    
+
+</td>
+<td>
+    
+    
+
+    <img src="/img/campaign_statuses/status-active.png" class="tooltip-trigger" data-title="Running - High Priority" style="width:25px; height:25px;" data-original-title="" title="">
+
+
+
+</td>
+<td class="adc-highlighted-column">
+    
+  
+    $1,398,830.72
+  
+
+</td>
+<td>
+    
+    
+    $21.33
+    
+
+</td>
+<td>
+    
+    65,585
+
+</td>
+<td>
+    
+    52,984,867
+
+</td>
+<td>
+    
+    47,235,048
+
+</td>
+<td>
+    
+    625,178
+
+</td>
+<td>
+    
+    1.18%
+
+</td>
+<td>
+    
+    <a class="date-tooltip" data-toggle="tooltip" data-placement="top" data-original-title="10/13/2014 20:55 (UTC)">8 days ago</a><script type="text/javascript">$('.date-tooltip').tooltip();</script> 
+
+</td>
+</tr><tr>
+<td>
+    
+    
+    <div class="ac-app-centered-container pull-left">
+        
+<div style="position:absolute;width: 0px;">
+    
+    <div class="ac-entry-number ">
+        <strong>2</strong>
+    </div>
+</div>
+
+    </div>
+    
+    <a href="/campaigns/4865">Game of War: Fire Age ANDROID</a>
+    <strong>(61 ads)</strong>
+    
+    <br>
+    <div>
+        <div class="pull-left">
+            <a href="/users/14435/edit" class="muted">Machine Zone</a>
+        </div>
+        <div class="pull-right h-space-right">
+            
+            <label class="label label-important label-campaign label-priority">PRIORITY</label>
+            
+            
+            <label class="label label-warning label-campaign label-yo">Y/O</label>
+            
+        </div>
+    </div>
+    
+
+</td>
+<td>
+    
+    
+
+    <img src="/img/campaign_statuses/status-active.png" class="tooltip-trigger" data-title="Running - High Priority" style="width:25px; height:25px;" data-original-title="" title="">
+
+
+
+</td>
+<td class="adc-highlighted-column">
+    
+  
+    $1,121,607.40
+  
+
+</td>
+<td>
+    
+    
+    $12.39
+    
+
+</td>
+<td>
+    
+    90,491
+
+</td>
+<td>
+    
+    65,952,516
+
+</td>
+<td>
+    
+    51,558,859
+
+</td>
+<td>
+    
+    580,566
+
+</td>
+<td>
+    
+    0.88%
+
+</td>
+<td>
+    
+    <a class="date-tooltip" data-toggle="tooltip" data-placement="top" data-original-title="10/13/2014 20:57 (UTC)">8 days ago</a><script type="text/javascript">$('.date-tooltip').tooltip();</script> 
+
+</td>
+</tr><tr>
+<td>
+    
+    
+    <div class="ac-app-centered-container pull-left">
+        
+<div style="position:absolute;width: 0px;">
+    
+    <div class="ac-entry-number ">
+        <strong>3</strong>
+    </div>
+</div>
+
+    </div>
+    
+    <a href="/campaigns/3232">Clash of Clans Android</a>
+    <strong>(33 ads)</strong>
+    
+    <br>
+    <div>
+        <div class="pull-left">
+            <a href="/users/9057/edit" class="muted">SuperCell</a>
+        </div>
+        <div class="pull-right h-space-right">
+            
+            <label class="label label-important label-campaign label-priority">PRIORITY</label>
+            
+            
+            <label class="label label-warning label-campaign label-yo">Y/O</label>
+            
+        </div>
+    </div>
+    
+
+</td>
+<td>
+    
+    
+
+    <img src="/img/campaign_statuses/status-active.png" class="tooltip-trigger" data-title="Running - High Priority" style="width:25px; height:25px;" data-original-title="" title="">
+
+
+
+</td>
+<td class="adc-highlighted-column">
+    
+  
+    $373,209.74
+  
+
+</td>
+<td>
+    
+    
+    $2.05
+    
+
+</td>
+<td>
+    
+    182,324
+
+</td>
+<td>
+    
+    33,854,298
+
+</td>
+<td>
+    
+    27,367,474
+
+</td>
+<td>
+    
+    416,862
+
+</td>
+<td>
+    
+    1.23%
+
+</td>
+<td>
+    
+    <a class="date-tooltip" data-toggle="tooltip" data-placement="top" data-original-title="10/15/2014 01:16 (UTC)">7 days ago</a><script type="text/javascript">$('.date-tooltip').tooltip();</script> 
+
+</td>
+</tr><tr>
+<td>
+    
+    
+    <div class="ac-app-centered-container pull-left">
+        
+<div style="position:absolute;width: 0px;">
+    
+    <div class="ac-entry-number ">
+        <strong>4</strong>
+    </div>
+</div>
+
+    </div>
+    
+    <a href="/campaigns/1928">Clash of Clans</a>
+    <strong>(37 ads)</strong>
+    
+    <br>
+    <div>
+        <div class="pull-left">
+            <a href="/users/9057/edit" class="muted">SuperCell</a>
+        </div>
+        <div class="pull-right h-space-right">
+            
+            <label class="label label-important label-campaign label-priority">PRIORITY</label>
+            
+            
+            <label class="label label-warning label-campaign label-yo">Y/O</label>
+            
+        </div>
+    </div>
+    
+
+</td>
+<td>
+    
+    
+
+    <img src="/img/campaign_statuses/status-active.png" class="tooltip-trigger" data-title="Running - High Priority" style="width:25px; height:25px;" data-original-title="" title="">
+
+
+
+</td>
+<td class="adc-highlighted-column">
+    
+  
+    $182,959.71
+  
+
+</td>
+<td>
+    
+    
+    $4.80
+    
+
+</td>
+<td>
+    
+    38,138
+
+</td>
+<td>
+    
+    11,739,887
+
+</td>
+<td>
+    
+    10,504,907
+
+</td>
+<td>
+    
+    201,502
+
+</td>
+<td>
+    
+    1.72%
+
+</td>
+<td>
+    
+    <a class="date-tooltip" data-toggle="tooltip" data-placement="top" data-original-title="10/20/2014 17:55 (UTC)">1 day ago</a><script type="text/javascript">$('.date-tooltip').tooltip();</script> 
+
+</td>
+</tr><tr>
+<td>
+    
+    
+    <div class="ac-app-centered-container pull-left">
+        
+<div style="position:absolute;width: 0px;">
+    
+    <div class="ac-entry-number ">
+        <strong>5</strong>
+    </div>
+</div>
+
+    </div>
+    
+    <a href="/campaigns/4222">MyVegasSlots Android</a>
+    <strong>(8 ads)</strong>
+    
+    <br>
+    <div>
+        <div class="pull-left">
+            <a href="/users/15921/edit" class="muted">Playstudios</a>
+        </div>
+        <div class="pull-right h-space-right">
+            
+            <label class="label label-important label-campaign label-priority">PRIORITY</label>
+            
+            
+            <label class="label label-warning label-campaign label-yo">Y/O</label>
+            
+        </div>
+    </div>
+    
+
+</td>
+<td>
+    
+    
+
+    <img src="/img/campaign_statuses/status-active.png" class="tooltip-trigger" data-title="Running - High Priority" style="width:25px; height:25px;" data-original-title="" title="">
+
+
+
+</td>
+<td class="adc-highlighted-column">
+    
+  
+    $154,789.92
+  
+
+</td>
+<td>
+    
+    
+    $7.87
+    
+
+</td>
+<td>
+    
+    19,669
+
+</td>
+<td>
+    
+    5,421,413
+
+</td>
+<td>
+    
+    5,038,923
+
+</td>
+<td>
+    
+    66,958
+
+</td>
+<td>
+    
+    1.24%
+
+</td>
+<td>
+    
+    <a class="date-tooltip" data-toggle="tooltip" data-placement="top" data-original-title="10/21/2014 01:50 (UTC)">18 hours ago</a><script type="text/javascript">$('.date-tooltip').tooltip();</script> 
+
+</td>
+</tr><tr>
+<td>
+    
+    
+    <div class="ac-app-centered-container pull-left">
+        
+<div style="position:absolute;width: 0px;">
+    
+    <div class="ac-entry-number ">
+        <strong>6</strong>
+    </div>
+</div>
+
+    </div>
+    
+    <a href="/campaigns/3592">myVEGAS Slots iOS</a>
+    <strong>(13 ads)</strong>
+    
+    <br>
+    <div>
+        <div class="pull-left">
+            <a href="/users/15921/edit" class="muted">Playstudios</a>
+        </div>
+        <div class="pull-right h-space-right">
+            
+            <label class="label label-important label-campaign label-priority">PRIORITY</label>
+            
+            
+            <label class="label label-warning label-campaign label-yo">Y/O</label>
+            
+        </div>
+    </div>
+    
+
+</td>
+<td>
+    
+    
+
+    <img src="/img/campaign_statuses/status-active.png" class="tooltip-trigger" data-title="Running - High Priority" style="width:25px; height:25px;" data-original-title="" title="">
+
+
+
+</td>
+<td class="adc-highlighted-column">
+    
+  
+    $137,544.04
+  
+
+</td>
+<td>
+    
+    
+    $11.27
+    
+
+</td>
+<td>
+    
+    12,206
+
+</td>
+<td>
+    
+    5,966,288
+
+</td>
+<td>
+    
+    5,699,740
+
+</td>
+<td>
+    
+    76,366
+
+</td>
+<td>
+    
+    1.28%
+
+</td>
+<td>
+    
+    <a class="date-tooltip" data-toggle="tooltip" data-placement="top" data-original-title="10/18/2014 20:50 (UTC)">3 days ago</a><script type="text/javascript">$('.date-tooltip').tooltip();</script> 
+
+</td>
+</tr><tr>
+<td>
+    
+    
+    <div class="ac-app-centered-container pull-left">
+        
+<div style="position:absolute;width: 0px;">
+    
+    <div class="ac-entry-number ">
+        <strong>7</strong>
+    </div>
+</div>
+
+    </div>
+    
+    <a href="/campaigns/5058">Farmville 2: Country Escape Android</a>
+    <strong>(4 ads)</strong>
+    
+    <br>
+    <div>
+        <div class="pull-left">
+            <a href="/users/10657/edit" class="muted">Zynga</a>
+        </div>
+        <div class="pull-right h-space-right">
+            
+            
+            <label class="label label-warning label-campaign label-yo">Y/O</label>
+            
+        </div>
+    </div>
+    
+
+</td>
+<td>
+    
+    
+
+    <img src="/img/campaign_statuses/status-active.png" class="tooltip-trigger" data-title="Running" style="width:25px; height:25px;" data-original-title="" title="">
+
+
+
+</td>
+<td class="adc-highlighted-column">
+    
+  
+    $130,463.08
+  
+
+</td>
+<td>
+    
+    
+    $4.72
+    
+
+</td>
+<td>
+    
+    27,622
+
+</td>
+<td>
+    
+    7,775,466
+
+</td>
+<td>
+    
+    7,152,230
+
+</td>
+<td>
+    
+    99,747
+
+</td>
+<td>
+    
+    1.28%
+
+</td>
+<td>
+    
+    <a class="date-tooltip" data-toggle="tooltip" data-placement="top" data-original-title="10/21/2014 01:44 (UTC)">18 hours ago</a><script type="text/javascript">$('.date-tooltip').tooltip();</script> 
+
+</td>
+</tr><tr>
+<td>
+    
+    
+    <div class="ac-app-centered-container pull-left">
+        
+<div style="position:absolute;width: 0px;">
+    
+    <div class="ac-entry-number ">
+        <strong>8</strong>
+    </div>
+</div>
+
+    </div>
+    
+    <a href="/campaigns/4982">Empire: Four Kingdoms Android</a>
+    <strong>(30 ads)</strong>
+    
+    <br>
+    <div>
+        <div class="pull-left">
+            <a href="/users/18123/edit" class="muted">Altigi GmbH - Goodgame Studios</a>
+        </div>
+        <div class="pull-right h-space-right">
+            
+            <label class="label label-important label-campaign label-priority">PRIORITY</label>
+            
+            
+            <label class="label label-warning label-campaign label-yo">Y/O</label>
+            
+        </div>
+    </div>
+    
+
+</td>
+<td>
+    
+    
+
+    <img src="/img/campaign_statuses/status-active.png" class="tooltip-trigger" data-title="Running - High Priority" style="width:25px; height:25px;" data-original-title="" title="">
+
+
+
+</td>
+<td class="adc-highlighted-column">
+    
+  
+    $112,387.85
+  
+
+</td>
+<td>
+    
+    
+    $2.91
+    
+
+</td>
+<td>
+    
+    38,628
+
+</td>
+<td>
+    
+    14,290,010
+
+</td>
+<td>
+    
+    10,891,251
+
+</td>
+<td>
+    
+    157,882
+
+</td>
+<td>
+    
+    1.10%
+
+</td>
+<td>
+    
+    <a class="date-tooltip" data-toggle="tooltip" data-placement="top" data-original-title="10/20/2014 09:47 (UTC)">1 day ago</a><script type="text/javascript">$('.date-tooltip').tooltip();</script> 
+
+</td>
+</tr><tr>
+<td>
+    
+    
+    <div class="ac-app-centered-container pull-left">
+        
+<div style="position:absolute;width: 0px;">
+    
+    <div class="ac-entry-number ">
+        <strong>9</strong>
+    </div>
+</div>
+
+    </div>
+    
+    <a href="/campaigns/2410">Secret Passages iPhone Premium CPI</a>
+    <strong>(5 ads)</strong>
+    
+    <br>
+    <div>
+        <div class="pull-left">
+            <a href="/users/9065/edit" class="muted">Pocket Gems</a>
+        </div>
+        <div class="pull-right h-space-right">
+            
+            <label class="label label-important label-campaign label-priority">PRIORITY</label>
+            
+            
+            <label class="label label-warning label-campaign label-yo">Y/O</label>
+            
+        </div>
+    </div>
+    
+
+</td>
+<td>
+    
+    
+
+    <img src="/img/campaign_statuses/status-active.png" class="tooltip-trigger" data-title="Running - High Priority" style="width:25px; height:25px;" data-original-title="" title="">
+
+
+
+</td>
+<td class="adc-highlighted-column">
+    
+  
+    $98,048.65
+  
+
+</td>
+<td>
+    
+    
+    $3.75
+    
+
+</td>
+<td>
+    
+    26,163
+
+</td>
+<td>
+    
+    5,938,413
+
+</td>
+<td>
+    
+    5,443,261
+
+</td>
+<td>
+    
+    106,362
+
+</td>
+<td>
+    
+    1.79%
+
+</td>
+<td>
+    
+    <a class="date-tooltip" data-toggle="tooltip" data-placement="top" data-original-title="10/18/2014 01:41 (UTC)">4 days ago</a><script type="text/javascript">$('.date-tooltip').tooltip();</script> 
+
+</td>
+</tr><tr>
+<td>
+    
+    
+    <div class="ac-app-centered-container pull-left">
+        
+<div style="position:absolute;width: 0px;">
+    
+    <div class="ac-entry-number ">
+        <strong>10</strong>
+    </div>
+</div>
+
+    </div>
+    
+    <a href="/campaigns/5933">Boom Beach Android</a>
+    <strong>(3 ads)</strong>
+    
+    <br>
+    <div>
+        <div class="pull-left">
+            <a href="/users/9057/edit" class="muted">SuperCell</a>
+        </div>
+        <div class="pull-right h-space-right">
+            
+            <label class="label label-important label-campaign label-priority">PRIORITY</label>
+            
+            
+            <label class="label label-warning label-campaign label-yo">Y/O</label>
+            
+        </div>
+    </div>
+    
+
+</td>
+<td>
+    
+    
+
+    <img src="/img/campaign_statuses/status-active.png" class="tooltip-trigger" data-title="Running - High Priority" style="width:25px; height:25px;" data-original-title="" title="">
+
+
+
+</td>
+<td class="adc-highlighted-column">
+    
+  
+    $93,814.58
+  
+
+</td>
+<td>
+    
+    
+    $1.86
+    
+
+</td>
+<td>
+    
+    50,484
+
+</td>
+<td>
+    
+    13,918,566
+
+</td>
+<td>
+    
+    10,051,770
+
+</td>
+<td>
+    
+    172,204
+
+</td>
+<td>
+    
+    1.24%
+
+</td>
+<td>
+    
+    <a class="date-tooltip" data-toggle="tooltip" data-placement="top" data-original-title="09/16/2014 19:56 (UTC)">1 month ago</a><script type="text/javascript">$('.date-tooltip').tooltip();</script> 
+
+</td>
+</tr><tr>
+<td>
+    
+    
+    <div class="ac-app-centered-container pull-left">
+        
+<div style="position:absolute;width: 0px;">
+    
+    <div class="ac-entry-number ">
+        <strong>11</strong>
+    </div>
+</div>
+
+    </div>
+    
+    <a href="/campaigns/4132">Boom Beach iOS</a>
+    <strong>(14 ads)</strong>
+    
+    <br>
+    <div>
+        <div class="pull-left">
+            <a href="/users/9057/edit" class="muted">SuperCell</a>
+        </div>
+        <div class="pull-right h-space-right">
+            
+            <label class="label label-important label-campaign label-priority">PRIORITY</label>
+            
+            
+            <label class="label label-warning label-campaign label-yo">Y/O</label>
+            
+        </div>
+    </div>
+    
+
+</td>
+<td>
+    
+    
+
+    <img src="/img/campaign_statuses/status-active.png" class="tooltip-trigger" data-title="Running - High Priority" style="width:25px; height:25px;" data-original-title="" title="">
+
+
+
+</td>
+<td class="adc-highlighted-column">
+    
+  
+    $90,204.80
+  
+
+</td>
+<td>
+    
+    
+    $3.45
+    
+
+</td>
+<td>
+    
+    26,149
+
+</td>
+<td>
+    
+    8,301,026
+
+</td>
+<td>
+    
+    7,180,691
+
+</td>
+<td>
+    
+    135,762
+
+</td>
+<td>
+    
+    1.64%
+
+</td>
+<td>
+    
+    <a class="date-tooltip" data-toggle="tooltip" data-placement="top" data-original-title="09/29/2014 19:45 (UTC)">22 days ago</a><script type="text/javascript">$('.date-tooltip').tooltip();</script> 
+
+</td>
+</tr><tr>
+<td>
+    
+    
+    <div class="ac-app-centered-container pull-left">
+        
+<div style="position:absolute;width: 0px;">
+    
+    <div class="ac-entry-number ">
+        <strong>12</strong>
+    </div>
+</div>
+
+    </div>
+    
+    <a href="/campaigns/4983">Empire: Four Kingdoms iOS</a>
+    <strong>(34 ads)</strong>
+    
+    <br>
+    <div>
+        <div class="pull-left">
+            <a href="/users/18123/edit" class="muted">Altigi GmbH - Goodgame Studios</a>
+        </div>
+        <div class="pull-right h-space-right">
+            
+            <label class="label label-important label-campaign label-priority">PRIORITY</label>
+            
+            
+            <label class="label label-warning label-campaign label-yo">Y/O</label>
+            
+        </div>
+    </div>
+    
+
+</td>
+<td>
+    
+    
+
+    <img src="/img/campaign_statuses/status-active.png" class="tooltip-trigger" data-title="Running - High Priority" style="width:25px; height:25px;" data-original-title="" title="">
+
+
+
+</td>
+<td class="adc-highlighted-column">
+    
+  
+    $85,944.11
+  
+
+</td>
+<td>
+    
+    
+    $4.35
+    
+
+</td>
+<td>
+    
+    19,774
+
+</td>
+<td>
+    
+    8,341,066
+
+</td>
+<td>
+    
+    7,747,229
+
+</td>
+<td>
+    
+    106,881
+
+</td>
+<td>
+    
+    1.28%
+
+</td>
+<td>
+    
+    <a class="date-tooltip" data-toggle="tooltip" data-placement="top" data-original-title="10/17/2014 19:35 (UTC)">4 days ago</a><script type="text/javascript">$('.date-tooltip').tooltip();</script> 
+
+</td>
+</tr><tr>
+<td>
+    
+    
+    <div class="ac-app-centered-container pull-left">
+        
+<div style="position:absolute;width: 0px;">
+    
+    <div class="ac-entry-number ">
+        <strong>13</strong>
+    </div>
+</div>
+
+    </div>
+    
+    <a href="/campaigns/6736">Diamond Digger Saga Android</a>
+    <strong>(41 ads)</strong>
+    
+    <br>
+    <div>
+        <div class="pull-left">
+            <a href="/users/11930/edit" class="muted">King.com Limited</a>
+        </div>
+        <div class="pull-right h-space-right">
+            
+            <label class="label label-important label-campaign label-priority">PRIORITY</label>
+            
+            
+            <label class="label label-warning label-campaign label-yo">Y/O</label>
+            
+        </div>
+    </div>
+    
+
+</td>
+<td>
+    
+    
+
+    <img src="/img/campaign_statuses/status-active.png" class="tooltip-trigger" data-title="Running - High Priority" style="width:25px; height:25px;" data-original-title="" title="">
+
+
+
+</td>
+<td class="adc-highlighted-column">
+    
+  
+    $81,572.93
+  
+
+</td>
+<td>
+    
+    
+    $2.77
+    
+
+</td>
+<td>
+    
+    29,491
+
+</td>
+<td>
+    
+    6,380,573
+
+</td>
+<td>
+    
+    5,367,759
+
+</td>
+<td>
+    
+    81,271
+
+</td>
+<td>
+    
+    1.27%
+
+</td>
+<td>
+    
+    <a class="date-tooltip" data-toggle="tooltip" data-placement="top" data-original-title="10/21/2014 13:18 (UTC)">6 hours ago</a><script type="text/javascript">$('.date-tooltip').tooltip();</script> 
+
+</td>
+</tr><tr>
+<td>
+    
+    
+    <div class="ac-app-centered-container pull-left">
+        
+<div style="position:absolute;width: 0px;">
+    
+    <div class="ac-entry-number ">
+        <strong>14</strong>
+    </div>
+</div>
+
+    </div>
+    
+    <a href="/campaigns/6780">Iron Desert Android</a>
+    <strong>(8 ads)</strong>
+    
+    <br>
+    <div>
+        <div class="pull-left">
+            <a href="/users/16711/edit" class="muted">MY.COM B.V.</a>
+        </div>
+        <div class="pull-right h-space-right">
+            
+            
+            <label class="label label-warning label-campaign label-yo">Y/O</label>
+            
+        </div>
+    </div>
+    
+
+</td>
+<td>
+    
+    
+
+    <img src="/img/campaign_statuses/status-active.png" class="tooltip-trigger" data-title="Running" style="width:25px; height:25px;" data-original-title="" title="">
+
+
+
+</td>
+<td class="adc-highlighted-column">
+    
+  
+    $80,974.01
+  
+
+</td>
+<td>
+    
+    
+    $4.77
+    
+
+</td>
+<td>
+    
+    16,969
+
+</td>
+<td>
+    
+    5,284,719
+
+</td>
+<td>
+    
+    4,498,223
+
+</td>
+<td>
+    
+    61,576
+
+</td>
+<td>
+    
+    1.17%
+
+</td>
+<td>
+    
+    <a class="date-tooltip" data-toggle="tooltip" data-placement="top" data-original-title="10/20/2014 15:14 (UTC)">1 day ago</a><script type="text/javascript">$('.date-tooltip').tooltip();</script> 
+
+</td>
+</tr><tr>
+<td>
+    
+    
+    <div class="ac-app-centered-container pull-left">
+        
+<div style="position:absolute;width: 0px;">
+    
+    <div class="ac-entry-number ">
+        <strong>15</strong>
+    </div>
+</div>
+
+    </div>
+    
+    <a href="/campaigns/6733">Diamond Digger Saga iPad</a>
+    <strong>(41 ads)</strong>
+    
+    <br>
+    <div>
+        <div class="pull-left">
+            <a href="/users/11930/edit" class="muted">King.com Limited</a>
+        </div>
+        <div class="pull-right h-space-right">
+            
+            <label class="label label-important label-campaign label-priority">PRIORITY</label>
+            
+            
+            <label class="label label-warning label-campaign label-yo">Y/O</label>
+            
+        </div>
+    </div>
+    
+
+</td>
+<td>
+    
+    
+
+    <img src="/img/campaign_statuses/status-active.png" class="tooltip-trigger" data-title="Running - High Priority" style="width:25px; height:25px;" data-original-title="" title="">
+
+
+
+</td>
+<td class="adc-highlighted-column">
+    
+  
+    $76,152.28
+  
+
+</td>
+<td>
+    
+    
+    $3.51
+    
+
+</td>
+<td>
+    
+    21,693
+
+</td>
+<td>
+    
+    5,755,284
+
+</td>
+<td>
+    
+    5,362,636
+
+</td>
+<td>
+    
+    84,689
+
+</td>
+<td>
+    
+    1.47%
+
+</td>
+<td>
+    
+    <a class="date-tooltip" data-toggle="tooltip" data-placement="top" data-original-title="10/21/2014 13:17 (UTC)">6 hours ago</a><script type="text/javascript">$('.date-tooltip').tooltip();</script> 
+
+</td>
+</tr><tr>
+<td>
+    
+    
+    <div class="ac-app-centered-container pull-left">
+        
+<div style="position:absolute;width: 0px;">
+    
+    <div class="ac-entry-number ">
+        <strong>16</strong>
+    </div>
+</div>
+
+    </div>
+    
+    <a href="/campaigns/6646">Gummy Drop!</a>
+    <strong>(3 ads)</strong>
+    
+    <br>
+    <div>
+        <div class="pull-left">
+            <a href="/users/11476/edit" class="muted">Big Fish Games</a>
+        </div>
+        <div class="pull-right h-space-right">
+            
+            
+            <label class="label label-warning label-campaign label-yo">Y/O</label>
+            
+        </div>
+    </div>
+    
+
+</td>
+<td>
+    
+    
+
+    <img src="/img/campaign_statuses/status-active.png" class="tooltip-trigger" data-title="Running" style="width:25px; height:25px;" data-original-title="" title="">
+
+
+
+</td>
+<td class="adc-highlighted-column">
+    
+  
+    $72,120.08
+  
+
+</td>
+<td>
+    
+    
+    $3.69
+    
+
+</td>
+<td>
+    
+    19,570
+
+</td>
+<td>
+    
+    5,716,580
+
+</td>
+<td>
+    
+    5,402,976
+
+</td>
+<td>
+    
+    63,381
+
+</td>
+<td>
+    
+    1.11%
+
+</td>
+<td>
+    
+    <a class="date-tooltip" data-toggle="tooltip" data-placement="top" data-original-title="10/20/2014 05:06 (UTC)">2 days ago</a><script type="text/javascript">$('.date-tooltip').tooltip();</script> 
+
+</td>
+</tr><tr>
+<td>
+    
+    
+    <div class="ac-app-centered-container pull-left">
+        
+<div style="position:absolute;width: 0px;">
+    
+    <div class="ac-entry-number ">
+        <strong>17</strong>
+    </div>
+</div>
+
+    </div>
+    
+    <a href="/campaigns/6833">Star Wars: Commander Android</a>
+    <strong>(2 ads)</strong>
+    
+    <br>
+    <div>
+        <div class="pull-left">
+            <a href="/users/14125/edit" class="muted">Playdom/Disney Interactive</a>
+        </div>
+        <div class="pull-right h-space-right">
+            
+            
+            <label class="label label-warning label-campaign label-yo">Y/O</label>
+            
+        </div>
+    </div>
+    
+
+</td>
+<td>
+    
+    
+
+    <img src="/img/campaign_statuses/status-dailylimit.png" class="tooltip-trigger" data-title="No daily budget remaining" style="width:25px; height:25px;" data-original-title="" title="">
+
+
+
+</td>
+<td class="adc-highlighted-column">
+    
+  
+    $62,898.91
+  
+
+</td>
+<td>
+    
+    
+    $2.32
+    
+
+</td>
+<td>
+    
+    27,141
+
+</td>
+<td>
+    
+    4,116,301
+
+</td>
+<td>
+    
+    3,639,785
+
+</td>
+<td>
+    
+    64,748
+
+</td>
+<td>
+    
+    1.57%
+
+</td>
+<td>
+    
+    <a class="date-tooltip" data-toggle="tooltip" data-placement="top" data-original-title="10/03/2014 13:50 (UTC)">18 days ago</a><script type="text/javascript">$('.date-tooltip').tooltip();</script> 
+
+</td>
+</tr><tr>
+<td>
+    
+    
+    <div class="ac-app-centered-container pull-left">
+        
+<div style="position:absolute;width: 0px;">
+    
+    <div class="ac-entry-number ">
+        <strong>18</strong>
+    </div>
+</div>
+
+    </div>
+    
+    <a href="/campaigns/6735">Diamond Digger Saga iPhone</a>
+    <strong>(38 ads)</strong>
+    
+    <br>
+    <div>
+        <div class="pull-left">
+            <a href="/users/11930/edit" class="muted">King.com Limited</a>
+        </div>
+        <div class="pull-right h-space-right">
+            
+            <label class="label label-important label-campaign label-priority">PRIORITY</label>
+            
+            
+            <label class="label label-warning label-campaign label-yo">Y/O</label>
+            
+        </div>
+    </div>
+    
+
+</td>
+<td>
+    
+    
+
+    <img src="/img/campaign_statuses/status-active.png" class="tooltip-trigger" data-title="Running - High Priority" style="width:25px; height:25px;" data-original-title="" title="">
+
+
+
+</td>
+<td class="adc-highlighted-column">
+    
+  
+    $60,097.17
+  
+
+</td>
+<td>
+    
+    
+    $3.26
+    
+
+</td>
+<td>
+    
+    18,463
+
+</td>
+<td>
+    
+    5,419,994
+
+</td>
+<td>
+    
+    5,031,672
+
+</td>
+<td>
+    
+    58,224
+
+</td>
+<td>
+    
+    1.07%
+
+</td>
+<td>
+    
+    <a class="date-tooltip" data-toggle="tooltip" data-placement="top" data-original-title="10/21/2014 13:20 (UTC)">6 hours ago</a><script type="text/javascript">$('.date-tooltip').tooltip();</script> 
+
+</td>
+</tr><tr>
+<td>
+    
+    
+    <div class="ac-app-centered-container pull-left">
+        
+<div style="position:absolute;width: 0px;">
+    
+    <div class="ac-entry-number ">
+        <strong>19</strong>
+    </div>
+</div>
+
+    </div>
+    
+    <a href="/campaigns/5057">Farmville 2: Country Escape iOS</a>
+    <strong>(6 ads)</strong>
+    
+    <br>
+    <div>
+        <div class="pull-left">
+            <a href="/users/10657/edit" class="muted">Zynga</a>
+        </div>
+        <div class="pull-right h-space-right">
+            
+            
+            <label class="label label-warning label-campaign label-yo">Y/O</label>
+            
+        </div>
+    </div>
+    
+
+</td>
+<td>
+    
+    
+
+    <img src="/img/campaign_statuses/status-active.png" class="tooltip-trigger" data-title="Running" style="width:25px; height:25px;" data-original-title="" title="">
+
+
+
+</td>
+<td class="adc-highlighted-column">
+    
+  
+    $57,260.51
+  
+
+</td>
+<td>
+    
+    
+    $6.36
+    
+
+</td>
+<td>
+    
+    8,999
+
+</td>
+<td>
+    
+    3,474,744
+
+</td>
+<td>
+    
+    3,371,950
+
+</td>
+<td>
+    
+    43,648
+
+</td>
+<td>
+    
+    1.26%
+
+</td>
+<td>
+    
+    <a class="date-tooltip" data-toggle="tooltip" data-placement="top" data-original-title="10/21/2014 01:45 (UTC)">18 hours ago</a><script type="text/javascript">$('.date-tooltip').tooltip();</script> 
+
+</td>
+</tr><tr>
+<td>
+    
+    
+    <div class="ac-app-centered-container pull-left">
+        
+<div style="position:absolute;width: 0px;">
+    
+    <div class="ac-entry-number ">
+        <strong>20</strong>
+    </div>
+</div>
+
+    </div>
+    
+    <a href="/campaigns/3060">Dragons of Atlantis Android</a>
+    <strong>(32 ads)</strong>
+    
+    <br>
+    <div>
+        <div class="pull-left">
+            <a href="/users/9011/edit" class="muted">Kabam</a>
+        </div>
+        <div class="pull-right h-space-right">
+            
+            
+            <label class="label label-warning label-campaign label-yo">Y/O</label>
+            
+        </div>
+    </div>
+    
+
+</td>
+<td>
+    
+    
+
+    <img src="/img/campaign_statuses/status-active.png" class="tooltip-trigger" data-title="Running" style="width:25px; height:25px;" data-original-title="" title="">
+
+
+
+</td>
+<td class="adc-highlighted-column">
+    
+  
+    $56,538.11
+  
+
+</td>
+<td>
+    
+    
+    $2.27
+    
+
+</td>
+<td>
+    
+    24,869
+
+</td>
+<td>
+    
+    7,183,768
+
+</td>
+<td>
+    
+    6,743,122
+
+</td>
+<td>
+    
+    84,687
+
+</td>
+<td>
+    
+    1.18%
+
+</td>
+<td>
+    
+    <a class="date-tooltip" data-toggle="tooltip" data-placement="top" data-original-title="10/19/2014 18:51 (UTC)">2 days ago</a><script type="text/javascript">$('.date-tooltip').tooltip();</script> 
+
+</td>
+</tr><tr>
+<td>
+    
+    
+    <div class="ac-app-centered-container pull-left">
+        
+<div style="position:absolute;width: 0px;">
+    
+    <div class="ac-entry-number ">
+        <strong>21</strong>
+    </div>
+</div>
+
+    </div>
+    
+    <a href="/campaigns/6903">Dragons of Atlantis iOS</a>
+    <strong>(26 ads)</strong>
+    
+    <br>
+    <div>
+        <div class="pull-left">
+            <a href="/users/9011/edit" class="muted">Kabam</a>
+        </div>
+        <div class="pull-right h-space-right">
+            
+            
+            <label class="label label-warning label-campaign label-yo">Y/O</label>
+            
+        </div>
+    </div>
+    
+
+</td>
+<td>
+    
+    
+
+    <img src="/img/campaign_statuses/status-active.png" class="tooltip-trigger" data-title="Running" style="width:25px; height:25px;" data-original-title="" title="">
+
+
+
+</td>
+<td class="adc-highlighted-column">
+    
+  
+    $53,606.71
+  
+
+</td>
+<td>
+    
+    
+    $3.24
+    
+
+</td>
+<td>
+    
+    16,551
+
+</td>
+<td>
+    
+    4,371,849
+
+</td>
+<td>
+    
+    4,245,899
+
+</td>
+<td>
+    
+    47,502
+
+</td>
+<td>
+    
+    1.09%
+
+</td>
+<td>
+    
+    <a class="date-tooltip" data-toggle="tooltip" data-placement="top" data-original-title="10/19/2014 18:50 (UTC)">2 days ago</a><script type="text/javascript">$('.date-tooltip').tooltip();</script> 
+
+</td>
+</tr><tr>
+<td>
+    
+    
+    <div class="ac-app-centered-container pull-left">
+        
+<div style="position:absolute;width: 0px;">
+    
+    <div class="ac-entry-number ">
+        <strong>22</strong>
+    </div>
+</div>
+
+    </div>
+    
+    <a href="/campaigns/1929">Hay Day iOS</a>
+    <strong>(16 ads)</strong>
+    
+    <br>
+    <div>
+        <div class="pull-left">
+            <a href="/users/9057/edit" class="muted">SuperCell</a>
+        </div>
+        <div class="pull-right h-space-right">
+            
+            <label class="label label-important label-campaign label-priority">PRIORITY</label>
+            
+            
+            <label class="label label-warning label-campaign label-yo">Y/O</label>
+            
+        </div>
+    </div>
+    
+
+</td>
+<td>
+    
+    
+
+    <img src="/img/campaign_statuses/status-active.png" class="tooltip-trigger" data-title="Running - High Priority" style="width:25px; height:25px;" data-original-title="" title="">
+
+
+
+</td>
+<td class="adc-highlighted-column">
+    
+  
+    $52,793.97
+  
+
+</td>
+<td>
+    
+    
+    $1.11
+    
+
+</td>
+<td>
+    
+    47,385
+
+</td>
+<td>
+    
+    12,356,252
+
+</td>
+<td>
+    
+    11,200,678
+
+</td>
+<td>
+    
+    220,277
+
+</td>
+<td>
+    
+    1.78%
+
+</td>
+<td>
+    
+    <a class="date-tooltip" data-toggle="tooltip" data-placement="top" data-original-title="10/09/2014 18:41 (UTC)">12 days ago</a><script type="text/javascript">$('.date-tooltip').tooltip();</script> 
+
+</td>
+</tr><tr>
+<td>
+    
+    
+    <div class="ac-app-centered-container pull-left">
+        
+<div style="position:absolute;width: 0px;">
+    
+    <div class="ac-entry-number ">
+        <strong>23</strong>
+    </div>
+</div>
+
+    </div>
+    
+    <a href="/campaigns/6447">Titan Empires iOS</a>
+    <strong>(1 ads)</strong>
+    
+    <br>
+    <div>
+        <div class="pull-left">
+            <a href="/users/8020/edit" class="muted">PerBlue</a>
+        </div>
+        <div class="pull-right h-space-right">
+            
+            
+            <label class="label label-warning label-campaign label-yo">Y/O</label>
+            
+        </div>
+    </div>
+    
+
+</td>
+<td>
+    
+    
+
+    <img src="/img/campaign_statuses/status-active.png" class="tooltip-trigger" data-title="Running" style="width:25px; height:25px;" data-original-title="" title="">
+
+
+
+</td>
+<td class="adc-highlighted-column">
+    
+  
+    $52,427.77
+  
+
+</td>
+<td>
+    
+    
+    $2.72
+    
+
+</td>
+<td>
+    
+    19,301
+
+</td>
+<td>
+    
+    2,922,997
+
+</td>
+<td>
+    
+    2,774,127
+
+</td>
+<td>
+    
+    55,124
+
+</td>
+<td>
+    
+    1.89%
+
+</td>
+<td>
+    
+    <a class="date-tooltip" data-toggle="tooltip" data-placement="top" data-original-title="10/15/2014 19:16 (UTC)">6 days ago</a><script type="text/javascript">$('.date-tooltip').tooltip();</script> 
+
+</td>
+</tr><tr>
+<td>
+    
+    
+    <div class="ac-app-centered-container pull-left">
+        
+<div style="position:absolute;width: 0px;">
+    
+    <div class="ac-entry-number ">
+        <strong>24</strong>
+    </div>
+</div>
+
+    </div>
+    
+    <a href="/campaigns/1688">101 in 1 Games HD iPad</a>
+    <strong>(2 ads)</strong>
+    
+    <br>
+    <div>
+        <div class="pull-left">
+            <a href="/users/8560/edit" class="muted">NordCurrent</a>
+        </div>
+        <div class="pull-right h-space-right">
+            
+            <label class="label label-important label-campaign label-priority">PRIORITY</label>
+            
+            
+        </div>
+    </div>
+    
+
+</td>
+<td>
+    
+    
+
+    <img src="/img/campaign_statuses/status-paused.png" class="tooltip-trigger" data-title="Paused - High Priority" style="width:25px; height:25px;" data-original-title="" title="">
+
+
+
+</td>
+<td class="adc-highlighted-column">
+    
+  
+    $50,628.34
+  
+
+</td>
+<td>
+    
+    
+    $1.69
+    
+
+</td>
+<td>
+    
+    29,880
+
+</td>
+<td>
+    
+    1,937,066
+
+</td>
+<td>
+    
+    1,865,184
+
+</td>
+<td>
+    
+    45,672
+
+</td>
+<td>
+    
+    2.36%
+
+</td>
+<td>
+    
+    <a class="date-tooltip" data-toggle="tooltip" data-placement="top" data-original-title="10/03/2014 20:04 (UTC)">18 days ago</a><script type="text/javascript">$('.date-tooltip').tooltip();</script> 
+
+</td>
+</tr><tr>
+<td>
+    
+    
+    <div class="ac-app-centered-container pull-left">
+        
+<div style="position:absolute;width: 0px;">
+    
+    <div class="ac-entry-number ">
+        <strong>25</strong>
+    </div>
+</div>
+
+    </div>
+    
+    <a href="/campaigns/6271">Titan Empires Android</a>
+    <strong>(3 ads)</strong>
+    
+    <br>
+    <div>
+        <div class="pull-left">
+            <a href="/users/8020/edit" class="muted">PerBlue</a>
+        </div>
+        <div class="pull-right h-space-right">
+            
+            
+            <label class="label label-warning label-campaign label-yo">Y/O</label>
+            
+        </div>
+    </div>
+    
+
+</td>
+<td>
+    
+    
+
+    <img src="/img/campaign_statuses/status-active.png" class="tooltip-trigger" data-title="Running" style="width:25px; height:25px;" data-original-title="" title="">
+
+
+
+</td>
+<td class="adc-highlighted-column">
+    
+  
+    $50,553.58
+  
+
+</td>
+<td>
+    
+    
+    $2.28
+    
+
+</td>
+<td>
+    
+    22,190
+
+</td>
+<td>
+    
+    3,696,559
+
+</td>
+<td>
+    
+    3,187,797
+
+</td>
+<td>
+    
+    56,126
+
+</td>
+<td>
+    
+    1.52%
+
+</td>
+<td>
+    
+    <a class="date-tooltip" data-toggle="tooltip" data-placement="top" data-original-title="10/14/2014 20:33 (UTC)">7 days ago</a><script type="text/javascript">$('.date-tooltip').tooltip();</script> 
+
+</td>
+</tr><tr>
+<td>
+    
+    
+    <div class="ac-app-centered-container pull-left">
+        
+<div style="position:absolute;width: 0px;">
+    
+    <div class="ac-entry-number ">
+        <strong>26</strong>
+    </div>
+</div>
+
+    </div>
+    
+    <a href="/campaigns/5492">Racing Rivals Android</a>
+    <strong>(10 ads)</strong>
+    
+    <br>
+    <div>
+        <div class="pull-left">
+            <a href="/users/8818/edit" class="muted">Glu Games Inc.</a>
+        </div>
+        <div class="pull-right h-space-right">
+            
+            
+            <label class="label label-warning label-campaign label-yo">Y/O</label>
+            
+        </div>
+    </div>
+    
+
+</td>
+<td>
+    
+    
+
+    <img src="/img/campaign_statuses/status-active.png" class="tooltip-trigger" data-title="Running" style="width:25px; height:25px;" data-original-title="" title="">
+
+
+
+</td>
+<td class="adc-highlighted-column">
+    
+  
+    $50,316.92
+  
+
+</td>
+<td>
+    
+    
+    $1.62
+    
+
+</td>
+<td>
+    
+    31,034
+
+</td>
+<td>
+    
+    3,257,447
+
+</td>
+<td>
+    
+    2,758,596
+
+</td>
+<td>
+    
+    80,999
+
+</td>
+<td>
+    
+    2.49%
+
+</td>
+<td>
+    
+    <a class="date-tooltip" data-toggle="tooltip" data-placement="top" data-original-title="10/21/2014 01:53 (UTC)">18 hours ago</a><script type="text/javascript">$('.date-tooltip').tooltip();</script> 
+
+</td>
+</tr><tr>
+<td>
+    
+    
+    <div class="ac-app-centered-container pull-left">
+        
+<div style="position:absolute;width: 0px;">
+    
+    <div class="ac-entry-number ">
+        <strong>27</strong>
+    </div>
+</div>
+
+    </div>
+    
+    <a href="/campaigns/4418"><span class="truncated-tooltip" title="" data-original-title="Secret Passages Big 4 iPad New Video (CPI Price)">
+  Secret Passages Big 4 iPad New Video (CP...
+</span><script type="text/javascript">$('.truncated-tooltip').tooltip();</script></a>
+    <strong>(2 ads)</strong>
+    
+    <br>
+    <div>
+        <div class="pull-left">
+            <a href="/users/9065/edit" class="muted">Pocket Gems</a>
+        </div>
+        <div class="pull-right h-space-right">
+            
+            <label class="label label-important label-campaign label-priority">PRIORITY</label>
+            
+            
+            <label class="label label-warning label-campaign label-yo">Y/O</label>
+            
+        </div>
+    </div>
+    
+
+</td>
+<td>
+    
+    
+
+    <img src="/img/campaign_statuses/status-active.png" class="tooltip-trigger" data-title="Running - High Priority" style="width:25px; height:25px;" data-original-title="" title="">
+
+
+
+</td>
+<td class="adc-highlighted-column">
+    
+  
+    $49,347.50
+  
+
+</td>
+<td>
+    
+    
+    $2.32
+    
+
+</td>
+<td>
+    
+    21,246
+
+</td>
+<td>
+    
+    3,555,090
+
+</td>
+<td>
+    
+    3,323,712
+
+</td>
+<td>
+    
+    72,321
+
+</td>
+<td>
+    
+    2.03%
+
+</td>
+<td>
+    
+    <a class="date-tooltip" data-toggle="tooltip" data-placement="top" data-original-title="10/18/2014 01:46 (UTC)">4 days ago</a><script type="text/javascript">$('.date-tooltip').tooltip();</script> 
+
+</td>
+</tr><tr>
+<td>
+    
+    
+    <div class="ac-app-centered-container pull-left">
+        
+<div style="position:absolute;width: 0px;">
+    
+    <div class="ac-entry-number ">
+        <strong>28</strong>
+    </div>
+</div>
+
+    </div>
+    
+    <a href="/campaigns/3646">Hay Day Android</a>
+    <strong>(7 ads)</strong>
+    
+    <br>
+    <div>
+        <div class="pull-left">
+            <a href="/users/9057/edit" class="muted">SuperCell</a>
+        </div>
+        <div class="pull-right h-space-right">
+            
+            <label class="label label-important label-campaign label-priority">PRIORITY</label>
+            
+            
+            <label class="label label-warning label-campaign label-yo">Y/O</label>
+            
+        </div>
+    </div>
+    
+
+</td>
+<td>
+    
+    
+
+    <img src="/img/campaign_statuses/status-active.png" class="tooltip-trigger" data-title="Running - High Priority" style="width:25px; height:25px;" data-original-title="" title="">
+
+
+
+</td>
+<td class="adc-highlighted-column">
+    
+  
+    $48,057.79
+  
+
+</td>
+<td>
+    
+    
+    $0.73
+    
+
+</td>
+<td>
+    
+    65,657
+
+</td>
+<td>
+    
+    16,027,184
+
+</td>
+<td>
+    
+    12,863,777
+
+</td>
+<td>
+    
+    224,906
+
+</td>
+<td>
+    
+    1.40%
+
+</td>
+<td>
+    
+    <a class="date-tooltip" data-toggle="tooltip" data-placement="top" data-original-title="10/09/2014 18:40 (UTC)">12 days ago</a><script type="text/javascript">$('.date-tooltip').tooltip();</script> 
+
+</td>
+</tr><tr>
+<td>
+    
+    
+    <div class="ac-app-centered-container pull-left">
+        
+<div style="position:absolute;width: 0px;">
+    
+    <div class="ac-entry-number ">
+        <strong>29</strong>
+    </div>
+</div>
+
+    </div>
+    
+    <a href="/campaigns/2828">Racing Rivals iOS</a>
+    <strong>(13 ads)</strong>
+    
+    <br>
+    <div>
+        <div class="pull-left">
+            <a href="/users/8818/edit" class="muted">Glu Games Inc.</a>
+        </div>
+        <div class="pull-right h-space-right">
+            
+            
+            <label class="label label-warning label-campaign label-yo">Y/O</label>
+            
+        </div>
+    </div>
+    
+
+</td>
+<td>
+    
+    
+
+    <img src="/img/campaign_statuses/status-active.png" class="tooltip-trigger" data-title="Running" style="width:25px; height:25px;" data-original-title="" title="">
+
+
+
+</td>
+<td class="adc-highlighted-column">
+    
+  
+    $45,232.23
+  
+
+</td>
+<td>
+    
+    
+    $1.77
+    
+
+</td>
+<td>
+    
+    25,622
+
+</td>
+<td>
+    
+    2,789,093
+
+</td>
+<td>
+    
+    2,516,564
+
+</td>
+<td>
+    
+    63,463
+
+</td>
+<td>
+    
+    2.28%
+
+</td>
+<td>
+    
+    <a class="date-tooltip" data-toggle="tooltip" data-placement="top" data-original-title="10/21/2014 01:56 (UTC)">18 hours ago</a><script type="text/javascript">$('.date-tooltip').tooltip();</script> 
+
+</td>
+</tr><tr>
+<td>
+    
+    
+    <div class="ac-app-centered-container pull-left">
+        
+<div style="position:absolute;width: 0px;">
+    
+    <div class="ac-entry-number ">
+        <strong>30</strong>
+    </div>
+</div>
+
+    </div>
+    
+    <a href="/campaigns/5647">Real Racing 3</a>
+    <strong>(4 ads)</strong>
+    
+    <br>
+    <div>
+        <div class="pull-left">
+            <a href="/users/9078/edit" class="muted">EA Mobile</a>
+        </div>
+        <div class="pull-right h-space-right">
+            
+            
+            <label class="label label-warning label-campaign label-yo">Y/O</label>
+            
+        </div>
+    </div>
+    
+
+</td>
+<td>
+    
+    
+
+    <img src="/img/campaign_statuses/status-active.png" class="tooltip-trigger" data-title="Running" style="width:25px; height:25px;" data-original-title="" title="">
+
+
+
+</td>
+<td class="adc-highlighted-column">
+    
+  
+    $42,033.71
+  
+
+</td>
+<td>
+    
+    
+    $3.31
+    
+
+</td>
+<td>
+    
+    12,689
+
+</td>
+<td>
+    
+    2,384,017
+
+</td>
+<td>
+    
+    2,295,053
+
+</td>
+<td>
+    
+    46,055
+
+</td>
+<td>
+    
+    1.93%
+
+</td>
+<td>
+    
+    <a class="date-tooltip" data-toggle="tooltip" data-placement="top" data-original-title="10/17/2014 22:21 (UTC)">4 days ago</a><script type="text/javascript">$('.date-tooltip').tooltip();</script> 
+
+</td>
+</tr><tr>
+<td>
+    
+    
+    <div class="ac-app-centered-container pull-left">
+        
+<div style="position:absolute;width: 0px;">
+    
+    <div class="ac-entry-number ">
+        <strong>31</strong>
+    </div>
+</div>
+
+    </div>
+    
+    <a href="/campaigns/1399">Sims Freeplay US/CA iOS</a>
+    <strong>(10 ads)</strong>
+    
+    <br>
+    <div>
+        <div class="pull-left">
+            <a href="/users/10496/edit" class="muted">Fiksu</a>
+        </div>
+        <div class="pull-right h-space-right">
+            
+            
+            <label class="label label-warning label-campaign label-yo">Y/O</label>
+            
+        </div>
+    </div>
+    
+
+</td>
+<td>
+    
+    
+
+    <img src="/img/campaign_statuses/status-active.png" class="tooltip-trigger" data-title="Running" style="width:25px; height:25px;" data-original-title="" title="">
+
+
+
+</td>
+<td class="adc-highlighted-column">
+    
+  
+    $41,966.46
+  
+
+</td>
+<td>
+    
+    
+    $2.03
+    
+
+</td>
+<td>
+    
+    20,698
+
+</td>
+<td>
+    
+    1,867,303
+
+</td>
+<td>
+    
+    1,770,298
+
+</td>
+<td>
+    
+    32,657
+
+</td>
+<td>
+    
+    1.75%
+
+</td>
+<td>
+    
+    <a class="date-tooltip" data-toggle="tooltip" data-placement="top" data-original-title="10/21/2014 00:03 (UTC)">19 hours ago</a><script type="text/javascript">$('.date-tooltip').tooltip();</script> 
+
+</td>
+</tr><tr>
+<td>
+    
+    
+    <div class="ac-app-centered-container pull-left">
+        
+<div style="position:absolute;width: 0px;">
+    
+    <div class="ac-entry-number ">
+        <strong>32</strong>
+    </div>
+</div>
+
+    </div>
+    
+    <a href="/campaigns/5859">World of Tanks: Blitz</a>
+    <strong>(27 ads)</strong>
+    
+    <br>
+    <div>
+        <div class="pull-left">
+            <a href="/users/20435/edit" class="muted">Wargaming</a>
+        </div>
+        <div class="pull-right h-space-right">
+            
+            
+            <label class="label label-warning label-campaign label-yo">Y/O</label>
+            
+        </div>
+    </div>
+    
+
+</td>
+<td>
+    
+    
+
+    <img src="/img/campaign_statuses/status-active.png" class="tooltip-trigger" data-title="Running" style="width:25px; height:25px;" data-original-title="" title="">
+
+
+
+</td>
+<td class="adc-highlighted-column">
+    
+  
+    $40,603.82
+  
+
+</td>
+<td>
+    
+    
+    $4.64
+    
+
+</td>
+<td>
+    
+    8,750
+
+</td>
+<td>
+    
+    1,854,595
+
+</td>
+<td>
+    
+    1,789,413
+
+</td>
+<td>
+    
+    23,717
+
+</td>
+<td>
+    
+    1.28%
+
+</td>
+<td>
+    
+    <a class="date-tooltip" data-toggle="tooltip" data-placement="top" data-original-title="10/21/2014 16:04 (UTC)">3 hours ago</a><script type="text/javascript">$('.date-tooltip').tooltip();</script> 
+
+</td>
+</tr><tr>
+<td>
+    
+    
+    <div class="ac-app-centered-container pull-left">
+        
+<div style="position:absolute;width: 0px;">
+    
+    <div class="ac-entry-number ">
+        <strong>33</strong>
+    </div>
+</div>
+
+    </div>
+    
+    <a href="/campaigns/6783">Monster High Freaky Fusion *Tablet* Moms</a>
+    <strong>(1 ads)</strong>
+    
+    <br>
+    <div>
+        <div class="pull-left">
+            <a href="/users/9000/edit" class="muted">AdColony.com</a>
+        </div>
+        <div class="pull-right h-space-right">
+            
+            
+        </div>
+    </div>
+    
+
+</td>
+<td>
+    
+    
+
+    <img src="/img/campaign_statuses/status-complete.png" class="tooltip-trigger" data-title="Ended" style="width:25px; height:25px;" data-original-title="" title="">
+
+
+
+</td>
+<td class="adc-highlighted-column">
+    
+  
+    $39,999.98
+  
+
+</td>
+<td>
+    
+    
+    $0.00
+    
+
+</td>
+<td>
+    
+    0
+
+</td>
+<td>
+    
+    763,940
+
+</td>
+<td>
+    
+    732,320
+
+</td>
+<td>
+    
+    3,763
+
+</td>
+<td>
+    
+    0.49%
+
+</td>
+<td>
+    
+    <a class="date-tooltip" data-toggle="tooltip" data-placement="top" data-original-title="10/05/2014 06:56 (UTC)">17 days ago</a><script type="text/javascript">$('.date-tooltip').tooltip();</script> 
+
+</td>
+</tr><tr>
+<td>
+    
+    
+    <div class="ac-app-centered-container pull-left">
+        
+<div style="position:absolute;width: 0px;">
+    
+    <div class="ac-entry-number ">
+        <strong>34</strong>
+    </div>
+</div>
+
+    </div>
+    
+    <a href="/campaigns/5505">Forge of Empires iOS</a>
+    <strong>(20 ads)</strong>
+    
+    <br>
+    <div>
+        <div class="pull-left">
+            <a href="/users/16214/edit" class="muted">InnoGames GmbH</a>
+        </div>
+        <div class="pull-right h-space-right">
+            
+            
+            <label class="label label-warning label-campaign label-yo">Y/O</label>
+            
+        </div>
+    </div>
+    
+
+</td>
+<td>
+    
+    
+
+    <img src="/img/campaign_statuses/status-active.png" class="tooltip-trigger" data-title="Running" style="width:25px; height:25px;" data-original-title="" title="">
+
+
+
+</td>
+<td class="adc-highlighted-column">
+    
+  
+    $39,466.67
+  
+
+</td>
+<td>
+    
+    
+    $4.86
+    
+
+</td>
+<td>
+    
+    8,129
+
+</td>
+<td>
+    
+    2,932,227
+
+</td>
+<td>
+    
+    2,614,766
+
+</td>
+<td>
+    
+    36,382
+
+</td>
+<td>
+    
+    1.24%
+
+</td>
+<td>
+    
+    <a class="date-tooltip" data-toggle="tooltip" data-placement="top" data-original-title="10/15/2014 15:14 (UTC)">6 days ago</a><script type="text/javascript">$('.date-tooltip').tooltip();</script> 
+
+</td>
+</tr><tr>
+<td>
+    
+    
+    <div class="ac-app-centered-container pull-left">
+        
+<div style="position:absolute;width: 0px;">
+    
+    <div class="ac-entry-number ">
+        <strong>35</strong>
+    </div>
+</div>
+
+    </div>
+    
+    <a href="/campaigns/1619">Sims Freeplay ROW</a>
+    <strong>(4 ads)</strong>
+    
+    <br>
+    <div>
+        <div class="pull-left">
+            <a href="/users/10496/edit" class="muted">Fiksu</a>
+        </div>
+        <div class="pull-right h-space-right">
+            
+            
+            <label class="label label-warning label-campaign label-yo">Y/O</label>
+            
+        </div>
+    </div>
+    
+
+</td>
+<td>
+    
+    
+
+    <img src="/img/campaign_statuses/status-active.png" class="tooltip-trigger" data-title="Running" style="width:25px; height:25px;" data-original-title="" title="">
+
+
+
+</td>
+<td class="adc-highlighted-column">
+    
+  
+    $38,115.46
+  
+
+</td>
+<td>
+    
+    
+    $1.61
+    
+
+</td>
+<td>
+    
+    23,605
+
+</td>
+<td>
+    
+    2,000,467
+
+</td>
+<td>
+    
+    1,893,136
+
+</td>
+<td>
+    
+    37,977
+
+</td>
+<td>
+    
+    1.90%
+
+</td>
+<td>
+    
+    <a class="date-tooltip" data-toggle="tooltip" data-placement="top" data-original-title="10/07/2014 18:16 (UTC)">14 days ago</a><script type="text/javascript">$('.date-tooltip').tooltip();</script> 
+
+</td>
+</tr><tr>
+<td>
+    
+    
+    <div class="ac-app-centered-container pull-left">
+        
+<div style="position:absolute;width: 0px;">
+    
+    <div class="ac-entry-number ">
+        <strong>36</strong>
+    </div>
+</div>
+
+    </div>
+    
+    <a href="/campaigns/6966">Army Prospect Q4'14 *Smartphone*</a>
+    <strong>(1 ads)</strong>
+    
+    <br>
+    <div>
+        <div class="pull-left">
+            <a href="/users/9000/edit" class="muted">AdColony.com</a>
+        </div>
+        <div class="pull-right h-space-right">
+            
+            
+        </div>
+    </div>
+    
+
+</td>
+<td>
+    
+    
+
+    <img src="/img/campaign_statuses/status-active.png" class="tooltip-trigger" data-title="Running" style="width:25px; height:25px;" data-original-title="" title="">
+
+
+
+</td>
+<td class="adc-highlighted-column">
+    
+  
+    $38,007.10
+  
+
+</td>
+<td>
+    
+    
+    $0.00
+    
+
+</td>
+<td>
+    
+    0
+
+</td>
+<td>
+    
+    1,214,450
+
+</td>
+<td>
+    
+    1,092,158
+
+</td>
+<td>
+    
+    16,019
+
+</td>
+<td>
+    
+    1.32%
+
+</td>
+<td>
+    
+    <a class="date-tooltip" data-toggle="tooltip" data-placement="top" data-original-title="10/01/2014 21:31 (UTC)">20 days ago</a><script type="text/javascript">$('.date-tooltip').tooltip();</script> 
+
+</td>
+</tr><tr>
+<td>
+    
+    
+    <div class="ac-app-centered-container pull-left">
+        
+<div style="position:absolute;width: 0px;">
+    
+    <div class="ac-entry-number ">
+        <strong>37</strong>
+    </div>
+</div>
+
+    </div>
+    
+    <a href="/campaigns/5071">Animal Voyage iPad Tier 1 CPI Pricing</a>
+    <strong>(3 ads)</strong>
+    
+    <br>
+    <div>
+        <div class="pull-left">
+            <a href="/users/9065/edit" class="muted">Pocket Gems</a>
+        </div>
+        <div class="pull-right h-space-right">
+            
+            
+            <label class="label label-warning label-campaign label-yo">Y/O</label>
+            
+        </div>
+    </div>
+    
+
+</td>
+<td>
+    
+    
+
+    <img src="/img/campaign_statuses/status-active.png" class="tooltip-trigger" data-title="Running" style="width:25px; height:25px;" data-original-title="" title="">
+
+
+
+</td>
+<td class="adc-highlighted-column">
+    
+  
+    $36,322.00
+  
+
+</td>
+<td>
+    
+    
+    $2.10
+    
+
+</td>
+<td>
+    
+    17,307
+
+</td>
+<td>
+    
+    1,725,227
+
+</td>
+<td>
+    
+    1,613,032
+
+</td>
+<td>
+    
+    33,733
+
+</td>
+<td>
+    
+    1.96%
+
+</td>
+<td>
+    
+    <a class="date-tooltip" data-toggle="tooltip" data-placement="top" data-original-title="10/18/2014 03:03 (UTC)">4 days ago</a><script type="text/javascript">$('.date-tooltip').tooltip();</script> 
+
+</td>
+</tr><tr>
+<td>
+    
+    
+    <div class="ac-app-centered-container pull-left">
+        
+<div style="position:absolute;width: 0px;">
+    
+    <div class="ac-entry-number ">
+        <strong>38</strong>
+    </div>
+</div>
+
+    </div>
+    
+    <a href="/campaigns/6973">The Flash *Smartphone* M18-34</a>
+    <strong>(2 ads)</strong>
+    
+    <br>
+    <div>
+        <div class="pull-left">
+            <a href="/users/9000/edit" class="muted">AdColony.com</a>
+        </div>
+        <div class="pull-right h-space-right">
+            
+            
+        </div>
+    </div>
+    
+
+</td>
+<td>
+    
+    
+
+    <img src="/img/campaign_statuses/status-paused.png" class="tooltip-trigger" data-title="Paused" style="width:25px; height:25px;" data-original-title="" title="">
+
+
+
+</td>
+<td class="adc-highlighted-column">
+    
+  
+    $36,000.00
+  
+
+</td>
+<td>
+    
+    
+    $0.00
+    
+
+</td>
+<td>
+    
+    0
+
+</td>
+<td>
+    
+    978,357
+
+</td>
+<td>
+    
+    919,023
+
+</td>
+<td>
+    
+    306,395
+
+</td>
+<td>
+    
+    31.32%
+
+</td>
+<td>
+    
+    <a class="date-tooltip" data-toggle="tooltip" data-placement="top" data-original-title="10/08/2014 02:21 (UTC)">14 days ago</a><script type="text/javascript">$('.date-tooltip').tooltip();</script> 
+
+</td>
+</tr><tr>
+<td>
+    
+    
+    <div class="ac-app-centered-container pull-left">
+        
+<div style="position:absolute;width: 0px;">
+    
+    <div class="ac-entry-number ">
+        <strong>39</strong>
+    </div>
+</div>
+
+    </div>
+    
+    <a href="/campaigns/6687">Opera VAST</a>
+    <strong>(8 ads)</strong>
+    
+    <br>
+    <div>
+        <div class="pull-left">
+            <a href="/users/15648/edit" class="muted">AdColony</a>
+        </div>
+        <div class="pull-right h-space-right">
+            
+            
+        </div>
+    </div>
+    
+
+</td>
+<td>
+    
+    
+
+    <img src="/img/campaign_statuses/status-active.png" class="tooltip-trigger" data-title="Running" style="width:25px; height:25px;" data-original-title="" title="">
+
+
+
+</td>
+<td class="adc-highlighted-column">
+    
+  
+    $35,676.85
+  
+
+</td>
+<td>
+    
+    
+    $0.00
+    
+
+</td>
+<td>
+    
+    0
+
+</td>
+<td>
+    
+    3,738,947
+
+</td>
+<td>
+    
+    3,647,137
+
+</td>
+<td>
+    
+    19,391
+
+</td>
+<td>
+    
+    0.52%
+
+</td>
+<td>
+    
+    <a class="date-tooltip" data-toggle="tooltip" data-placement="top" data-original-title="10/20/2014 23:34 (UTC)">20 hours ago</a><script type="text/javascript">$('.date-tooltip').tooltip();</script> 
+
+</td>
+</tr><tr>
+<td>
+    
+    
+    <div class="ac-app-centered-container pull-left">
+        
+<div style="position:absolute;width: 0px;">
+    
+    <div class="ac-entry-number ">
+        <strong>40</strong>
+    </div>
+</div>
+
+    </div>
+    
+    <a href="/campaigns/1494">My Singing Monsters iPhone/iPod</a>
+    <strong>(3 ads)</strong>
+    
+    <br>
+    <div>
+        <div class="pull-left">
+            <a href="/users/11659/edit" class="muted">Big Blue Bubble</a>
+        </div>
+        <div class="pull-right h-space-right">
+            
+            
+            <label class="label label-warning label-campaign label-yo">Y/O</label>
+            
+        </div>
+    </div>
+    
+
+</td>
+<td>
+    
+    
+
+    <img src="/img/campaign_statuses/status-active.png" class="tooltip-trigger" data-title="Running" style="width:25px; height:25px;" data-original-title="" title="">
+
+
+
+</td>
+<td class="adc-highlighted-column">
+    
+  
+    $34,902.42
+  
+
+</td>
+<td>
+    
+    
+    $2.61
+    
+
+</td>
+<td>
+    
+    13,375
+
+</td>
+<td>
+    
+    2,148,224
+
+</td>
+<td>
+    
+    1,965,310
+
+</td>
+<td>
+    
+    37,491
+
+</td>
+<td>
+    
+    1.75%
+
+</td>
+<td>
+    
+    <a class="date-tooltip" data-toggle="tooltip" data-placement="top" data-original-title="10/10/2014 18:10 (UTC)">11 days ago</a><script type="text/javascript">$('.date-tooltip').tooltip();</script> 
+
+</td>
+</tr><tr>
+<td>
+    
+    
+    <div class="ac-app-centered-container pull-left">
+        
+<div style="position:absolute;width: 0px;">
+    
+    <div class="ac-entry-number ">
+        <strong>41</strong>
+    </div>
+</div>
+
+    </div>
+    
+    <a href="/campaigns/4999">Dragon City iOS </a>
+    <strong>(19 ads)</strong>
+    
+    <br>
+    <div>
+        <div class="pull-left">
+            <a href="/users/12891/edit" class="muted">Social Point</a>
+        </div>
+        <div class="pull-right h-space-right">
+            
+            
+            <label class="label label-warning label-campaign label-yo">Y/O</label>
+            
+        </div>
+    </div>
+    
+
+</td>
+<td>
+    
+    
+
+    <img src="/img/campaign_statuses/status-active.png" class="tooltip-trigger" data-title="Running" style="width:25px; height:25px;" data-original-title="" title="">
+
+
+
+</td>
+<td class="adc-highlighted-column">
+    
+  
+    $34,297.85
+  
+
+</td>
+<td>
+    
+    
+    $3.62
+    
+
+</td>
+<td>
+    
+    9,467
+
+</td>
+<td>
+    
+    3,543,180
+
+</td>
+<td>
+    
+    3,441,124
+
+</td>
+<td>
+    
+    28,270
+
+</td>
+<td>
+    
+    0.80%
+
+</td>
+<td>
+    
+    <a class="date-tooltip" data-toggle="tooltip" data-placement="top" data-original-title="10/17/2014 18:47 (UTC)">4 days ago</a><script type="text/javascript">$('.date-tooltip').tooltip();</script> 
+
+</td>
+</tr><tr>
+<td>
+    
+    
+    <div class="ac-app-centered-container pull-left">
+        
+<div style="position:absolute;width: 0px;">
+    
+    <div class="ac-entry-number ">
+        <strong>42</strong>
+    </div>
+</div>
+
+    </div>
+    
+    <a href="/campaigns/6011">Evolution: Battle for Utopia Android</a>
+    <strong>(8 ads)</strong>
+    
+    <br>
+    <div>
+        <div class="pull-left">
+            <a href="/users/16711/edit" class="muted">MY.COM B.V.</a>
+        </div>
+        <div class="pull-right h-space-right">
+            
+            
+            <label class="label label-warning label-campaign label-yo">Y/O</label>
+            
+        </div>
+    </div>
+    
+
+</td>
+<td>
+    
+    
+
+    <img src="/img/campaign_statuses/status-active.png" class="tooltip-trigger" data-title="Running" style="width:25px; height:25px;" data-original-title="" title="">
+
+
+
+</td>
+<td class="adc-highlighted-column">
+    
+  
+    $33,631.85
+  
+
+</td>
+<td>
+    
+    
+    $5.59
+    
+
+</td>
+<td>
+    
+    6,015
+
+</td>
+<td>
+    
+    3,575,035
+
+</td>
+<td>
+    
+    2,888,378
+
+</td>
+<td>
+    
+    44,366
+
+</td>
+<td>
+    
+    1.24%
+
+</td>
+<td>
+    
+    <a class="date-tooltip" data-toggle="tooltip" data-placement="top" data-original-title="10/20/2014 15:12 (UTC)">1 day ago</a><script type="text/javascript">$('.date-tooltip').tooltip();</script> 
+
+</td>
+</tr><tr>
+<td>
+    
+    
+    <div class="ac-app-centered-container pull-left">
+        
+<div style="position:absolute;width: 0px;">
+    
+    <div class="ac-entry-number ">
+        <strong>43</strong>
+    </div>
+</div>
+
+    </div>
+    
+    <a href="/campaigns/5134">Evolution: Battle for Utopia iOS</a>
+    <strong>(16 ads)</strong>
+    
+    <br>
+    <div>
+        <div class="pull-left">
+            <a href="/users/16711/edit" class="muted">MY.COM B.V.</a>
+        </div>
+        <div class="pull-right h-space-right">
+            
+            
+            <label class="label label-warning label-campaign label-yo">Y/O</label>
+            
+        </div>
+    </div>
+    
+
+</td>
+<td>
+    
+    
+
+    <img src="/img/campaign_statuses/status-active.png" class="tooltip-trigger" data-title="Running" style="width:25px; height:25px;" data-original-title="" title="">
+
+
+
+</td>
+<td class="adc-highlighted-column">
+    
+  
+    $32,419.13
+  
+
+</td>
+<td>
+    
+    
+    $6.61
+    
+
+</td>
+<td>
+    
+    4,904
+
+</td>
+<td>
+    
+    1,951,933
+
+</td>
+<td>
+    
+    1,835,223
+
+</td>
+<td>
+    
+    25,276
+
+</td>
+<td>
+    
+    1.29%
+
+</td>
+<td>
+    
+    <a class="date-tooltip" data-toggle="tooltip" data-placement="top" data-original-title="10/20/2014 15:11 (UTC)">1 day ago</a><script type="text/javascript">$('.date-tooltip').tooltip();</script> 
+
+</td>
+</tr><tr>
+<td>
+    
+    
+    <div class="ac-app-centered-container pull-left">
+        
+<div style="position:absolute;width: 0px;">
+    
+    <div class="ac-entry-number ">
+        <strong>44</strong>
+    </div>
+</div>
+
+    </div>
+    
+    <a href="/campaigns/3160"><span class="truncated-tooltip" title="" data-original-title="Animal Voyage Android: Premium Devices &quot;High&quot;">
+  Animal Voyage Android: Premium Devices "...
+</span><script type="text/javascript">$('.truncated-tooltip').tooltip();</script></a>
+    <strong>(5 ads)</strong>
+    
+    <br>
+    <div>
+        <div class="pull-left">
+            <a href="/users/9065/edit" class="muted">Pocket Gems</a>
+        </div>
+        <div class="pull-right h-space-right">
+            
+            
+            <label class="label label-warning label-campaign label-yo">Y/O</label>
+            
+        </div>
+    </div>
+    
+
+</td>
+<td>
+    
+    
+
+    <img src="/img/campaign_statuses/status-active.png" class="tooltip-trigger" data-title="Running" style="width:25px; height:25px;" data-original-title="" title="">
+
+
+
+</td>
+<td class="adc-highlighted-column">
+    
+  
+    $32,065.49
+  
+
+</td>
+<td>
+    
+    
+    $1.29
+    
+
+</td>
+<td>
+    
+    24,901
+
+</td>
+<td>
+    
+    2,194,602
+
+</td>
+<td>
+    
+    1,808,853
+
+</td>
+<td>
+    
+    38,707
+
+</td>
+<td>
+    
+    1.76%
+
+</td>
+<td>
+    
+    <a class="date-tooltip" data-toggle="tooltip" data-placement="top" data-original-title="10/18/2014 01:11 (UTC)">4 days ago</a><script type="text/javascript">$('.date-tooltip').tooltip();</script> 
+
+</td>
+</tr><tr>
+<td>
+    
+    
+    <div class="ac-app-centered-container pull-left">
+        
+<div style="position:absolute;width: 0px;">
+    
+    <div class="ac-entry-number ">
+        <strong>45</strong>
+    </div>
+</div>
+
+    </div>
+    
+    <a href="/campaigns/5961">Star Wars: Commander iOS</a>
+    <strong>(2 ads)</strong>
+    
+    <br>
+    <div>
+        <div class="pull-left">
+            <a href="/users/14125/edit" class="muted">Playdom/Disney Interactive</a>
+        </div>
+        <div class="pull-right h-space-right">
+            
+            
+            <label class="label label-warning label-campaign label-yo">Y/O</label>
+            
+        </div>
+    </div>
+    
+
+</td>
+<td>
+    
+    
+
+    <img src="/img/campaign_statuses/status-active.png" class="tooltip-trigger" data-title="Running" style="width:25px; height:25px;" data-original-title="" title="">
+
+
+
+</td>
+<td class="adc-highlighted-column">
+    
+  
+    $31,928.63
+  
+
+</td>
+<td>
+    
+    
+    $4.06
+    
+
+</td>
+<td>
+    
+    7,872
+
+</td>
+<td>
+    
+    1,509,511
+
+</td>
+<td>
+    
+    1,384,399
+
+</td>
+<td>
+    
+    25,925
+
+</td>
+<td>
+    
+    1.72%
+
+</td>
+<td>
+    
+    <a class="date-tooltip" data-toggle="tooltip" data-placement="top" data-original-title="10/14/2014 23:11 (UTC)">7 days ago</a><script type="text/javascript">$('.date-tooltip').tooltip();</script> 
+
+</td>
+</tr><tr>
+<td>
+    
+    
+    <div class="ac-app-centered-container pull-left">
+        
+<div style="position:absolute;width: 0px;">
+    
+    <div class="ac-entry-number ">
+        <strong>46</strong>
+    </div>
+</div>
+
+    </div>
+    
+    <a href="/campaigns/3287">Puzzle &amp; Dragons Android</a>
+    <strong>(2 ads)</strong>
+    
+    <br>
+    <div>
+        <div class="pull-left">
+            <a href="/users/11078/edit" class="muted">Grow Mobile Inc.</a>
+        </div>
+        <div class="pull-right h-space-right">
+            
+            
+            <label class="label label-warning label-campaign label-yo">Y/O</label>
+            
+        </div>
+    </div>
+    
+
+</td>
+<td>
+    
+    
+
+    <img src="/img/campaign_statuses/status-dailylimit.png" class="tooltip-trigger" data-title="No daily budget remaining" style="width:25px; height:25px;" data-original-title="" title="">
+
+
+
+</td>
+<td class="adc-highlighted-column">
+    
+  
+    $31,380.38
+  
+
+</td>
+<td>
+    
+    
+    $5.84
+    
+
+</td>
+<td>
+    
+    5,369
+
+</td>
+<td>
+    
+    1,920,081
+
+</td>
+<td>
+    
+    1,595,183
+
+</td>
+<td>
+    
+    18,592
+
+</td>
+<td>
+    
+    0.97%
+
+</td>
+<td>
+    
+    <a class="date-tooltip" data-toggle="tooltip" data-placement="top" data-original-title="10/21/2014 01:51 (UTC)">18 hours ago</a><script type="text/javascript">$('.date-tooltip').tooltip();</script> 
+
+</td>
+</tr><tr>
+<td>
+    
+    
+    <div class="ac-app-centered-container pull-left">
+        
+<div style="position:absolute;width: 0px;">
+    
+    <div class="ac-entry-number ">
+        <strong>47</strong>
+    </div>
+</div>
+
+    </div>
+    
+    <a href="/campaigns/6804">Kroger Coupons *Smartphone*</a>
+    <strong>(8 ads)</strong>
+    
+    <br>
+    <div>
+        <div class="pull-left">
+            <a href="/users/9000/edit" class="muted">AdColony.com</a>
+        </div>
+        <div class="pull-right h-space-right">
+            
+            
+        </div>
+    </div>
+    
+
+</td>
+<td>
+    
+    
+
+    <img src="/img/campaign_statuses/status-paused.png" class="tooltip-trigger" data-title="Paused" style="width:25px; height:25px;" data-original-title="" title="">
+
+
+
+</td>
+<td class="adc-highlighted-column">
+    
+  
+    $28,974.80
+  
+
+</td>
+<td>
+    
+    
+    $0.00
+    
+
+</td>
+<td>
+    
+    0
+
+</td>
+<td>
+    
+    669,575
+
+</td>
+<td>
+    
+    635,065
+
+</td>
+<td>
+    
+    6,796
+
+</td>
+<td>
+    
+    1.01%
+
+</td>
+<td>
+    
+    <a class="date-tooltip" data-toggle="tooltip" data-placement="top" data-original-title="10/11/2014 18:02 (UTC)">10 days ago</a><script type="text/javascript">$('.date-tooltip').tooltip();</script> 
+
+</td>
+</tr><tr>
+<td>
+    
+    
+    <div class="ac-app-centered-container pull-left">
+        
+<div style="position:absolute;width: 0px;">
+    
+    <div class="ac-entry-number ">
+        <strong>48</strong>
+    </div>
+</div>
+
+    </div>
+    
+    <a href="/campaigns/6968">Army Influencer Q4'14 *Smartphone*</a>
+    <strong>(1 ads)</strong>
+    
+    <br>
+    <div>
+        <div class="pull-left">
+            <a href="/users/9000/edit" class="muted">AdColony.com</a>
+        </div>
+        <div class="pull-right h-space-right">
+            
+            
+        </div>
+    </div>
+    
+
+</td>
+<td>
+    
+    
+
+    <img src="/img/campaign_statuses/status-active.png" class="tooltip-trigger" data-title="Running" style="width:25px; height:25px;" data-original-title="" title="">
+
+
+
+</td>
+<td class="adc-highlighted-column">
+    
+  
+    $28,649.97
+  
+
+</td>
+<td>
+    
+    
+    $0.00
+    
+
+</td>
+<td>
+    
+    0
+
+</td>
+<td>
+    
+    907,249
+
+</td>
+<td>
+    
+    823,275
+
+</td>
+<td>
+    
+    10,423
+
+</td>
+<td>
+    
+    1.15%
+
+</td>
+<td>
+    
+    <a class="date-tooltip" data-toggle="tooltip" data-placement="top" data-original-title="10/01/2014 21:41 (UTC)">20 days ago</a><script type="text/javascript">$('.date-tooltip').tooltip();</script> 
+
+</td>
+</tr><tr>
+<td>
+    
+    
+    <div class="ac-app-centered-container pull-left">
+        
+<div style="position:absolute;width: 0px;">
+    
+    <div class="ac-entry-number ">
+        <strong>49</strong>
+    </div>
+</div>
+
+    </div>
+    
+    <a href="/campaigns/1451">Big Fish Casino</a>
+    <strong>(15 ads)</strong>
+    
+    <br>
+    <div>
+        <div class="pull-left">
+            <a href="/users/11476/edit" class="muted">Big Fish Games</a>
+        </div>
+        <div class="pull-right h-space-right">
+            
+            
+            <label class="label label-warning label-campaign label-yo">Y/O</label>
+            
+        </div>
+    </div>
+    
+
+</td>
+<td>
+    
+    
+
+    <img src="/img/campaign_statuses/status-active.png" class="tooltip-trigger" data-title="Running" style="width:25px; height:25px;" data-original-title="" title="">
+
+
+
+</td>
+<td class="adc-highlighted-column">
+    
+  
+    $28,104.44
+  
+
+</td>
+<td>
+    
+    
+    $15.30
+    
+
+</td>
+<td>
+    
+    1,837
+
+</td>
+<td>
+    
+    1,281,879
+
+</td>
+<td>
+    
+    1,230,638
+
+</td>
+<td>
+    
+    12,115
+
+</td>
+<td>
+    
+    0.95%
+
+</td>
+<td>
+    
+    <a class="date-tooltip" data-toggle="tooltip" data-placement="top" data-original-title="10/17/2014 15:55 (UTC)">4 days ago</a><script type="text/javascript">$('.date-tooltip').tooltip();</script> 
+
+</td>
+</tr><tr>
+<td>
+    
+    
+    <div class="ac-app-centered-container pull-left">
+        
+<div style="position:absolute;width: 0px;">
+    
+    <div class="ac-entry-number ">
+        <strong>50</strong>
+    </div>
+</div>
+
+    </div>
+    
+    <a href="/campaigns/6287">Total Domination iOS</a>
+    <strong>(4 ads)</strong>
+    
+    <br>
+    <div>
+        <div class="pull-left">
+            <a href="/users/14621/edit" class="muted">Plarium</a>
+        </div>
+        <div class="pull-right h-space-right">
+            
+            
+            <label class="label label-warning label-campaign label-yo">Y/O</label>
+            
+        </div>
+    </div>
+    
+
+</td>
+<td>
+    
+    
+
+    <img src="/img/campaign_statuses/status-active.png" class="tooltip-trigger" data-title="Running" style="width:25px; height:25px;" data-original-title="" title="">
+
+
+
+</td>
+<td class="adc-highlighted-column">
+    
+  
+    $27,846.79
+  
+
+</td>
+<td>
+    
+    
+    $5.62
+    
+
+</td>
+<td>
+    
+    4,953
+
+</td>
+<td>
+    
+    1,316,798
+
+</td>
+<td>
+    
+    1,189,527
+
+</td>
+<td>
+    
+    18,097
+
+</td>
+<td>
+    
+    1.37%
+
+</td>
+<td>
+    
+    <a class="date-tooltip" data-toggle="tooltip" data-placement="top" data-original-title="10/21/2014 14:14 (UTC)">5 hours ago</a><script type="text/javascript">$('.date-tooltip').tooltip();</script> 
+
+</td>
+</tr></tbody>
+    
+
+</table>
+</div>
+<!-- Pagination controls -->
+<div class="pagination pull-left">
+    <ul>
+        <!-- Previous -->
+        
+        <li class="disabled"><a>«</a></li>
+        
+
+        <!-- Pages to display -->
+        
+        
+        <li class="active">
+            <a>1</a></li>
+        
+        
+        
+        <li class="page-select" data-page="2">
+            <a>2</a>
+        </li>
+        
+        
+        
+        <li class="page-select" data-page="3">
+            <a>3</a>
+        </li>
+        
+        
+        
+        <li class="page-select" data-page="4">
+            <a>4</a>
+        </li>
+        
+        
+        
+        <li class="page-select" data-page="5">
+            <a>5</a>
+        </li>
+        
+        
+
+        <!-- Next -->
+        
+        <li class="page-next"><a>»</a></li>
+        
+
+    </ul>
+    <br>
+    <small><em>Showing 1 to 50 of 7099 entries</em></small>
+</div>
+<div class="pull-left h-space-left" style="margin: 20px;">
+    <div class="loader-icon loader-paging loader-placeholder hide">
+        <div class=" ui-spinner">
+    <span class="side side-left">
+      <span class="fill"></span>
+    </span>
+    <span class="side side-right">
+      <span class="fill"></span>
+    </span>
+</div>
+
+
+    </div>
+</div>
+<div class="pull-right" style="margin: 20px;">
+
+<div class="dropdown">
+    <a class="btn dropdown-toggle" data-toggle="dropdown">
+        50
+        <strong class="muted-hover entypo center chevron-down"></strong>
+    </a>
+    <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+        <li><a class="dropdown-link page-size-select" tabindex="-1" data-value="10">10</a></li>
+        <li><a class="dropdown-link page-size-select" tabindex="-1" data-value="25">25</a></li>
+        <li><a class="dropdown-link page-size-select" tabindex="-1" data-value="50">50</a></li>
+        <li><a class="dropdown-link page-size-select" tabindex="-1" data-value="100">100</a></li>
+        <li><a class="dropdown-link page-size-select" tabindex="-1" data-value="250">250</a></li>
+    </ul>
+</div>
+    <label>
+        <small>Items Per Page</small>
+    </label>
+</div>
+
+
+</div></div>
+</div>
+</div></div>
+            </div>
+        </div>
+        <!-- Give some wiggle room -->
+        <!--<div class="row-fluid" style="margin-top:100px;"></div>-->
+    </div>
+    <div class="row-fluid v-space-bottom">
+        <div class="span10 offset1">
+          <footer id="footer">
+    <div id="footer-social" style="display: none">
+        <span class="adc--steel-text">Follow us:</span>
+        <a href="http://twitter.com/adcolony/" target="_blank"><img src="/img/footer-icon-social-twitter.jpg"></a>
+        <a href="http://facebook.com/adcolony/" target="_blank"><img src="/img/footer-icon-social-facebook.jpg"></a>
+        <a href="http://pinterest.com/adcolony/" target="_blank"><img src="/img/footer-icon-social-pinterest.jpg"></a>
+        <a href="http://www.linkedin.com/company/935402" target="_blank"><img src="/img/footer-icon-social-linkedin.jpg"></a>
+        <a href="http://vimeo.com/adcolony/" target="_blank"><img src="/img/footer-icon-social-vimeo.jpg"></a>
+    </div>
+
+    <br class="clear">
+    <hr>
+
+    <ul id="footer-nav" class="row">
+        <li><a target="_blank" href="http://www.adcolony.com/company/contact">Contact</a></li>
+        <li><a target="_blank" href="http://support.adcolony.com/">Support</a></li>
+        <li><a target="_blank" href="http://www.adcolony.com/legal/privacy/">Privacy</a></li>
+    </ul>
+
+    <p>Copyright © 2014 Jirbo, Inc. Jirbo, AdColony, Instant-Play, Videos-For-Virtual-Currency and V4VC are trademarks of Jirbo, Inc. All rights reserved.</p>
+</footer>
+        </div>
+    </div>
+</div>
+
+<div id="welcome_modal_region"></div>
+
+<div id="main_alert_modal" class="modal hide fade">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h3 id="main_alert_modal_header"></h3>
+    </div>
+    <div id="main_alert_modal_body" class="modal-body"></div>
+    <div class="modal-footer">
+        <a id="main_alert_close" class="btn" data-dismiss="modal">Close</a>
+        <a id="main_alert_confirm" class="btn btn-primary hide">Confirm</a>
+    </div>
+</div>
+
+</div>
+
+    
+    <!-- Message to display if JS is disabled -->
+    <noscript>
+        &lt;div style="text-align: center; margin-top: 64px;"&gt;
+          &lt;a id="ac-logo-grey" class="center marginbottom" href="http://adcolony.com"&gt;
+              &lt;span&gt;AdColony&lt;/span&gt;
+          &lt;/a&gt;
+          &lt;h3&gt;Unable to load AdColony Client Portal&lt;/h3&gt;
+          &lt;p style="width:512px; margin: 32px auto;"&gt;This site requires JavaScript to run.
+              Please enable JavaScript in your browser for https://clients.adcolony.com.
+              Contact AdColony &lt;a href="mailto:support@adcolony.com"&gt;support&lt;/a&gt; for assistance.
+          &lt;/p&gt;
+        &lt;/div&gt;
+    </noscript>
+    
+    
+    
+    <script type="text/javascript" src="/js/lib.min.js"></script>
+    <script type="text/javascript" src="/flash/flowplayer-3.2.6.min.js"></script>
+    <script type="text/javascript">
+    window.bootstrapJson = {"status":"success","result":{},"user":{"id":9147,"admin":true,"admin_mode_on":true,"master_account":true,"master_id":0,"can_see_financial_info":1,"agreed_to_tos":true,"agreed_to_tos_at":null,"custom_agreement_upload_id":null,"email":"brandon@adcolony.com","name":null,"company":null,"single_access_token":"mi1QNGajb1Bq7JNKguCD","ua_interest":true,"monetization_interest":true,"enable_discount":false,"discount":0,"dismissed_current_notification":false,"enable_saas":false,"banned":false,"premium":false,"tier_id":8,"enable_minimum_cpm":false,"minimum_cpm":null,"custom_agreement_s3_key":null,"minimum_target_cpm_us":null,"minimum_target_cpm_big_four":null,"minimum_target_cpm_row":null,"enable_oba_activity":true,"enable_saas_ac_backfill":false,"can_create_apps":1,"can_create_ads":1,"can_invite_users":1,"admin_can_manage_apps":1,"admin_can_view_all_apps":1,"admin_can_manage_ads":1,"admin_can_view_all_ads":1,"admin_can_view_tiers":1,"admin_can_manage_tiers":0,"admin_can_manage_system_settings":0,"admin_can_transfer_funds":0,"admin_can_manage_users":1,"admin_can_view_all_users":1,"admin_can_impersonate_user":0,"admin_can_review_ads":1,"admin_can_manage_financial_info":0,"admin_can_manage_admin_permissions":0,"admin_can_manage_segments":1,"admin_can_view_segments":1,"admin_can_manage_ad_sources":1,"admin_can_view_ad_sources":1,"admin_can_view_financial_info":0},"_csrf":"S_vccaQWRsyvhodwk-V2gNCQ","env":"production","uglify":false,"dateable":{"interval":"this_month","start_date":"20141001 00","end_date":"20141021 23"}};
+    window.flashMessage = {};
+    
+    window.conf = {"env":"production","S3":{"input":"input","output":"output"},"v":"2.1.0"};
+    // bind CSRF token to all POST requests
+    $("body").bind("ajaxSend", function (elm, xhr, s) {
+        if (s.type != "GET") {
+            xhr.setRequestHeader('X-CSRF-Token', window.bootstrapJson._csrf);
+        }
+    });
+    // window._translation = null;
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+      
+      script.src = "/js/App.js.min?version=" + window.conf.v;
+      
+    document.getElementsByTagName('body')[0].appendChild(script);
+</script><script type="text/javascript" src="/js/App.js.min?version=2.1.0"></script>
+
+</body>
+</html>
