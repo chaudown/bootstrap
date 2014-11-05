@@ -10,7 +10,7 @@
 	font-style: normal;
 	font-weight: normal;
 }
-
+	
 @font-face {
 	font-family: 'Proxima';
 	src: url('../fonts/proximanova-semibold.eot'); 
@@ -34,13 +34,14 @@
 
 body {
 	background:#fff;
-	
 }
+
 .yo-table {
 	 border-collapse: collapse; 
 	 margin: 10px;
 	 text-rendering: optimizeLegibility;
 }
+
 .yo-table 
 	thead {
 		/*text-transform: uppercase;*/
@@ -151,7 +152,7 @@ td.yo-status img{
 }
 
 .yo-dropdown .btn-group .dropdown-toggle{
-	min-width: 80px;
+	min-width: 75px;
 	text-align: left;
 	font-family: proxima;
 	font-weight: bold;
@@ -166,7 +167,7 @@ td.yo-status img{
 
 	margin-right: 4px;
 
-	line-height: 15px;
+	line-height: 14px;
 	vertical-align: middle;
 
 }
@@ -188,7 +189,7 @@ td.yo-status img{
 }
 
 .yo-dropdown img {
-	height: 12px;
+	height: 10px;
 	margin-top: -2px;
 	padding: 0;
 	vertical-align: middle;
@@ -204,25 +205,26 @@ td.yo-status img{
 	color: #60a9ed;
 }
 
-
 .yo-dropdown .caret {
-  margin-top: 6px;
-  margin-left: 16px;
+  margin-top: 5px;
+  margin-left: 12px;
   float: right;
 }
 
-.yo-btn-grey {
+.yo-btn-default {
 	font-family: proxima;
 	font-weight: bold;
-	font-size: 12px;
-	color: #268ceb;
+	font-size: 12px;	
+	background: #fff;
+	color: #3ba0da;
 	padding: 6px 8px;
 	border: 1px solid #d2d8de;
 	border-radius: 2px;
 	transition: .1s all;
+	line-height: 15px;
 }
 
-.yo-btn-grey:hover, .yo-btn-grey:focus {
+.yo-btn-default:hover, .yo-btn-default:focus {
 	border: 1px solid #aeb6be;
 	text-decoration: none;
 	color: #268ceb;
@@ -232,7 +234,7 @@ td.yo-status img{
 	// outline: none;
 }
 
-.yo-btn-grey:active {
+.yo-btn-default:active {
 	color: #6fb1ef;
 	background: #f6f9fb;
 	box-shadow: none;
@@ -241,27 +243,74 @@ td.yo-status img{
 }
 
 input.yo-search {
-	margin: 0;
+	background: url(../img/icon-search.png);
+	background-size: 11px;
+	background-position: 8px 50%; 	
+	background-repeat: no-repeat;
+
+	margin: 0 4px 0 0;
 	height: 15px;
-	padding: 6px 8px;
+	padding: 6px 8px 6px 24px;
 	line-height: 20px;
 	font-family: proxima;
 	font-size: 13px;
 	color: #6D6E70;
 	border: 1px solid #d2d8de;
 	border-radius: 2px;
-	box-shadow: none;
+	box-shadow: 0px 1px 1px rgba(210,216,222,0.5) inset;
 	transition: none;
 }
 input.yo-search:hover {
 	border: 1px solid #aeb6be;
-	box-shadow: 0 1px 2px rgba(0,0,0,0.1), 0px 1px 1px #fff inset;
+	box-shadow: 0 1px 2px rgba(0,0,0,0.0), 0px 1px 2px rgba(210,216,222,0.9) inset;
 }
 
 input.yo-search:focus {
 	border: 1px solid #268ceb;
 	box-shadow: 0 0 0 2px #c4d9ef;
-	
+}
+
+.yo-btn-group .btn, .yo-btn-group .btn:focus  {
+	background: #fff;
+	font-family: proxima;
+	font-weight: bold;
+	font-size: 12px;	
+	color: #6D6E70;
+	padding: 5px 8px;
+	border: 1px solid #d2d8de;
+	transition: .1s all;
+	line-height: 17px;
+	min-width: 36px;
+	box-shadow: none;
+}
+
+.yo-btn-group .btn:hover, .yo-btn-group .btn:focus {
+	border: 1px solid #aeb6be;
+	text-decoration: none;
+	color: #268ceb;
+	box-shadow: 0 1px 2px rgba(0,0,0,0.1), 0px 1px 1px #fff inset;
+	background: #fff;
+}
+
+.yo-btn-group .btn:active {
+	color: #6fb1ef;
+	background: #f6f9fb;
+	box-shadow: none;
+	border: 1px solid #d2d8de;
+	transition: 0s all;
+}
+
+.yo-btn-group .btn img {
+	margin-top: -2px;
+	height: 10px;
+}
+
+.yo-btn-group .btn:first-child {
+	border-radius: 2px 0px 0px 2px;
+}
+
+.yo-btn-group .btn:last-child {
+	border-radius: 0px 2px 2px 0px;
 }
 
 ::-webkit-input-placeholder {
@@ -286,5 +335,6 @@ input.yo-search:focus {
 	padding: 20px;
 	border-radius: 3px;
 	box-shadow: 0px 1px 2px rgba(238,241,243,0.5);
-
+	
+	min-width: 1000px;
 }
