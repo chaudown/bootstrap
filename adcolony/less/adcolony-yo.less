@@ -96,7 +96,7 @@ td:first-child, th:first-child {
 	color: #405363;
 	background: #e9f3f9;
 	cursor: pointer;
-	border-bottom: 1px solid #b7cada;	
+	border-bottom: 1px solid #3ba0da;	
 }
 
 .yo-table tbody tr:hover > .yo-numbers em {
@@ -151,6 +151,8 @@ td.yo-status img{
 	font-style: normal;
 }
 
+
+
 .yo-dropdown .btn-group .dropdown-toggle{
 	min-width: 75px;
 	text-align: left;
@@ -170,6 +172,8 @@ td.yo-status img{
 	line-height: 14px;
 	vertical-align: middle;
 
+	transition: 0.1s;
+
 }
 
 .yo-dropdown .btn-group .dropdown-toggle:hover, .yo-dropdown .btn-group .dropdown-toggle:focus {
@@ -187,6 +191,14 @@ td.yo-status img{
 	border: 1px solid #d2d8de;
 	transition: 0s all;
 }
+
+.yo-dropdown .btn-group.open .btn.dropdown-toggle {
+	border: 1px solid #268ceb;
+	box-shadow: 0 0 0 2px #c4d9ef;
+	background: #fff;
+	color: #3ba0da;
+}	
+
 
 .yo-dropdown img {
 	height: 10px;
@@ -209,6 +221,38 @@ td.yo-status img{
   margin-top: 5px;
   margin-left: 12px;
   float: right;
+}
+
+.yo-dropdown .dropdown-menu {
+	font-size: 13px;
+	border: 1px solid #d2d8de;
+	border-radius: 2px;
+}
+
+.yo-dropdown .dropdown-menu li {
+	line-height: 16px;
+}
+
+.yo-dropdown .dropdown-menu a {
+	line-height: 16px;
+	padding: 5px 15px;
+	color: #6D6E70;
+	font-weight: normal;
+}
+
+.yo-dropdown .dropdown-menu a:hover, .yo-dropdown .dropdown-menu a:focus {
+	color:#3ba0da;
+	background: #e0eef9;
+	outline: none;
+}
+
+.yo-dropdown .dropdown-menu a:active {
+	color: #fff;
+	background: #3c7ec8;
+}
+
+.yo-dropdown .dropdown-menu li.divider {
+	margin: 6px 1px;
 }
 
 .yo-btn-default {
@@ -250,7 +294,7 @@ input.yo-search {
 
 	margin: 0 4px 0 0;
 	height: 15px;
-	padding: 6px 8px 6px 24px;
+	padding: 6px 8px 6px 23px;
 	line-height: 20px;
 	font-family: proxima;
 	font-size: 13px;
@@ -258,7 +302,8 @@ input.yo-search {
 	border: 1px solid #d2d8de;
 	border-radius: 2px;
 	box-shadow: 0px 1px 1px rgba(210,216,222,0.5) inset;
-	transition: none;
+	
+	transition: 0.1s;
 }
 input.yo-search:hover {
 	border: 1px solid #aeb6be;
@@ -330,7 +375,7 @@ input.yo-search:focus {
 }
 
 
-.yo-container {
+.yo-dash {
 	border: 1px solid #e3e7eb;
 	padding: 20px;
 	border-radius: 3px;

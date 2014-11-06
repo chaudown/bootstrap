@@ -10,9 +10,9 @@
 
 </head>
 
-<body class="yo-dashboard">
+<body>
 	&nbsp;
-	<div class="container yo-container">
+	<div class="container yo-dash">
 		
 		<div class="dropdown pull-left yo-dropdown">
 		  	<div class="btn-group">
@@ -20,7 +20,7 @@
 		    		<img src="../img/icon-dropdown-calendar.png" /> 	<em>-</em> Last 7 Days
 		    		<span class="caret"></span>
 		  		</a>
-		  		<ul class="dropdown-menu">
+		  		<ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
 		    		<!-- dropdown menu links -->
 		  		</ul>
 			</div>
@@ -32,7 +32,7 @@
 		    		<em>Status - </em>All
 		    		<span class="caret"></span>
 		  		</a>
-		  		<ul class="dropdown-menu">
+		  		<ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
       				<li><a href="#">Action</a></li>
       				<li><a href="#">Another action</a></li>
       				<li><a href="#">Something else here</a></li>
@@ -48,7 +48,7 @@
 		    		<em>Attribution - </em>All
 		    		<span class="caret"></span>
 		  		</a>
-		  		<ul class="dropdown-menu">
+		  		<ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
       				<li><a href="#">Action</a></li>
       				<li><a href="#">Another action</a></li>
       				<li><a href="#">Something else here</a></li>
@@ -64,10 +64,10 @@
 		    		<em>Alerts - </em>All
 		    		<span class="caret"></span>
 		  		</a>
-		  		<ul class="dropdown-menu">
-      				<li><a href="#">Action</a></li>
-      				<li><a href="#">Another action</a></li>
-      				<li><a href="#">Something else here</a></li>
+		  		<ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+      				<li><a role="menuitem" href="#">Action</a></li>
+      				<li><a role="menuitem" href="#">Another action</a></li>
+      				<li><a role="menuitem" href="#">Something else here</a></li>
       				<li class="divider"></li>
       				<li><a href="#">Separated link</a></li>
     			</ul>
@@ -667,6 +667,7 @@
 	</div>
 
 <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src="../../js/bootstrap-dropdown.js"></script>
 
 
 </body>
