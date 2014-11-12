@@ -5,8 +5,8 @@
 	<title>a place to experiment</title>
 	<link rel="stylesheet" type="text/css" href="../css/adcolony.css">
 
-	<script src="../js/less.min.js"></script>
-	<link rel="stylesheet" href="../less/adcolony-yo.less">
+	<!--<script src="../js/less.min.js"></script>-->
+	<!--<link rel="stylesheet" href="../less/adcolony-bootstrap.less">-->
 
 </head>
 
@@ -166,12 +166,11 @@
 <!-- ////////// START: YO-DASH ////////// -->
 
 
-
-	<div class="container yo-dash">
+ <div class="yo-dash">
+	<div class="container">
 
 		
-		<div class="dropdown pull-left yo-dropdown">
-		  	<div class="btn-group">
+		<div class="dropdown pull-left">
 		  		<a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
 		    		<img src="../img/icon-dropdown-calendar.png" /> 	<em>-</em> Last 7 Days
 		    		<span class="caret"></span>
@@ -179,11 +178,9 @@
 		  		<ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
 		    		<!-- dropdown menu links -->
 		  		</ul>
-			</div>
 		</div>
 
-		<div class="dropdown pull-left yo-dropdown">
-		  	<div class="btn-group">
+		<div class="dropdown pull-left">
 		  		<a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
 		    		<em>Status - </em>All
 		    		<span class="caret"></span>
@@ -195,11 +192,9 @@
       				<li class="divider"></li>
       				<li><a href="#">Separated link</a></li>
     			</ul>
-			</div>
 		</div>
 
-		<div class="dropdown pull-left yo-dropdown">
-		  	<div class="btn-group">
+		<div class="dropdown pull-left">
 		  		<a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
 		    		<em>Alerts - </em>Show All
 		    		<span class="caret"></span>
@@ -211,13 +206,11 @@
       				<li class="divider"></li>
       				<li><a href="#">Separated link</a></li>
     			</ul>
-			</div>
 		</div>
 
-		<input class="yo-search pull-left" type="search" placeholder="Search" />
+		<input class="input-search pull-left" type="search" placeholder="Search" />
 
-		<div class="dropdown pull-left yo-dropdown">
-		  	<div class="btn-group">
+		<div class="dropdown pull-left">
 		  		<a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
 		    		<em>Attribution - </em>All
 		    		<span class="caret"></span>
@@ -229,15 +222,14 @@
       				<li class="divider"></li>
       				<li><a href="#">Separated link</a></li>
     			</ul>
-			</div>
 		</div>
 
-		<a class="btn yo-btn-default pull-left" href="#">Export CSV</a>
+		<a class="btn btn-default pull-left" href="#">Export CSV</a>
 		
 	
 
 		<div class="pull-right">
-			<div class="btn-group yo-btn-group">
+			<div class="btn-group">
   				<button class="btn"><img src="../img/icon-arrow-left.png" /></button>
   				<button class="btn"><img src="../img/icon-arrow-right.png" /></button>
 			</div>
@@ -256,7 +248,7 @@
 				<th class="yo-firescore">FIRE SCORE</th>
 				<th class="yo-numbers">eCPI</th>
 				<th class="yo-numbers">CPI GOAL</th>
-				<th class="yo-numbers">AVG. CPI GOAL</th>
+				<th class="yo-numbers field-sort"><span class="sortable-field">AVG. CPI GOAL</span></th>
 				<th class="yo-numbers">DELTA %</th>
 				<th class="yo-numbers">DELTA $</th>
 				<th class="yo-numbers">SPEND</th>
@@ -821,6 +813,7 @@
 			</tr>
 		</tbody>
 	</table>
+ </div>
 </body>
 </html>
 	</div>
