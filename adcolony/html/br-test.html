@@ -1,0 +1,619 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>a place to experiment</title>
+	<link rel="stylesheet" type="text/css" href="../css/adcolony.css">
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	<script src="http://code.highcharts.com/highcharts.js"></script>
+</head>
+<body>
+<div class="ac-header-top">
+    <div class="container">
+        <div class="row">
+            <a id="ac-logo" href="/home">
+                <span>AdColony</span>
+            </a>
+            <div class="pull-right">
+                <div id="user_balance" style="min-width: 300px;"><div><div class="compact-header">
+    <div class="pull-left h-space-right adc-header-block">
+        <small class="muted">Advertising Balance</small><br>
+        <h3 class="number-font">$10.00</h3>
+    </div>
+    <div class="pull-left adc-header-block">
+        <small class="muted">Pending Earnings</small><br>
+        <h3 class="number-font">$0.00</h3>
+    </div>
+</div>
+</div></div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="ac-navbar">
+    <div class="container">
+        <ul>
+            <li class="">
+                <a href="/home" class="ac-navbar-link">Home</a>
+            </li>
+            <li class="">
+                <a href="/apps" class="ac-navbar-link">Monetization</a>
+            </li>
+            <li class="active">
+                <a href="/campaigns" class="ac-navbar-link">Advertising</a>
+            </li>
+            
+            <li class="">
+                <a href="/admin/ad_approval" class="ac-navbar-link">Admin</a>
+            </li>
+            
+            <li><a class="ac-navbar-link" target="_blank" href="http://support.adcolony.com/">Support</a></li>
+        </ul>
+        <div id="login_control" class="btn-group pull-right">
+            <a class="btn btn-danger dropdown-toggle" data-toggle="dropdown" href="#">
+                <strong class="entypo center user"></strong>
+
+                <strong class="entypo center triangle-down"></strong>
+            </a>
+            <ul class="dropdown-menu pull-right">
+                <li>
+                    <a href="/users/edit">brandon@adcolony.com<br><small>Account Settings</small></a>
+                </li>
+                
+                
+                <li>
+                    <a class="link-admin-mode-off">Turn Off Admin Mode</a>
+                </li>
+                
+                
+                <hr>
+                <li>
+                    <a href="/logout">Logout</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+<div id="ac-content-container" class="yo-content-container">
+	<div class="navbar  container" style="left: 0px; position: relative;">
+            <div class="navbar-inner">
+                    
+                    
+                    
+                    
+
+<ul class="nav">
+    <li class="">
+        <a href="/admin/ad_approval">
+            Ad Creative Review
+        </a>
+    </li>
+    
+    <li class="">
+        <a href="/admin/master_account_list">
+            All Users
+        </a>
+    </li>
+    
+    
+    <li class="">
+        <a href="/admin/system_settings">
+            System Settings
+        </a>
+    </li>
+    
+    
+    <li class="">
+        <a href="/ad_sources">
+            Ad Sources
+        </a>
+    </li>
+    <li class="">
+        <a href="/ad_source_platforms">
+            Ad Source Platforms
+        </a>
+    </li>
+    
+    
+    <li class="">
+        <a href="/tiers">
+            Customer Tiers
+        </a>
+    </li>
+    
+    
+    <li class="">
+            <a href="/billing/transfer">
+                Transfer Funds
+            </a>
+    </li>
+    
+    
+    <li class="">
+        <a href="/admins">
+            Manage Admins
+        </a>
+    </li>
+    <li class="">
+        <a href="/security_groups">
+            Security Groups
+        </a>
+    </li>
+    
+    
+    
+      <li class="">
+        <a href="/app_generator">
+          App List Generator
+        </a>
+      </li>
+    
+    
+    <li class="">
+        <a href="/yo/ad_groups">
+            Y/O Dashboard
+        </a>
+    </li>
+    
+    
+    <li class="">
+        <a href="/ipx_tiers">
+            IPX Tiers
+        </a>
+    </li>
+    
+    
+    <li class="active">
+        <a href="/brand_report/search">
+            Brand Reporting
+        </a>
+    </li>
+    
+</ul>
+
+
+            </div>
+        </div>
+    <div class="row-fluid v-space-bottom">
+    	<div class="ac-inner-container">
+    		<div id="content">
+    			<div>
+    				<div class="row-fluid">
+					    <div class="region-search-overlay"><div><div class="br-show-container search-bar" style="z-index: 21; position: relative;">
+					    <div class="region-search-bar" style="padding-top: 6px;"><div><div class="row-fluid">
+					    <div class="ac-inner-narrow-container-element">
+					        <!-- Search -->
+					        <div class="pull-left">
+					            <div class="region-name-filter"><div>
+					<input style="padding-right: 20px;" class="text-filter input-search input-xxlarge" type="text" placeholder="Search by Campaign or Advertiser">
+					<div class="loader-icon loader-input loader-placeholder hide">
+					    <div class=" ui-spinner">
+					    <span class="side side-left">
+					      <span class="fill"></span>
+					    </span>
+					    <span class="side side-right">
+					      <span class="fill"></span>
+					    </span>
+					</div>
+
+
+					</div></div></div>
+					        </div>
+					        <!-- Status filter -->
+					        <div class="pull-left h-space-left">
+					            <div class="region-status-filter"><div>
+					<div style="padding-top: 8px;">
+					<ul class="nav nav-pills" style="margin-bottom: 0px;">
+					    <li class="active"><a href="#" class="status-change" data-status="all">All</a></li>
+					    <li><a href="#" class="status-change" data-status="active">In Progress</a></li>
+					    <li><a href="#" class="status-change" data-status="recent">Recently Completed</a></li>
+					    <li><a href="#" class="status-change" data-status="complete">Completed</a></li>
+					</ul>
+					</div>
+					</div></div>
+					        </div>
+					    </div>
+					</div>
+					</div></div>
+					</div>
+					<div class="ac-overlay-container hide" style="position: relative; margin-top: -1px; display: none;">
+					    <div class="ac-overlay br-search-overlay">
+					        <div class="region-search-results" style="max-height: 400px; overflow-y:scroll; background-color: white; border-bottom-right-radius: 3px; border-bottom-left-radius: 3px;"><div><div style="overflow-x:hidden;">
+					    <table class="table table-top table-brand-reporting">
+					        <!-- CompositeView.itemViewContainer - see index_entry-->
+					        
+					        <tbody><tr><td><strong>No Results</strong></td></tr></tbody>
+					        
+
+					    </table>
+					</div>
+					</div></div>
+					    </div>
+					    <div class="modal-backdrop"></div>
+					</div></div></div>
+					</div>
+    			</div>
+    			<!-- campaign header -->
+    			<div class="row-fluid">
+    <div class="region-io-summary"><div>
+<div class="ac-inner-narrow-container-element br-show-container br-io-summary">
+    
+    <h2>
+        KFC - Pizza Hut (Glossom, Inc.)
+    </h2>
+    <strong class="muted"><small>video-ad@glossom.co.jp</small></strong>
+    <a href="/insertion_orders/49">
+        <strong class="muted entypo center link"></strong>
+    </a>
+    <hr>
+    <div class="row-fluid">
+        <div class="search-entry-box span4">
+            <strong>FLIGHT</strong><br>
+            
+            <div>
+                <div class="pull-left">
+                    <strong class="muted entypo center calendar"></strong>
+                    -- - 12/15/2014
+                </div>
+                <div class="pull-right">
+                    0.00%
+                </div>
+            </div><br>
+            <div class="progress br-progress br-progress-full">
+                <div class="bar bar-danger" style="width: NaN%;"></div>
+            </div>
+            
+        </div>
+        <div class="search-entry-box span4 with-border">
+            <strong>IMPRESSIONS</strong><br>
+            <div>
+                <div class="pull-left">
+                    <strong class="muted entypo center play"></strong>
+                    88,896 / 0
+                </div>
+                <div class="pull-right">
+                    0.00%
+                </div>
+            </div><br>
+            <div class="progress br-progress br-progress-full">
+                <div class="bar bar-info" style="width: %;"></div>
+            </div>
+        </div>
+        <div class="search-entry-box span4 with-border">
+            <strong>SPEND</strong><br>
+            <div>
+                <div class="pull-left">
+                    <strong class="muted entypo center gauge"></strong>
+                    $4,237.00 / $4,237.00
+                </div>
+                <div class="pull-right">
+                    100.00%
+                </div>
+            </div><br>
+            <div class="progress br-progress br-progress-full">
+                <div class="bar bar-success" style="width: 100%;"></div>
+            </div>
+        </div>
+    </div>
+    
+
+    <hr>
+    <div class="row-fluid">
+        <h4 class="placements-section">
+            <strong>Placements</strong>
+            <span class="text-info">(2)</span>
+            <a class="action-toggle-placements">
+                
+                <strong class="muted entypo center three-dots"></strong>
+                
+            </a>
+        </h4>
+        <div class="placements-hidden-section hide">
+            <hr>
+            <div class="row-fluid region-placements"><div><div><div class="pull-left span4 ">
+    <div class="box-shadow-light" style="padding: 8px 8px;">
+        <h5>Pizza Hut Android</h5>
+        <hr>
+
+        <div class="row-fluid">
+            <div class="pull-left region-pie-chart" style="position: relative; width: 50px; height: 50px;"><div><div id="chart_view274" class="reporting-chart" style="width:100%;height:100%;position:absolute;left:0;top:0;background-color:transparent;" data-highcharts-chart="26"><div class="highcharts-container" id="highcharts-55" style="position: relative; overflow: hidden; width: 50px; height: 50px; text-align: left; line-height: normal; z-index: 0; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);"><svg version="1.1" style="font-family:&quot;Lucida Grande&quot;, &quot;Lucida Sans Unicode&quot;, Arial, Helvetica, sans-serif;font-size:12px;" xmlns="http://www.w3.org/2000/svg" width="50" height="50"><desc>Created with Highcharts 4.0.4 /Highstock 2.0.4</desc><defs><clipPath id="highcharts-56"><rect x="0" y="0" width="50" height="50"></rect></clipPath></defs><rect x="0" y="0" width="50" height="50" strokeWidth="0" fill="#FFFFFF" class=" highcharts-background"></rect><g class="highcharts-series-group" zIndex="3"><g class="highcharts-series highcharts-tracker" visibility="visible" zIndex="0.1" transform="translate(0,0) scale(1 1)" style="cursor:pointer;"><path fill="#7cb5ec" d="M 24.996944901944573 10.000000311120807 A 15 15 0 1 1 23.648779056735 39.93901609753742 L 25 25 A 0 0 0 1 0 25 25 Z" stroke="#FFFFFF" stroke-width="1" stroke-linejoin="round" transform="translate(0,0)"></path><path fill="#434348" d="M 23.633840718737712 39.93765740731193 A 15 15 0 0 1 24.979165300928926 10.000014469496492 L 25 25 A 0 0 0 0 0 25 25 Z" stroke="#FFFFFF" stroke-width="1" stroke-linejoin="round" transform="translate(0,0)"></path></g><g class="highcharts-markers" visibility="visible" zIndex="0.1" transform="translate(0,0) scale(1 1)"></g></g><g class="highcharts-legend" zIndex="7"><g zIndex="1"><g></g></g></g></svg></div></div>
+</div></div>
+            <div class="pull-left h-space-left">
+                <strong class="muted">IMPRESSIONS</strong><br>
+                <strong>45,740</strong>
+                <span class="muted">(51.45%)</span>
+            </div>
+            <div class="pull-right">
+                <a href="/campaigns/7902" class="btn br-btn" style="margin-top: 10%">VIEW</a>
+            </div>
+        </div>
+
+        <hr>
+        <div class="row-fluid">
+            <div class="span4 ac-border-right">
+                <strong class="muted">COMPLETE RATE</strong><br>
+                86.09%
+            </div>
+            <div class="span4 ac-border-right">
+                <strong class="muted">ENGAGEMENTs</strong><br>
+                246
+            </div>
+            <div class="span4">
+                <strong class="muted">KPI</strong><br>
+                TBD
+            </div>
+        </div>
+    </div>
+</div>
+</div><div><div class="pull-left span4 " style="margin-left:1%;">
+    <div class="box-shadow-light" style="padding: 8px 8px;">
+        <h5>Pizza Hut iOS</h5>
+        <hr>
+
+        <div class="row-fluid">
+            <div class="pull-left region-pie-chart" style="position: relative; width: 50px; height: 50px;"><div><div id="chart_view282" class="reporting-chart" style="width:100%;height:100%;position:absolute;left:0;top:0;background-color:transparent;" data-highcharts-chart="27"><div class="highcharts-container" id="highcharts-57" style="position: relative; overflow: hidden; width: 50px; height: 50px; text-align: left; line-height: normal; z-index: 0; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);"><svg version="1.1" style="font-family:&quot;Lucida Grande&quot;, &quot;Lucida Sans Unicode&quot;, Arial, Helvetica, sans-serif;font-size:12px;" xmlns="http://www.w3.org/2000/svg" width="50" height="50"><desc>Created with Highcharts 4.0.4 /Highstock 2.0.4</desc><defs><clipPath id="highcharts-58"><rect x="0" y="0" width="50" height="50"></rect></clipPath></defs><rect x="0" y="0" width="50" height="50" strokeWidth="0" fill="#FFFFFF" class=" highcharts-background"></rect><g class="highcharts-series-group" zIndex="3"><g class="highcharts-series highcharts-tracker" visibility="visible" zIndex="0.1" transform="translate(0,0) scale(1 1)" style="cursor:pointer;"><path fill="#7cb5ec" d="M 24.996944901944573 10.000000311120807 A 15 15 0 0 1 26.38994805223533 39.93546264472873 L 25 25 A 0 0 0 0 0 25 25 Z" stroke="#FFFFFF" stroke-width="1" stroke-linejoin="round" transform="translate(0,0)"></path><path fill="#434348" d="M 26.37501189710588 39.9368451248186 A 15 15 0 1 1 24.979165300928926 10.000014469496492 L 25 25 A 0 0 0 1 0 25 25 Z" stroke="#FFFFFF" stroke-width="1" stroke-linejoin="round" transform="translate(0,0)"></path></g><g class="highcharts-markers" visibility="visible" zIndex="0.1" transform="translate(0,0) scale(1 1)"></g></g><g class="highcharts-legend" zIndex="7"><g zIndex="1"><g></g></g></g></svg></div></div>
+</div></div>
+            <div class="pull-left h-space-left">
+                <strong class="muted">IMPRESSIONS</strong><br>
+                <strong>43,156</strong>
+                <span class="muted">(48.55%)</span>
+            </div>
+            <div class="pull-right">
+                <a href="/campaigns/7903" class="btn br-btn" style="margin-top: 10%">VIEW</a>
+            </div>
+        </div>
+
+        <hr>
+        <div class="row-fluid">
+            <div class="span4 ac-border-right">
+                <strong class="muted">COMPLETE RATE</strong><br>
+                97.15%
+            </div>
+            <div class="span4 ac-border-right">
+                <strong class="muted">ENGAGEMENTs</strong><br>
+                322
+            </div>
+            <div class="span4">
+                <strong class="muted">KPI</strong><br>
+                TBD
+            </div>
+        </div>
+    </div>
+</div>
+</div></div></div>
+        </div>
+    </div>
+
+    <hr>
+    <div class="row-fluid">
+        <h4 class="ads-section">
+            <strong>Creatives</strong>
+            <span class="text-info">(2)</span>
+            <a class="action-toggle-ads">
+                
+                <strong class="muted entypo center three-dots"></strong>
+                
+            </a>
+        </h4>
+        <div class="ads-hidden-section hide">
+            <hr>
+            <div class="row-fluid region-ads"><div><div><div class="pull-left span4 ">
+    <div class="box-shadow-light" style="padding: 8px 8px;">
+        <h5>Pizza Hut Android</h5>
+        <hr>
+
+        <div class="row-fluid">
+            <div class="pull-left region-pie-chart" style="position: relative; width: 50px; height: 50px;"><div><div id="chart_view290" class="reporting-chart" style="width:100%;height:100%;position:absolute;left:0;top:0;background-color:transparent;" data-highcharts-chart="28"><div class="highcharts-container" id="highcharts-59" style="position: relative; overflow: hidden; width: 50px; height: 50px; text-align: left; line-height: normal; z-index: 0; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);"><svg version="1.1" style="font-family:&quot;Lucida Grande&quot;, &quot;Lucida Sans Unicode&quot;, Arial, Helvetica, sans-serif;font-size:12px;" xmlns="http://www.w3.org/2000/svg" width="50" height="50"><desc>Created with Highcharts 4.0.4 /Highstock 2.0.4</desc><defs><clipPath id="highcharts-60"><rect x="0" y="0" width="50" height="50"></rect></clipPath></defs><rect x="0" y="0" width="50" height="50" strokeWidth="0" fill="#FFFFFF" class=" highcharts-background"></rect><g class="highcharts-series-group" zIndex="3"><g class="highcharts-series highcharts-tracker" visibility="visible" zIndex="0.1" transform="translate(0,0) scale(1 1)" style="cursor:pointer;"><path fill="#7cb5ec" d="M 24.996944901944573 10.000000311120807 A 15 15 0 1 1 23.648779056735 39.93901609753742 L 25 25 A 0 0 0 1 0 25 25 Z" stroke="#FFFFFF" stroke-width="1" stroke-linejoin="round" transform="translate(0,0)"></path><path fill="#434348" d="M 23.633840718737712 39.93765740731193 A 15 15 0 0 1 24.979165300928926 10.000014469496492 L 25 25 A 0 0 0 0 0 25 25 Z" stroke="#FFFFFF" stroke-width="1" stroke-linejoin="round" transform="translate(0,0)"></path></g><g class="highcharts-markers" visibility="visible" zIndex="0.1" transform="translate(0,0) scale(1 1)"></g></g><g class="highcharts-legend" zIndex="7"><g zIndex="1"><g></g></g></g></svg></div></div>
+</div></div>
+            <div class="pull-left h-space-left">
+                <strong class="muted">IMPRESSIONS</strong><br>
+                <strong>45,740</strong>
+                <span class="muted">(51.45%)</span>
+            </div>
+            <div class="pull-right">
+                <a href="/ads/17665" class="btn br-btn" style="margin-top: 10%">VIEW</a>
+            </div>
+        </div>
+
+        <hr>
+        <div class="row-fluid">
+            <div class="span4 ac-border-right">
+                <strong class="muted">COMPLETE RATE</strong><br>
+                86.09%
+            </div>
+            <div class="span4 ac-border-right">
+                <strong class="muted">ENGAGEMENTs</strong><br>
+                246
+            </div>
+            <div class="span4">
+                <strong class="muted">KPI</strong><br>
+                TBD
+            </div>
+        </div>
+    </div>
+</div>
+</div><div><div class="pull-left span4 " style="margin-left:1%;">
+    <div class="box-shadow-light" style="padding: 8px 8px;">
+        <h5>Pizza Hut iOS</h5>
+        <hr>
+
+        <div class="row-fluid">
+            <div class="pull-left region-pie-chart" style="position: relative; width: 50px; height: 50px;"><div><div id="chart_view298" class="reporting-chart" style="width:100%;height:100%;position:absolute;left:0;top:0;background-color:transparent;" data-highcharts-chart="29"><div class="highcharts-container" id="highcharts-61" style="position: relative; overflow: hidden; width: 50px; height: 50px; text-align: left; line-height: normal; z-index: 0; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);"><svg version="1.1" style="font-family:&quot;Lucida Grande&quot;, &quot;Lucida Sans Unicode&quot;, Arial, Helvetica, sans-serif;font-size:12px;" xmlns="http://www.w3.org/2000/svg" width="50" height="50"><desc>Created with Highcharts 4.0.4 /Highstock 2.0.4</desc><defs><clipPath id="highcharts-62"><rect x="0" y="0" width="50" height="50"></rect></clipPath></defs><rect x="0" y="0" width="50" height="50" strokeWidth="0" fill="#FFFFFF" class=" highcharts-background"></rect><g class="highcharts-series-group" zIndex="3"><g class="highcharts-series highcharts-tracker" visibility="visible" zIndex="0.1" transform="translate(0,0) scale(1 1)" style="cursor:pointer;"><path fill="#7cb5ec" d="M 24.996944901944573 10.000000311120807 A 15 15 0 0 1 26.38994805223533 39.93546264472873 L 25 25 A 0 0 0 0 0 25 25 Z" stroke="#FFFFFF" stroke-width="1" stroke-linejoin="round" transform="translate(0,0)"></path><path fill="#434348" d="M 26.37501189710588 39.9368451248186 A 15 15 0 1 1 24.979165300928926 10.000014469496492 L 25 25 A 0 0 0 1 0 25 25 Z" stroke="#FFFFFF" stroke-width="1" stroke-linejoin="round" transform="translate(0,0)"></path></g><g class="highcharts-markers" visibility="visible" zIndex="0.1" transform="translate(0,0) scale(1 1)"></g></g><g class="highcharts-legend" zIndex="7"><g zIndex="1"><g></g></g></g></svg></div></div>
+</div></div>
+            <div class="pull-left h-space-left">
+                <strong class="muted">IMPRESSIONS</strong><br>
+                <strong>43,156</strong>
+                <span class="muted">(48.55%)</span>
+            </div>
+            <div class="pull-right">
+                <a href="/ads/17659" class="btn br-btn" style="margin-top: 10%">VIEW</a>
+            </div>
+        </div>
+
+        <hr>
+        <div class="row-fluid">
+            <div class="span4 ac-border-right">
+                <strong class="muted">COMPLETE RATE</strong><br>
+                97.15%
+            </div>
+            <div class="span4 ac-border-right">
+                <strong class="muted">ENGAGEMENTs</strong><br>
+                322
+            </div>
+            <div class="span4">
+                <strong class="muted">KPI</strong><br>
+                TBD
+            </div>
+        </div>
+    </div>
+</div>
+</div></div></div>
+        </div>
+    </div>
+</div>
+
+</div></div>
+</div>
+<!-- test section -->
+<div class="row-fluid">
+    <div style="margin:0 auto;width:1024px;height:700px;background-color:white;">
+	<div class="br-info-card">
+		<br/>
+		<img src="../img/icon-engagement.png" width="44" height="44">
+		<div class="br-names title" style="max-width:200px;margin:0 auto;">ENAGEMENT RATE<br/><hr/></div>
+		<div class="br-numbers header" style="margin: 20px 0 12px 0;">3.17<span class="percent-symbol">%</span></div>
+		<div class="br-names sub-title">Overall Engagement Rate</div>
+		<br/>
+		<div id="chart_container" style="width:241px;height:262px;margin-left:20px;"> Chart Here </div>
+		<br/>
+		<div class="br-names chart-title">Exposure Time</div>
+	</div>
+</div>
+</div>	
+<!-- end test section -->
+    		</div>
+    	</div>
+    </div>
+</div>
+<script type="text/javascript">
+$(function () {
+    $('#chart_container').highcharts({
+
+        title: {
+            text: null	// No chart title
+        },        
+        chart: {
+            type: 'column'
+        },
+        legend: {
+        	enabled: false	// No legend
+        },
+        yAxis: {
+            gridLineWidth: 0, // Hide the grid lines
+            tickPixelInterval: 262, // Use the chart's height so only 2 ticks will be placed
+            labels: {
+            	style: {	// Style the labels as spec'd by bchau
+            		fontFamily: 'Whitney',
+            		fontWeight: 'normal',
+            		fontSize: 13,
+            		color: '#CFCFCF'            		
+            	}
+            },
+            title: {
+            	text: null	// No title for y-axis
+            }
+        },
+        xAxis: {	// Dotted grid lines
+            gridLineColor: '#BBBBB7',
+            gridLineWidth: 1,
+            gridLineDashStyle: 'dot',
+            tickmarkPlacement: 'on',
+            categories: ['0-5', '6-10', '11-19', '20+'],
+            lineWidth: 0,	// Hide axis line
+            tickWidth: 0,	// Hide tick lines
+            title: {
+            	text: 'Seconds',
+            	style: {
+            		fontFamily: 'ProximaNova',
+            		fontWeight: 'normal',
+            		fontSize: 11,
+            		color: '#CFCFCF'            		
+            	}
+            },
+            labels: {
+            	style: {
+            		fontFamily: 'Whitney',
+            		fontWeight: 'normal',
+            		fontSize: 13,
+            		color: '#4D4E4E'            		
+            	}
+            }
+        },
+        plotOptions: {
+            column: {	// Rounded 10 pixel columns
+                pointWidth: 10,
+                borderRadius: 3
+            }
+        },
+        series: [{	// Each point needs to be an object so the column and label can be the same color
+            data: [{
+                y: 21634,
+                color: '#BD3E97',
+                dataLabels: {
+                	enabled: true,
+                	y: -6,
+                	style: {
+                		fontWeight: 'bold',
+                		fontFamily: 'Whitney',
+                		fontSize: 15,
+                		color: '#BD3E97'
+                	}
+                }
+            }, {
+                y: 19421,
+                color: '#9659A4',
+                dataLabels: {
+                	enabled: true,
+                	y: -6,
+                	style: {
+                		fontWeight: 'bold',
+                		fontFamily: 'Whitney',
+                		fontSize: 15,
+                		color: '#9659A4'
+                	}
+                }
+            }, {
+                y: 9526,
+                color: '#6966AF',
+                dataLabels: {
+                	enabled: true,
+                	y: -6,
+                	style: {
+                		fontWeight: 'bold',
+                		fontFamily: 'Whitney',
+                		fontSize: 15,
+                		color: '#6966AF'
+                	}
+                }
+            }, {
+                y: 5444,
+                color: '#0070B8',
+                dataLabels: {
+                	enabled: true,
+                	y: -6,
+                	style: {
+                		fontWeight: 'bold',
+                		fontFamily: 'Whitney',
+                		fontSize: 15,
+                		color: '#0070B8'
+                	}
+                }
+            }]
+        }]
+
+    });
+});
+</script>
+</body>
+</html>
