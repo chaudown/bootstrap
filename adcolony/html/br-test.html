@@ -7,21 +7,22 @@
 	<script src="http://code.highcharts.com/highcharts.js"></script>
 </head>
 <body>
+<div id="layout_container">
 <div class="ac-header-top">
     <div class="container">
-        <div class="row">
+        <div class="row-fluid">
             <a id="ac-logo" href="/home">
                 <span>AdColony</span>
             </a>
             <div class="pull-right">
                 <div id="user_balance" style="min-width: 300px;"><div><div class="compact-header">
-    <div class="pull-left h-space-right adc-header-block">
-        <small class="muted">Advertising Balance</small><br>
-        <h3 class="number-font">$10.00</h3>
-    </div>
-    <div class="pull-left adc-header-block">
+    <div class="pull-right adc-header-block">
         <small class="muted">Pending Earnings</small><br>
-        <h3 class="number-font">$0.00</h3>
+        <h3 class="number-font">$3.10</h3>
+    </div>
+    <div class="pull-right h-space-right adc-header-block">
+        <small class="muted">Advertising Balance</small><br>
+        <h3 class="number-font">$12.10</h3>
     </div>
 </div>
 </div></div>
@@ -29,6 +30,8 @@
         </div>
     </div>
 </div>
+
+
 <div id="ac-navbar">
     <div class="container">
         <ul>
@@ -38,11 +41,11 @@
             <li class="">
                 <a href="/apps" class="ac-navbar-link">Monetization</a>
             </li>
-            <li class="active">
+            <li class="">
                 <a href="/campaigns" class="ac-navbar-link">Advertising</a>
             </li>
             
-            <li class="">
+            <li class="active">
                 <a href="/admin/ad_approval" class="ac-navbar-link">Admin</a>
             </li>
             
@@ -56,7 +59,7 @@
             </a>
             <ul class="dropdown-menu pull-right">
                 <li>
-                    <a href="/users/edit">brandon@adcolony.com<br><small>Account Settings</small></a>
+                    <a href="/users/edit">eric.treworgy@adcolony.com<br><small>Account Settings</small></a>
                 </li>
                 
                 
@@ -75,8 +78,11 @@
 </div>
 
 
-<div id="ac-content-container" class="yo-content-container">
-	<div class="navbar  container" style="left: 0px; position: relative;">
+<div id="main-content-container" class="container">
+    <div id="ac-content-container" style="border-radius: 0px; -webkit-box-shadow: none; box-shadow: none; background: rgb(223, 228, 234);">
+
+
+        <div class="navbar ">
             <div class="navbar-inner">
                     
                     
@@ -175,67 +181,70 @@
 
             </div>
         </div>
-    <div class="row-fluid v-space-bottom">
-    	<div class="ac-inner-container">
-    		<div id="content">
-    			<div>
-    				<div class="row-fluid">
-					    <div class="region-search-overlay"><div><div class="br-show-container search-bar" style="z-index: 21; position: relative;">
-					    <div class="region-search-bar" style="padding-top: 6px;"><div><div class="row-fluid">
-					    <div class="ac-inner-narrow-container-element">
-					        <!-- Search -->
-					        <div class="pull-left">
-					            <div class="region-name-filter"><div>
-					<input style="padding-right: 20px;" class="text-filter input-search input-xxlarge" type="text" placeholder="Search by Campaign or Advertiser">
-					<div class="loader-icon loader-input loader-placeholder hide">
-					    <div class=" ui-spinner">
-					    <span class="side side-left">
-					      <span class="fill"></span>
-					    </span>
-					    <span class="side side-right">
-					      <span class="fill"></span>
-					    </span>
-					</div>
 
 
-					</div></div></div>
-					        </div>
-					        <!-- Status filter -->
-					        <div class="pull-left h-space-left">
-					            <div class="region-status-filter"><div>
-					<div style="padding-top: 8px;">
-					<ul class="nav nav-pills" style="margin-bottom: 0px;">
-					    <li class="active"><a href="#" class="status-change" data-status="all">All</a></li>
-					    <li><a href="#" class="status-change" data-status="active">In Progress</a></li>
-					    <li><a href="#" class="status-change" data-status="recent">Recently Completed</a></li>
-					    <li><a href="#" class="status-change" data-status="complete">Completed</a></li>
-					</ul>
-					</div>
-					</div></div>
-					        </div>
-					    </div>
-					</div>
-					</div></div>
-					</div>
-					<div class="ac-overlay-container hide" style="position: relative; margin-top: -1px; display: none;">
-					    <div class="ac-overlay br-search-overlay">
-					        <div class="region-search-results" style="max-height: 400px; overflow-y:scroll; background-color: white; border-bottom-right-radius: 3px; border-bottom-left-radius: 3px;"><div><div style="overflow-x:hidden;">
-					    <table class="table table-top table-brand-reporting">
-					        <!-- CompositeView.itemViewContainer - see index_entry-->
-					        
-					        <tbody><tr><td><strong>No Results</strong></td></tr></tbody>
-					        
+        <div class="row-fluid v-space-bottom">
+            <div class="ac-inner-container">
+                <span id="flash_container"><div>      
+    
 
-					    </table>
-					</div>
-					</div></div>
-					    </div>
-					    <div class="modal-backdrop"></div>
-					</div></div></div>
-					</div>
-    			</div>
-    			<!-- campaign header -->
-    			<div class="row-fluid">
+</div></span>
+                
+                <div id="content"><div><div class="row-fluid">
+    <div class="region-search-overlay"><div><div class="br-show-container search-bar" style="z-index: 21; position: relative;">
+    <div class="region-search-bar" style="padding-top: 6px;"><div><div class="row-fluid">
+    <div class="ac-inner-narrow-container-element">
+        <!-- Search -->
+        <div class="pull-left">
+            <div class="region-name-filter"><div>
+<input style="padding-right: 20px;" class="text-filter input-search input-xxlarge" type="text" placeholder="Search by Campaign or Advertiser">
+<div class="loader-icon loader-input loader-placeholder hide">
+    <div class=" ui-spinner">
+    <span class="side side-left">
+      <span class="fill"></span>
+    </span>
+    <span class="side side-right">
+      <span class="fill"></span>
+    </span>
+</div>
+
+
+</div></div></div>
+        </div>
+        <!-- Status filter -->
+        <div class="pull-left h-space-left">
+            <div class="region-status-filter"><div>
+<div style="padding-top: 8px;">
+<ul class="nav nav-pills" style="margin-bottom: 0px;">
+    <li class="active"><a href="#" class="status-change" data-status="all">All</a></li>
+    <li><a href="#" class="status-change" data-status="active">In Progress</a></li>
+    <li><a href="#" class="status-change" data-status="recent">Recently Completed</a></li>
+    <li><a href="#" class="status-change" data-status="complete">Completed</a></li>
+</ul>
+</div>
+</div></div>
+        </div>
+    </div>
+</div>
+</div></div>
+</div>
+<div class="ac-overlay-container hide" style="position: relative; margin-top: -1px;">
+    <div class="ac-overlay br-search-overlay">
+        <div class="region-search-results" style="max-height: 400px; overflow-y:scroll; background-color: white; border-bottom-right-radius: 3px; border-bottom-left-radius: 3px;"><div><div style="overflow-x:hidden;">
+    <table class="table table-top table-brand-reporting">
+        <!-- CompositeView.itemViewContainer - see index_entry-->
+        
+        <tbody><tr><td><strong>No Results</strong></td></tr></tbody>
+        
+
+    </table>
+</div>
+</div></div>
+    </div>
+    <div class="modal-backdrop"></div>
+</div></div></div>
+</div>
+<div class="row-fluid">
     <div class="region-io-summary"><div>
 <div class="ac-inner-narrow-container-element br-show-container br-io-summary">
     
@@ -317,7 +326,7 @@
         <hr>
 
         <div class="row-fluid">
-            <div class="pull-left region-pie-chart" style="position: relative; width: 50px; height: 50px;"><div><div id="chart_view274" class="reporting-chart" style="width:100%;height:100%;position:absolute;left:0;top:0;background-color:transparent;" data-highcharts-chart="26"><div class="highcharts-container" id="highcharts-55" style="position: relative; overflow: hidden; width: 50px; height: 50px; text-align: left; line-height: normal; z-index: 0; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);"><svg version="1.1" style="font-family:&quot;Lucida Grande&quot;, &quot;Lucida Sans Unicode&quot;, Arial, Helvetica, sans-serif;font-size:12px;" xmlns="http://www.w3.org/2000/svg" width="50" height="50"><desc>Created with Highcharts 4.0.4 /Highstock 2.0.4</desc><defs><clipPath id="highcharts-56"><rect x="0" y="0" width="50" height="50"></rect></clipPath></defs><rect x="0" y="0" width="50" height="50" strokeWidth="0" fill="#FFFFFF" class=" highcharts-background"></rect><g class="highcharts-series-group" zIndex="3"><g class="highcharts-series highcharts-tracker" visibility="visible" zIndex="0.1" transform="translate(0,0) scale(1 1)" style="cursor:pointer;"><path fill="#7cb5ec" d="M 24.996944901944573 10.000000311120807 A 15 15 0 1 1 23.648779056735 39.93901609753742 L 25 25 A 0 0 0 1 0 25 25 Z" stroke="#FFFFFF" stroke-width="1" stroke-linejoin="round" transform="translate(0,0)"></path><path fill="#434348" d="M 23.633840718737712 39.93765740731193 A 15 15 0 0 1 24.979165300928926 10.000014469496492 L 25 25 A 0 0 0 0 0 25 25 Z" stroke="#FFFFFF" stroke-width="1" stroke-linejoin="round" transform="translate(0,0)"></path></g><g class="highcharts-markers" visibility="visible" zIndex="0.1" transform="translate(0,0) scale(1 1)"></g></g><g class="highcharts-legend" zIndex="7"><g zIndex="1"><g></g></g></g></svg></div></div>
+            <div class="pull-left region-pie-chart" style="position: relative; width: 50px; height: 50px;"><div><div id="chart_view148" class="reporting-chart" style="width:100%;height:100%;position:absolute;left:0;top:0;background-color:transparent;" data-highcharts-chart="4"><div class="highcharts-container" id="highcharts-8" style="position: relative; overflow: hidden; width: 50px; height: 50px; text-align: left; line-height: normal; z-index: 0; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);"><svg version="1.1" style="font-family:&quot;Lucida Grande&quot;, &quot;Lucida Sans Unicode&quot;, Arial, Helvetica, sans-serif;font-size:12px;" xmlns="http://www.w3.org/2000/svg" width="50" height="50"><desc>Created with Highcharts 4.0.4 /Highstock 2.0.4</desc><defs><clipPath id="highcharts-9"><rect x="0" y="0" width="50" height="50"></rect></clipPath></defs><rect x="0" y="0" width="50" height="50" strokeWidth="0" fill="#FFFFFF" class=" highcharts-background"></rect><g class="highcharts-series-group" zIndex="3"><g class="highcharts-series highcharts-tracker" visibility="visible" zIndex="0.1" transform="translate(0,0) scale(1 1)" style="cursor:pointer;"><path fill="#7cb5ec" d="M 24.996944901944573 10.000000311120807 A 15 15 0 1 1 23.648779056735 39.93901609753742 L 25 25 A 0 0 0 1 0 25 25 Z" stroke="#FFFFFF" stroke-width="1" stroke-linejoin="round" transform="translate(0,0)"></path><path fill="#434348" d="M 23.633840718737712 39.93765740731193 A 15 15 0 0 1 24.979165300928926 10.000014469496492 L 25 25 A 0 0 0 0 0 25 25 Z" stroke="#FFFFFF" stroke-width="1" stroke-linejoin="round" transform="translate(0,0)"></path></g><g class="highcharts-markers" visibility="visible" zIndex="0.1" transform="translate(0,0) scale(1 1)"></g></g><g class="highcharts-legend" zIndex="7"><g zIndex="1"><g></g></g></g></svg></div></div>
 </div></div>
             <div class="pull-left h-space-left">
                 <strong class="muted">IMPRESSIONS</strong><br>
@@ -352,7 +361,7 @@
         <hr>
 
         <div class="row-fluid">
-            <div class="pull-left region-pie-chart" style="position: relative; width: 50px; height: 50px;"><div><div id="chart_view282" class="reporting-chart" style="width:100%;height:100%;position:absolute;left:0;top:0;background-color:transparent;" data-highcharts-chart="27"><div class="highcharts-container" id="highcharts-57" style="position: relative; overflow: hidden; width: 50px; height: 50px; text-align: left; line-height: normal; z-index: 0; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);"><svg version="1.1" style="font-family:&quot;Lucida Grande&quot;, &quot;Lucida Sans Unicode&quot;, Arial, Helvetica, sans-serif;font-size:12px;" xmlns="http://www.w3.org/2000/svg" width="50" height="50"><desc>Created with Highcharts 4.0.4 /Highstock 2.0.4</desc><defs><clipPath id="highcharts-58"><rect x="0" y="0" width="50" height="50"></rect></clipPath></defs><rect x="0" y="0" width="50" height="50" strokeWidth="0" fill="#FFFFFF" class=" highcharts-background"></rect><g class="highcharts-series-group" zIndex="3"><g class="highcharts-series highcharts-tracker" visibility="visible" zIndex="0.1" transform="translate(0,0) scale(1 1)" style="cursor:pointer;"><path fill="#7cb5ec" d="M 24.996944901944573 10.000000311120807 A 15 15 0 0 1 26.38994805223533 39.93546264472873 L 25 25 A 0 0 0 0 0 25 25 Z" stroke="#FFFFFF" stroke-width="1" stroke-linejoin="round" transform="translate(0,0)"></path><path fill="#434348" d="M 26.37501189710588 39.9368451248186 A 15 15 0 1 1 24.979165300928926 10.000014469496492 L 25 25 A 0 0 0 1 0 25 25 Z" stroke="#FFFFFF" stroke-width="1" stroke-linejoin="round" transform="translate(0,0)"></path></g><g class="highcharts-markers" visibility="visible" zIndex="0.1" transform="translate(0,0) scale(1 1)"></g></g><g class="highcharts-legend" zIndex="7"><g zIndex="1"><g></g></g></g></svg></div></div>
+            <div class="pull-left region-pie-chart" style="position: relative; width: 50px; height: 50px;"><div><div id="chart_view155" class="reporting-chart" style="width:100%;height:100%;position:absolute;left:0;top:0;background-color:transparent;" data-highcharts-chart="5"><div class="highcharts-container" id="highcharts-10" style="position: relative; overflow: hidden; width: 50px; height: 50px; text-align: left; line-height: normal; z-index: 0; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);"><svg version="1.1" style="font-family:&quot;Lucida Grande&quot;, &quot;Lucida Sans Unicode&quot;, Arial, Helvetica, sans-serif;font-size:12px;" xmlns="http://www.w3.org/2000/svg" width="50" height="50"><desc>Created with Highcharts 4.0.4 /Highstock 2.0.4</desc><defs><clipPath id="highcharts-11"><rect x="0" y="0" width="50" height="50"></rect></clipPath></defs><rect x="0" y="0" width="50" height="50" strokeWidth="0" fill="#FFFFFF" class=" highcharts-background"></rect><g class="highcharts-series-group" zIndex="3"><g class="highcharts-series highcharts-tracker" visibility="visible" zIndex="0.1" transform="translate(0,0) scale(1 1)" style="cursor:pointer;"><path fill="#7cb5ec" d="M 24.996944901944573 10.000000311120807 A 15 15 0 0 1 26.38994805223533 39.93546264472873 L 25 25 A 0 0 0 0 0 25 25 Z" stroke="#FFFFFF" stroke-width="1" stroke-linejoin="round" transform="translate(0,0)"></path><path fill="#434348" d="M 26.37501189710588 39.9368451248186 A 15 15 0 1 1 24.979165300928926 10.000014469496492 L 25 25 A 0 0 0 1 0 25 25 Z" stroke="#FFFFFF" stroke-width="1" stroke-linejoin="round" transform="translate(0,0)"></path></g><g class="highcharts-markers" visibility="visible" zIndex="0.1" transform="translate(0,0) scale(1 1)"></g></g><g class="highcharts-legend" zIndex="7"><g zIndex="1"><g></g></g></g></svg></div></div>
 </div></div>
             <div class="pull-left h-space-left">
                 <strong class="muted">IMPRESSIONS</strong><br>
@@ -404,7 +413,7 @@
         <hr>
 
         <div class="row-fluid">
-            <div class="pull-left region-pie-chart" style="position: relative; width: 50px; height: 50px;"><div><div id="chart_view290" class="reporting-chart" style="width:100%;height:100%;position:absolute;left:0;top:0;background-color:transparent;" data-highcharts-chart="28"><div class="highcharts-container" id="highcharts-59" style="position: relative; overflow: hidden; width: 50px; height: 50px; text-align: left; line-height: normal; z-index: 0; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);"><svg version="1.1" style="font-family:&quot;Lucida Grande&quot;, &quot;Lucida Sans Unicode&quot;, Arial, Helvetica, sans-serif;font-size:12px;" xmlns="http://www.w3.org/2000/svg" width="50" height="50"><desc>Created with Highcharts 4.0.4 /Highstock 2.0.4</desc><defs><clipPath id="highcharts-60"><rect x="0" y="0" width="50" height="50"></rect></clipPath></defs><rect x="0" y="0" width="50" height="50" strokeWidth="0" fill="#FFFFFF" class=" highcharts-background"></rect><g class="highcharts-series-group" zIndex="3"><g class="highcharts-series highcharts-tracker" visibility="visible" zIndex="0.1" transform="translate(0,0) scale(1 1)" style="cursor:pointer;"><path fill="#7cb5ec" d="M 24.996944901944573 10.000000311120807 A 15 15 0 1 1 23.648779056735 39.93901609753742 L 25 25 A 0 0 0 1 0 25 25 Z" stroke="#FFFFFF" stroke-width="1" stroke-linejoin="round" transform="translate(0,0)"></path><path fill="#434348" d="M 23.633840718737712 39.93765740731193 A 15 15 0 0 1 24.979165300928926 10.000014469496492 L 25 25 A 0 0 0 0 0 25 25 Z" stroke="#FFFFFF" stroke-width="1" stroke-linejoin="round" transform="translate(0,0)"></path></g><g class="highcharts-markers" visibility="visible" zIndex="0.1" transform="translate(0,0) scale(1 1)"></g></g><g class="highcharts-legend" zIndex="7"><g zIndex="1"><g></g></g></g></svg></div></div>
+            <div class="pull-left region-pie-chart" style="position: relative; width: 50px; height: 50px;"><div><div id="chart_view162" class="reporting-chart" style="width:100%;height:100%;position:absolute;left:0;top:0;background-color:transparent;" data-highcharts-chart="6"><div class="highcharts-container" id="highcharts-12" style="position: relative; overflow: hidden; width: 50px; height: 50px; text-align: left; line-height: normal; z-index: 0; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);"><svg version="1.1" style="font-family:&quot;Lucida Grande&quot;, &quot;Lucida Sans Unicode&quot;, Arial, Helvetica, sans-serif;font-size:12px;" xmlns="http://www.w3.org/2000/svg" width="50" height="50"><desc>Created with Highcharts 4.0.4 /Highstock 2.0.4</desc><defs><clipPath id="highcharts-13"><rect x="0" y="0" width="50" height="50"></rect></clipPath></defs><rect x="0" y="0" width="50" height="50" strokeWidth="0" fill="#FFFFFF" class=" highcharts-background"></rect><g class="highcharts-series-group" zIndex="3"><g class="highcharts-series highcharts-tracker" visibility="visible" zIndex="0.1" transform="translate(0,0) scale(1 1)" style="cursor:pointer;"><path fill="#7cb5ec" d="M 24.996944901944573 10.000000311120807 A 15 15 0 1 1 23.648779056735 39.93901609753742 L 25 25 A 0 0 0 1 0 25 25 Z" stroke="#FFFFFF" stroke-width="1" stroke-linejoin="round" transform="translate(0,0)"></path><path fill="#434348" d="M 23.633840718737712 39.93765740731193 A 15 15 0 0 1 24.979165300928926 10.000014469496492 L 25 25 A 0 0 0 0 0 25 25 Z" stroke="#FFFFFF" stroke-width="1" stroke-linejoin="round" transform="translate(0,0)"></path></g><g class="highcharts-markers" visibility="visible" zIndex="0.1" transform="translate(0,0) scale(1 1)"></g></g><g class="highcharts-legend" zIndex="7"><g zIndex="1"><g></g></g></g></svg></div></div>
 </div></div>
             <div class="pull-left h-space-left">
                 <strong class="muted">IMPRESSIONS</strong><br>
@@ -439,7 +448,7 @@
         <hr>
 
         <div class="row-fluid">
-            <div class="pull-left region-pie-chart" style="position: relative; width: 50px; height: 50px;"><div><div id="chart_view298" class="reporting-chart" style="width:100%;height:100%;position:absolute;left:0;top:0;background-color:transparent;" data-highcharts-chart="29"><div class="highcharts-container" id="highcharts-61" style="position: relative; overflow: hidden; width: 50px; height: 50px; text-align: left; line-height: normal; z-index: 0; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);"><svg version="1.1" style="font-family:&quot;Lucida Grande&quot;, &quot;Lucida Sans Unicode&quot;, Arial, Helvetica, sans-serif;font-size:12px;" xmlns="http://www.w3.org/2000/svg" width="50" height="50"><desc>Created with Highcharts 4.0.4 /Highstock 2.0.4</desc><defs><clipPath id="highcharts-62"><rect x="0" y="0" width="50" height="50"></rect></clipPath></defs><rect x="0" y="0" width="50" height="50" strokeWidth="0" fill="#FFFFFF" class=" highcharts-background"></rect><g class="highcharts-series-group" zIndex="3"><g class="highcharts-series highcharts-tracker" visibility="visible" zIndex="0.1" transform="translate(0,0) scale(1 1)" style="cursor:pointer;"><path fill="#7cb5ec" d="M 24.996944901944573 10.000000311120807 A 15 15 0 0 1 26.38994805223533 39.93546264472873 L 25 25 A 0 0 0 0 0 25 25 Z" stroke="#FFFFFF" stroke-width="1" stroke-linejoin="round" transform="translate(0,0)"></path><path fill="#434348" d="M 26.37501189710588 39.9368451248186 A 15 15 0 1 1 24.979165300928926 10.000014469496492 L 25 25 A 0 0 0 1 0 25 25 Z" stroke="#FFFFFF" stroke-width="1" stroke-linejoin="round" transform="translate(0,0)"></path></g><g class="highcharts-markers" visibility="visible" zIndex="0.1" transform="translate(0,0) scale(1 1)"></g></g><g class="highcharts-legend" zIndex="7"><g zIndex="1"><g></g></g></g></svg></div></div>
+            <div class="pull-left region-pie-chart" style="position: relative; width: 50px; height: 50px;"><div><div id="chart_view169" class="reporting-chart" style="width:100%;height:100%;position:absolute;left:0;top:0;background-color:transparent;" data-highcharts-chart="7"><div class="highcharts-container" id="highcharts-14" style="position: relative; overflow: hidden; width: 50px; height: 50px; text-align: left; line-height: normal; z-index: 0; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);"><svg version="1.1" style="font-family:&quot;Lucida Grande&quot;, &quot;Lucida Sans Unicode&quot;, Arial, Helvetica, sans-serif;font-size:12px;" xmlns="http://www.w3.org/2000/svg" width="50" height="50"><desc>Created with Highcharts 4.0.4 /Highstock 2.0.4</desc><defs><clipPath id="highcharts-15"><rect x="0" y="0" width="50" height="50"></rect></clipPath></defs><rect x="0" y="0" width="50" height="50" strokeWidth="0" fill="#FFFFFF" class=" highcharts-background"></rect><g class="highcharts-series-group" zIndex="3"><g class="highcharts-series highcharts-tracker" visibility="visible" zIndex="0.1" transform="translate(0,0) scale(1 1)" style="cursor:pointer;"><path fill="#7cb5ec" d="M 24.996944901944573 10.000000311120807 A 15 15 0 0 1 26.38994805223533 39.93546264472873 L 25 25 A 0 0 0 0 0 25 25 Z" stroke="#FFFFFF" stroke-width="1" stroke-linejoin="round" transform="translate(0,0)"></path><path fill="#434348" d="M 26.37501189710588 39.9368451248186 A 15 15 0 1 1 24.979165300928926 10.000014469496492 L 25 25 A 0 0 0 1 0 25 25 Z" stroke="#FFFFFF" stroke-width="1" stroke-linejoin="round" transform="translate(0,0)"></path></g><g class="highcharts-markers" visibility="visible" zIndex="0.1" transform="translate(0,0) scale(1 1)"></g></g><g class="highcharts-legend" zIndex="7"><g zIndex="1"><g></g></g></g></svg></div></div>
 </div></div>
             <div class="pull-left h-space-left">
                 <strong class="muted">IMPRESSIONS</strong><br>
@@ -475,139 +484,327 @@
 
 </div></div>
 </div>
-<!-- test section -->
 <div class="row-fluid">
-    <div style="margin:0 auto;width:1024px;height:700px;background-color:white;">
-	<div class="br-info-card">
-		<br/>
-		<img src="../img/icon-engagement.png" width="44" height="44">
-		<div class="br-names title" style="max-width:200px;margin:0 auto;">ENAGEMENT RATE<br/><hr/></div>
-		<div class="br-numbers header" style="margin: 20px 0 12px 0;">3.17<span class="percent-symbol">%</span></div>
-		<div class="br-names sub-title">Overall Engagement Rate</div>
-		<br/>
-		<div id="chart_container" style="width:241px;height:262px;margin-left:20px;"> Chart Here </div>
-		<br/>
-		<div class="br-names chart-title">Exposure Time</div>
-	</div>
+    <div class="region-filter-overlay"><div><div class="br-show-container filter-bar" style="position: relative;">
+    <div class="row-fluid" style="border-bottom: 1px solid #ddd;">
+        <div class="pull-left br-button-block btn-overview"><strong>OVERVIEW</strong></div>
+        <div class="pull-left br-button-block btn-end-card"><strong>DYNAMIC END CARD</strong></div>
+        <div class="pull-right" style="padding: 6px;">
+            <a class="btn btn-primary btn-clear" style="line-height: 18px;" type="button">
+                Clear Filters
+            </a>
+        </div>
+        <div class="pull-right" style="padding: 6px;">
+            <a class="btn btn-primary btn-refresh" style="line-height: 18px;" type="button">
+                Refresh Data
+            </a>
+        </div>
+        <div class="pull-right" style="padding: 6px;">
+            <a href="" class="btn btn-export" style="line-height: 18px;" type="button">
+                Export CSV
+            </a>
+        </div>
+    </div>
+    <div class="row-fluid">
+        <div class="pull-left br-border-right region-date-picker" style="padding: 2px;"><div>
+
+
+<div>
+    
+    <button class="btn btn-hover-date-picker btn-overlay-date-picker btn-link" data-target=".ac-overlay-container">
+        <strong class="muted center fa fa-calendar-o"></strong>
+        <span class="muted"> - </span>
+        <strong>This Month</strong>
+        <strong class="muted-hover entypo center chevron-down"> </strong>
+    </button>
 </div>
-</div>	
-<!-- end test section -->
-    		</div>
-    	</div>
+
+<div class="ac-overlay-container overlay-date-picker row-fluid left
+        hide">
+    
+    <div class="span12">
+    
+    <div class="ac-overlay ac-overlay-date-picker pull-left">
+        
+        <div class="row-fluid">
+            <h4>Date Range</h4>
+        </div>
+        <hr>
+        
+        <div class="row-fluid">
+            
+            <div class="pull-left">
+                <ul class="ac-compact-list">
+                    
+                    <li><a class="select-interval" data-value="today">Today</a></li>
+                    
+                    <li><a class="select-interval" data-value="yesterday">Yesterday</a></li>
+                    
+                    <li><a class="select-interval" data-value="recent">Today and Yesterday</a></li>
+                    
+                    <li><a class="select-interval" data-value="this_week">This Week</a></li>
+                    
+                    <li><a class="select-interval" data-value="last_week">Last Week</a></li>
+                    
+                    <li><a class="select-interval" data-value="this_month">This Month</a></li>
+                    
+                    <li><a class="select-interval" data-value="last_month">Last Month</a></li>
+                    
+                    <li><a class="select-interval" data-value="last_30_days">Last 30 Days</a></li>
+                    
+                    <li><a class="select-interval" data-value="quarter_to_date">Quarter to Date</a></li>
+                    
+                    <li><a class="select-interval" data-value="this_year">This Year</a></li>
+                    
+                    <li><a class="select-interval" data-value="last_year">Last Year</a></li>
+                    
+                    <li><a class="select-interval" data-value="all_time">All Time</a></li>
+                    
+                </ul>
+            </div>
+            <div class="pull-left h-space-left ac-border-left">
+            
+            
+                <div class="row-fluid">
+                    <div class="date-picker-calendar pull-left">
+                        <p class="header">
+                            Start Date <span style="color:#999;font-size:9px;">(MM/DD/YYYY)</span>
+                        </p>
+                        <input class="input date-picker-value-start" type="text" value="02/01/2015">
+                        <div class="date-picker-calendar-start" data-date="02/01/2015"><div class="datepicker datepicker-inline" style="display: block;"><div class="datepicker-days" style="display: block;"><table class=" table-condensed"><thead><tr><th class="prev" style="visibility: visible;"><i class="icon-arrow-left"></i></th><th colspan="5" class="switch">February 2015</th><th class="next" style="visibility: visible;"><i class="icon-arrow-right"></i></th></tr><tr><th class="dow">Su</th><th class="dow">Mo</th><th class="dow">Tu</th><th class="dow">We</th><th class="dow">Th</th><th class="dow">Fr</th><th class="dow">Sa</th></tr></thead><tbody><tr><td class="day old">25</td><td class="day old">26</td><td class="day old">27</td><td class="day old">28</td><td class="day old">29</td><td class="day old">30</td><td class="day old">31</td></tr><tr><td class="day active">1</td><td class="day">2</td><td class="day">3</td><td class="day">4</td><td class="day">5</td><td class="day">6</td><td class="day">7</td></tr><tr><td class="day">8</td><td class="day">9</td><td class="day">10</td><td class="day">11</td><td class="day">12</td><td class="day">13</td><td class="day">14</td></tr><tr><td class="day">15</td><td class="day">16</td><td class="day">17</td><td class="day">18</td><td class="day">19</td><td class="day">20</td><td class="day">21</td></tr><tr><td class="day">22</td><td class="day">23</td><td class="day">24</td><td class="day">25</td><td class="day">26</td><td class="day">27</td><td class="day">28</td></tr><tr><td class="day new">1</td><td class="day new">2</td><td class="day new">3</td><td class="day new">4</td><td class="day new">5</td><td class="day new">6</td><td class="day new">7</td></tr></tbody><tfoot><tr><th colspan="7" class="today" style="display: none;">Today</th></tr></tfoot></table></div><div class="datepicker-months" style="display: none;"><table class="table-condensed"><thead><tr><th class="prev" style="visibility: visible;"><i class="icon-arrow-left"></i></th><th colspan="5" class="switch">2015</th><th class="next" style="visibility: visible;"><i class="icon-arrow-right"></i></th></tr></thead><tbody><tr><td colspan="7"><span class="month">Jan</span><span class="month active">Feb</span><span class="month">Mar</span><span class="month">Apr</span><span class="month">May</span><span class="month">Jun</span><span class="month">Jul</span><span class="month">Aug</span><span class="month">Sep</span><span class="month">Oct</span><span class="month">Nov</span><span class="month">Dec</span></td></tr></tbody><tfoot><tr><th colspan="7" class="today" style="display: none;">Today</th></tr></tfoot></table></div><div class="datepicker-years" style="display: none;"><table class="table-condensed"><thead><tr><th class="prev" style="visibility: visible;"><i class="icon-arrow-left"></i></th><th colspan="5" class="switch">2010-2019</th><th class="next" style="visibility: visible;"><i class="icon-arrow-right"></i></th></tr></thead><tbody><tr><td colspan="7"><span class="year old disabled">2009</span><span class="year">2010</span><span class="year">2011</span><span class="year">2012</span><span class="year">2013</span><span class="year">2014</span><span class="year active">2015</span><span class="year">2016</span><span class="year">2017</span><span class="year">2018</span><span class="year">2019</span><span class="year old">2020</span></td></tr></tbody><tfoot><tr><th colspan="7" class="today" style="display: none;">Today</th></tr></tfoot></table></div></div></div>
+                    </div>
+                    <div class="date-picker-calendar pull-left">
+                        <p class="header">
+                            End Date <span style="color:#999;font-size:9px;">(MM/DD/YYYY)</span>
+                        </p>
+                        <input class="input date-picker-value-end" type="text" value="02/05/2015">
+                        <div class="date-picker-calendar-end" data-date="02/05/2015"><div class="datepicker datepicker-inline" style="display: block;"><div class="datepicker-days" style="display: block;"><table class=" table-condensed"><thead><tr><th class="prev" style="visibility: visible;"><i class="icon-arrow-left"></i></th><th colspan="5" class="switch">February 2015</th><th class="next" style="visibility: visible;"><i class="icon-arrow-right"></i></th></tr><tr><th class="dow">Su</th><th class="dow">Mo</th><th class="dow">Tu</th><th class="dow">We</th><th class="dow">Th</th><th class="dow">Fr</th><th class="dow">Sa</th></tr></thead><tbody><tr><td class="day old">25</td><td class="day old">26</td><td class="day old">27</td><td class="day old">28</td><td class="day old">29</td><td class="day old">30</td><td class="day old">31</td></tr><tr><td class="day">1</td><td class="day">2</td><td class="day">3</td><td class="day">4</td><td class="day active">5</td><td class="day">6</td><td class="day">7</td></tr><tr><td class="day">8</td><td class="day">9</td><td class="day">10</td><td class="day">11</td><td class="day">12</td><td class="day">13</td><td class="day">14</td></tr><tr><td class="day">15</td><td class="day">16</td><td class="day">17</td><td class="day">18</td><td class="day">19</td><td class="day">20</td><td class="day">21</td></tr><tr><td class="day">22</td><td class="day">23</td><td class="day">24</td><td class="day">25</td><td class="day">26</td><td class="day">27</td><td class="day">28</td></tr><tr><td class="day new">1</td><td class="day new">2</td><td class="day new">3</td><td class="day new">4</td><td class="day new">5</td><td class="day new">6</td><td class="day new">7</td></tr></tbody><tfoot><tr><th colspan="7" class="today" style="display: none;">Today</th></tr></tfoot></table></div><div class="datepicker-months" style="display: none;"><table class="table-condensed"><thead><tr><th class="prev" style="visibility: visible;"><i class="icon-arrow-left"></i></th><th colspan="5" class="switch">2015</th><th class="next" style="visibility: visible;"><i class="icon-arrow-right"></i></th></tr></thead><tbody><tr><td colspan="7"><span class="month">Jan</span><span class="month active">Feb</span><span class="month">Mar</span><span class="month">Apr</span><span class="month">May</span><span class="month">Jun</span><span class="month">Jul</span><span class="month">Aug</span><span class="month">Sep</span><span class="month">Oct</span><span class="month">Nov</span><span class="month">Dec</span></td></tr></tbody><tfoot><tr><th colspan="7" class="today" style="display: none;">Today</th></tr></tfoot></table></div><div class="datepicker-years" style="display: none;"><table class="table-condensed"><thead><tr><th class="prev" style="visibility: visible;"><i class="icon-arrow-left"></i></th><th colspan="5" class="switch">2010-2019</th><th class="next" style="visibility: visible;"><i class="icon-arrow-right"></i></th></tr></thead><tbody><tr><td colspan="7"><span class="year old disabled">2009</span><span class="year">2010</span><span class="year">2011</span><span class="year">2012</span><span class="year">2013</span><span class="year">2014</span><span class="year active">2015</span><span class="year">2016</span><span class="year">2017</span><span class="year">2018</span><span class="year">2019</span><span class="year old">2020</span></td></tr></tbody><tfoot><tr><th colspan="7" class="today" style="display: none;">Today</th></tr></tfoot></table></div></div></div>
+                    </div>
+                </div>
+                <div class="row-fluid">
+                    <span class="span4"></span>
+                    <span class="span8">
+                        
+                          <button class="btn btn-success">
+                            Okay
+                          </button>
+                        
+                        <button class="btn btn-cancel">Cancel</button>
+                    </span>
+                </div>
+            
+            
+            </div>
+            
+        </div>
+    </div>
+    
+    </div>
+    
+    <div class="modal-backdrop"></div>
+</div>
+</div></div>
+        <div class="pull-left region-filter-summary"><div> 
+<div class="pull-left br-filter-block"><strong>Platforms (All)</strong></div>
+
+<div class="pull-left br-filter-block"><strong>Device Types (All)</strong></div>
+
+<div class="pull-left br-filter-block br-border-right"><strong>Inventory Types (All)</strong></div>
+<div class="pull-left br-filter-block"><strong>Ad Campaigns (All)</strong></div>
+<div class="pull-left br-filter-block br-border-right"><strong>Ad Creatives (All)</strong></div>
+<div class="pull-left br-filter-block"><strong>DMAs (All)</strong></div>
+<div class="pull-left br-filter-block br-border-right"><strong>Apps (All)</strong></div></div></div>
+        <div class="pull-right br-filter-block" style="padding: 2px;">
+            
+            <a class="btn btn-link btn-filter"><strong class="muted fa fa-list btn-filter" style=""></strong></a>
+            
+        </div>
     </div>
 </div>
+<div class="ac-overlay-container br-filter-overlay-container hide" style="position: relative; margin-top: -1px;">
+    <div class="ac-overlay br-search-overlay">
+        
+            <div class="region-filter-block"><div><div class="row-fluid" style="max-height: 400px; overflow-y: scroll;"></div></div></div>
+        
+    </div>
+    <div class="modal-backdrop"></div>
+</div>
+</div></div>
+</div>
+<!-- test section -->
+<div class="row-fluid">
+    <!-- <div style="margin:0 auto;width:1024px;height:700px;background-color:white;"> -->
+    <div class="region-info-cards">
+        <div class="br-show-container">
+            <div class="ac-inner-narrow-container-element">
+                <div class="row-fluid">
+                <div class="pull-left">
+                <div style="width:342px;height:586px;border: 1px solid black;margin: 14px 14px 14px 0px;">Test</div>
+            </div>
+                            <div class="pull-left">
+                <div style="width:342px;height:586px;border: 1px solid black;margin: 14px 14px 14px 0px;">Test</div>
+            </div>
+                <div class="br-info-card-modal">
+                    <div class="br-sneaky-modal-bg"></div>
+                    <div class="br-info-card">
+                        <br/>
+                        <img src="../img/icon-engagement.png" width="44" height="44">
+                        <div class="br-names title" style="max-width:200px;margin:0 auto;">ENAGEMENT RATE<br/><hr/></div>
+                        <div class="br-numbers header" style="margin: 20px 0 12px 0;">3.17<span class="percent-symbol">%</span></div>
+                        <div class="br-names sub-title">Overall Engagement Rate</div>
+                        <br/>
+                        <div id="chart_container" style="width:241px;height:262px;margin-left:20px;"> Chart Here </div>
+                        <br/>
+                        <div class="br-names chart-title">Exposure Time</div>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+</div>  
+<script type="text/javascript">
+function toggleInfoCardToModal() {
+    var el = $('.br-info-card-modal')
+    var modal = el.children('.br-info-card')
+    el.toggleClass('active');
+    if (el[0].className.indexOf('active') >= 0) {
+        var container_width = el.parent().width();
+        var modal_width = modal.outerWidth();
+        var modal_position = modal.position().left;
+        var offset = ((container_width - modal_width) / 2 - modal_position) / 2;
+        modal.css('margin-left', offset);
+    } else {
+        modal.css('margin-left', '');
+    }
+}
+
+$('.br-info-card').on('click', function() {
+    console.log("Info Card Clicked");
+    toggleInfoCardToModal();
+});
+$('.br-sneaky-modal-bg').on('click', function() {
+    toggleInfoCardToModal()
+})
+</script>
 <script type="text/javascript">
 $(function () {
     $('#chart_container').highcharts({
 
         title: {
-            text: null	// No chart title
+            text: null  // No chart title
         },        
         chart: {
-            type: 'column'
+            type: 'column',
+            events: {
+                click: function(e) {
+                    console.log("Chart clicked");
+                    toggleInfoCardToModal();
+                }
+            }
         },
         legend: {
-        	enabled: false	// No legend
+            enabled: false  // No legend
         },
         yAxis: {
             gridLineWidth: 0, // Hide the grid lines
             tickPixelInterval: 262, // Use the chart's height so only 2 ticks will be placed
             labels: {
-            	style: {	// Style the labels as spec'd by bchau
-            		fontFamily: 'Whitney',
-            		fontWeight: 'normal',
-            		fontSize: 13,
-            		color: '#CFCFCF'            		
-            	}
+                style: {    // Style the labels as spec'd by bchau
+                    fontFamily: 'Whitney',
+                    fontWeight: 'normal',
+                    fontSize: 13,
+                    color: '#CFCFCF'                    
+                }
             },
             title: {
-            	text: null	// No title for y-axis
+                text: null  // No title for y-axis
             }
         },
-        xAxis: {	// Dotted grid lines
+        xAxis: {    // Dotted grid lines
             gridLineColor: '#BBBBB7',
             gridLineWidth: 1,
             gridLineDashStyle: 'dot',
             tickmarkPlacement: 'on',
             categories: ['0-5', '6-10', '11-19', '20+'],
-            lineWidth: 0,	// Hide axis line
-            tickWidth: 0,	// Hide tick lines
+            lineWidth: 0,   // Hide axis line
+            tickWidth: 0,   // Hide tick lines
             title: {
-            	text: 'Seconds',
-            	style: {
-            		fontFamily: 'ProximaNova',
-            		fontWeight: 'normal',
-            		fontSize: 11,
-            		color: '#CFCFCF'            		
-            	}
+                text: 'Seconds',
+                style: {
+                    fontFamily: 'ProximaNova',
+                    fontWeight: 'normal',
+                    fontSize: 11,
+                    color: '#CFCFCF'                    
+                }
             },
             labels: {
-            	style: {
-            		fontFamily: 'Whitney',
-            		fontWeight: 'normal',
-            		fontSize: 13,
-            		color: '#4D4E4E'            		
-            	}
+                style: {
+                    fontFamily: 'Whitney',
+                    fontWeight: 'normal',
+                    fontSize: 13,
+                    color: '#4D4E4E'                    
+                }
             }
         },
         plotOptions: {
-            column: {	// Rounded 10 pixel columns
+            column: {   // Rounded 10 pixel columns
                 pointWidth: 10,
                 borderRadius: 3
             }
         },
-        series: [{	// Each point needs to be an object so the column and label can be the same color
+        series: [{  // Each point needs to be an object so the column and label can be the same color
             data: [{
                 y: 21634,
                 color: '#BD3E97',
                 dataLabels: {
-                	enabled: true,
-                	y: -6,
-                	style: {
-                		fontWeight: 'bold',
-                		fontFamily: 'Whitney',
-                		fontSize: 15,
-                		color: '#BD3E97'
-                	}
+                    enabled: true,
+                    y: -6,
+                    style: {
+                        fontWeight: 'bold',
+                        fontFamily: 'Whitney',
+                        fontSize: 15,
+                        color: '#BD3E97'
+                    }
                 }
             }, {
                 y: 19421,
                 color: '#9659A4',
                 dataLabels: {
-                	enabled: true,
-                	y: -6,
-                	style: {
-                		fontWeight: 'bold',
-                		fontFamily: 'Whitney',
-                		fontSize: 15,
-                		color: '#9659A4'
-                	}
+                    enabled: true,
+                    y: -6,
+                    style: {
+                        fontWeight: 'bold',
+                        fontFamily: 'Whitney',
+                        fontSize: 15,
+                        color: '#9659A4'
+                    }
                 }
             }, {
                 y: 9526,
                 color: '#6966AF',
                 dataLabels: {
-                	enabled: true,
-                	y: -6,
-                	style: {
-                		fontWeight: 'bold',
-                		fontFamily: 'Whitney',
-                		fontSize: 15,
-                		color: '#6966AF'
-                	}
+                    enabled: true,
+                    y: -6,
+                    style: {
+                        fontWeight: 'bold',
+                        fontFamily: 'Whitney',
+                        fontSize: 15,
+                        color: '#6966AF'
+                    }
                 }
             }, {
                 y: 5444,
                 color: '#0070B8',
                 dataLabels: {
-                	enabled: true,
-                	y: -6,
-                	style: {
-                		fontWeight: 'bold',
-                		fontFamily: 'Whitney',
-                		fontSize: 15,
-                		color: '#0070B8'
-                	}
+                    enabled: true,
+                    y: -6,
+                    style: {
+                        fontWeight: 'bold',
+                        fontFamily: 'Whitney',
+                        fontSize: 15,
+                        color: '#0070B8'
+                    }
                 }
             }]
         }]
@@ -615,5 +812,8 @@ $(function () {
     });
 });
 </script>
+<!-- end test section -->
+
+</div>
 </body>
 </html>

@@ -9501,7 +9501,41 @@ pre.pretty-json .key {
 .yo-spark-line {
   margin-top: 4px;
 }
+.br-sneaky-modal-bg {
+  transition: z-index 1s ease-in-out 1s, opacity 1s ease-in-out 1s;
+  position: fixed;
+  background-color: white;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  opacity: 0;
+}
+.br-info-card-modal {
+  float: left;
+}
+.br-info-card-modal.active .br-sneaky-modal-bg {
+  transition: z-index 1s ease-in-out 0s, opacity 1s ease-in-out 0s;
+  z-index: 30;
+  opacity: 1;
+}
+.br-info-card-modal.active .br-info-card {
+  transition: margin 1s ease-in-out 1s, z-index 1s ease-in-out 0s;
+  z-index: 31;
+  margin-left: 569px;
+}
+.br-info-card-modal.active .br-info-card:hover {
+  cursor: auto;
+  border: 1px solid #DADBDC;
+}
+.br-info-card-modal.active .br-info-card:active {
+  border: 1px solid #DADBDC;
+}
 .br-info-card {
+  position: relative;
+  transition: margin 1s ease-in-out 0s, z-index 1s ease-in-out 1s;
+  z-index: 1;
   text-align: center;
   padding: 0px 13px;
   border: 1px solid #DADBDC;
@@ -9509,7 +9543,6 @@ pre.pretty-json .key {
   margin: 14px 14px 14px 0px;
   width: 314px;
   height: 584px;
-  float: left;
 }
 .br-info-card .br-info-icon {
   width: 44px;
@@ -9535,6 +9568,13 @@ pre.pretty-json .key {
   fontWeight: 'normal';
   fontSize: 13;
   color: #CFCFCF;
+}
+.br-info-card:hover {
+  cursor: zoom-in;
+  border: 1px solid #CFCFCF;
+}
+.br-info-card:active {
+  border: 1px solid #4D4E4E;
 }
 .br-numbers {
   font-style: normal;
