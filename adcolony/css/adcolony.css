@@ -9501,7 +9501,7 @@ pre.pretty-json .key {
 .yo-spark-line {
   margin-top: 4px;
 }
-.br-sneaky-modal-bg {
+.br-modal-bg {
   transition: z-index 1s ease-in-out 1s, opacity 1s ease-in-out 1s;
   position: fixed;
   background-color: white;
@@ -9515,7 +9515,7 @@ pre.pretty-json .key {
 .br-info-card-modal {
   float: left;
 }
-.br-info-card-modal.active .br-sneaky-modal-bg {
+.br-info-card-modal.active .br-modal-bg {
   transition: z-index 1s ease-in-out 0s, opacity 1s ease-in-out 0s;
   z-index: 30;
   opacity: 1;
@@ -9523,7 +9523,6 @@ pre.pretty-json .key {
 .br-info-card-modal.active .br-info-card {
   transition: margin 1s ease-in-out 1s, z-index 1s ease-in-out 0s;
   z-index: 31;
-  margin-left: 569px;
 }
 .br-info-card-modal.active .br-info-card:hover {
   cursor: auto;
