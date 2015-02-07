@@ -9501,6 +9501,10 @@ pre.pretty-json .key {
 .yo-spark-line {
   margin-top: 4px;
 }
+.br-bordered-card {
+  border: 1px solid #DADBDC;
+  border-radius: 3px;
+}
 .br-modal-bg {
   transition: z-index 1s ease-in-out 1s, opacity 1s ease-in-out 1s;
   position: fixed;
@@ -9537,8 +9541,6 @@ pre.pretty-json .key {
   z-index: 1;
   text-align: center;
   padding: 0px 13px;
-  border: 1px solid #DADBDC;
-  border-radius: 3px;
   margin: 14px 14px 14px 0px;
   width: 314px;
   height: 584px;
@@ -9646,6 +9648,7 @@ pre.pretty-json .key {
 }
 .br-progress-full {
   max-width: 100%;
+  width: 100%;
 }
 .br-search-progress .bar {
   background-color: #aaaaaa;
@@ -9760,6 +9763,29 @@ table.table-brand-reporting tbody tr:hover {
   height: 200px;
   width: 200px;
   margin: 0 auto;
+}
+.br-dec-preview {
+  position: absolute;
+  margin-top: -20px;
+  z-index: 4;
+  font-weight: bold;
+  color: white;
+}
+.br-video-preview {
+  position: relative;
+  top: 135px;
+  /* margin-top: 10px; */
+  /* left: 6px; */
+  /* width: 100%; */
+  /* vertical-align: bottom; */
+  font-weight: bold;
+  color: white;
+  z-index: 4;
+}
+/* Custom grid */
+.br-flush-grid .span6 {
+  width: 50%;
+  margin: 0px;
 }
 .pull-right {
   float: right;
