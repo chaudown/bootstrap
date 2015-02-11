@@ -84,6 +84,10 @@
 }
 /* END Info Card Styles */
 /* Text and Number Styles */
+.br-small-text {
+  font-size: 13px;
+  line-height: 13px;
+}
 .br-numbers {
   font-style: normal;
   font-weight: normal;
@@ -141,6 +145,11 @@
 .br-search-asset-preview {
   .br-asset-preview {
     height: 134px;
+  }
+  .br-single-preview, .br-multi-preview {
+    .br-asset-overlay {
+      margin-top: 110px;
+    }
   }
 }
 
@@ -318,6 +327,9 @@ table.table-brand-reporting tbody tr:hover {
   .br-asset-preview {
     max-height: 155px;
   }
+}
+.br-preview-click-thru {
+  cursor: pointer;
 }
 /* video overlay and dec overlays are different styling
   because the img cycling we use for the video preview
