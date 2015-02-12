@@ -1,0 +1,450 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>a place to experiment</title>
+    <link rel="stylesheet" type="text/css" href="../css/adcolony.css">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script src="http://code.highcharts.com/highcharts.js"></script>
+<script src="http://code.highcharts.com/highcharts-more.js"></script>
+</head>
+<body>
+<div id="ac-content-container">
+<div class="row-fluid" style="padding: 0px 13px;">
+<div class="br-info-card-modal br-placeholder-card">
+    <div class="br-modal-bg"></div>
+    <div class="br-info-card br-bordered-card">
+		<img src="../img/icon-dec-views.png" class="br-info-icon">
+		<div class="br-names br-info-title">DEC VIEWS</div>
+		<div class="br-numbers br-info-header">124,643</span></div>
+		<div class="br-names br-info-sub-title">Total DEC Views</div>
+		<br/>
+		<div id="chart_container_views" class="br-info-chart"> Chart Here </div>
+		<br/>
+		<div class="br-names br-info-chart-title">Exposure Time</div>
+	</div>
+</div>      
+<div class="br-info-card-modal br-placeholder-card">
+    <div class="br-modal-bg"></div>
+    <div class="br-info-card br-bordered-card">
+        <img src="../img/icon-engagement.png" class="br-info-icon">
+        <div class="br-names br-info-title">ENAGEMENT RATE</div>
+        <div class="br-numbers br-info-header">3.17<span class="br-symbol">%</span></div>
+        <div class="br-names br-info-sub-title">Overall Engagement Rate</div>
+        <br/>
+        <div id="chart_container_enagements" class="br-info-chart" style="width:260px;height:260px;margin: 0 auto;"> Chart Here </div>
+        <br/>
+        <div class="br-names br-info-chart-title">Exposure Time</div>
+    </div>
+</div>      
+<div class="br-info-card-modal br-placeholder-card">
+    <div class="br-modal-bg"></div>
+    <div class="br-info-card br-bordered-card">
+        <img src="../img/icon-kpi.png" class="br-info-icon">
+        <div class="br-names br-info-title">KPI RATE</div>
+        <div class="br-numbers br-info-header">1.43<span class="br-symbol">%</span></div>
+        <div class="br-names br-info-sub-title">Overall KPI Rate</div>
+        <br/>
+        <div id="chart_container_kpi" class="br-info-chart" style="width:250px;height:250px;margin: 0 auto;"> Chart Here </div>
+        <br/>
+        <div class="br-names br-info-chart-title">Exposure Time</div>
+    </div>
+</div>	
+</div>  
+</div>
+<script type="text/javascript">
+$(function () {
+
+    /**
+     * Get the current time
+     */
+    function getNow() {
+        var now = new Date();
+
+        return {
+            hours: now.getHours() + now.getMinutes() / 60,
+            minutes: now.getMinutes() * 12 / 60 + now.getSeconds() * 12 / 3600,
+            seconds: now.getSeconds() * 12 / 60
+        };
+    }
+
+    /**
+     * Pad numbers
+     */
+    function pad(number, length) {
+        // Create an array of the remaining length + 1 and join it with 0's
+        return new Array((length || 2) + 1 - String(number).length).join(0) + number;
+    }
+
+    var now = getNow();
+
+    // Create the chart
+    $('#chart_container_kpi').highcharts({
+
+        chart: {
+            type: 'gauge',
+            plotBackgroundColor: null,
+            plotBackgroundImage: '../img/clock-bg-white-test.png',
+            plotBorderWidth: 0,
+            plotShadow: false,
+            height: 250,
+            spacing: [0, 10, 0, 10],
+            marginTop: 5,
+            // spacingTop: 0
+            // spacingTop: 0,
+            // spacingBottom: 20
+        },
+
+        credits: {
+            enabled: false
+        },
+
+        title: {
+            text: null
+        },
+
+        pane: {
+            background: [{
+                // default background
+                backgroundColor: null,
+                borderColor: null
+            }]
+        },
+
+        yAxis: {
+            labels: {
+                enabled: false,
+                distance: -20
+            },
+            min: 0,
+            max: 12,
+            lineWidth: 0,
+            showFirstLabel: false,
+
+            minorTickInterval: null,
+            tickLength: 0,
+            title: {
+                enabled: false,
+                style: {
+                    color: '#BBB',
+                    fontWeight: 'normal',
+                    fontSize: '8px',
+                    lineHeight: '10px'
+                },
+                y: 10
+            },
+            plotBands: [{
+                from: 0,
+                to: 2.8,
+                color: 'rgba(41, 171, 223, 1)',
+                innerRadius: '72%',
+                outerRadius: '75%'
+            }]
+        },
+
+        tooltip: {
+            enabled: false,
+            formatter: function () {
+                return this.series.chart.tooltipText;
+            }
+        },
+        
+        plotOptions: {
+            gauge: {
+                pivot: {
+                    radius: 4,
+                    backgroundColor: 'white',
+                    borderWidth: 3,
+                    borderColor: 'red'
+                },
+                dial: {
+                    radius: '98%',
+                    baseWidth: 3,
+                    rearLength: '10%',
+                    backgroundColor: 'red',
+                    baseLength: '99%'
+                }
+            }
+        },
+
+        series: [{
+            data: [{
+                id: 'second',
+                y: 2.8,
+            }],
+            animation: false,
+            dataLabels: {
+                enabled: false
+            }
+        }]
+    }
+
+       );
+});
+</script>
+<script type="text/javascript">
+$(function () {
+
+    /**
+     * Get the current time
+     */
+    function getNow() {
+        var now = new Date();
+
+        return {
+            hours: now.getHours() + now.getMinutes() / 60,
+            minutes: now.getMinutes() * 12 / 60 + now.getSeconds() * 12 / 3600,
+            seconds: now.getSeconds() * 12 / 60
+        };
+    }
+
+    /**
+     * Pad numbers
+     */
+    function pad(number, length) {
+        // Create an array of the remaining length + 1 and join it with 0's
+        return new Array((length || 2) + 1 - String(number).length).join(0) + number;
+    }
+
+    var now = getNow();
+
+    // Create the chart
+    $('#chart_container_enagements').highcharts({
+
+        chart: {
+            type: 'gauge',
+            plotBackgroundColor: null,
+            plotBackgroundImage: null,
+            plotBorderWidth: 0,
+            plotShadow: false,
+            height: 260
+        },
+
+        credits: {
+            enabled: false
+        },
+
+        title: {
+            text: null
+        },
+
+        pane: {
+            background: [{
+                // default background
+                backgroundColor: 'rgba(48, 57, 62, 1)',
+                borderColor: 'rgba(115, 131, 138, 1)',
+                borderWidth: 10
+            }]
+        },
+
+        yAxis: {
+            labels: {
+                enabled: false,
+                distance: -20
+            },
+            min: 0,
+            max: 12,
+            lineWidth: 0,
+            showFirstLabel: false,
+
+            minorTickInterval: 'auto',
+            minorTickWidth: 1,
+            minorTickLength: 10,
+            minorTickPosition: 'inside',
+            minorGridLineWidth: 0,
+            minorTickColor: 'rgba(78, 108, 132, 1)',
+            offset: -10,
+
+            tickInterval: 1,
+            tickWidth: 2,
+            tickPosition: 'inside',
+            tickLength: 10,
+            tickColor: 'rgba(207, 223, 231, 1)',
+            title: {
+                enabled: false,
+                style: {
+                    color: '#BBB',
+                    fontWeight: 'normal',
+                    fontSize: '8px',
+                    lineHeight: '10px'
+                },
+                y: 10
+            },
+            plotBands: [{
+                from: 0,
+                to:12,
+                color: 'rgba(64, 75, 96, 1)',
+                innerRadius: '73%',
+                outerRadius: '74%',
+                dashStyle: 'dot' // This unfortunately doesn't work..
+            }, {
+                from: 0,
+                to: 2.8,
+                color: 'rgba(41, 171, 223, 1)',
+                innerRadius: '72%',
+                outerRadius: '75%'
+            }]
+        },
+
+        tooltip: {
+            enabled: false,
+            formatter: function () {
+                return this.series.chart.tooltipText;
+            }
+        },
+        
+        plotOptions: {
+            gauge: {
+                pivot: {
+                    radius: 4,
+                    backgroundColor: 'white',
+                    borderWidth: 3,
+                    borderColor: 'red'
+                },
+                dial: {
+                    radius: '98%',
+                    baseWidth: 3,
+                    rearLength: '10%',
+                    backgroundColor: 'red',
+                    baseLength: '99%'
+                }
+            }
+        },
+
+        series: [{
+            data: [{
+                id: 'second',
+                y: 2.8,
+            }],
+            animation: false,
+            dataLabels: {
+                enabled: false
+            }
+        }]
+    }
+
+       );
+});
+</script>
+<script type="text/javascript">
+$(function () {
+    $('#chart_container_views').highcharts({
+
+        title: {
+            text: null  // No chart title
+        },        
+        chart: {
+            type: 'column'
+        },
+        legend: false,  // No legend
+        tooltip: false,  // No tooltip
+        yAxis: {
+            gridLineWidth: 0, // Hide the grid lines
+            tickPixelInterval: 10000, // Use the chart's height so only 2 ticks will be placed
+            labels: {
+                // This html route sort of works, but it's easier to just use the style block
+                // useHTML: true,
+                // formatter: function () {
+                //   return "<span class='axis-label'>"+this.value+"</span>";
+                // }
+                style: {    // Style the labels as spec'd by bchau
+                    fontFamily: 'Whitney',
+                    fontWeight: 'normal',
+                    fontSize: 13,
+                    color: '#CFCFCF'                    
+                }
+            },
+            title: null // No title for y-axis
+        },
+        xAxis: {    // Dotted grid lines
+            gridLineColor: '#BBBBB7',
+            gridLineWidth: 1,
+            gridLineDashStyle: 'dot',
+            tickmarkPlacement: 'on',
+            categories: ['0-5', '6-10', '11-19', '20+'],
+            lineWidth: 0,   // Hide axis line
+            tickWidth: 0,   // Hide tick lines
+            title: {
+                text: 'Seconds',
+                style: {
+                    fontFamily: 'ProximaNova',
+                    fontWeight: 'normal',
+                    fontSize: 11,
+                    color: '#CFCFCF'                    
+                }
+            },
+            labels: {
+                style: {
+                    fontFamily: 'Whitney',
+                    fontWeight: 'normal',
+                    fontSize: 13,
+                    color: '#4D4E4E'                    
+                }
+            }
+        },
+        plotOptions: {
+            column: {   // Rounded 10 pixel columns
+                pointWidth: 10,
+                borderRadius: 3
+            }
+        },
+        series: [{  // Each point needs to be an object so the column and label can be the same color
+            data: [{
+                y: 21634,
+                color: '#BD3E97',
+                dataLabels: {
+                    enabled: true,
+                    y: -6,
+                    style: {
+                        fontWeight: 'bold',
+                        fontFamily: 'Whitney',
+                        fontSize: 15,
+                        color: '#BD3E97'
+                    }
+                }
+            }, {
+                y: 19421,
+                color: '#9659A4',
+                dataLabels: {
+                    enabled: true,
+                    y: -6,
+                    style: {
+                        fontWeight: 'bold',
+                        fontFamily: 'Whitney',
+                        fontSize: 15,
+                        color: '#9659A4'
+                    }
+                }
+            }, {
+                y: 9526,
+                color: '#6966AF',
+                dataLabels: {
+                    enabled: true,
+                    y: -6,
+                    style: {
+                        fontWeight: 'bold',
+                        fontFamily: 'Whitney',
+                        fontSize: 15,
+                        color: '#6966AF'
+                    }
+                }
+            }, {
+                y: 5444,
+                color: '#0070B8',
+                dataLabels: {
+                    enabled: true,
+                    y: -6,
+                    style: {
+                        fontWeight: 'bold',
+                        fontFamily: 'Whitney',
+                        fontSize: 15,
+                        color: '#0070B8'
+                    }
+                }
+            }]
+        }]
+
+    });
+});
+</script>
+</body>
+</html>
