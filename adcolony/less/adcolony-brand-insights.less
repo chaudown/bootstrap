@@ -41,8 +41,8 @@
   transition: margin 1s ease-in-out 0s, z-index 1s ease-in-out 1s;
   z-index: 1;
   text-align: center;
-  padding: 0px 13px;
-  margin: 14px 14px 14px 0px;
+//  padding: 0px 13px;
+  margin: 16px 16px 0px 0px;
   width: 314px;
   height: 584px;
 //  float: left;
@@ -78,6 +78,49 @@
 }
 .br-info-card:active {
   border: 1px solid #4D4E4E;
+}
+.br-info-card.wide {
+  width: 480px;
+  .br-info-chart {
+    width: 400px;
+    margin-left: 40px;
+  }
+}
+.br-info-card.tall {
+  height: 690px;
+  .br-info-chart {
+    height: 350px; /* TODO: this is all arbitrary, we'll need to see how it fits and come up with a number that works */
+  }
+}
+.br-info-card.short {
+  height: 337px;
+  .br-info-chart {
+    height: 120px; /* TODO: this is all arbitrary, we'll need to see how it fits and come up with a number that works */
+  }
+}
+.br-info-card.short, .br-info-card.condensed {
+  .br-info-sub-title {
+    display: none;
+  }
+  .br-info-chart-title {
+    display: none;
+  }
+  .br-names.br-info-title {
+    font-size: 13px;
+    line-height: 15px;
+  }
+  .br-info-icon {
+    width: 36px;
+    height: 36px;
+    margin: 20px 0px 12px 0px;
+  }
+  .br-info-title {
+    max-width: 100px;
+  }
+  .br-numbers.br-info-header {
+    font-size: 30px;
+    line-height: 36px;
+  }
 }
 .br-bottom-border {
   border-bottom: 1px solid #DADBDC;

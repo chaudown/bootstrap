@@ -9541,8 +9541,7 @@ pre.pretty-json .key {
   transition: margin 1s ease-in-out 0s, z-index 1s ease-in-out 1s;
   z-index: 1;
   text-align: center;
-  padding: 0px 13px;
-  margin: 14px 14px 14px 0px;
+  margin: 16px 16px 0px 0px;
   width: 314px;
   height: 584px;
 }
@@ -9578,8 +9577,64 @@ pre.pretty-json .key {
 .br-info-card:active {
   border: 1px solid #4D4E4E;
 }
+.br-info-card.wide {
+  width: 480px;
+}
+.br-info-card.wide .br-info-chart {
+  width: 400px;
+  margin-left: 40px;
+}
+.br-info-card.tall {
+  height: 690px;
+}
+.br-info-card.tall .br-info-chart {
+  height: 350px;
+  /* TODO: this is all arbitrary, we'll need to see how it fits and come up with a number that works */
+}
+.br-info-card.short {
+  height: 337px;
+}
+.br-info-card.short .br-info-chart {
+  height: 120px;
+  /* TODO: this is all arbitrary, we'll need to see how it fits and come up with a number that works */
+}
+.br-info-card.short .br-info-sub-title,
+.br-info-card.condensed .br-info-sub-title {
+  display: none;
+}
+.br-info-card.short .br-info-chart-title,
+.br-info-card.condensed .br-info-chart-title {
+  display: none;
+}
+.br-info-card.short .br-names.br-info-title,
+.br-info-card.condensed .br-names.br-info-title {
+  font-size: 13px;
+  line-height: 15px;
+}
+.br-info-card.short .br-info-icon,
+.br-info-card.condensed .br-info-icon {
+  width: 36px;
+  height: 36px;
+  margin: 20px 0px 12px 0px;
+}
+.br-info-card.short .br-info-title,
+.br-info-card.condensed .br-info-title {
+  max-width: 100px;
+}
+.br-info-card.short .br-numbers.br-info-header,
+.br-info-card.condensed .br-numbers.br-info-header {
+  font-size: 30px;
+  line-height: 36px;
+}
+.br-bottom-border {
+  border-bottom: 1px solid #DADBDC;
+}
 /* END Info Card Styles */
 /* Text and Number Styles */
+.br-small-text {
+  font-size: 13px;
+  line-height: 13px;
+}
 .br-numbers {
   font-style: normal;
   font-weight: normal;
@@ -9634,6 +9689,10 @@ pre.pretty-json .key {
 .br-search-asset-preview .br-asset-preview {
   height: 134px;
 }
+.br-search-asset-preview .br-single-preview .br-asset-overlay,
+.br-search-asset-preview .br-multi-preview .br-asset-overlay {
+  margin-top: 110px;
+}
 .br-search-preview-overlay {
   position: absolute;
   top: 110px;
@@ -9644,38 +9703,44 @@ pre.pretty-json .key {
   color: white;
   z-index: 4;
 }
+/* Progress Bar Styles */
 .br-progress {
   max-width: 140px;
   height: 6px;
   margin-bottom: 10px;
+  box-shadow: none;
+  background-image: none;
 }
 .br-search-progress {
   max-width: 140px;
   height: 14px;
   margin-bottom: 10px;
+  background-image: none;
+  box-shadow: none;
 }
 .br-progress-full {
   max-width: 100%;
   width: 100%;
 }
+.br-progress .bar {
+  background-image: none;
+  box-shadow: none;
+}
 .br-search-progress .bar {
   background-color: #aaaaaa;
-  background-image: linear-gradient(to bottom, #cccccc, #999999);
+  background-image: none;
+  box-shadow: none;
 }
+.br-spend-progress .bar {
+  background-color: #1BAAE1;
+}
+.br-date-progress .bar {
+  background-color: #0672BA;
+}
+/* END Progress Bar Styles */
 table.table-brand-reporting tbody tr:hover {
   background-color: #23314b;
   cursor: pointer;
-}
-.cycler {
-  position: relative;
-}
-.cycler img {
-  position: absolute;
-  z-index: 1;
-  background-color: black;
-}
-.cycler img.active {
-  z-index: 3;
 }
 /*table.table-brand-reporting tbody tr:nth-child(odd):hover {*/
 /*background-color: blue;*/
@@ -9716,12 +9781,16 @@ table.table-brand-reporting tbody tr:hover {
   padding: 12px 12px 8px 12px;
   border-bottom: 4px solid transparent;
 }
+.br-button-block a {
+  text-decoration: none;
+  color: black;
+}
 .br-button-block:hover {
   border-top-left-radius: 3px;
   border-bottom: 4px solid #4bb1cf;
   cursor: pointer;
 }
-.br-button-block .active {
+.br-button-block.active {
   border-bottom: 4px solid #4bb1cf;
 }
 .br-filter-block {
@@ -9786,6 +9855,9 @@ table.table-brand-reporting tbody tr:hover {
     max-height: 155px;
   }
 }
+.br-preview-click-thru {
+  cursor: pointer;
+}
 /* video overlay and dec overlays are different styling
   because the img cycling we use for the video preview
  has the images using absolute position*/
@@ -9801,6 +9873,10 @@ table.table-brand-reporting tbody tr:hover {
   margin-top: -25px;
   margin-right: 10px;
 }
+.br-single-preview .br-asset-overlay.compact {
+  font-size: 11px;
+  margin-right: 5px;
+}
 .br-single-preview .br-asset-preview {
   border-top-right-radius: 3px;
 }
@@ -9809,6 +9885,10 @@ table.table-brand-reporting tbody tr:hover {
   float: left;
   margin-top: -25px;
   margin-left: 10px;
+}
+.br-single-preview.left .br-asset-overlay.compact {
+  font-size: 11px;
+  margin-left: 5px;
 }
 .br-single-preview.left .br-asset-preview {
   border-top-left-radius: 3px;
@@ -9819,6 +9899,11 @@ table.table-brand-reporting tbody tr:hover {
   margin-top: 130px;
   margin-left: 10px;
 }
+.br-multi-preview .br-asset-overlay.compact {
+  margin-top: 23px;
+  margin-left: 5px;
+  font-size: 11px;
+}
 .br-multi-preview .br-asset-preview {
   border-top-left-radius: 3px;
 }
@@ -9828,8 +9913,24 @@ table.table-brand-reporting tbody tr:hover {
   margin-top: 130px;
   margin-right: 10px;
 }
+.br-multi-preview.right .br-asset-overlay.compact {
+  margin-top: 23px;
+  margin-right: 5px;
+  font-size: 11px;
+}
 .br-multi-preview.right .br-asset-preview {
   border-top-right-radius: 3px;
+}
+.cycler {
+  position: relative;
+}
+.cycler img {
+  position: absolute;
+  z-index: 1;
+  background-color: black;
+}
+.cycler img.active {
+  z-index: 3;
 }
 /* Custom grid for the ad creative info box*/
 .br-flush-grid {
@@ -9838,6 +9939,9 @@ table.table-brand-reporting tbody tr:hover {
 .br-flush-grid .span6 {
   width: 50%;
   margin: 0px;
+}
+.compact .br-flush-grid {
+  border-bottom: none;
 }
 .pull-right {
   float: right;

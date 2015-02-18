@@ -50,7 +50,168 @@
     </div>
 </div>	
 </div>  
+<div class="row-fluid" style="padding: 0px 13px;">
+<div class="br-info-card-modal br-placeholder-card">
+    <div class="br-modal-bg"></div>
+    <div class="br-info-card wide br-bordered-card">
+        <img src="../img/icon-dec-views.png" class="br-info-icon">
+        <div class="br-names br-info-title">DEC VIEWS</div>
+        <div class="br-numbers br-info-header">124,643</span></div>
+        <div class="br-names br-info-sub-title">Total DEC Views</div>
+        <br/>
+        <div id="chart_container_wide_1" class="br-info-chart"> Chart Here </div>
+        <br/>
+        <div class="br-names br-info-chart-title">Exposure Time</div>
+    </div>
+</div>      
+<div class="br-info-card-modal br-placeholder-card">
+    <div class="br-modal-bg"></div>
+    <div class="br-info-card wide short br-bordered-card">
+        <img src="../img/icon-dec-views.png" class="br-info-icon">
+        <div class="br-names br-info-title">DEC VIEWS</div>
+        <div class="br-numbers br-info-header">124,643</span></div>
+        <div class="br-names br-info-sub-title">Total DEC Views</div>
+        <br/>
+        <div id="chart_container_wide_2" class="br-info-chart"> Chart Here </div>
+        <br/>
+        <div class="br-names br-info-chart-title">Exposure Time</div>
+    </div>
+</div> 
 </div>
+</div>
+<script type="text/javascript">
+$(function () {
+    $('#chart_container_wide_1').highcharts({
+
+        title: {
+            text: null  // No chart title
+        },        
+        chart: {
+            type: 'column',
+            events: {
+                click: function(e) {
+                    console.log("Chart clicked");
+                    toggleInfoCardToModal(e);
+                }
+            }
+        },
+        legend: {
+            enabled: false // No legend
+        },  
+        tooltip: false,  // No tooltip
+        yAxis: {
+            gridLineWidth: 0, // Hide the grid lines
+            tickPixelInterval: 10000, // Use the chart's height so only 2 ticks will be placed
+            labels: {
+                // This html route sort of works, but it's easier to just use the style block
+                // useHTML: true,
+                // formatter: function () {
+                //   return "<span class='axis-label'>"+this.value+"</span>";
+                // }
+                style: {    // Style the labels as spec'd by bchau
+                    fontFamily: 'Whitney',
+                    fontWeight: 'normal',
+                    fontSize: 13,
+                    color: '#CFCFCF'                    
+                }
+            },
+            title: null // No title for y-axis
+        },
+        xAxis: {    // Dotted grid lines
+            gridLineColor: '#BBBBB7',
+            gridLineWidth: 1,
+            gridLineDashStyle: 'dot',
+            tickmarkPlacement: 'on',
+            categories: ['0-5', '6-10', '11-19', '20+'],
+            lineWidth: 0,   // Hide axis line
+            tickWidth: 0,   // Hide tick lines
+            title: {
+                text: 'Seconds',
+                style: {
+                    fontFamily: 'ProximaNova',
+                    fontWeight: 'normal',
+                    fontSize: 11,
+                    color: '#CFCFCF'                    
+                }
+            },
+            labels: {
+                style: {
+                    fontFamily: 'Whitney',
+                    fontWeight: 'normal',
+                    fontSize: 13,
+                    color: '#4D4E4E'                    
+                }
+            }
+        },
+        plotOptions: {
+            column: {   // Rounded 10 pixel columns
+                pointWidth: 10,
+                borderRadius: 3
+            }
+        },
+        series: [{  // Each point needs to be an object so the column and label can be the same color
+            data: [{
+                y: 21634,
+                color: '#BD3E97',
+                dataLabels: {
+                    enabled: true,
+                    y: -6,
+                    style: {
+                        fontWeight: 'bold',
+                        fontFamily: 'Whitney',
+                        fontSize: 15,
+                        color: '#BD3E97',
+                        textShadow: 'none'
+                    }
+                }
+            }, {
+                y: 19421,
+                color: '#9659A4',
+                dataLabels: {
+                    enabled: true,
+                    y: -6,
+                    style: {
+                        fontWeight: 'bold',
+                        fontFamily: 'Whitney',
+                        fontSize: 15,
+                        color: '#9659A4',
+                        textShadow: 'none'
+                    }
+                }
+            }, {
+                y: 9526,
+                color: '#6966AF',
+                dataLabels: {
+                    enabled: true,
+                    y: -6,
+                    style: {
+                        fontWeight: 'bold',
+                        fontFamily: 'Whitney',
+                        fontSize: 15,
+                        color: '#6966AF',
+                        textShadow: 'none'
+                    }
+                }
+            }, {
+                y: 5444,
+                color: '#0070B8',
+                dataLabels: {
+                    enabled: true,
+                    y: -6,
+                    style: {
+                        fontWeight: 'bold',
+                        fontFamily: 'Whitney',
+                        fontSize: 15,
+                        color: '#0070B8',
+                        textShadow: 'none'
+                    }
+                }
+            }]
+        }]
+
+    });
+});
+</script>
 <script type="text/javascript">
 $(function () {
 
@@ -333,9 +494,17 @@ $(function () {
             text: null  // No chart title
         },        
         chart: {
-            type: 'column'
+            type: 'column',
+            events: {
+                click: function(e) {
+                    console.log("Chart clicked");
+                    toggleInfoCardToModal(e);
+                }
+            }
         },
-        legend: false,  // No legend
+        legend: {
+            enabled: false // No legend
+        },  
         tooltip: false,  // No tooltip
         yAxis: {
             gridLineWidth: 0, // Hide the grid lines
@@ -398,7 +567,8 @@ $(function () {
                         fontWeight: 'bold',
                         fontFamily: 'Whitney',
                         fontSize: 15,
-                        color: '#BD3E97'
+                        color: '#BD3E97',
+                        textShadow: 'none'
                     }
                 }
             }, {
@@ -411,7 +581,8 @@ $(function () {
                         fontWeight: 'bold',
                         fontFamily: 'Whitney',
                         fontSize: 15,
-                        color: '#9659A4'
+                        color: '#9659A4',
+                        textShadow: 'none'
                     }
                 }
             }, {
@@ -424,7 +595,8 @@ $(function () {
                         fontWeight: 'bold',
                         fontFamily: 'Whitney',
                         fontSize: 15,
-                        color: '#6966AF'
+                        color: '#6966AF',
+                        textShadow: 'none'
                     }
                 }
             }, {
@@ -437,7 +609,8 @@ $(function () {
                         fontWeight: 'bold',
                         fontFamily: 'Whitney',
                         fontSize: 15,
-                        color: '#0070B8'
+                        color: '#0070B8',
+                        textShadow: 'none'
                     }
                 }
             }]
