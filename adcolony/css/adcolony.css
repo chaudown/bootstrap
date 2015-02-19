@@ -9531,6 +9531,9 @@ pre.pretty-json .key {
 .br-info-card-modal {
   float: left;
 }
+.br-info-card-modal:first-child {
+  margin-left: 22px;
+}
 .br-info-card-modal.active .br-modal-bg {
   transition: z-index 1s ease-in-out 0s, opacity 1s ease-in-out 0s;
   z-index: 30;
@@ -9594,6 +9597,13 @@ pre.pretty-json .key {
 .br-info-card.wide .br-info-chart {
   width: 400px;
   margin-left: 40px;
+}
+.br-info-card.full-width {
+  width: 978px;
+  height: 240px;
+}
+.br-info-card.full-width .br-sub-card {
+  width: 326px;
 }
 .br-info-card.tall {
   height: 690px;
@@ -9677,6 +9687,9 @@ pre.pretty-json .key {
 }
 .br-info-card.wide.side-by-side .br-info-sub-title {
   display: block;
+}
+.br-sub-card {
+  float: left;
 }
 .br-info-sub-title {
   margin-bottom: 36px;

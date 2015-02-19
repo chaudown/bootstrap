@@ -25,7 +25,7 @@
         </div>      
         <div class="br-info-card-modal br-placeholder-card">
             <div class="br-modal-bg"></div>
-            <div class="br-info-card br-bordered-card">
+            <div id="center_info_card" class="br-info-card br-bordered-card">
                 <img src="../img/icon-engagement.png" class="br-info-icon">
                 <div class="br-names br-info-title">ENAGEMENT RATE</div>
                 <div class="br-numbers br-info-header">3.17<span class="br-symbol">%</span></div>
@@ -91,7 +91,34 @@
         </div> 
     </div>
     </div>
-    <div class="row-fluid" style="height: 100px;width:100%;"></div>    
+    <div class="row-fluid">
+    <div class="br-row">    
+        <div class="br-info-card-modal br-placeholder-card">
+            <div class="br-modal-bg"></div>
+            <div id="full_width_card" class="br-info-card full-width br-bordered-card">
+                <div class="br-sub-card">
+                    <img src="../img/icon-dec-views.png" class="br-info-icon">
+                    <div class="br-names br-info-title">DEC VIEWS</div>
+                    <div class="br-numbers br-info-header">3,291</div>
+                    <div class="br-names br-info-sub-title">Total DEC Views</div>
+                </div>
+                <div class="br-sub-card">
+                    <img src="../img/icon-dec-views.png" class="br-info-icon">
+                    <div class="br-names br-info-title">AVERAGE LOAD TIME</div>
+                    <div class="br-numbers br-info-header">0.21</div>
+                    <div class="br-names br-info-sub-title">Seconds</div>
+                </div>
+                <div class="br-sub-card">
+                    <img src="../img/icon-dec-views.png" class="br-info-icon">
+                    <div class="br-names br-info-title">FAILURE RATE</div>
+                    <div class="br-numbers br-info-header">12.3%</div>
+                    <div class="br-names br-info-sub-title">DEC Failure Rate</div>
+                </div>
+            </div>
+        </div>
+    </div>    
+    </div>
+    <div class="row-fluid" style="height:100px;"></div>
 </div>
 <script type="text/javascript">
 function toggleInfoCardToModal(e) {
@@ -120,7 +147,7 @@ function toggleInfoCardToModal(e) {
     }
 }
 
-$('#test_card').on('click', function(e) {
+$('#center_info_card').on('click', function(e) {
     console.log("Info Card Clicked");
     if ($(e.target).hasClass("btn-br-info-action")) {
         e.stopPropagation();
