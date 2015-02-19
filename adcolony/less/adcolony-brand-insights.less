@@ -1,4 +1,8 @@
 // Fonts declared in adcolony-variables.less
+.br-row {
+  max-width: 1024px;
+  margin: 0 auto;
+}
 /* Info Card Styles */
 .br-bordered-card {
   border: 1px solid #DADBDC;
@@ -55,10 +59,10 @@
     max-width: 200px;
     margin: 0 auto;
     border-bottom: 1px solid #DADBDC;
-    padding-bottom: 10px;
+    padding-bottom: 5px;
   }
   .br-info-header {
-    margin: 12px 0 6px 0;
+    margin: 12px 0 0 0;
   }
   .br-info-chart {
     width: 241px;
@@ -122,8 +126,65 @@
     line-height: 36px;
   }
 }
+.br-info-card.short {
+  .btn-br-info-action {
+    margin-top: 20px;
+  }
+}
+.br-info-card.condensed {
+  .btn-br-info-action {
+    margin-top: 10px;
+  }
+}
+.br-info-card.wide.side-by-side {
+  .left-side {
+    float: left;
+    width: 204px;
+    height: 265px;
+    padding: 36px 0 36px 36px;
+  }
+  .right-side {
+    float: right;
+    width: 204px;
+    height: 265px;
+    padding: 36px 36px 36px 0;
+  }
+  .br-info-icon {
+    width: 44px;
+    height: 44px;
+    margin: 20px 0px 12px 0px;
+  }
+  .br-info-chart {
+    width: 188px;
+    height: 188px;
+    margin: 0;
+    top: 50%;
+    position: relative;
+    transform: translateY(-50%);
+  }
+  .br-info-header {
+    margin: 0;
+  }
+  .br-numbers.br-info-header {
+    font-size: 60px;
+    line-height: 70px;
+  }
+  .br-info-sub-title {
+    display: block;
+  }
+}
+.br-info-sub-title {
+  margin-bottom: 36px;
+}
 .br-bottom-border {
   border-bottom: 1px solid #DADBDC;
+}
+.btn-br-info-action {
+  padding: 6px;
+  box-shadow: none;
+  background-image: none;
+  border: none;
+  background-color: #E7E8E8;
 }
 /* END Info Card Styles */
 /* Text and Number Styles */
@@ -145,6 +206,12 @@
   line-height: 57px;
   font-size: 48px;
 }
+.br-numbers.br-info-light {
+  font-weight: 100;
+  font-size: 33px;
+  line-height: 38px;
+  color: white;
+}
 .br-names {
   font-style: normal;
   font-family: Proxima;
@@ -162,7 +229,15 @@
 }
 .br-names.br-info-sub-title {
   font-size: 16px;
+  line-height: 19px;
   color: #9B9B9B;
+}
+.br-names.btn-br-info-action {
+  font-family: ProximaNova;
+  font-weight: bold;
+  color: #666767;
+  font-size: 13px;
+  line-height: 15px;
 }
 /* END Text and Number Styles*/
 .search-entry-box {

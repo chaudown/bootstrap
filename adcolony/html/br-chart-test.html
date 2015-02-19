@@ -9,76 +9,139 @@
 </head>
 <body>
 <div id="ac-content-container">
-<div class="row-fluid" style="padding: 0px 13px;">
-<div class="br-info-card-modal br-placeholder-card">
-    <div class="br-modal-bg"></div>
-    <div class="br-info-card br-bordered-card">
-		<img src="../img/icon-dec-views.png" class="br-info-icon">
-		<div class="br-names br-info-title">DEC VIEWS</div>
-		<div class="br-numbers br-info-header">124,643</span></div>
-		<div class="br-names br-info-sub-title">Total DEC Views</div>
-		<br/>
-		<div id="chart_container_views" class="br-info-chart"> Chart Here </div>
-		<br/>
-		<div class="br-names br-info-chart-title">Exposure Time</div>
-	</div>
-</div>      
-<div class="br-info-card-modal br-placeholder-card">
-    <div class="br-modal-bg"></div>
-    <div class="br-info-card br-bordered-card">
-        <img src="../img/icon-engagement.png" class="br-info-icon">
-        <div class="br-names br-info-title">ENAGEMENT RATE</div>
-        <div class="br-numbers br-info-header">3.17<span class="br-symbol">%</span></div>
-        <div class="br-names br-info-sub-title">Overall Engagement Rate</div>
-        <br/>
-        <div id="chart_container_enagements" class="br-info-chart" style="width:260px;height:260px;margin: 0 auto;"> Chart Here </div>
-        <br/>
-        <div class="br-names br-info-chart-title">Exposure Time</div>
+    <div class="row-fluid">
+    <div class="br-row">    
+        <div class="br-info-card-modal br-placeholder-card">
+            <div class="br-modal-bg"></div>
+            <div class="br-info-card br-bordered-card">
+        		<img src="../img/icon-dec-views.png" class="br-info-icon">
+        		<div class="br-names br-info-title">DEC VIEWS</div>
+        		<div class="br-numbers br-info-header">124,643</span></div>
+        		<div class="br-names br-info-sub-title">Total DEC Views</div>
+        		<div id="chart_container_views" class="br-info-chart"> Chart Here </div>
+        		<br/>
+        		<div class="br-names br-info-chart-title">Exposure Time</div>
+        	</div>
+        </div>      
+        <div class="br-info-card-modal br-placeholder-card">
+            <div class="br-modal-bg"></div>
+            <div class="br-info-card br-bordered-card">
+                <img src="../img/icon-engagement.png" class="br-info-icon">
+                <div class="br-names br-info-title">ENAGEMENT RATE</div>
+                <div class="br-numbers br-info-header">3.17<span class="br-symbol">%</span></div>
+                <div class="br-names br-info-sub-title">Overall Engagement Rate</div>
+                <div id="chart_container_enagements" class="br-info-chart" style="width:260px;height:260px;margin: 0 auto;"> Chart Here </div>
+                <br/>
+                <div class="br-names br-info-chart-title">Exposure Time</div>
+            </div>
+        </div>      
+        <div class="br-info-card-modal br-placeholder-card">
+            <div class="br-modal-bg"></div>
+            <div class="br-info-card br-bordered-card">
+                <img src="../img/icon-kpi.png" class="br-info-icon">
+                <div class="br-names br-info-title">KPI RATE</div>
+                <div class="br-numbers br-info-header">1.43<span class="br-symbol">%</span></div>
+                <div class="br-names br-info-sub-title">Overall KPI Rate</div>
+                <div id="chart_container_kpi" class="br-info-chart" style="width:250px;height:250px;margin: 0 auto;"> Chart Here </div>
+                <br/>
+                <div class="br-names br-info-chart-title">Exposure Time</div>
+            </div>
+        </div>	
     </div>
-</div>      
-<div class="br-info-card-modal br-placeholder-card">
-    <div class="br-modal-bg"></div>
-    <div class="br-info-card br-bordered-card">
-        <img src="../img/icon-kpi.png" class="br-info-icon">
-        <div class="br-names br-info-title">KPI RATE</div>
-        <div class="br-numbers br-info-header">1.43<span class="br-symbol">%</span></div>
-        <div class="br-names br-info-sub-title">Overall KPI Rate</div>
-        <br/>
-        <div id="chart_container_kpi" class="br-info-chart" style="width:250px;height:250px;margin: 0 auto;"> Chart Here </div>
-        <br/>
-        <div class="br-names br-info-chart-title">Exposure Time</div>
+    </div>  
+    <div class="row-fluid">
+    <div class="br-row">
+        <div class="br-info-card-modal br-placeholder-card">
+            <div class="br-modal-bg"></div>
+            <div id="test_card" class="br-info-card wide tall br-bordered-card">
+                <img src="../img/icon-dec-views.png" class="br-info-icon">
+                <div class="br-names br-info-title">DEC VIEWS</div>
+                <div class="br-numbers br-info-header">124,643</span></div>
+                <div class="br-names br-info-sub-title">Total DEC Views</div>
+                <button class="btn br-names btn-br-info-action" onclick="toggleText(this)">PLACEMENTS</button>
+                <div id="chart_container_wide_1" class="br-info-chart"> Chart Here </div>
+                <div class="br-names br-info-chart-title">Exposure Time</div>
+            </div>
+        </div>      
+        <div class="br-info-card-modal br-placeholder-card">
+            <div class="br-modal-bg"></div>
+            <div id="test_card2" class="br-info-card wide short br-bordered-card">
+                <img src="../img/icon-dec-views.png" class="br-info-icon">
+                <p class="br-names br-info-title">DEC VIEWS</p>
+                <div class="br-numbers br-info-header">124,643</div>
+                <div class="br-names br-info-sub-title">Total DEC Views</div>
+                <button class="btn br-names btn-br-info-action" onclick="toggleText(this)">PLACEMENTS</button>
+                <div id="chart_container_wide_2" class="br-info-chart"> Chart Here </div>
+                <div class="br-names br-info-chart-title">Exposure Time</div>
+            </div>
+        </div> 
+        <div class="br-info-card-modal br-placeholder-card">
+            <div class="br-modal-bg"></div>
+            <div id="test_card3" class="br-info-card wide short side-by-side br-bordered-card">
+                <div class="left-side">
+                    <img src="../img/icon-dec-views.png" class="br-info-icon">
+                    <div class="br-names br-info-title">DEC VIEWS</div>
+                    <div class="br-numbers br-info-header">124,643</span></div>
+                    <div class="br-names br-info-sub-title">Total DEC Views</div>
+                </div>
+                <div class="right-side">
+                    <div id="chart_container_wide_2" class="br-info-chart"> Chart Here </div>
+                </div>                
+            </div>
+        </div> 
     </div>
-</div>	
-</div>  
-<div class="row-fluid" style="padding: 0px 13px;">
-<div class="br-info-card-modal br-placeholder-card">
-    <div class="br-modal-bg"></div>
-    <div class="br-info-card wide br-bordered-card">
-        <img src="../img/icon-dec-views.png" class="br-info-icon">
-        <div class="br-names br-info-title">DEC VIEWS</div>
-        <div class="br-numbers br-info-header">124,643</span></div>
-        <div class="br-names br-info-sub-title">Total DEC Views</div>
-        <br/>
-        <div id="chart_container_wide_1" class="br-info-chart"> Chart Here </div>
-        <br/>
-        <div class="br-names br-info-chart-title">Exposure Time</div>
     </div>
-</div>      
-<div class="br-info-card-modal br-placeholder-card">
-    <div class="br-modal-bg"></div>
-    <div class="br-info-card wide short br-bordered-card">
-        <img src="../img/icon-dec-views.png" class="br-info-icon">
-        <div class="br-names br-info-title">DEC VIEWS</div>
-        <div class="br-numbers br-info-header">124,643</span></div>
-        <div class="br-names br-info-sub-title">Total DEC Views</div>
-        <br/>
-        <div id="chart_container_wide_2" class="br-info-chart"> Chart Here </div>
-        <br/>
-        <div class="br-names br-info-chart-title">Exposure Time</div>
-    </div>
-</div> 
+    <div class="row-fluid" style="height: 100px;width:100%;"></div>    
 </div>
-</div>
+<script type="text/javascript">
+function toggleInfoCardToModal(e) {
+    var target = null;
+    if (typeof e.currentTarget.container !== "undefined" && e.currentTarget.container !== null) {
+        target = e.currentTarget.container.parentNode;
+    } else {
+        target = e.currentTarget;
+    }
+    var child = $(target);
+    var el = child.parents('.br-info-card-modal');
+    var modal = el.children('.br-info-card');
+    el.toggleClass('active');
+    if (el[0].className.indexOf('active') >= 0) {
+        var container_width = el.offsetParent().width();
+        var modal_width = modal.outerWidth();
+        var modal_position = modal.position().left;
+        var offset = ((container_width - modal_width) / 2) - modal_position;
+        modal.css('margin-left', offset);
+        var offset_top = ($(window).height() - modal.height()) / 2;
+        $('html, body').animate({
+            scrollTop: modal.offset().top - offset_top
+        }, 1000);
+    } else {
+        modal.css('margin-left', '');
+    }
+}
+
+$('#test_card').on('click', function(e) {
+    console.log("Info Card Clicked");
+    if ($(e.target).hasClass("btn-br-info-action")) {
+        e.stopPropagation();
+        e.preventDefault()
+        return;
+    }
+    toggleInfoCardToModal(e);
+});
+$('.br-modal-bg').on('click', function(e) {
+    toggleInfoCardToModal(e)
+})
+</script>
+<script type="text/javascript">
+function toggleText(el) {
+    if (el.innerHTML === "PLACEMENTS") {
+        el.innerHTML = "CREATIVES";
+    } else {
+        el.innerHTML = "PLACEMENTS";
+    }
+}
+</script>
 <script type="text/javascript">
 $(function () {
     $('#chart_container_wide_1').highcharts({
@@ -87,7 +150,7 @@ $(function () {
             text: null  // No chart title
         },        
         chart: {
-            type: 'column',
+            type: 'bar',
             events: {
                 click: function(e) {
                     console.log("Chart clicked");
