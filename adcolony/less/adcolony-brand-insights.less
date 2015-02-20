@@ -51,7 +51,7 @@
 //  padding: 0px 13px;
   margin: 16px 16px 0px 0px;
   width: 314px;
-  height: 584px;
+  height: 582px; // 2 less than the spec because css borders add on to height
 //  float: left;
   .br-info-icon {
     width: 44px;
@@ -102,13 +102,18 @@
   }
 }
 .br-info-card.tall {
-  height: 690px;
+  height: 688px; // 2 less than the spec because css borders add on to height
   .br-info-chart {
-    height: 350px; /* TODO: this is all arbitrary, we'll need to see how it fits and come up with a number that works */
+    height: 360px; /* TODO: this is all arbitrary, we'll need to see how it fits and come up with a number that works */
+  }
+}
+.br-info-card.tall.condensed {
+  .br-info-chart {
+    height: 480px;
   }
 }
 .br-info-card.short {
-  height: 337px;
+  height: 335px; // 2 less than the spec because css borders add on to height
   .br-info-chart {
     height: 120px; /* TODO: this is all arbitrary, we'll need to see how it fits and come up with a number that works */
   }

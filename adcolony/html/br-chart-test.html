@@ -59,7 +59,7 @@
                 <div class="br-numbers br-info-header">124,643</span></div>
                 <div class="br-names br-info-sub-title">Total DEC Views</div>
                 <button class="btn br-names btn-br-info-action" onclick="toggleText(this)">PLACEMENTS</button>
-                <div id="chart_container_wide_1" class="br-info-chart"> Chart Here </div>
+                <div class="br-info-chart"><div id="chart_container_wide_1">Chart Here</div></div>
                 <div class="br-names br-info-chart-title">Exposure Time</div>
             </div>
         </div>      
@@ -85,7 +85,7 @@
                     <div class="br-names br-info-sub-title">Total DEC Views</div>
                 </div>
                 <div class="right-side">
-                    <div id="chart_container_wide_2" class="br-info-chart"> Chart Here </div>
+                    <div class="br-info-chart"><div id="chart_container_wide_2">Chart Here</div></div>
                 </div>                
             </div>
         </div> 
@@ -172,6 +172,36 @@ function toggleText(el) {
 <script type="text/javascript">
 $(function () {
     $('#chart_container_wide_1').highcharts({
+        "title":null,
+        "credits":{"enabled":false},
+        "navigation":{"buttonOptions":{"enabled":false}},
+        "chart":{"events":{},"type":"bar"},
+        "legend":{"enabled":false},
+        "tooltip":false,
+        "plotOptions":{"bar":{"pointWidth":10,"borderRadius":3}},
+        "yAxis":{"gridLineWidth":0,"tickPixelInterval":10000,"title":null,"labels":{"enabled":false}},
+        "xAxis":{
+            "categories":["Magic Jigsaw Puzzles iOS","Magic Jigsaw Puzzles Android","Magic Jigsaw Puzzles Amazon","Lil Quest iOS","Muffin Quest, Android","Lil Quest Android"],
+            "gridLineWidth":0,"lineWidth":0,"tickWidth":0,"title":null,
+            "labels":{
+                "x":0,
+                "y":-10,
+                align: 'left',
+                "style":{
+                    "fontFamily":"Whitney",
+                    "fontWeight":"normal",
+                    "fontSize":13,
+                    "color":"#4D4E4E",
+                    whiteSpace: 'nowrap'
+                }
+            }
+        },
+        "series":[{"data":[{"y":10335,"color":"#69d0f5","dataLabels":{"enabled":true,"y":-1,"style":{"fontWeight":"bold","fontFamily":"Whitney","fontSize":15,"color":"#69d0f5"}}},{"y":109,"color":"#5c9be0","dataLabels":{"enabled":true,"y":-1,"style":{"fontWeight":"bold","fontFamily":"Whitney","fontSize":15,"color":"#5c9be0"}}},{"y":7,"color":"#506acc","dataLabels":{"enabled":true,"y":-1,"style":{"fontWeight":"bold","fontFamily":"Whitney","fontSize":15,"color":"#506acc"}}},{"y":0,"color":"#4944b8","dataLabels":{"enabled":true,"y":-1,"style":{"fontWeight":"bold","fontFamily":"Whitney","fontSize":15,"color":"#4944b8"}}},{"y":20,"color":"#5a39a3","dataLabels":{"enabled":true,"y":-1,"style":{"fontWeight":"bold","fontFamily":"Whitney","fontSize":15,"color":"#5a39a3"}}},{"y":8,"color":"#652f8f","dataLabels":{"enabled":true,"y":-1,"style":{"fontWeight":"bold","fontFamily":"Whitney","fontSize":15,"color":"#652f8f"}}}],"_colorIndex":0}]});
+});
+</script>
+<script type="text/javascript">
+$(function () {
+    $('#chart_container_wide_4').highcharts({
 
         title: {
             text: null  // No chart title
@@ -207,8 +237,7 @@ $(function () {
             gridLineWidth: 0,
             gridLineDashStyle: 'dot',
             tickmarkPlacement: 'on',
-            // categories: ['Placement #1', 'Placement #2', 'Placement #3', 'Placement #4'],
-            type: 'categories',
+            categories: ['Placement #1', 'Placement #2', 'Placement #3', 'Placement #4'],
             lineWidth: 0,   // Hide axis line
             tickWidth: 0,   // Hide tick lines
             title: null,
@@ -233,7 +262,6 @@ $(function () {
         series: [{  // Each point needs to be an object so the column and label can be the same color
             data: [{
                 y: 21634,
-                name: 'Placement #1',
                 color: '#BD3E97',
                 dataLabels: {
                     enabled: true,
@@ -247,7 +275,6 @@ $(function () {
                     }
                 }
             }, {
-                name: 'Placement #2',
                 y: 19421,
                 color: '#9659A4',
                 dataLabels: {
@@ -262,7 +289,6 @@ $(function () {
                     }
                 }
             }, {
-                name: 'Placement #3',
                 y: 9526,
                 color: '#6966AF',
                 dataLabels: {
@@ -277,7 +303,6 @@ $(function () {
                     }
                 }
             }, {
-                name: 'Placement #4',
                 y: 5444,
                 color: '#0070B8',
                 dataLabels: {

@@ -9557,7 +9557,7 @@ pre.pretty-json .key {
   text-align: center;
   margin: 16px 16px 0px 0px;
   width: 314px;
-  height: 584px;
+  height: 582px;
 }
 .br-info-card .br-info-icon {
   width: 44px;
@@ -9607,14 +9607,17 @@ pre.pretty-json .key {
   width: 326px;
 }
 .br-info-card.tall {
-  height: 690px;
+  height: 688px;
 }
 .br-info-card.tall .br-info-chart {
-  height: 350px;
+  height: 360px;
   /* TODO: this is all arbitrary, we'll need to see how it fits and come up with a number that works */
 }
+.br-info-card.tall.condensed .br-info-chart {
+  height: 480px;
+}
 .br-info-card.short {
-  height: 337px;
+  height: 335px;
 }
 .br-info-card.short .br-info-chart {
   height: 120px;
@@ -9704,6 +9707,10 @@ pre.pretty-json .key {
   background-image: none;
   border: none;
   background-color: #E7E8E8;
+}
+.btn-flat {
+  box-shadow: none;
+  background-image: none;
 }
 /* END Info Card Styles */
 /* Text and Number Styles */
