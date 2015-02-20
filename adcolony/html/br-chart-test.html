@@ -198,43 +198,34 @@ $(function () {
                 // formatter: function () {
                 //   return "<span class='axis-label'>"+this.value+"</span>";
                 // }
-                style: {    // Style the labels as spec'd by bchau
-                    fontFamily: 'Whitney',
-                    fontWeight: 'normal',
-                    fontSize: 13,
-                    color: '#CFCFCF'                    
-                }
+                enabled: false
             },
             title: null // No title for y-axis
         },
         xAxis: {    // Dotted grid lines
             gridLineColor: '#BBBBB7',
-            gridLineWidth: 1,
+            gridLineWidth: 0,
             gridLineDashStyle: 'dot',
             tickmarkPlacement: 'on',
-            categories: ['0-5', '6-10', '11-19', '20+'],
+            // categories: ['Placement #1', 'Placement #2', 'Placement #3', 'Placement #4'],
+            type: 'categories',
             lineWidth: 0,   // Hide axis line
             tickWidth: 0,   // Hide tick lines
-            title: {
-                text: 'Seconds',
-                style: {
-                    fontFamily: 'ProximaNova',
-                    fontWeight: 'normal',
-                    fontSize: 11,
-                    color: '#CFCFCF'                    
-                }
-            },
+            title: null,
             labels: {
                 style: {
-                    fontFamily: 'Whitney',
+                    fontFamily: 'Proxima',
                     fontWeight: 'normal',
                     fontSize: 13,
-                    color: '#4D4E4E'                    
-                }
+                    color: '#444445'                    
+                },
+                align: 'left',
+                x: 0,
+                y: -10
             }
         },
         plotOptions: {
-            column: {   // Rounded 10 pixel columns
+            bar: {   // Rounded 10 pixel columns
                 pointWidth: 10,
                 borderRadius: 3
             }
@@ -242,10 +233,11 @@ $(function () {
         series: [{  // Each point needs to be an object so the column and label can be the same color
             data: [{
                 y: 21634,
+                name: 'Placement #1',
                 color: '#BD3E97',
                 dataLabels: {
                     enabled: true,
-                    y: -6,
+                    y: -1,
                     style: {
                         fontWeight: 'bold',
                         fontFamily: 'Whitney',
@@ -255,11 +247,12 @@ $(function () {
                     }
                 }
             }, {
+                name: 'Placement #2',
                 y: 19421,
                 color: '#9659A4',
                 dataLabels: {
                     enabled: true,
-                    y: -6,
+                    y: -1,
                     style: {
                         fontWeight: 'bold',
                         fontFamily: 'Whitney',
@@ -269,11 +262,12 @@ $(function () {
                     }
                 }
             }, {
+                name: 'Placement #3',
                 y: 9526,
                 color: '#6966AF',
                 dataLabels: {
                     enabled: true,
-                    y: -6,
+                    y: -1,
                     style: {
                         fontWeight: 'bold',
                         fontFamily: 'Whitney',
@@ -283,11 +277,12 @@ $(function () {
                     }
                 }
             }, {
+                name: 'Placement #4',
                 y: 5444,
                 color: '#0070B8',
                 dataLabels: {
                     enabled: true,
-                    y: -6,
+                    y: -1,
                     style: {
                         fontWeight: 'bold',
                         fontFamily: 'Whitney',
