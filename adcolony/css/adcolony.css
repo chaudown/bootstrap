@@ -9016,6 +9016,9 @@ pre.pretty-json .key {
 .spaced .pull-left + .pull-left {
   margin-left: 12px;
 }
+.percentage-header {
+  width: 85px;
+}
 .yo-dash {
   background: #fff;
   /** Square it up **/
@@ -9509,8 +9512,9 @@ pre.pretty-json .key {
   margin-top: 4px;
 }
 .br-row {
-  max-width: 1024px;
+  max-width: 1002px;
   margin: 0 auto;
+  padding-left: 22px;
 }
 /* Info Card Styles */
 .br-bordered-card {
@@ -9531,9 +9535,10 @@ pre.pretty-json .key {
 .br-info-card-modal {
   float: left;
 }
-.br-info-card-modal:first-child {
+/*.br-info-card-modal:first-child {
   margin-left: 22px;
 }
+*/
 .br-info-card-modal.active .br-modal-bg {
   transition: z-index 1s ease-in-out 0s, opacity 1s ease-in-out 0s;
   z-index: 30;
@@ -9576,7 +9581,7 @@ pre.pretty-json .key {
 .br-info-card .br-info-chart {
   width: 241px;
   height: 262px;
-  margin-left: 20px;
+  margin: 0 auto;
   position: relative;
 }
 .br-info-card .br-info-chart .axis-labels {
@@ -9707,10 +9712,6 @@ pre.pretty-json .key {
   background-image: none;
   border: none;
   background-color: #E7E8E8;
-}
-.btn-flat {
-  box-shadow: none;
-  background-image: none;
 }
 /* END Info Card Styles */
 /* Text and Number Styles */
@@ -10039,6 +10040,68 @@ table.table-brand-reporting tbody tr:hover {
 }
 .compact .br-flush-grid {
   border-bottom: none;
+}
+/* Custom person chart styles */
+.br-person-row {
+  width: 235px;
+  height: 20px;
+  margin: 10px auto;
+}
+.br-person-container {
+  float: left;
+  width: 7px;
+  height: 20px;
+  background-image: url('../img/brand_reporting/person-green.png');
+}
+.br-person-container.blue {
+  background-image: url('../img/brand_reporting/person-blue.png');
+}
+.br-person-container + .br-person-container {
+  margin-left: 5px;
+}
+.br-person-container.empty {
+  opacity: .25;
+}
+.br-gradient-block {
+  width: 117px;
+  height: 44px;
+  margin: 0 auto;
+  margin-bottom: 10px;
+  background-image: linear-gradient(-135deg, #5179bc 0%, #36ace2 100%);
+  border-radius: 2px;
+}
+.br-numbers.br-gradient-block {
+  font-style: normal;
+  font-weight: 100;
+  font-family: Whitney;
+  color: white;
+  font-size: 33px;
+  line-height: 38px;
+}
+.br-info-chart.br-uniques-chart {
+  height: 140px;
+  margin-bottom: 55px;
+}
+.br-sub-header {
+  float: left;
+}
+.br-info-card.wide .br-sub-header {
+  width: 160px;
+}
+.br-info-card.wide .br-sub-header .br-numbers.br-info-header {
+  font-size: 28px;
+  line-height: 33px;
+}
+.br-info-card.wide .br-sub-header .br-names.br-info-sub-title {
+  font-size: 13px;
+  line-height: 16px;
+  margin-bottom: 22px;
+}
+.br-info-card.wide .br-info-chart.br-pyramid-chart {
+  width: 284px;
+  height: 266px;
+  margin: 0 auto;
+  margin-top: 30px;
 }
 .pull-right {
   float: right;
