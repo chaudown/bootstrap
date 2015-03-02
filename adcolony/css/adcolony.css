@@ -9606,10 +9606,23 @@ pre.pretty-json .key {
 }
 .br-info-card.full-width {
   width: 978px;
-  height: 240px;
 }
 .br-info-card.full-width .br-sub-card {
   width: 326px;
+}
+.br-info-card.full-width .br-sub-card.wide {
+  width: 652px;
+}
+.br-info-card.full-width .br-sub-card.wide .br-info-title {
+  max-width: 300px;
+}
+.br-info-card.full-width .br-sub-card.wide .br-info-chart {
+  width: 540px;
+  height: 374px;
+  margin-top: 12px;
+}
+.br-info-card.shorter {
+  height: 240px;
 }
 .br-info-card.tall {
   height: 688px;

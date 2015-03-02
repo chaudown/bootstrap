@@ -98,10 +98,23 @@
 }
 .br-info-card.full-width {
   width: 978px;
-  height: 240px;
   .br-sub-card {
     width: 326px;
   }
+  .br-sub-card.wide {
+    width: 652px;
+    .br-info-title {
+      max-width: 300px;
+    }
+    .br-info-chart {
+      width: 540px;
+      height: 374px;
+      margin-top: 12px;
+    }
+  }
+}
+.br-info-card.shorter {
+  height: 240px;
 }
 .br-info-card.tall {
   height: 688px; // 2 less than the spec because css borders add on to height
@@ -582,10 +595,6 @@ table.table-brand-reporting tbody tr:hover {
   float: left;
   width:7px;
   height:20px;
-  background-image: url('../img/brand_reporting/person-green.png');
-}
-.br-person-container.blue {
-  background-image: url('../img/brand_reporting/person-blue.png');
 }
 
 .br-person-container + .br-person-container {
@@ -642,6 +651,19 @@ table.table-brand-reporting tbody tr:hover {
     margin-top:30px;
   }
 }
+
 .br-info-chart .highcharts-container {
   overflow: visible !important;
+}
+
+// Donut Chart title classes
+.br-info-chart {
+  .br-numbers.br-info-header {
+    text-align: center;
+    font-size: 40px;
+    line-height: 47px;
+  }
+  .br-names.br-info-sub-title {
+    text-align: center;
+  }
 }
