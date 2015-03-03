@@ -61,10 +61,16 @@
     margin: 30px 0px 12px 0px;
   }
   .br-info-title {
-    max-width: 200px;
+//    max-width: 200px;
     margin: 0 auto;
+//    border-bottom: 1px solid #DADBDC;
+//    padding-bottom: 5px;
+  }
+  .br-info-divider {
+    margin: 5px auto 0;
+    width: 100px;
     border-bottom: 1px solid #DADBDC;
-    padding-bottom: 5px;
+//    padding-bottom: 5px;
   }
   .br-info-header {
     margin: 12px 0 0 0;
@@ -208,7 +214,8 @@
   float: left;
 }
 .br-info-sub-title {
-  margin-bottom: 36px;
+  max-width: 224px;
+  margin: 0 auto 36px;
 }
 .br-bottom-border {
   border-bottom: 1px solid #DADBDC;
@@ -265,6 +272,11 @@
   font-size: 16px;
   line-height: 19px;
   color: #9B9B9B;
+  strong {
+    color: black;
+    border-bottom:1px solid black;
+    padding-bottom:2px;
+  }
 }
 .br-names.btn-br-info-action {
   font-family: ProximaNova;
@@ -665,5 +677,149 @@ table.table-brand-reporting tbody tr:hover {
   }
   .br-names.br-info-sub-title {
     text-align: center;
+  }
+}
+
+.br-planet-chart {
+  height: 23px;
+  margin: 93px 0;
+  .br-rocket-trail {
+    height:10px;
+    border-top-right-radius:3px;
+    border-bottom-right-radius:3px;
+    float: left;
+    min-width: 20px;
+  }
+  .br-rocket {
+    background-image: url(../img/brand_reporting/rocket-icon.png);
+    background-size: 100% 100%;
+    width: 30px;
+    height: 23px;
+    left: 36px;
+    top: -6px;
+    float: right;
+    position: relative;
+  }
+  .br-rocket-bg {
+    border-top: 1px dashed #DADBDC;
+    position: relative;
+    top: 6px;
+    width: 100%;
+    z-index: -1;
+  }
+}
+
+.br-info-card.planet {
+  background-size:100% 100%;
+  .br-planet-sub-title {
+    margin-top: 140px;
+  }
+}
+.br-info-card.moon {
+  background-image: url('../img/brand_reporting/bg-moon.png');
+  .br-planet-chart {
+    width: 64%;
+  }
+  .br-rocket-path {
+    width: 82%;
+  }
+  .br-rocket-trail {
+    background-image: linear-gradient(-135deg, #F86E40 0%, #F3480F 100%);
+  }
+}
+.br-info-card.mars {
+  background-image: url('../img/brand_reporting/bg-mars.png');
+  .br-planet-chart {
+    width: 57%;
+  }
+  .br-rocket-path {
+    width: 80%;
+  }
+  .br-rocket-trail {
+    background-image: linear-gradient(-135deg, #F86E40 0%, #F3480F 100%);
+  }
+}
+.br-info-card.venus {
+  background-image: url('../img/brand_reporting/bg-venus.png');
+  .br-planet-chart {
+    width: 60%;
+  }
+  .br-rocket-path {
+    width: 82%;
+  }
+  .br-rocket-trail {
+    background-image: linear-gradient(-135deg, #F86E40 0%, #F3480F 100%);
+  }
+}
+.br-info-card.mercury {
+  background-image: url('../img/brand_reporting/bg-mercury.png');
+  .br-planet-chart {
+    width: 63%;
+  }
+  .br-rocket-path {
+    width: 82%;
+  }
+  .br-rocket-trail {
+    background-image: linear-gradient(-135deg, #F86E40 0%, #F3480F 100%);
+  }
+}
+.br-info-card.jupiter {
+  background-image: url('../img/brand_reporting/bg-jupiter.png');
+  .br-planet-chart {
+    width: 53%;
+  }
+  .br-rocket-path {
+    width: 78%;
+  }
+  .br-rocket-trail {
+    background-image: linear-gradient(-135deg, #F86E40 0%, #F3480F 100%);
+  }
+}
+.br-info-card.saturn {
+  background-image: url('../img/brand_reporting/bg-saturn.png');
+  .br-planet-chart {
+    width: 53%;
+  }
+  .br-rocket-path {
+    width: 78%;
+  }
+  .br-rocket-trail {
+    background-image: linear-gradient(-135deg, #F86E40 0%, #F3480F 100%);
+  }
+}
+.br-info-card.neptune {
+  background-image: url('../img/brand_reporting/bg-neptune.png');
+  .br-planet-chart {
+    width: 53%;
+  }
+  .br-rocket-path {
+    width: 78%;
+  }
+  .br-rocket-trail {
+    background-image: linear-gradient(-135deg, #F86E40 0%, #F3480F 100%);
+  }
+}
+.br-info-card.uranus {
+  background-image: url('../img/brand_reporting/bg-uranus.png');
+  .br-planet-chart {
+    width: 53%;
+  }
+  .br-rocket-path {
+    width: 78%;
+  }
+  .br-rocket-trail {
+    background-image: linear-gradient(-135deg, #F86E40 0%, #F3480F 100%);
+  }
+}
+.br-info-card.pluto {
+  background-image: url('../img/brand_reporting/bg-pluto.png');
+  .br-planet-chart {
+    width: 65%;
+  }
+  .br-rocket-path {
+    width: 82%;
+  }
+  .br-rocket-trail {
+    background-image: linear-gradient(-135deg, #F86E40 0%, #F3480F 100%);
   }
 }
