@@ -5327,128 +5327,6 @@ a.badge:focus {
  *
  * Designed and built with all the love in the world @twitter by @mdo and @fat.
  */
-@font-face {
-  font-family: "ProximaNova";
-  src: url("../fonts/proximanova-light.eot");
-  src: url("../fonts/proximanova-light.eot?#iefix") format("embedded-opentype"), url("../fonts/proximanova-light.woff") format("woff"), url("../fonts/proximanova-light.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: "ProximaNova";
-  src: url("../fonts/proximanova-bold.eot");
-  src: url("../fonts/proximanova-bold.eot?#iefix") format("embedded-opentype"), url("../fonts/proximanova-bold.woff") format("woff"), url("../fonts/proximanova-bold.ttf") format("truetype");
-  font-weight: bold;
-  font-style: normal;
-}
-@font-face {
-  font-family: "Avenir";
-  src: url("../fonts/AvenirLTStd-Black.eot");
-  src: url("../fonts/AvenirLTStd-Black.eot?#iefix") format("embedded-opentype"), url("../fonts/AvenirLTStd-Black.woff") format("woff"), url("../fonts/AvenirLTStd-Black.ttf") format("truetype");
-  font-weight: bold;
-  font-style: normal;
-}
-@font-face {
-  font-family: "Proxima";
-  src: url("../fonts/proximanova-regular.eot");
-  src: url("../fonts/proximanova-regular.eot?#iefix") format("embedded-opentype"), url("../fonts/proximanova-regular.woff") format("woff"), url("../fonts/proximanova-regular.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: "Proxima";
-  src: url("../fonts/proximanova-semibold.eot");
-  src: url("../fonts/proximanova-semibold.eot?#iefix") format("embedded-opentype"), url("../fonts/proximanova-semibold.woff") format("woff"), url("../fonts/proximanova-semibold.ttf") format("truetype");
-  font-weight: bold;
-  font-style: normal;
-}
-@font-face {
-  font-family: "bentonsans";
-  src: url("../fonts/bentonsans-book.eot");
-  src: url("../fonts/bentonsans-book.eot?#iefix") format("embedded-opentype"), url("../fonts/bentonsans-book.woff") format("woff"), url("../fonts/bentonsans-book.ttf") format("truetype");
-  font-weight: 300;
-  font-style: light;
-}
-@font-face {
-  font-family: "Whitney";
-  src: url("../fonts/Whitney-Light-webfont.eot");
-  src: url("../fonts/Whitney-Light-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/Whitney-Light-webfont.woff") format("woff"), url("../fonts/Whitney-Light-webfont.ttf") format("truetype");
-  font-weight: 100;
-  font-style: normal;
-}
-@font-face {
-  font-family: "Whitney";
-  src: url("../fonts/whitney-book-webfont.eot");
-  src: url("../fonts/whitney-book-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/whitney-book-webfont.woff") format("woff"), url("../fonts/whitney-book-webfont.ttf") format("truetype");
-  font-weight: 300;
-  font-style: normal;
-}
-@font-face {
-  font-family: "Whitney";
-  src: url("../fonts/whitney-medium-webfont.eot");
-  src: url("../fonts/whitney-medium-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/whitney-medium-webfont.woff") format("woff"), url("../fonts/whitney-medium-webfont.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: "Whitney";
-  src: url("../fonts/whitney-semibold-webfont.eot");
-  src: url("../fonts/whitney-semibold-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/whitney-semibold-webfont.woff") format("woff"), url("../fonts/whitney-semibold-webfont.ttf") format("truetype");
-  font-weight: bold;
-  font-style: normal;
-}
-@font-face {
-  font-family: "Whitney";
-  src: url("../fonts/whitney-bold-webfont.eot");
-  src: url("../fonts/whitney-bold-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/whitney-bold-webfont.woff") format("woff"), url("../fonts/whitney-bold-webfont.ttf") format("truetype");
-  font-weight: 900;
-  font-style: normal;
-}
-.black {
-  color: #000000;
-}
-.graydarker {
-  color: #222222;
-}
-.graydark {
-  color: #333333;
-}
-.gray {
-  color: #555555;
-}
-.graylight {
-  color: #999999;
-}
-.graylighter {
-  color: #eeeeee;
-}
-.white {
-  color: #ffffff;
-}
-.blue {
-  color: #049cdb;
-}
-.blueDark {
-  color: #0064cd;
-}
-.green {
-  color: #46a546;
-}
-.red {
-  color: #9d261d;
-}
-.yellow {
-  color: #ffc40d;
-}
-.orange {
-  color: #f89406;
-}
-.pink {
-  color: #c3325f;
-}
-.purple {
-  color: #7a43b6;
-}
 @-ms-viewport {
   width: device-width;
 }
@@ -6853,6 +6731,128 @@ a.badge:focus {
     height: auto !important;
     overflow: visible !important;
   }
+}
+@font-face {
+  font-family: "ProximaNova";
+  src: url("../fonts/proximanova-light.eot");
+  src: url("../fonts/proximanova-light.eot?#iefix") format("embedded-opentype"), url("../fonts/proximanova-light.woff") format("woff"), url("../fonts/proximanova-light.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "ProximaNova";
+  src: url("../fonts/proximanova-bold.eot");
+  src: url("../fonts/proximanova-bold.eot?#iefix") format("embedded-opentype"), url("../fonts/proximanova-bold.woff") format("woff"), url("../fonts/proximanova-bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Avenir";
+  src: url("../fonts/AvenirLTStd-Black.eot");
+  src: url("../fonts/AvenirLTStd-Black.eot?#iefix") format("embedded-opentype"), url("../fonts/AvenirLTStd-Black.woff") format("woff"), url("../fonts/AvenirLTStd-Black.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Proxima";
+  src: url("../fonts/proximanova-regular.eot");
+  src: url("../fonts/proximanova-regular.eot?#iefix") format("embedded-opentype"), url("../fonts/proximanova-regular.woff") format("woff"), url("../fonts/proximanova-regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Proxima";
+  src: url("../fonts/proximanova-semibold.eot");
+  src: url("../fonts/proximanova-semibold.eot?#iefix") format("embedded-opentype"), url("../fonts/proximanova-semibold.woff") format("woff"), url("../fonts/proximanova-semibold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: "bentonsans";
+  src: url("../fonts/bentonsans-book.eot");
+  src: url("../fonts/bentonsans-book.eot?#iefix") format("embedded-opentype"), url("../fonts/bentonsans-book.woff") format("woff"), url("../fonts/bentonsans-book.ttf") format("truetype");
+  font-weight: 300;
+  font-style: light;
+}
+@font-face {
+  font-family: "Whitney";
+  src: url("../fonts/Whitney-Light-webfont.eot");
+  src: url("../fonts/Whitney-Light-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/Whitney-Light-webfont.woff") format("woff"), url("../fonts/Whitney-Light-webfont.ttf") format("truetype");
+  font-weight: 100;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Whitney";
+  src: url("../fonts/whitney-book-webfont.eot");
+  src: url("../fonts/whitney-book-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/whitney-book-webfont.woff") format("woff"), url("../fonts/whitney-book-webfont.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Whitney";
+  src: url("../fonts/whitney-medium-webfont.eot");
+  src: url("../fonts/whitney-medium-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/whitney-medium-webfont.woff") format("woff"), url("../fonts/whitney-medium-webfont.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Whitney";
+  src: url("../fonts/whitney-semibold-webfont.eot");
+  src: url("../fonts/whitney-semibold-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/whitney-semibold-webfont.woff") format("woff"), url("../fonts/whitney-semibold-webfont.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Whitney";
+  src: url("../fonts/whitney-bold-webfont.eot");
+  src: url("../fonts/whitney-bold-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/whitney-bold-webfont.woff") format("woff"), url("../fonts/whitney-bold-webfont.ttf") format("truetype");
+  font-weight: 900;
+  font-style: normal;
+}
+.black {
+  color: #000000;
+}
+.graydarker {
+  color: #222222;
+}
+.graydark {
+  color: #333333;
+}
+.gray {
+  color: #555555;
+}
+.graylight {
+  color: #999999;
+}
+.graylighter {
+  color: #eeeeee;
+}
+.white {
+  color: #ffffff;
+}
+.blue {
+  color: #049cdb;
+}
+.blueDark {
+  color: #0064cd;
+}
+.green {
+  color: #46a546;
+}
+.red {
+  color: #9d261d;
+}
+.yellow {
+  color: #ffc40d;
+}
+.orange {
+  color: #f89406;
+}
+.pink {
+  color: #c3325f;
+}
+.purple {
+  color: #7a43b6;
 }
 /* ////////////////////////////////////////////// */
 /* ////////////////////////////////////////////// */
@@ -9570,10 +9570,12 @@ pre.pretty-json .key {
   margin: 30px 0px 12px 0px;
 }
 .br-info-card .br-info-title {
-  max-width: 200px;
   margin: 0 auto;
+}
+.br-info-card .br-info-divider {
+  margin: 5px auto 0;
+  width: 100px;
   border-bottom: 1px solid #DADBDC;
-  padding-bottom: 5px;
 }
 .br-info-card .br-info-header {
   margin: 12px 0 0 0;
@@ -9714,7 +9716,8 @@ pre.pretty-json .key {
   float: left;
 }
 .br-info-sub-title {
-  margin-bottom: 36px;
+  max-width: 224px;
+  margin: 0 auto 36px;
 }
 .br-bottom-border {
   border-bottom: 1px solid #DADBDC;
@@ -9770,6 +9773,11 @@ pre.pretty-json .key {
   font-size: 16px;
   line-height: 19px;
   color: #9B9B9B;
+}
+.br-names.br-info-sub-title strong {
+  color: black;
+  border-bottom: 1px solid black;
+  padding-bottom: 2px;
 }
 .br-names.btn-br-info-action {
   font-family: ProximaNova;
@@ -10064,10 +10072,6 @@ table.table-brand-reporting tbody tr:hover {
   float: left;
   width: 7px;
   height: 20px;
-  background-image: url('../img/brand_reporting/person-green.png');
-}
-.br-person-container.blue {
-  background-image: url('../img/brand_reporting/person-blue.png');
 }
 .br-person-container + .br-person-container {
   margin-left: 5px;
@@ -10115,6 +10119,159 @@ table.table-brand-reporting tbody tr:hover {
   height: 266px;
   margin: 0 auto;
   margin-top: 30px;
+}
+.br-info-chart .highcharts-container {
+  overflow: visible !important;
+}
+.br-info-chart .br-numbers.br-info-header {
+  text-align: center;
+  font-size: 40px;
+  line-height: 47px;
+}
+.br-info-chart .br-names.br-info-sub-title {
+  text-align: center;
+}
+.br-planet-chart {
+  height: 23px;
+  margin: 93px 0;
+}
+.br-planet-chart .br-rocket-trail {
+  height: 10px;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+  float: left;
+  min-width: 20px;
+}
+.br-planet-chart .br-rocket {
+  background-image: url(../img/brand_reporting/rocket-icon.png);
+  background-size: 100% 100%;
+  width: 30px;
+  height: 23px;
+  left: 36px;
+  top: -6px;
+  float: right;
+  position: relative;
+}
+.br-planet-chart .br-rocket-bg {
+  border-top: 1px dashed #DADBDC;
+  position: relative;
+  top: 6px;
+  width: 100%;
+  z-index: -1;
+}
+.br-info-card.planet {
+  background-size: 100% 100%;
+}
+.br-info-card.planet .br-planet-sub-title {
+  margin-top: 140px;
+}
+.br-info-card.moon {
+  background-image: url('../img/brand_reporting/bg-moon.png');
+}
+.br-info-card.moon .br-planet-chart {
+  width: 64%;
+}
+.br-info-card.moon .br-rocket-path {
+  width: 82%;
+}
+.br-info-card.moon .br-rocket-trail {
+  background-image: linear-gradient(-135deg, #f86e40 0%, #f3480f 100%);
+}
+.br-info-card.mars {
+  background-image: url('../img/brand_reporting/bg-mars.png');
+}
+.br-info-card.mars .br-planet-chart {
+  width: 57%;
+}
+.br-info-card.mars .br-rocket-path {
+  width: 80%;
+}
+.br-info-card.mars .br-rocket-trail {
+  background-image: linear-gradient(-135deg, #f86e40 0%, #f3480f 100%);
+}
+.br-info-card.venus {
+  background-image: url('../img/brand_reporting/bg-venus.png');
+}
+.br-info-card.venus .br-planet-chart {
+  width: 60%;
+}
+.br-info-card.venus .br-rocket-path {
+  width: 82%;
+}
+.br-info-card.venus .br-rocket-trail {
+  background-image: linear-gradient(-135deg, #f86e40 0%, #f3480f 100%);
+}
+.br-info-card.mercury {
+  background-image: url('../img/brand_reporting/bg-mercury.png');
+}
+.br-info-card.mercury .br-planet-chart {
+  width: 63%;
+}
+.br-info-card.mercury .br-rocket-path {
+  width: 82%;
+}
+.br-info-card.mercury .br-rocket-trail {
+  background-image: linear-gradient(-135deg, #f86e40 0%, #f3480f 100%);
+}
+.br-info-card.jupiter {
+  background-image: url('../img/brand_reporting/bg-jupiter.png');
+}
+.br-info-card.jupiter .br-planet-chart {
+  width: 53%;
+}
+.br-info-card.jupiter .br-rocket-path {
+  width: 78%;
+}
+.br-info-card.jupiter .br-rocket-trail {
+  background-image: linear-gradient(-135deg, #f86e40 0%, #f3480f 100%);
+}
+.br-info-card.saturn {
+  background-image: url('../img/brand_reporting/bg-saturn.png');
+}
+.br-info-card.saturn .br-planet-chart {
+  width: 53%;
+}
+.br-info-card.saturn .br-rocket-path {
+  width: 78%;
+}
+.br-info-card.saturn .br-rocket-trail {
+  background-image: linear-gradient(-135deg, #f86e40 0%, #f3480f 100%);
+}
+.br-info-card.neptune {
+  background-image: url('../img/brand_reporting/bg-neptune.png');
+}
+.br-info-card.neptune .br-planet-chart {
+  width: 53%;
+}
+.br-info-card.neptune .br-rocket-path {
+  width: 78%;
+}
+.br-info-card.neptune .br-rocket-trail {
+  background-image: linear-gradient(-135deg, #f86e40 0%, #f3480f 100%);
+}
+.br-info-card.uranus {
+  background-image: url('../img/brand_reporting/bg-uranus.png');
+}
+.br-info-card.uranus .br-planet-chart {
+  width: 53%;
+}
+.br-info-card.uranus .br-rocket-path {
+  width: 78%;
+}
+.br-info-card.uranus .br-rocket-trail {
+  background-image: linear-gradient(-135deg, #f86e40 0%, #f3480f 100%);
+}
+.br-info-card.pluto {
+  background-image: url('../img/brand_reporting/bg-pluto.png');
+}
+.br-info-card.pluto .br-planet-chart {
+  width: 65%;
+}
+.br-info-card.pluto .br-rocket-path {
+  width: 82%;
+}
+.br-info-card.pluto .br-rocket-trail {
+  background-image: linear-gradient(-135deg, #f86e40 0%, #f3480f 100%);
 }
 .pull-right {
   float: right;
