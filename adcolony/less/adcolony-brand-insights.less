@@ -73,7 +73,7 @@
 //    padding-bottom: 5px;
   }
   .br-info-header {
-    margin: 12px 0 0 0;
+//    margin: 12px 0 0 0;
   }
   .br-info-chart {
     width: 241px;
@@ -146,10 +146,6 @@
   .br-info-chart-title {
     display: none;
   }
-  .br-names.br-info-title {
-    font-size: 13px;
-    line-height: 15px;
-  }
   .br-info-icon {
     width: 36px;
     height: 36px;
@@ -171,6 +167,18 @@
 .br-info-card.condensed {
   .btn-br-info-action {
     margin-top: 10px;
+  }
+}
+.br-info-card.short {
+  .br-names.br-info-title {
+    font-size: 18px;
+    line-height: 20px;
+  }
+}
+.br-info-card.condensed {
+  .br-names.br-info-title {
+        font-size: 13px;
+        line-height: 15px;
   }
 }
 .br-info-card.wide.side-by-side {
@@ -212,10 +220,6 @@
 }
 .br-sub-card {
   float: left;
-}
-.br-info-sub-title {
-  max-width: 224px;
-  margin: 0 auto 36px;
 }
 .br-bottom-border {
   border-bottom: 1px solid #DADBDC;
@@ -680,146 +684,157 @@ table.table-brand-reporting tbody tr:hover {
   }
 }
 
-.br-planet-chart {
-  height: 23px;
-  margin: 93px 0;
-  .br-rocket-trail {
-    height:10px;
-    border-top-right-radius:3px;
-    border-bottom-right-radius:3px;
-    float: left;
-    min-width: 20px;
-  }
-  .br-rocket {
-    background-image: url(../img/brand_reporting/rocket-icon.png);
-    background-size: 100% 100%;
-    width: 30px;
-    height: 23px;
-    left: 36px;
-    top: -6px;
-    float: right;
-    position: relative;
-  }
-  .br-rocket-bg {
-    border-top: 1px dashed #DADBDC;
-    position: relative;
-    top: 6px;
-    width: 100%;
-    z-index: -1;
-  }
-}
-
 .br-info-card.planet {
   background-size:100% 100%;
-  .br-planet-sub-title {
-    margin-top: 140px;
+  .br-info-chart {
+    height: 23px;
+    margin: 93px 0;
+    .br-rocket-trail {
+      height: 10px;
+      border-top-right-radius: 3px;
+      border-bottom-right-radius: 3px;
+      float: left;
+      min-width: 20px;
+      transition: width 1s ease-in-out;
+    }
+    .br-rocket {
+      background-image: url(../img/brand_reporting/rocket-icon.png);
+      background-size: 100% 100%;
+      width: 30px;
+      height: 23px;
+      left: 36px;
+      top: -6px;
+      float: right;
+      position: relative;
+    }
+    .br-rocket-bg {
+      border-top: 1px dashed #DADBDC;
+      position: relative;
+      top: 6px;
+      width: 100%;
+      z-index: -1;
+    }
+  }
+  .br-info-chart-title {
+    max-width: 224px;
+    margin: 140px auto 36px;
+  }
+  .br-names.br-info-chart-title {
+    font-size: 16px;
+    line-height: 19px;
+    color: #9B9B9B;
+    strong {
+      color: black;
+      border-bottom:1px solid black;
+      padding-bottom:2px;
+    }
   }
 }
 .br-info-card.moon {
   background-image: url('../img/brand_reporting/bg-moon.png');
-  .br-planet-chart {
+  .br-info-chart {
     width: 64%;
   }
   .br-rocket-path {
     width: 82%;
   }
   .br-rocket-trail {
-    background-image: linear-gradient(-135deg, #F86E40 0%, #F3480F 100%);
+    background-image: linear-gradient(-90deg, #828BC5 0%, #A78EC3 100%);
   }
 }
 .br-info-card.mars {
   background-image: url('../img/brand_reporting/bg-mars.png');
-  .br-planet-chart {
+  .br-info-chart {
     width: 57%;
   }
   .br-rocket-path {
     width: 80%;
   }
   .br-rocket-trail {
-    background-image: linear-gradient(-135deg, #F86E40 0%, #F3480F 100%);
+    background-image: linear-gradient(-90deg, #E92428 0%, #EC5877 100%);
   }
 }
 .br-info-card.venus {
   background-image: url('../img/brand_reporting/bg-venus.png');
-  .br-planet-chart {
+  .br-info-chart {
     width: 60%;
   }
   .br-rocket-path {
     width: 82%;
   }
   .br-rocket-trail {
-    background-image: linear-gradient(-135deg, #F86E40 0%, #F3480F 100%);
+    background-image: linear-gradient(-90deg, #4FBA69 0%, #85C557 100%);
   }
 }
 .br-info-card.mercury {
   background-image: url('../img/brand_reporting/bg-mercury.png');
-  .br-planet-chart {
+  .br-info-chart {
     width: 63%;
   }
   .br-rocket-path {
     width: 82%;
   }
   .br-rocket-trail {
-    background-image: linear-gradient(-135deg, #F86E40 0%, #F3480F 100%);
+    background-image: linear-gradient(-90deg, #F8B019 0%, #FBC311 100%);
   }
 }
 .br-info-card.jupiter {
   background-image: url('../img/brand_reporting/bg-jupiter.png');
-  .br-planet-chart {
+  .br-info-chart {
     width: 53%;
   }
   .br-rocket-path {
     width: 78%;
   }
   .br-rocket-trail {
-    background-image: linear-gradient(-135deg, #F86E40 0%, #F3480F 100%);
+    background-image: linear-gradient(-90deg, #EF4428 0%, #F26727 100%);
   }
 }
 .br-info-card.saturn {
   background-image: url('../img/brand_reporting/bg-saturn.png');
-  .br-planet-chart {
+  .br-info-chart {
     width: 53%;
   }
   .br-rocket-path {
     width: 78%;
   }
   .br-rocket-trail {
-    background-image: linear-gradient(-135deg, #F86E40 0%, #F3480F 100%);
+    background-image: linear-gradient(-90deg, #F08121 0%, #F5A31D 100%);
   }
 }
 .br-info-card.neptune {
   background-image: url('../img/brand_reporting/bg-neptune.png');
-  .br-planet-chart {
+  .br-info-chart {
     width: 53%;
   }
   .br-rocket-path {
     width: 78%;
   }
   .br-rocket-trail {
-    background-image: linear-gradient(-135deg, #F86E40 0%, #F3480F 100%);
+    background-image: linear-gradient(-90deg, #00B6DE 0%, #0091CA 100%);
   }
 }
 .br-info-card.uranus {
   background-image: url('../img/brand_reporting/bg-uranus.png');
-  .br-planet-chart {
+  .br-info-chart {
     width: 53%;
   }
   .br-rocket-path {
     width: 78%;
   }
   .br-rocket-trail {
-    background-image: linear-gradient(-135deg, #F86E40 0%, #F3480F 100%);
+    background-image: linear-gradient(-90deg, #2965B0 0%, #00816C 100%);
   }
 }
 .br-info-card.pluto {
   background-image: url('../img/brand_reporting/bg-pluto.png');
-  .br-planet-chart {
+  .br-info-chart {
     width: 65%;
   }
   .br-rocket-path {
     width: 82%;
   }
   .br-rocket-trail {
-    background-image: linear-gradient(-135deg, #F86E40 0%, #F3480F 100%);
+    background-image: linear-gradient(-90deg, #56459C 0%, #73469B 100%);
   }
 }
