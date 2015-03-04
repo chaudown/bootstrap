@@ -9603,6 +9603,9 @@ pre.pretty-json .key {
   width: 400px;
   margin-left: 40px;
 }
+.br-info-card.wider {
+  width: 680px;
+}
 .br-info-card.full-width {
   width: 978px;
 }
@@ -10132,7 +10135,7 @@ table.table-brand-reporting tbody tr:hover {
 }
 .br-info-card.planet .br-info-chart {
   height: 23px;
-  margin: 93px 0;
+  margin: 110px 0;
 }
 .br-info-card.planet .br-info-chart .br-rocket-trail {
   height: 10px;
@@ -10185,26 +10188,14 @@ table.table-brand-reporting tbody tr:hover {
 .br-info-card.moon .br-rocket-trail {
   background-image: linear-gradient(-90deg, #828bc5 0%, #a78ec3 100%);
 }
-.br-info-card.mars {
-  background-image: url('../img/brand_reporting/bg-mars.png');
-}
-.br-info-card.mars .br-info-chart {
-  width: 57%;
-}
-.br-info-card.mars .br-rocket-path {
-  width: 80%;
-}
-.br-info-card.mars .br-rocket-trail {
-  background-image: linear-gradient(-90deg, #e92428 0%, #ec5877 100%);
-}
 .br-info-card.venus {
   background-image: url('../img/brand_reporting/bg-venus.png');
 }
 .br-info-card.venus .br-info-chart {
-  width: 60%;
+  width: 61%;
 }
 .br-info-card.venus .br-rocket-path {
-  width: 82%;
+  width: 80%;
 }
 .br-info-card.venus .br-rocket-trail {
   background-image: linear-gradient(-90deg, #4fba69 0%, #85c557 100%);
@@ -10213,13 +10204,25 @@ table.table-brand-reporting tbody tr:hover {
   background-image: url('../img/brand_reporting/bg-mercury.png');
 }
 .br-info-card.mercury .br-info-chart {
-  width: 63%;
+  width: 64%;
 }
 .br-info-card.mercury .br-rocket-path {
-  width: 82%;
+  width: 81%;
 }
 .br-info-card.mercury .br-rocket-trail {
   background-image: linear-gradient(-90deg, #f8b019 0%, #fbc311 100%);
+}
+.br-info-card.mars {
+  background-image: url('../img/brand_reporting/bg-mars.png');
+}
+.br-info-card.mars .br-info-chart {
+  width: 58%;
+}
+.br-info-card.mars .br-rocket-path {
+  width: 80%;
+}
+.br-info-card.mars .br-rocket-trail {
+  background-image: linear-gradient(-90deg, #e92428 0%, #ec5877 100%);
 }
 .br-info-card.jupiter {
   background-image: url('../img/brand_reporting/bg-jupiter.png');
@@ -10237,13 +10240,25 @@ table.table-brand-reporting tbody tr:hover {
   background-image: url('../img/brand_reporting/bg-saturn.png');
 }
 .br-info-card.saturn .br-info-chart {
-  width: 53%;
+  width: 52%;
 }
 .br-info-card.saturn .br-rocket-path {
   width: 78%;
 }
 .br-info-card.saturn .br-rocket-trail {
   background-image: linear-gradient(-90deg, #f08121 0%, #f5a31d 100%);
+}
+.br-info-card.uranus {
+  background-image: url('../img/brand_reporting/bg-uranus.png');
+}
+.br-info-card.uranus .br-info-chart {
+  width: 52%;
+}
+.br-info-card.uranus .br-rocket-path {
+  width: 78%;
+}
+.br-info-card.uranus .br-rocket-trail {
+  background-image: linear-gradient(-90deg, #2965b0 0%, #00816c 100%);
 }
 .br-info-card.neptune {
   background-image: url('../img/brand_reporting/bg-neptune.png');
@@ -10257,23 +10272,11 @@ table.table-brand-reporting tbody tr:hover {
 .br-info-card.neptune .br-rocket-trail {
   background-image: linear-gradient(-90deg, #00b6de 0%, #0091ca 100%);
 }
-.br-info-card.uranus {
-  background-image: url('../img/brand_reporting/bg-uranus.png');
-}
-.br-info-card.uranus .br-info-chart {
-  width: 53%;
-}
-.br-info-card.uranus .br-rocket-path {
-  width: 78%;
-}
-.br-info-card.uranus .br-rocket-trail {
-  background-image: linear-gradient(-90deg, #2965b0 0%, #00816c 100%);
-}
 .br-info-card.pluto {
   background-image: url('../img/brand_reporting/bg-pluto.png');
 }
 .br-info-card.pluto .br-info-chart {
-  width: 65%;
+  width: 64%;
 }
 .br-info-card.pluto .br-rocket-path {
   width: 82%;
