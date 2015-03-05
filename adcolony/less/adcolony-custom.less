@@ -1447,9 +1447,6 @@ td {
 }
 
 .table-striped tbody {
-  tr.adc-highlighted:nth-child(even) td {
-    background-color: @white;
-  }
   tr.adc-highlighted:nth-child(odd) td {
     background-color: #facccc;
   }
@@ -2166,28 +2163,5 @@ li.btn-group.nav-active >a {
       display: -webkit-flex;
       display: flex;
       flex:1 0 auto;
-  }
-}
-
-/** JSON display **/
-pre.pretty-json {
-  outline: 1px solid #ccc;
-  padding: 5px;
-  margin: 5px;
-
-  & .string {
-    color: green;
-  }
-  & .number {
-    color: orange;
-  }
-  & .boolean {
-    color: blue;
-  }
-  & .null {
-    color: magenta;
-  }
-  & .key {
-    color: red;
   }
 }
