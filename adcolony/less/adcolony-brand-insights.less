@@ -656,12 +656,25 @@ table.table-brand-reporting tbody tr:hover {
   .br-info-chart {
     width: 556px;
     height: 297px;
-    margin-top: 10px;
+//    margin-top: 10px;
+    margin: 10px 0 0 173px;
 //    background-image: url(../img/brand_reporting/regions-all.svg);
 //    background-size: 100% 100%;
   }
   .br-sub-header.br-map-key {
     width: 164px;
+    height: 10px;
+
+  }
+  .row-fluid.br-top-legend {
+    .br-sub-header:first-child {
+      margin-left: 191px;
+    }
+  }
+  .row-fluid.br-bottom-legend {
+    .br-sub-header:first-child {
+      margin-left: 251px;
+    }
   }
 }
 .br-sub-header {
@@ -674,7 +687,7 @@ table.table-brand-reporting tbody tr:hover {
   }
   .br-sub-header {
     text-align: center;
-    width: 100px;
+    width: 80px;
     margin: 20px 10px 2px 0;
     .br-numbers.br-info-header {
       font-size: 21px;
@@ -687,9 +700,6 @@ table.table-brand-reporting tbody tr:hover {
       font-family: ProximaNova;
       color: #444445;
     }
-  }
-  .br-sub-header:first-child {
-    margin-left: 217px;
   }
 }
 .br-info-card.wide {
