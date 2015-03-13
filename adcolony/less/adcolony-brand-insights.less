@@ -647,8 +647,50 @@ table.table-brand-reporting tbody tr:hover {
   margin-bottom: 55px;
 }
 
+.br-info-card.map-card {
+  .br-info-icon {
+    width: 36px;
+    height: 36px;
+    margin: 20px 0px 10px 0px;
+  }
+  .br-info-chart {
+    width: 556px;
+    height: 297px;
+    margin-top: 10px;
+//    background-image: url(../img/brand_reporting/regions-all.svg);
+//    background-size: 100% 100%;
+  }
+  .br-sub-header.br-map-key {
+    width: 164px;
+  }
+}
 .br-sub-header {
   float: left;
+}
+.br-info-card.full-width {
+  .br-sub-header + .br-sub-header {
+    border-left: 1px solid #DADBDC;
+    padding-left: 10px;
+  }
+  .br-sub-header {
+    text-align: center;
+    width: 100px;
+    margin: 20px 10px 2px 0;
+    .br-numbers.br-info-header {
+      font-size: 21px;
+      line-height: 25px;
+    }
+    .br-names.br-info-sub-title {
+      font-size: 11px;
+      line-height: 12px;
+      font-weight: bold;
+      font-family: ProximaNova;
+      color: #444445;
+    }
+  }
+  .br-sub-header:first-child {
+    margin-left: 217px;
+  }
 }
 .br-info-card.wide {
   .br-sub-header {
@@ -814,7 +856,7 @@ table.table-brand-reporting tbody tr:hover {
     width: 78%;
   }
   .br-rocket-trail {
-    background-image: linear-gradient(-90deg, #2965B0 0%, #00816C 100%);
+    background-image: linear-gradient(-90deg, #00B6DE 0%, #0091CA 100%);
   }
 }
 .br-info-card.neptune {
@@ -826,7 +868,7 @@ table.table-brand-reporting tbody tr:hover {
     width: 78%;
   }
   .br-rocket-trail {
-    background-image: linear-gradient(-90deg, #00B6DE 0%, #0091CA 100%);
+    background-image: linear-gradient(-90deg, #2965B0 0%, #00816C 100%);
   }
 }
 .br-info-card.pluto {

@@ -10098,8 +10098,44 @@ table.table-brand-reporting tbody tr:hover {
   height: 140px;
   margin-bottom: 55px;
 }
+.br-info-card.map-card .br-info-icon {
+  width: 36px;
+  height: 36px;
+  margin: 20px 0px 10px 0px;
+}
+.br-info-card.map-card .br-info-chart {
+  width: 556px;
+  height: 297px;
+  margin-top: 10px;
+}
+.br-info-card.map-card .br-sub-header.br-map-key {
+  width: 164px;
+}
 .br-sub-header {
   float: left;
+}
+.br-info-card.full-width .br-sub-header + .br-sub-header {
+  border-left: 1px solid #DADBDC;
+  padding-left: 10px;
+}
+.br-info-card.full-width .br-sub-header {
+  text-align: center;
+  width: 100px;
+  margin: 20px 10px 2px 0;
+}
+.br-info-card.full-width .br-sub-header .br-numbers.br-info-header {
+  font-size: 21px;
+  line-height: 25px;
+}
+.br-info-card.full-width .br-sub-header .br-names.br-info-sub-title {
+  font-size: 11px;
+  line-height: 12px;
+  font-weight: bold;
+  font-family: ProximaNova;
+  color: #444445;
+}
+.br-info-card.full-width .br-sub-header:first-child {
+  margin-left: 217px;
 }
 .br-info-card.wide .br-sub-header {
   width: 160px;
@@ -10258,7 +10294,7 @@ table.table-brand-reporting tbody tr:hover {
   width: 78%;
 }
 .br-info-card.uranus .br-rocket-trail {
-  background-image: linear-gradient(-90deg, #2965b0 0%, #00816c 100%);
+  background-image: linear-gradient(-90deg, #00b6de 0%, #0091ca 100%);
 }
 .br-info-card.neptune {
   background-image: url('../img/brand_reporting/bg-neptune.png');
@@ -10270,7 +10306,7 @@ table.table-brand-reporting tbody tr:hover {
   width: 78%;
 }
 .br-info-card.neptune .br-rocket-trail {
-  background-image: linear-gradient(-90deg, #00b6de 0%, #0091ca 100%);
+  background-image: linear-gradient(-90deg, #2965b0 0%, #00816c 100%);
 }
 .br-info-card.pluto {
   background-image: url('../img/brand_reporting/bg-pluto.png');
