@@ -101,6 +101,10 @@
     width: 400px;
     margin-left: 40px;
   }
+  .br-info-chart-title {
+    max-width: 367px;
+    margin: 0 auto;
+  }
 }
 .br-info-card.wider {
   width: 680px;
@@ -268,6 +272,11 @@
 .br-names.br-info-chart-title {
   font-size: 18px;
   color: #4D4E4E;
+  strong {
+    color: black;
+    border-bottom:1px solid black;
+    padding-bottom:2px;
+  }
 }
 .br-names.br-info-title {
   font-weight: bold;
@@ -642,9 +651,15 @@ table.table-brand-reporting tbody tr:hover {
   line-height: 38px;
 }
 
-.br-info-chart.br-uniques-chart {
-  height: 140px;
-  margin-bottom: 55px;
+.br-info-card.br-uniques-card {
+  .br-info-chart {
+    height: 140px;
+    margin-bottom: 55px;
+  }
+  .br-info-chart-title {
+    margin: 0 auto;
+    max-width: 169px;
+  }
 }
 
 .br-info-card.map-card {
@@ -732,6 +747,72 @@ table.table-brand-reporting tbody tr:hover {
     margin-top:30px;
   }
 }
+/* For direct 1 to 1 comparisons */
+.br-info-card.wide.comparison {
+  .br-sub-header {
+    margin: 40px 0 0 0;
+    width: 140px;
+    .br-numbers.br-info-header {
+      font-size: 26px;
+      line-height: 31px;
+    }
+    .br-info-divider {
+      width: 50px;
+    }
+  }
+  .br-info-chart {
+    float:left;
+    width: 187px;
+    height: 187px;
+    margin: 40px 0 54px 0;
+  }
+  .br-numbers.br-info-header {
+    font-size: 42px;
+    line-height: 49px;
+  }
+  .br-names.br-info-chart-title {
+    font-size: 18px;
+    line-height: 22px;
+    color: #9B9B9B;
+  }
+}
+/* For comparisons of 3 items (inventory and device) */
+.br-info-card.wide.tall.comparison {
+  .br-sub-header {
+    margin: 0 0 30px 0;
+    width: 160px;
+    .br-info-icon {
+      width: 34px;
+      height: 34px;
+    }
+    .br-names.br-info-title {
+      font-size: 13px;
+      line-height: 15px;
+    }
+    .br-numbers.br-info-header {
+      font-size: 24px;
+      line-height: 28px;
+    }
+    .br-info-divider {
+      width: 50px;
+    }
+  }
+  .br-info-chart {
+    float: none;
+    width: 212px;
+    height: 212px;
+    margin: 40px auto 0;
+  }
+  .br-numbers.br-info-header {
+    font-size: 42px;
+    line-height: 49px;
+  }
+  .br-names.br-info-chart-title {
+    font-size: 18px;
+    line-height: 22px;
+    color: #9B9B9B;
+  }
+}
 
 .br-info-chart .highcharts-container {
   overflow: visible !important;
@@ -788,11 +869,6 @@ table.table-brand-reporting tbody tr:hover {
     font-size: 16px;
     line-height: 19px;
     color: #9B9B9B;
-    strong {
-      color: black;
-      border-bottom:1px solid black;
-      padding-bottom:2px;
-    }
   }
 }
 .br-info-card.moon {
