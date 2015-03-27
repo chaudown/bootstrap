@@ -325,6 +325,7 @@
 .br-search-asset-preview {
   .br-asset-preview {
     height: 134px;
+//    max-height: 134px;
   }
   .br-single-preview, .br-multi-preview {
     .br-asset-overlay {
@@ -523,17 +524,20 @@ table.table-brand-reporting tbody tr:hover {
   z-index: 4;
   font-weight: bold;
   font-size: 13px;
+  line-height: 16px;
   color: white;
 }
 .br-single-preview {
   .br-asset-overlay {
     position: relative;
     float: right;
-    margin-top: -25px;
+    margin-top: -20px; /* line-height + 4px padding */
     margin-right: 10px;
   }
   .br-asset-overlay.compact {
     font-size: 11px;
+    line-height: 14px;
+    margin-top: -16px; /* line-height + 2px padding */
     margin-right: 5px;
   }
   .br-asset-preview {
@@ -542,13 +546,10 @@ table.table-brand-reporting tbody tr:hover {
 }
 .br-single-preview.left {
   .br-asset-overlay {
-    position: relative;
     float: left;
-    margin-top: -25px;
     margin-left: 10px;
   }
   .br-asset-overlay.compact {
-    font-size: 11px;
     margin-left: 5px;
   }
   .br-asset-preview {
