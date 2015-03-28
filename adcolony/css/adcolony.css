@@ -5327,6 +5327,128 @@ a.badge:focus {
  *
  * Designed and built with all the love in the world @twitter by @mdo and @fat.
  */
+@font-face {
+  font-family: "ProximaNova";
+  src: url("../fonts/proximanova-light.eot");
+  src: url("../fonts/proximanova-light.eot?#iefix") format("embedded-opentype"), url("../fonts/proximanova-light.woff") format("woff"), url("../fonts/proximanova-light.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "ProximaNova";
+  src: url("../fonts/proximanova-bold.eot");
+  src: url("../fonts/proximanova-bold.eot?#iefix") format("embedded-opentype"), url("../fonts/proximanova-bold.woff") format("woff"), url("../fonts/proximanova-bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Avenir";
+  src: url("../fonts/AvenirLTStd-Black.eot");
+  src: url("../fonts/AvenirLTStd-Black.eot?#iefix") format("embedded-opentype"), url("../fonts/AvenirLTStd-Black.woff") format("woff"), url("../fonts/AvenirLTStd-Black.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Proxima";
+  src: url("../fonts/proximanova-regular.eot");
+  src: url("../fonts/proximanova-regular.eot?#iefix") format("embedded-opentype"), url("../fonts/proximanova-regular.woff") format("woff"), url("../fonts/proximanova-regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Proxima";
+  src: url("../fonts/proximanova-semibold.eot");
+  src: url("../fonts/proximanova-semibold.eot?#iefix") format("embedded-opentype"), url("../fonts/proximanova-semibold.woff") format("woff"), url("../fonts/proximanova-semibold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: "bentonsans";
+  src: url("../fonts/bentonsans-book.eot");
+  src: url("../fonts/bentonsans-book.eot?#iefix") format("embedded-opentype"), url("../fonts/bentonsans-book.woff") format("woff"), url("../fonts/bentonsans-book.ttf") format("truetype");
+  font-weight: 300;
+  font-style: light;
+}
+@font-face {
+  font-family: "Whitney";
+  src: url("../fonts/Whitney-Light-webfont.eot");
+  src: url("../fonts/Whitney-Light-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/Whitney-Light-webfont.woff") format("woff"), url("../fonts/Whitney-Light-webfont.ttf") format("truetype");
+  font-weight: 100;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Whitney";
+  src: url("../fonts/whitney-book-webfont.eot");
+  src: url("../fonts/whitney-book-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/whitney-book-webfont.woff") format("woff"), url("../fonts/whitney-book-webfont.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Whitney";
+  src: url("../fonts/whitney-medium-webfont.eot");
+  src: url("../fonts/whitney-medium-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/whitney-medium-webfont.woff") format("woff"), url("../fonts/whitney-medium-webfont.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Whitney";
+  src: url("../fonts/whitney-semibold-webfont.eot");
+  src: url("../fonts/whitney-semibold-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/whitney-semibold-webfont.woff") format("woff"), url("../fonts/whitney-semibold-webfont.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Whitney";
+  src: url("../fonts/whitney-bold-webfont.eot");
+  src: url("../fonts/whitney-bold-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/whitney-bold-webfont.woff") format("woff"), url("../fonts/whitney-bold-webfont.ttf") format("truetype");
+  font-weight: 900;
+  font-style: normal;
+}
+.black {
+  color: #000000;
+}
+.graydarker {
+  color: #222222;
+}
+.graydark {
+  color: #333333;
+}
+.gray {
+  color: #555555;
+}
+.graylight {
+  color: #999999;
+}
+.graylighter {
+  color: #eeeeee;
+}
+.white {
+  color: #ffffff;
+}
+.blue {
+  color: #049cdb;
+}
+.blueDark {
+  color: #0064cd;
+}
+.green {
+  color: #46a546;
+}
+.red {
+  color: #9d261d;
+}
+.yellow {
+  color: #ffc40d;
+}
+.orange {
+  color: #f89406;
+}
+.pink {
+  color: #c3325f;
+}
+.purple {
+  color: #7a43b6;
+}
 @-ms-viewport {
   width: device-width;
 }
@@ -6731,128 +6853,6 @@ a.badge:focus {
     height: auto !important;
     overflow: visible !important;
   }
-}
-@font-face {
-  font-family: "ProximaNova";
-  src: url("../fonts/proximanova-light.eot");
-  src: url("../fonts/proximanova-light.eot?#iefix") format("embedded-opentype"), url("../fonts/proximanova-light.woff") format("woff"), url("../fonts/proximanova-light.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: "ProximaNova";
-  src: url("../fonts/proximanova-bold.eot");
-  src: url("../fonts/proximanova-bold.eot?#iefix") format("embedded-opentype"), url("../fonts/proximanova-bold.woff") format("woff"), url("../fonts/proximanova-bold.ttf") format("truetype");
-  font-weight: bold;
-  font-style: normal;
-}
-@font-face {
-  font-family: "Avenir";
-  src: url("../fonts/AvenirLTStd-Black.eot");
-  src: url("../fonts/AvenirLTStd-Black.eot?#iefix") format("embedded-opentype"), url("../fonts/AvenirLTStd-Black.woff") format("woff"), url("../fonts/AvenirLTStd-Black.ttf") format("truetype");
-  font-weight: bold;
-  font-style: normal;
-}
-@font-face {
-  font-family: "Proxima";
-  src: url("../fonts/proximanova-regular.eot");
-  src: url("../fonts/proximanova-regular.eot?#iefix") format("embedded-opentype"), url("../fonts/proximanova-regular.woff") format("woff"), url("../fonts/proximanova-regular.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: "Proxima";
-  src: url("../fonts/proximanova-semibold.eot");
-  src: url("../fonts/proximanova-semibold.eot?#iefix") format("embedded-opentype"), url("../fonts/proximanova-semibold.woff") format("woff"), url("../fonts/proximanova-semibold.ttf") format("truetype");
-  font-weight: bold;
-  font-style: normal;
-}
-@font-face {
-  font-family: "bentonsans";
-  src: url("../fonts/bentonsans-book.eot");
-  src: url("../fonts/bentonsans-book.eot?#iefix") format("embedded-opentype"), url("../fonts/bentonsans-book.woff") format("woff"), url("../fonts/bentonsans-book.ttf") format("truetype");
-  font-weight: 300;
-  font-style: light;
-}
-@font-face {
-  font-family: "Whitney";
-  src: url("../fonts/Whitney-Light-webfont.eot");
-  src: url("../fonts/Whitney-Light-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/Whitney-Light-webfont.woff") format("woff"), url("../fonts/Whitney-Light-webfont.ttf") format("truetype");
-  font-weight: 100;
-  font-style: normal;
-}
-@font-face {
-  font-family: "Whitney";
-  src: url("../fonts/whitney-book-webfont.eot");
-  src: url("../fonts/whitney-book-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/whitney-book-webfont.woff") format("woff"), url("../fonts/whitney-book-webfont.ttf") format("truetype");
-  font-weight: 300;
-  font-style: normal;
-}
-@font-face {
-  font-family: "Whitney";
-  src: url("../fonts/whitney-medium-webfont.eot");
-  src: url("../fonts/whitney-medium-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/whitney-medium-webfont.woff") format("woff"), url("../fonts/whitney-medium-webfont.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: "Whitney";
-  src: url("../fonts/whitney-semibold-webfont.eot");
-  src: url("../fonts/whitney-semibold-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/whitney-semibold-webfont.woff") format("woff"), url("../fonts/whitney-semibold-webfont.ttf") format("truetype");
-  font-weight: bold;
-  font-style: normal;
-}
-@font-face {
-  font-family: "Whitney";
-  src: url("../fonts/whitney-bold-webfont.eot");
-  src: url("../fonts/whitney-bold-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/whitney-bold-webfont.woff") format("woff"), url("../fonts/whitney-bold-webfont.ttf") format("truetype");
-  font-weight: 900;
-  font-style: normal;
-}
-.black {
-  color: #000000;
-}
-.graydarker {
-  color: #222222;
-}
-.graydark {
-  color: #333333;
-}
-.gray {
-  color: #555555;
-}
-.graylight {
-  color: #999999;
-}
-.graylighter {
-  color: #eeeeee;
-}
-.white {
-  color: #ffffff;
-}
-.blue {
-  color: #049cdb;
-}
-.blueDark {
-  color: #0064cd;
-}
-.green {
-  color: #46a546;
-}
-.red {
-  color: #9d261d;
-}
-.yellow {
-  color: #ffc40d;
-}
-.orange {
-  color: #f89406;
-}
-.pink {
-  color: #c3325f;
-}
-.purple {
-  color: #7a43b6;
 }
 /* ////////////////////////////////////////////// */
 /* ////////////////////////////////////////////// */
@@ -9815,6 +9815,7 @@ pre.pretty-json .key {
 }
 .br-search-asset-preview .br-asset-preview {
   height: 134px;
+  max-height: 134px;
 }
 .br-search-asset-preview .br-single-preview .br-asset-overlay,
 .br-search-asset-preview .br-multi-preview .br-asset-overlay {
@@ -9992,60 +9993,61 @@ table.table-brand-reporting tbody tr:hover {
   z-index: 4;
   font-weight: bold;
   font-size: 13px;
+  line-height: 16px;
   color: white;
 }
 .br-single-preview .br-asset-overlay {
   position: relative;
   float: right;
-  margin-top: -25px;
+  margin-top: -20px;
+  /* line-height + 4px padding */
   margin-right: 10px;
 }
 .br-single-preview .br-asset-overlay.compact {
   font-size: 11px;
+  line-height: 14px;
+  margin-top: -16px;
+  /* line-height + 2px padding */
   margin-right: 5px;
 }
 .br-single-preview .br-asset-preview {
   border-top-right-radius: 3px;
 }
 .br-single-preview.left .br-asset-overlay {
-  position: relative;
   float: left;
-  margin-top: -25px;
   margin-left: 10px;
 }
 .br-single-preview.left .br-asset-overlay.compact {
-  font-size: 11px;
   margin-left: 5px;
 }
 .br-single-preview.left .br-asset-preview {
+  border-top-right-radius: 0px;
   border-top-left-radius: 3px;
 }
 .br-multi-preview .br-asset-overlay {
   position: relative;
   float: left;
-  margin-top: 130px;
+  margin-top: 100px;
   margin-left: 10px;
 }
 .br-multi-preview .br-asset-overlay.compact {
-  margin-top: 23px;
+  margin-top: 20px;
   margin-left: 5px;
   font-size: 11px;
+  line-height: 14px;
 }
 .br-multi-preview .br-asset-preview {
   border-top-left-radius: 3px;
 }
 .br-multi-preview.right .br-asset-overlay {
-  position: relative;
   float: right;
-  margin-top: 130px;
   margin-right: 10px;
 }
 .br-multi-preview.right .br-asset-overlay.compact {
-  margin-top: 23px;
   margin-right: 5px;
-  font-size: 11px;
 }
 .br-multi-preview.right .br-asset-preview {
+  border-top-left-radius: 0px;
   border-top-right-radius: 3px;
 }
 .cycler {
@@ -10257,6 +10259,7 @@ table.table-brand-reporting tbody tr:hover {
   color: #9B9B9B;
 }
 .br-info-card.wide.tall.device-comparison .br-sub-header .br-info-icon {
+  margin: 30px auto 12px;
   width: 60px;
   height: 60px;
 }
