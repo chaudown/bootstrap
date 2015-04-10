@@ -1359,14 +1359,12 @@ td {
 .chart-container {
     width:100%;
     margin: 0 auto;
-    height:280px;
     border:1px solid #DFDFDF;
     position:relative;
     overflow:hidden;
 }
 
 .tabbed-chart {
-  height: 290px;
   border: 0px;
   border-top:1px solid #DFDFDF;
 }
@@ -1414,6 +1412,8 @@ td {
 .chart-axis {
   position:absolute;
   width:100%;
+  /* Hide for now, TODO remove from markup */
+  display: none;
   height:21px;
   bottom:0;
   left:0;
@@ -1447,9 +1447,6 @@ td {
 }
 
 .table-striped tbody {
-  tr.adc-highlighted:nth-child(even) td {
-    background-color: @white;
-  }
   tr.adc-highlighted:nth-child(odd) td {
     background-color: #facccc;
   }
