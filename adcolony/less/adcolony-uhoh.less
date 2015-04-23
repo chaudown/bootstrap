@@ -1,0 +1,93 @@
+#uhoh-layout {
+  .input-region {
+    form {
+      margin: 16px;
+      padding: 20px 16px;
+      border: 2px solid #d3d3d3;
+
+      .inline {
+        display: inline-block;
+      }
+
+      input, .dropdown, .control-group, .clear-btn {
+        margin: 12px;
+      }
+
+      input[type=checkbox] {
+        margin-left: 0;
+        margin-right: 4px;
+        margin-bottom: 16px;
+      }
+
+      .chosen-search input {
+        margin-left: 0;
+      }
+    }
+  }
+
+  .results-region {
+    table {
+      table-layout: fixed;
+      width: ~"-moz-calc(100% - 1px)";
+      width: ~"-webkit-calc(100% - 1px)";
+      width: ~"calc(100% - 1px)";
+      white-space: nowrap;
+
+      .date-row {
+          width: 12%;
+      }
+
+      .entity-type-row {
+          width: 10%;
+      }
+
+      .entity-row {
+          width: 15%;
+      }
+
+      .email-row {
+          width: 15%;
+      }
+
+      .summary-row {
+          width: 40%;
+      }
+
+      .ip-row {
+          width: 8%;
+      }
+
+      td {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+    }
+  }
+
+  .details-region {
+    .modal-header h3 {
+      text-align: center;
+    }
+
+    .modal-body {
+      max-height: ~"-moz-calc(80vh - 139px)";
+      max-height: ~"-webkit-calc(80vh - 139px)";
+      max-height: ~"calc(80vh - 139px)";
+
+      textarea {
+        resize: none;
+      }
+
+      table {
+        table-layout: fixed;
+        width: 100%;
+
+        td {
+          white-space: normal;
+          word-break: break-all;
+        }
+      }
+    }
+  }
+}
