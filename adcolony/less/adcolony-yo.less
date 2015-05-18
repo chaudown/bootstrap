@@ -1,0 +1,493 @@
+@yo-table-border: #e4ebf2;
+@yoBaseHeight: 15px;
+@yoInputLineHeight: 15px;
+@yoBaseBorderRadius: 2px;
+
+// Fonts moved to adcolony-variables.less
+
+.yo-dash {
+  background: #fff;
+
+  .yo-table {
+    border-collapse: collapse;
+    margin: 10px;
+    text-rendering: optimizeLegibility;
+  }
+
+  .yo-table thead {
+    /*text-transform: uppercase;*/
+    font-family: Proxima;
+    font-weight: bold;
+    font-size: 10px;
+    line-height: @yoBaseHeight;
+    letter-spacing: 0.2px;
+    color: #85939f;
+
+    vertical-align: bottom;
+  }
+
+  th {
+    margin-bottom: 10px;
+  }
+
+  th:hover {
+    color: #577290;
+    cursor: pointer;
+  }
+  th:active {
+    color: #405363;
+  }
+
+  tbody {
+    border: 1px solid #e4ebf2;
+    color: #577290;
+  }
+
+  .yo-table tbody tr:nth-child(odd) {
+    background: #f6f9fb;
+  }
+  .yo-table tbody tr:nth-child(even) {
+    background: #fbfdfe;
+  }
+  td {
+    height: 32px;
+  }
+  td, th {
+    padding: 0px 3px;
+  }
+
+  td:first-child, th:first-child {
+    padding: 0px 5px 0px 5px;
+  }
+
+  th.field-sort {
+    font-family: Proxima;
+    letter-spacing: 0.1px;
+    font-size: 12.5px;
+    min-width: 100px;
+  }
+  .yo-table tbody tr {
+    border-bottom: 1px solid #e4ebf2;
+  }
+  .yo-table tbody tr:hover {
+    color: #405363;
+    background: #eaf4fa;
+    cursor: pointer;
+    border-bottom: 1px solid #3ba0da;
+  }
+
+  .yo-table tbody tr:active {
+    background: #e4f2ff;
+  }
+
+  .yo-table tbody tr:hover > .yo-numbers em {
+    color: #9db1c1;
+  }
+
+  .yo-name {
+    text-align: left;
+  }
+
+  .yo-name-adgroup {
+    min-width: 300px;
+  }
+
+  .yo-firescore {
+    text-align: left;
+    min-width: 75px;
+  }
+  .yo-numbers {
+    text-align: right;
+    min-width: 60px;
+  }
+  .yo-status {
+    text-align: center;
+    min-width: 30px;
+  }
+
+  td.yo-name {
+    font-family: Proxima;
+    letter-spacing: 0.1px;
+    font-size: 12.5px;
+    min-width: 100px;
+  }
+
+  td.yo-numbers, td.yo-firescore {
+    font-family: bentonsans;
+    letter-spacing: 0.25px;
+    font-size: 12px;
+
+  }
+  td.yo-status img {
+    height: 9px;
+    margin: 0;
+    padding: 0;
+    display: block;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .yo-numbers em {
+    color: #b8c6d5;
+    font-style: normal;
+  }
+
+  .dropdown .dropdown-toggle {
+    min-width: 75px;
+    text-align: left;
+    font-family: proxima;
+    font-weight: bold;
+    font-size: 12px;
+    color: #6D6E70;
+
+    padding: 5px 8px;
+
+    border: 1px solid #d2d8de;
+    border-radius: @yoBaseBorderRadius;
+    background: #fff;
+
+    margin-right: 4px;
+
+    line-height: @yoBaseHeight;
+    vertical-align: middle;
+
+    transition: 0.1s;
+
+  }
+
+  .dropdown .dropdown-toggle:hover, .dropdown .dropdown-toggle:focus {
+    background: white;
+    color: #6D6E70;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1), 0px 1px 1px #fff inset;
+    border: 1px solid #aeb6be;
+    text-decoration: none;
+  }
+
+  .dropdown .dropdown-toggle:active {
+    color: #848b99;
+    background: #f6f9fb;
+    box-shadow: none;
+    border: 1px solid #d2d8de;
+    transition: 0s all;
+  }
+
+  .dropdown .open .btn.dropdown-toggle {
+    border: 1px solid #268ceb;
+    box-shadow: 0 0 0 2px #d0e4f2;
+    background: #fff;
+    color: #3ba0da;
+  }
+
+  .dropdown img {
+    height: 10px;
+    margin-top: -2px;
+    padding: 0;
+    vertical-align: middle;
+  }
+
+  .dropdown em {
+    font-style: normal;
+    font-weight: normal;
+    color: #9ea5b2;
+  }
+
+  .dropdown .dropdown-toggle:active + .dropdown em {
+    color: #60a9ed;
+  }
+
+  .dropdown .caret {
+    margin-top: 5px;
+    margin-left: 12px;
+    float: right;
+  }
+
+  .dropdown .dropdown-menu {
+    font-size: 13px;
+    border: 1px solid #d2d8de;
+    border-radius: @yoBaseBorderRadius;
+  }
+
+  .dropdown .dropdown-menu li {
+    line-height: @yoInputLineHeight;
+  }
+
+  .dropdown .dropdown-menu a {
+    line-height: @yoInputLineHeight;
+    padding: 5px 15px;
+    color: #6D6E70;
+    font-weight: normal;
+  }
+
+  .dropdown .dropdown-menu a:hover, .dropdown .dropdown-menu a:focus {
+    color: #3ba0da;
+    background: #e0eef9;
+    outline: none;
+  }
+
+  .dropdown .dropdown-menu a:active {
+    color: #fff;
+    background: #3c7ec8;
+  }
+
+  .dropdown .dropdown-menu li.divider {
+    margin: 6px 1px;
+  }
+
+  .dropdown a {
+    line-height: @yoBaseHeight;
+    margin-right: 4px;
+    padding: 6px 2px;
+    font-family: proxima;
+    font-weight: bold;
+    font-size: 12px;
+    transition: .1s all;
+  }
+
+  .btn {
+    font-family: proxima;
+    font-weight: bold;
+    font-size: 12px;
+    background: #fff;
+    color: #3ba0da;
+    padding: 5px 8px;
+    border: 1px solid #d2d8de;
+    border-radius: @yoBaseBorderRadius;
+    transition: .1s all;
+    line-height: @yoBaseHeight;
+    margin-right: 4px;
+  }
+
+  .btn:hover, .btn:focus {
+    border: 1px solid #aeb6be;
+    text-decoration: none;
+    color: #268ceb;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1), 0px 1px 1px #fff inset;
+    background: #fff;
+
+    // outline: none;
+  }
+
+  // Input fields
+  select, textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], .uneditable-input {
+    font-size: 12px;
+    line-height: @yoBaseHeight;
+    .transition(box-shadow border-color 0.1s ease-out);
+    //cursor: pointer; // Seems nicer but could be an incorrect use.
+
+    &:hover {
+      border-color: #aeb6be;
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.0), 0px 1px 2px rgba(210, 216, 222, 0.9) inset;
+    }
+
+    &:focus {
+      border-color: #268ceb;
+      box-shadow: 0 0 0 2px #d0e4f2;
+    }
+  }
+
+  input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], .uneditable-input {
+    height: @yoBaseHeight;
+  }
+
+  .input-large,
+  .input-xlarge,
+  .input-xxlarge,
+  input[class*="span"],
+  select[class*="span"],
+  textarea[class*="span"],
+  .uneditable-input {
+    min-height: @yoBaseHeight;
+  }
+
+  .btn:active {
+    color: #6fb1ef;
+    background: #f6f9fb;
+    box-shadow: none;
+    border: 1px solid #d2d8de;
+    transition: 0s all;
+  }
+
+  .btn img {
+    height: 10px;
+    margin-top: -2px;
+    padding: 0;
+    vertical-align: middle;
+  }
+
+  .input-search {
+    background: url(../img/yo-dash/icon-search.png);
+    background-size: 11px;
+    background-position: 8px 50%;
+    background-repeat: no-repeat;
+
+    margin: 0 4px 0 0;
+    padding: 5px 8px 5px 23px;
+    line-height: 20px;
+    font-family: proxima;
+    font-size: 13px;
+    color: #6D6E70;
+    border: 1px solid #d2d8de;
+    border-radius: @yoBaseBorderRadius;
+    box-shadow: 0px 1px 1px rgba(210, 216, 222, 0.5) inset;
+
+    transition: 0.1s;
+  }
+
+  .btn-group .btn, .btn-group .btn:focus {
+    background: #fff;
+    font-family: proxima;
+    font-weight: bold;
+    font-size: 12px;
+    color: #6D6E70;
+    padding: 5px 8px;
+    border: 1px solid #d2d8de;
+    transition: .1s all;
+    line-height: @yoBaseHeight;
+    min-width: 36px;
+    box-shadow: none;
+  }
+
+  .btn-group .btn:hover, .btn-group .btn:focus {
+    border: 1px solid #aeb6be;
+    text-decoration: none;
+    color: #268ceb;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1), 0px 1px 1px #fff inset;
+    background: #fff;
+  }
+
+  .btn-group .btn:active {
+    color: #6fb1ef;
+    background: #f6f9fb;
+    box-shadow: none;
+    border: 1px solid #d2d8de;
+    transition: 0s all;
+  }
+
+  .btn-group .btn img {
+    margin-top: -2px;
+    height: 10px;
+  }
+
+  .btn-group .btn:first-child {
+    border-radius: 2px 0px 0px 2px;
+  }
+
+  .btn-group .btn:last-child {
+    border-radius: 0px 2px 2px 0px;
+  }
+
+  /** Square it up **/
+  .btn-group .btn-mini {
+    padding: @baseGutter/4 @gutterLarge/4;
+    min-width: 0px;
+  }
+
+  ::-webkit-input-placeholder {
+    color: #b7cadb;
+  }
+
+  :-moz-placeholder {
+    /* Firefox 18- */
+    color: #b7cadb;
+  }
+
+  ::-moz-placeholder {
+    /* Firefox 19+ */
+    color: #b7cadb;
+  }
+
+  :-ms-input-placeholder {
+    color: #b7cadb;
+  }
+
+  // Overrides for the pagination styles (see originals in pagination.less)
+  .pagination {
+    margin: 0;
+  }
+
+  .pagination ul {
+    box-shadow: none;
+    .border-radius(@yoBaseBorderRadius);
+  }
+
+  .pagination ul > li + li > a{
+    margin-left: 4px;
+  }
+
+  .pagination ul > li > a,
+  .pagination ul > li > span {
+    line-height: 17px;
+    padding: 4px 9.5px;
+    color: #6D6E70;
+    border-left-width: 1px;
+  }
+
+  .pagination ul > li > a:hover,
+  .pagination ul > li > a:focus {
+    border: 1px solid #aeb6be;
+    border-left-width: 1;
+    text-decoration: none;
+    color: #268ceb;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1), 0px 1px 1px #fff inset;
+    background: #fff;
+  }
+
+  .pagination ul > .active > a,
+  .pagination ul > .active > span,
+  .pagination ul > li > a:active {
+    color: #6fb1ef;
+    background: #f6f9fb;
+    box-shadow: none;
+    border: 1px solid #d2d8de;
+    border-left-width: 1;
+    transition: 0s all;
+  }
+
+  .pagination ul > .disabled > span,
+  .pagination ul > .disabled > a,
+  .pagination ul > .disabled > a:hover,
+  .pagination ul > .disabled > a:focus {
+    color: @grayLight;
+    background-color: transparent;
+    cursor: default;
+    box-shadow: none;
+    border: 1px solid @paginationBorder;
+    border-left-width: 1;
+  }
+
+  .pagination ul > li:first-child > a,
+  .pagination ul > li:first-child > span {
+    border-left-width: 1px;
+    .border-left-radius(@yoBaseBorderRadius);
+  }
+  .pagination ul > li:last-child > a,
+  .pagination ul > li:last-child > span {
+    .border-right-radius(@yoBaseBorderRadius);
+  }
+  /** When we just have a row of floating elements, we often want spaces between
+  them. Use this class so we don't have to h-space-left over and over **/
+  .spaced .pull-left + .pull-left {
+    margin-left:0px;
+  }
+}
+
+.yo-dash {
+//	border: 1px solid #e3e7eb;
+	padding: 20px;
+	border-radius: 3px;
+//	box-shadow: 0px 1px 2px rgba(238,241,243,0.5);
+	min-width: 1000px;
+	margin-top: 20px;
+}
+
+#ac-content-container.yo-content-container {
+  box-shadow: none;
+}
+
+.yo-floating-block {
+  position: relative;
+}
+
+.yo-spark-line {
+  margin-top: 4px;
+}

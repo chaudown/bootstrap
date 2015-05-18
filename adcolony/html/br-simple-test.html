@@ -1,0 +1,222 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>a place to experiment</title>
+    <link rel="stylesheet" type="text/css" href="../css/adcolony.css">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script src="http://code.highcharts.com/highcharts.js"></script>
+</head>
+<body>
+<div id="ac-content-container">
+<div class="row-fluid" style="padding: 0px 13px;">
+	<div class="br-info-card">
+		<img src="../img/icon-dec-views.png" class="br-info-icon">
+		<div class="br-names br-info-title">DEC VIEWS</div>
+		<div class="br-numbers br-info-header">124,643</span></div>
+		<div class="br-names br-info-sub-title">Total DEC Views</div>
+		<br/>
+		<div id="chart_container_views" class="br-info-chart"> Chart Here </div>
+		<br/>
+		<div class="br-names br-info-chart-title">Exposure Time</div>
+	</div>
+    <div class="br-info-card">
+        <img src="../img/icon-engagement.png" class="br-info-icon">
+        <div class="br-names br-info-title">ENAGEMENT RATE</div>
+        <div class="br-numbers br-info-header">3.17<span class="br-symbol">%</span></div>
+        <div class="br-names br-info-sub-title">Overall Engagement Rate</div>
+        <br/>
+        <div id="chart_container_enagements" class="br-info-chart"> Chart Here </div>
+        <br/>
+        <div class="br-names br-info-chart-title">Exposure Time</div>
+    </div>
+    <div class="br-info-card">
+        <img src="../img/icon-kpi.png" class="br-info-icon">
+        <div class="br-names br-info-title">KPI RATE</div>
+        <div class="br-numbers br-info-header">1.43<span class="br-symbol">%</span></div>
+        <div class="br-names br-info-sub-title">Overall KPI Rate</div>
+        <br/>
+        <div id="chart_container_enagements" class="br-info-chart"> Chart Here </div>
+        <br/>
+        <div class="br-names br-info-chart-title">Exposure Time</div>
+    </div>
+</div>	
+<div id="color_test" style="width:50px;height:50px;background-color:rgb(0,0,0);"></div>
+<input type="text" name="color_range" value="0"/>
+<div style="width:50px;height:50px;background-color:#df00ff;"></div>
+<div style="width:50px;height:50px;background-color:#004dff;"></div>
+<div style="width:50px;height:50px;background-color:#0077ff;"></div>
+<div style="width:50px;height:50px;background-color:#6e00c3;"></div>
+<div style="width:50px;height:50px;background-color:#7e00f8;"></div>
+<div style="width:50px;height:50px;background-color:#0026e0;"></div>
+<div style="width:50px;height:50px;background-color:#8b00ff;"></div>
+<div style="width:50px;height:50px;background-color:#9c00ff;"></div>
+<div style="width:50px;height:50px;background-color:#ab00ff;"></div>
+<div style="width:50px;height:50px;background-color:#0095ff;"></div>
+<br/>
+<br/>
+<div style="width:50px;height:50px;background-color:#de00ff;"></div>
+<div style="width:50px;height:50px;background-color:#3b00ff;"></div>
+<div style="width:50px;height:50px;background-color:#0051c9;"></div>
+<div style="width:50px;height:50px;background-color:#a000ff;"></div>
+<div style="width:50px;height:50px;background-color:#0003ff;"></div>
+<div style="width:50px;height:50px;background-color:#ff00fa;"></div>
+<div style="width:50px;height:50px;background-color:#6200ff;"></div>
+<div style="width:50px;height:50px;background-color:#0039e0;"></div>
+<div style="width:50px;height:50px;background-color:#c600ff;"></div>
+<div style="width:50px;height:50px;background-color:#2400ff;"></div>
+<script type="text/javascript">
+    var startingR = 189;
+    var startingG = 63;
+    var startingB = 151;
+    var endingR = 5;
+    var endingG = 113;
+    var endingB = 185;
+    var rRange = endingR - startingR;
+    var gRange = endingG - startingG;
+    var bRange = endingB - startingB;
+    Number.prototype.clamp = function(min, max) {
+        return Math.min(Math.max(this, min), max);
+    }
+    function setColor(r, g, b) {
+        r = parseInt(r).clamp(0, 255);
+        g = parseInt(g).clamp(0, 255);
+        b = parseInt(b).clamp(0, 255);
+        console.log("setColor: " + r + ", " + g + ", " + b);
+        console.log("Hex: " + "#" + r.toString(16) + g.toString(16) + b.toString(16));
+        $('#color_test').css("background-color", "#" + r.toString(16) + g.toString(16) + b.toString(16));
+        // $('#color_test').css("background-color", "rgb(" + r + ", " + g + ", " + b + ")");
+    }
+    $('input[name=color_range]').change(function() {
+        range = $('input[name=color_range]').val() / 100
+        console.log("Range = " + range);
+        r = startingR + rRange * range;
+        g = startingG + gRange * range;
+        b = startingB + bRange * range;
+        setColor(r, g, b);
+    });
+    setColor(startingR, startingG, startingB);
+</script>
+</div>
+<script type="text/javascript">
+$(function () {
+    $('#chart_container_enagements').highcharts({
+
+        title: {
+            text: null	// No chart title
+        },        
+        chart: {
+            type: 'column'
+        },
+        legend: false,	// No legend
+        tooltip: false,  // No tooltip
+        yAxis: {
+            gridLineWidth: 0, // Hide the grid lines
+            tickPixelInterval: 10000, // Use the chart's height so only 2 ticks will be placed
+            labels: {
+                // This html route sort of works, but it's easier to just use the style block
+                // useHTML: true,
+                // formatter: function () {
+                //   return "<span class='axis-label'>"+this.value+"</span>";
+                // }
+            	style: {	// Style the labels as spec'd by bchau
+            		fontFamily: 'Whitney',
+            		fontWeight: 'normal',
+            		fontSize: 13,
+            		color: '#CFCFCF'            		
+            	}
+            },
+            title: null	// No title for y-axis
+        },
+        xAxis: {	// Dotted grid lines
+            gridLineColor: '#BBBBB7',
+            gridLineWidth: 1,
+            gridLineDashStyle: 'dot',
+            tickmarkPlacement: 'on',
+            categories: ['0-5', '6-10', '11-19', '20+'],
+            lineWidth: 0,	// Hide axis line
+            tickWidth: 0,	// Hide tick lines
+            title: {
+            	text: 'Seconds',
+            	style: {
+            		fontFamily: 'ProximaNova',
+            		fontWeight: 'normal',
+            		fontSize: 11,
+            		color: '#CFCFCF'            		
+            	}
+            },
+            labels: {
+            	style: {
+            		fontFamily: 'Whitney',
+            		fontWeight: 'normal',
+            		fontSize: 13,
+            		color: '#4D4E4E'            		
+            	}
+            }
+        },
+        plotOptions: {
+            column: {	// Rounded 10 pixel columns
+                pointWidth: 10,
+                borderRadius: 3
+            }
+        },
+        series: [{	// Each point needs to be an object so the column and label can be the same color
+            data: [{
+                y: 21634,
+                color: '#BD3E97',
+                dataLabels: {
+                	enabled: true,
+                	y: -6,
+                	style: {
+                		fontWeight: 'bold',
+                		fontFamily: 'Whitney',
+                		fontSize: 15,
+                		color: '#BD3E97'
+                	}
+                }
+            }, {
+                y: 19421,
+                color: '#9659A4',
+                dataLabels: {
+                	enabled: true,
+                	y: -6,
+                	style: {
+                		fontWeight: 'bold',
+                		fontFamily: 'Whitney',
+                		fontSize: 15,
+                		color: '#9659A4'
+                	}
+                }
+            }, {
+                y: 9526,
+                color: '#6966AF',
+                dataLabels: {
+                	enabled: true,
+                	y: -6,
+                	style: {
+                		fontWeight: 'bold',
+                		fontFamily: 'Whitney',
+                		fontSize: 15,
+                		color: '#6966AF'
+                	}
+                }
+            }, {
+                y: 5444,
+                color: '#0070B8',
+                dataLabels: {
+                	enabled: true,
+                	y: -6,
+                	style: {
+                		fontWeight: 'bold',
+                		fontFamily: 'Whitney',
+                		fontSize: 15,
+                		color: '#0070B8'
+                	}
+                }
+            }]
+        }]
+
+    });
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,1117 @@
+// Fonts declared in adcolony-variables.less
+.br-row {
+  max-width: 1002px;
+  margin: 0 auto;
+  padding-left: 22px;
+}
+/* Info Card Styles */
+.br-bordered-card {
+  border: 1px solid #DADBDC;
+  border-radius: @acBaseBorderRadius;
+}
+.br-modal-bg {
+  transition: z-index 1s ease-in-out 1s, opacity 1s ease-in-out 1s;
+  position: fixed;
+  background-color: white;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  opacity: 0;
+}
+.br-info-card-modal {
+  float: left;
+}
+/*.br-info-card-modal:first-child {
+  margin-left: 22px;
+}
+*/
+.br-info-card-modal.active {
+  .br-modal-bg {
+    transition: z-index 1s ease-in-out 0s, opacity 1s ease-in-out 0s;
+    z-index: 30;
+    opacity: 1;
+  }
+  .br-info-card {
+    transition: margin 1s ease-in-out 1s, z-index 1s ease-in-out 0s;
+    z-index: 31;
+  }
+  .br-info-card:hover {
+    cursor: auto;
+    border: 1px solid #DADBDC;
+  }
+  .br-info-card:active {
+    border: 1px solid #DADBDC;
+  }
+}
+.br-info-card {
+  position:relative;
+  transition: margin 1s ease-in-out 0s, z-index 1s ease-in-out 1s;
+  z-index: 1;
+  text-align: center;
+//  padding: 0px 13px;
+  margin: 16px 16px 0px 0px;
+  width: 314px;
+  height: 582px; // 2 less than the spec because css borders add on to height
+//  float: left;
+  .br-info-icon {
+    width: 44px;
+    height: 44px;
+    margin: 30px 0px 12px 0px;
+  }
+  .br-info-title {
+    max-width: 200px;
+    margin: 0 auto;
+//    border-bottom: 1px solid #DADBDC;
+//    padding-bottom: 5px;
+  }
+  .br-info-divider {
+    margin: 5px auto 0;
+    width: 100px;
+    border-bottom: 1px solid #DADBDC;
+//    padding-bottom: 5px;
+  }
+  .br-info-header {
+//    margin: 12px 0 0 0;
+  }
+  .br-info-chart {
+    width: 241px;
+    height: 262px;
+    margin: 0 auto;
+    position: relative;
+    .axis-labels {
+      fontFamily: 'Whitney';
+      fontWeight: 'normal';
+      fontSize: 13;
+      color: #CFCFCF;
+    }
+  }
+}
+.br-info-card:hover {
+  cursor: zoom-in;
+  border: 1px solid #CFCFCF;
+}
+.br-info-card:active {
+  border: 1px solid #4D4E4E;
+}
+.br-info-card.wide {
+  width: 480px;
+  .br-info-title {
+    max-width: none;
+  }
+  .br-info-chart {
+    width: 400px;
+    margin-left: 40px;
+  }
+  .br-info-chart-title {
+    max-width: 367px;
+    margin: 0 auto;
+  }
+}
+.br-info-card.wider {
+  width: 680px;
+}
+.br-info-card.full-width {
+  width: 978px;
+  .br-info-title {
+    max-width: none;
+  }
+  .br-sub-card {
+    width: 326px;
+  }
+  .br-sub-card.wide {
+    width: 652px;
+    .br-info-title {
+      max-width: 300px;
+    }
+    .br-info-chart {
+      width: 540px;
+      height: 374px;
+      margin-top: 12px;
+    }
+  }
+}
+.br-info-card.shorter {
+  height: 240px;
+}
+.br-info-card.tall {
+  height: 688px; // 2 less than the spec because css borders add on to height
+  .br-info-chart {
+    height: 360px; /* TODO: this is all arbitrary, we'll need to see how it fits and come up with a number that works */
+  }
+}
+.br-info-card.tall.condensed {
+  .br-info-chart {
+    height: 480px;
+  }
+}
+.br-info-card.short {
+  height: 335px; // 2 less than the spec because css borders add on to height
+  .br-info-chart {
+    height: 120px; /* TODO: this is all arbitrary, we'll need to see how it fits and come up with a number that works */
+  }
+}
+.br-info-card.short, .br-info-card.condensed {
+  .br-info-sub-title {
+    display: none;
+  }
+  .br-info-chart-title {
+    display: none;
+  }
+  .br-info-icon {
+    width: 36px;
+    height: 36px;
+    margin: 20px 0px 12px 0px;
+  }
+  .br-info-title {
+    max-width: 150px;
+  }
+  .br-numbers.br-info-header {
+    font-size: 30px;
+    line-height: 36px;
+  }
+}
+.br-info-card.short {
+  .btn-br-info-action {
+    margin-top: 20px;
+  }
+}
+.br-info-card.condensed {
+  .btn-br-info-action {
+    margin-top: 10px;
+  }
+}
+.br-info-card.short {
+  .br-names.br-info-title {
+    font-size: 18px;
+    line-height: 20px;
+  }
+}
+.br-info-card.condensed {
+  .br-names.br-info-title {
+        font-size: 13px;
+        line-height: 15px;
+  }
+}
+.br-info-card.wide.side-by-side {
+  .left-side {
+    float: left;
+    width: 204px;
+    height: 265px;
+    padding: 36px 0 36px 36px;
+  }
+  .right-side {
+    float: right;
+    width: 204px;
+    height: 265px;
+    padding: 36px 36px 36px 0;
+  }
+  .br-info-icon {
+    width: 44px;
+    height: 44px;
+    margin: 20px 0px 12px 0px;
+  }
+  .br-info-chart {
+    width: 188px;
+    height: 188px;
+    margin: 0;
+    top: 50%;
+    position: relative;
+    transform: translateY(-50%);
+  }
+  .br-info-header {
+    margin: 0;
+  }
+  .br-numbers.br-info-header {
+    font-size: 60px;
+    line-height: 70px;
+  }
+  .br-info-sub-title {
+    display: block;
+  }
+}
+.br-sub-card {
+  float: left;
+}
+.br-bottom-border {
+  border-bottom: 1px solid #DADBDC;
+}
+.btn-br-info-action {
+  padding: 6px;
+  box-shadow: none;
+  background-image: none;
+  border: none;
+  background-color: #E7E8E8;
+}
+/* END Info Card Styles */
+/* Text and Number Styles */
+.br-small-text {
+  font-size: 13px;
+  line-height: 13px;
+}
+.br-numbers {
+  font-style: normal;
+  font-weight: normal;
+  font-family: Whitney;
+//  font-size: 13px;
+  .br-symbol {
+    font-weight: 300;
+  }
+}
+.br-numbers.br-info-header {
+  color: #4D4E4E;
+  line-height: 57px;
+  font-size: 48px;
+}
+.br-numbers.br-info-light {
+  font-weight: 100;
+  font-size: 33px;
+  line-height: 38px;
+  color: white;
+}
+.br-names {
+  font-style: normal;
+  font-family: Proxima;
+  font-weight: normal;
+}
+.br-names.br-info-chart-title {
+  font-size: 18px;
+  color: #4D4E4E;
+  strong {
+    color: black;
+    border-bottom:1px solid black;
+//    padding-bottom:2px;
+  }
+}
+.br-names.br-info-title {
+  font-weight: bold;
+  font-family: ProximaNova;
+  font-size: 18px;
+  color: #444445;
+}
+.br-names.br-info-sub-title {
+  font-size: 16px;
+  line-height: 19px;
+  color: #9B9B9B;
+  strong {
+    color: black;
+    border-bottom:1px solid black;
+    padding-bottom:2px;
+  }
+}
+.br-names.btn-br-info-action {
+  font-family: ProximaNova;
+  font-weight: bold;
+  color: #666767;
+  font-size: 13px;
+  line-height: 15px;
+}
+/* END Text and Number Styles*/
+.search-entry-box {
+  padding: 12px;
+  overflow: hidden;
+  max-width: 600px;
+}
+
+@media (max-width: 1599px) {
+  .search-entry-box {
+    max-width: 400px;
+  }
+}
+
+.with-border {
+  border-left: 1px solid #ddd;
+}
+
+@media (min-width: 1200px) {
+  .br-search-asset-preview {
+    position: relative;
+    width: 200px;
+    height: 134px;
+  }
+}
+@media (max-width: 1199px) {
+  .br-search-asset-preview {
+    display: none;
+  }
+}
+.br-search-asset-preview {
+  .br-asset-preview {
+    height: 134px;
+    max-height: 134px;
+  }
+  .br-single-preview, .br-multi-preview {
+    .br-asset-overlay {
+      margin-top: 110px;
+    }
+  }
+}
+
+.br-search-preview-overlay {
+  position: absolute;
+  top: 110px;
+  left: 6px;
+  /*width: 100%;*/
+  vertical-align: bottom;
+  font-weight: bold;
+  color: white;
+  z-index: 4;
+}
+
+/* Progress Bar Styles */
+.br-progress {
+  max-width: 140px;
+  height: 6px;
+  margin-bottom: 10px;
+  box-shadow: none;
+  background-image: none;
+}
+.br-search-progress {
+  max-width: 140px;
+  height: 14px;
+  margin-bottom: 10px;
+  background-image: none;
+  box-shadow: none;
+}
+.br-progress-full {
+  max-width: 100%;
+  width: 100%;
+}
+.br-progress .bar {
+  background-image: none;
+  box-shadow: none;
+}
+.br-search-progress .bar {
+  background-color: #aaaaaa;
+  background-image: none;
+  box-shadow: none;
+}
+.br-spend-progress .bar {
+  background-color: #1BAAE1;
+}
+.br-date-progress .bar {
+  background-color: #0672BA;
+}
+/* END Progress Bar Styles */
+
+table.table-brand-reporting tbody tr:hover {
+  background-color: rgb(35, 49, 75);
+  cursor:pointer;
+}
+
+/*table.table-brand-reporting tbody tr:nth-child(odd):hover {*/
+/*background-color: blue;*/
+/*}*/
+
+.br-show-container {
+  background: #ffffff;
+  border-radius: 3px;
+  -webkit-box-shadow: 0px 0px 8px #bbbec3;
+  -moz-box-shadow: 0px 0px 8px #bbbec3;
+  -ms-box-shadow: 0px 0px 8px #bbbec3;
+  -o-box-shadow: 0px 0px 8px #bbbec3;
+  box-shadow: 0px 0px 8px #bbbec3;
+  margin-top: 6px;
+}
+
+.br-show-overlay {
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+  box-shadow: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  -ms-box-shadow: none;
+  -o-box-shadow: none;
+}
+
+.br-search-overlay {
+  border: none;
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+  box-shadow: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  -ms-box-shadow: none;
+  -o-box-shadow: none;
+}
+
+.br-search-overlay table {
+  margin-bottom: 0px;
+}
+
+.br-button-block {
+  padding: 12px 12px 8px 12px;
+  border-bottom: 4px solid transparent;
+}
+
+.br-button-block a {
+  text-decoration: none;
+  color: black;
+}
+
+.br-button-block:hover {
+  border-top-left-radius: 3px;
+  border-bottom: 4px solid #4bb1cf;
+  cursor: pointer;
+}
+
+.br-button-block.active {
+  border-bottom: 4px solid #4bb1cf;
+}
+
+.br-filter-block {
+  padding: 6px;
+  line-height: 32px;
+  vertical-align: middle;
+  cursor: pointer;
+}
+
+.br-border-right {
+  border-right: 1px solid #ddd;
+}
+
+.br-show-container .ac-overlay {
+  border: none;
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+  box-shadow: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  -ms-box-shadow: none;
+  -o-box-shadow: none;
+}
+
+/** http://avriqq.net/ **/
+.br-btn {
+  border: none;
+  background: #BDC3C7;
+  color: white;
+  font-size: 14px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  text-decoration: none;
+  text-shadow: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  -webkit-transition: 0.25s;
+  -moz-transition: 0.25s;
+  -o-transition: 0.25s;
+  transition: 0.25s;
+  -webkit-backface-visibility: hidden;
+}
+
+.br-exposure-total-box {
+  padding: 20px 0px 20px 0px;
+  background-color: rgba(0,0,0,0.2);
+}
+
+.br-dec-info-left-chart-container {
+  position: relative;
+  height: 200px;
+  width: 200px;
+  margin: 0 auto;
+}
+
+/* Ad Preview Styles */
+.br-asset-preview {
+  width: 100%;
+}
+@media (max-width: 1599px) {
+  .br-asset-preview {
+    max-height: 118px;
+  }
+}
+@media (min-width: 1600px) {
+  .br-asset-preview {
+    max-height: 155px;
+  }
+}
+.br-preview-click-thru {
+  cursor: pointer;
+}
+/* video overlay and dec overlays are different styling
+  because the img cycling we use for the video preview
+ has the images using absolute position*/
+.br-asset-overlay {
+  z-index: 4;
+  font-weight: bold;
+  font-size: 13px;
+  line-height: 16px;
+  color: white;
+}
+.br-single-preview {
+  .br-asset-overlay {
+    position: relative;
+    float: right;
+    margin-top: -20px; /* line-height + 4px padding */
+    margin-right: 10px;
+  }
+  .br-asset-overlay.compact {
+    font-size: 11px;
+    line-height: 14px;
+    margin-top: -16px; /* line-height + 2px padding */
+    margin-right: 5px;
+  }
+  .br-asset-preview {
+    border-top-right-radius: @acBaseBorderRadius;
+  }
+}
+.br-single-preview.left {
+  .br-asset-overlay {
+    float: left;
+    margin-left: 10px;
+  }
+  .br-asset-overlay.compact {
+    margin-left: 5px;
+  }
+  .br-asset-preview {
+    border-top-right-radius: 0px;
+    border-top-left-radius: @acBaseBorderRadius;
+  }
+}
+.br-multi-preview {
+  .br-asset-overlay {
+    position: relative;
+    float: left;
+    margin-top: 100px;
+    margin-left: 10px;
+  }
+  .br-asset-overlay.compact {
+    margin-top: 20px;
+    margin-left: 5px;
+    font-size: 11px;
+    line-height: 14px;
+  }
+  .br-asset-preview {
+    border-top-left-radius: @acBaseBorderRadius;
+  }
+}
+.br-multi-preview.right{
+  .br-asset-overlay {
+    float: right;
+    margin-right: 10px;
+  }
+  .br-asset-overlay.compact {
+    margin-right: 5px;
+  }
+  .br-asset-preview {
+    border-top-left-radius: 0px;
+    border-top-right-radius: @acBaseBorderRadius;
+  }
+}
+
+.cycler {
+  position: relative;
+}
+.cycler img {
+  position: absolute;
+  z-index: 1;
+  background-color:black;
+}
+.cycler img.active {
+  z-index: 3
+}
+/* Custom grid for the ad creative info box*/
+.br-flush-grid {
+  border-bottom: 1px solid #DADBDC;
+  .span6 {
+    width: 50%;
+    margin: 0px;
+  }
+}
+.compact {
+  .br-flush-grid {
+    border-bottom: none;
+  }
+}
+/* Custom person chart styles */
+.br-person-row {
+  width: 235px;
+  height: 20px;
+  margin: 10px auto;
+}
+
+.br-person-container {
+  float: left;
+  width:7px;
+  height:20px;
+}
+
+.br-person-container + .br-person-container {
+  margin-left: 5px;
+}
+
+.br-person-container.empty {
+  opacity: .25;
+}
+
+.br-gradient-block {
+  width: 117px;
+  height: 44px;
+  margin: 0 auto;
+  margin-bottom: 10px;
+  background-image: linear-gradient(-135deg, #5179BC 0%, #36ACE2 100%);
+  border-radius: 2px;
+}
+
+.br-numbers.br-gradient-block {
+  font-style: normal;
+  font-weight: 100;
+  font-family: Whitney;
+  color: white;
+  font-size: 33px;
+  line-height: 38px;
+}
+
+.br-info-card.br-uniques-card {
+  .br-info-chart {
+    height: 140px;
+    margin-bottom: 55px;
+  }
+  .br-info-chart-title {
+    margin: 0 auto;
+    max-width: 169px;
+  }
+}
+
+.br-info-card.daypart-card {
+  /* Needs to be tweaked every time you change anything, GO BRAND INSIGHTS */
+  .br-building {
+    height: 300px;
+    width: 184px;
+    margin: 0 auto;
+    overflow-y: hidden;
+  }
+  .br-building-container {
+    overflow-x: visible;
+    position:relative;
+  }
+  .br-building-sizer {
+    position: absolute;
+    left: -30px;
+  }
+  .br-meridien {
+    color: #9B9B9B;
+    font-size: 11px;
+    line-height: 12px;
+    font-weight: bold;
+    font-family: ProximaNova;
+  }
+  .br-value {
+    font-size: 26;
+  }
+
+  .br-info-divider {
+    width: 50px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+  }
+
+  .br-info-icon {
+    width: 36px;
+    height: 36px;
+    margin: 20px 0px 10px 0px;
+  }
+
+  .br-info-chart {
+    width: 556px;
+    height: 297px;
+//    margin-top: 10px;
+    margin: 10px 0 0 173px;
+//    background-image: url(../img/brand_reporting/regions-all.svg);
+//    background-size: 100% 100%;
+  }
+
+  .br-sub-header.br-map-key {
+    width: 164px;
+    height: 10px;
+    .br-map-key-bar {
+      width:100%;
+      height: 5px;
+      border-radius: 1px;
+      margin-top: 5px;
+    }
+    .br-numbers.br-map-key-label {
+      font-size: 9px;
+      line-height: 11px;
+      color: #9B9B9B;
+    }
+  }
+
+}
+
+.br-info-card.map-card {
+  .br-info-icon {
+    width: 36px;
+    height: 36px;
+    margin: 20px 0px 10px 0px;
+  }
+  .br-info-chart {
+    width: 556px;
+    height: 297px;
+//    margin-top: 10px;
+    margin: 10px 0 0 173px;
+//    background-image: url(../img/brand_reporting/regions-all.svg);
+//    background-size: 100% 100%;
+  }
+  .br-sub-header.br-map-key {
+    width: 164px;
+    height: 10px;
+    .br-map-key-bar {
+      width:100%;
+      height: 5px;
+      border-radius: 1px;
+      margin-top: 5px;
+    }
+    .br-numbers.br-map-key-label {
+      font-size: 9px;
+      line-height: 11px;
+      color: #9B9B9B;
+    }
+  }
+  .row-fluid.br-top-legend {
+    .br-sub-header:first-child {
+      margin-left: 191px;
+    }
+  }
+  .row-fluid.br-bottom-legend {
+    .br-sub-header:first-child {
+      margin-left: 251px;
+    }
+  }
+}
+
+.br-sub-header {
+  float: left;
+}
+.br-info-card.full-width {
+  .br-sub-header + .br-sub-header {
+    border-left: 1px solid #DADBDC;
+    padding-left: 10px;
+  }
+  .br-sub-header {
+    text-align: center;
+    width: 80px;
+    margin: 20px 10px 2px 0;
+    .br-numbers.br-info-header {
+      font-size: 21px;
+      line-height: 25px;
+    }
+    .br-names.br-info-sub-title {
+      font-size: 11px;
+      line-height: 12px;
+      font-weight: bold;
+      font-family: ProximaNova;
+      color: #444445;
+    }
+  }
+}
+.br-info-card.wide {
+  .br-sub-header {
+    width: 160px;
+    .br-numbers.br-info-header {
+      font-size: 28px;
+      line-height: 33px;
+    }
+    .br-names.br-info-sub-title {
+      font-size: 13px;
+      line-height: 16px;
+      margin-bottom: 22px;
+    }
+  }
+  .br-info-chart.br-pyramid-chart {
+    width: 284px;
+    height: 266px;
+    margin: 0 auto;
+    margin-top:30px;
+  }
+}
+/* For direct 1 to 1 comparisons */
+.br-info-card.wide.comparison {
+  .br-sub-header {
+    margin: 40px 0 0 0;
+    width: 140px;
+    .br-numbers.br-info-header {
+      font-size: 26px;
+      line-height: 31px;
+    }
+    .br-info-divider {
+      width: 50px;
+    }
+    .br-info-icon {
+      height:auto;
+    }
+  }
+  .br-info-chart.fill-width {
+    width: 389px;
+    height: 240px;
+    margin: 40px auto 0;
+    float: none;
+  }
+  .br-info-chart {
+    float:left;
+    width: 187px;
+    height: 187px;
+    margin: 40px 0 54px 0;
+  }
+  .br-numbers.br-info-header {
+    font-size: 42px;
+    line-height: 49px;
+  }
+  .br-names.br-info-chart-title {
+    font-size: 18px;
+    line-height: 22px;
+    color: #9B9B9B;
+  }
+}
+/* For comparisons of 3 items (inventory and device) */
+.br-info-card.wide.tall.comparison {
+  .br-sub-header {
+    margin: 0 0 30px 0;
+    width: 160px;
+    .br-info-icon {
+      width: 34px;
+      height: 34px;
+    }
+    .br-names.br-info-title {
+      font-size: 13px;
+      line-height: 15px;
+    }
+    .br-numbers.br-info-header {
+      font-size: 24px;
+      line-height: 28px;
+    }
+    .br-info-divider {
+      width: 50px;
+    }
+  }
+  .br-info-chart.fill-width {
+    width: 389px;
+    margin: 40px auto 0;
+    float: none;
+  }
+  .br-info-chart {
+    float: none;
+    width: 212px;
+    height: 212px;
+    margin: 40px auto 0;
+  }
+  .br-numbers.br-info-header {
+    font-size: 42px;
+    line-height: 49px;
+  }
+  .br-names.br-info-chart-title {
+    font-size: 18px;
+    line-height: 22px;
+    color: #9B9B9B;
+  }
+}
+
+.br-info-card.wide.tall.device-comparison {
+  .br-sub-header {
+    .br-info-icon {
+      margin: 30px auto 0px;
+      width: 60px;
+      height: 60px;
+    }
+    .br-names.br-info-title {
+      font-family: Proxima;
+      font-weight: normal;
+      font-size: 16px;
+      line-height: 19px;
+    }
+    .br-numbers.br-info-header {
+      font-size: 24px;
+      line-height: 28px;
+    }
+  }
+  .br-info-chart {
+    margin-top: 45px;
+  }
+}
+
+.br-info-chart .highcharts-container {
+  overflow: visible !important;
+}
+
+// Donut Chart title classes
+.br-info-chart {
+  .br-numbers.br-info-header {
+    text-align: center;
+    font-size: 40px;
+    line-height: 47px;
+  }
+  .br-names.br-info-sub-title {
+    text-align: center;
+  }
+}
+
+.br-info-card.planet {
+  background-size:100% 100%;
+  .br-info-chart {
+    height: 23px;
+    margin: 110px 0;
+    .br-rocket-trail {
+      height: 10px;
+      border-top-right-radius: 3px;
+      border-bottom-right-radius: 3px;
+      float: left;
+      min-width: 20px;
+      transition: width 1s ease-in-out;
+    }
+    .br-rocket {
+      background-image: url(../img/brand_reporting/rocket-icon.png);
+      background-size: 100% 100%;
+      width: 30px;
+      height: 23px;
+      left: 36px;
+      top: -6px;
+      float: right;
+      position: relative;
+    }
+    .br-rocket-bg {
+      border-top: 1px dashed #DADBDC;
+      position: relative;
+      top: 6px;
+      width: 100%;
+      z-index: -1;
+    }
+  }
+  .br-info-chart-title {
+    max-width: 224px;
+    margin: 140px auto 36px;
+  }
+  .br-names.br-info-chart-title {
+    font-size: 16px;
+    line-height: 19px;
+    color: #9B9B9B;
+  }
+}
+.br-info-card.moon {
+  background-image: url('../img/brand_reporting/bg-moon.png');
+  .br-info-chart {
+    width: 64%;
+  }
+  .br-rocket-path {
+    width: 82%;
+  }
+  .br-rocket-trail {
+    background-image: linear-gradient(-90deg, #828BC5 0%, #A78EC3 100%);
+  }
+}
+.br-info-card.venus {
+  background-image: url('../img/brand_reporting/bg-venus.png');
+  .br-info-chart {
+    width: 61%;
+  }
+  .br-rocket-path {
+    width: 80%;
+  }
+  .br-rocket-trail {
+    background-image: linear-gradient(-90deg, #4FBA69 0%, #85C557 100%);
+  }
+}
+.br-info-card.mercury {
+  background-image: url('../img/brand_reporting/bg-mercury.png');
+  .br-info-chart {
+    width: 64%;
+  }
+  .br-rocket-path {
+    width: 81%;
+  }
+  .br-rocket-trail {
+    background-image: linear-gradient(-90deg, #F8B019 0%, #FBC311 100%);
+  }
+}
+.br-info-card.mars {
+  background-image: url('../img/brand_reporting/bg-mars.png');
+  .br-info-chart {
+    width: 58%;
+  }
+  .br-rocket-path {
+    width: 80%;
+  }
+  .br-rocket-trail {
+    background-image: linear-gradient(-90deg, #E92428 0%, #EC5877 100%);
+  }
+}
+.br-info-card.jupiter {
+  background-image: url('../img/brand_reporting/bg-jupiter.png');
+  .br-info-chart {
+    width: 53%;
+  }
+  .br-rocket-path {
+    width: 78%;
+  }
+  .br-rocket-trail {
+    background-image: linear-gradient(-90deg, #EF4428 0%, #F26727 100%);
+  }
+}
+.br-info-card.saturn {
+  background-image: url('../img/brand_reporting/bg-saturn.png');
+  .br-info-chart {
+    width: 52%;
+  }
+  .br-rocket-path {
+    width: 78%;
+  }
+  .br-rocket-trail {
+    background-image: linear-gradient(-90deg, #F08121 0%, #F5A31D 100%);
+  }
+}
+.br-info-card.uranus {
+  background-image: url('../img/brand_reporting/bg-uranus.png');
+  .br-info-chart {
+    width: 52%;
+  }
+  .br-rocket-path {
+    width: 78%;
+  }
+  .br-rocket-trail {
+    background-image: linear-gradient(-90deg, #00B6DE 0%, #0091CA 100%);
+  }
+}
+.br-info-card.neptune {
+  background-image: url('../img/brand_reporting/bg-neptune.png');
+  .br-info-chart {
+    width: 53%;
+  }
+  .br-rocket-path {
+    width: 78%;
+  }
+  .br-rocket-trail {
+    background-image: linear-gradient(-90deg, #2965B0 0%, #00816C 100%);
+  }
+}
+.br-info-card.pluto {
+  background-image: url('../img/brand_reporting/bg-pluto.png');
+  .br-info-chart {
+    width: 64%;
+  }
+  .br-rocket-path {
+    width: 82%;
+  }
+  .br-rocket-trail {
+    background-image: linear-gradient(-90deg, #56459C 0%, #73469B 100%);
+  }
+}
+
+/* Bar chart graph icon styles */
+.br-chart-inner {
+  position: relative;
+  .br-chart-icon {
+    position: relative;
+    left:-50px;
+    top: -15px;
+    min-width: 40px;
+    img {
+      width:40px;
+      height:40px;
+    }
+  }
+  .br-chart-label {
+    white-space: nowrap;
+  }
+}

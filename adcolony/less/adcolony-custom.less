@@ -624,11 +624,8 @@ p.body-large { font-size: @adcFontSizeMedium;}
 	float: left;
 }
 
-// Fixing up dropdown menu in navbar - No longer necessary (8/15/13)
-#ac-navbar .dropdown-menu {
-//  left: 0;
-//  right: 20px;
-//  min-width: 240px;
+.dropdown-menu {
+  min-width: 165px;
 }
 
 #ac-navbar .dropdown-menu:after {
@@ -1302,6 +1299,9 @@ th.field-sort:hover .no-sort {
 }
 td {
 	white-space: nowrap;
+}
+.table th {
+  font-size: 14px;
 }
 .table td {
   vertical-align: middle;
@@ -2164,4 +2164,40 @@ li.btn-group.nav-active >a {
       display: flex;
       flex:1 0 auto;
   }
+}
+
+/** JSON display **/
+pre.pretty-json {
+  outline: 1px solid #ccc;
+  padding: 5px;
+  margin: 5px;
+
+  & .string {
+    color: green;
+  }
+  & .number {
+    color: orange;
+  }
+  & .boolean {
+    color: blue;
+  }
+  & .null {
+    color: magenta;
+  }
+  & .key {
+    color: red;
+  }
+}
+
+/** When we just have a row of floating elements, we often want spaces between
+  them. Use this class so we don't have to h-space-left over and over **/
+.spaced .pull-left + .pull-left {
+  .h-space-left()
+}
+
+// Helper class for App Show page chart header
+// There are too many metrics to use spans now, this class is the max size needed to fit '100.00%'.
+// NOT responsive
+.percentage-header {
+  width:85px;
 }
