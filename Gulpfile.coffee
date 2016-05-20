@@ -28,4 +28,11 @@ gulp.task 'watch', ['less'], ->
   gulp.watch([lessGlob], ['less'])
   .on('change', (e) -> console.log e)
 
+gulp.task 'selectize', ->
+  gulp.src('./selectize/less/selectize.bootstrap2.less')
+  .pipe(less())
+  .on('error', getErrorHandler('Less'))
+  .pipe(concat('selectize.css'))
+  .pipe(gulp.dest('./selectize/css/'))
+
 gulp.task 'default', ['watch']
