@@ -1907,6 +1907,37 @@ ul.ac-compact-list {
       margin-top: 38px;
   }
 
+  &-operator.not  {
+      background: #FFE6BD;
+      color: #F5B54D;
+      border: 1px solid #F5B54D;
+
+      order-radius: 2px;
+      box-shadow: 0px 1px 3px rgba(0,0,0,0.12);
+  }
+
+  &-operator.not:hover {
+      background: #fff5e6;
+      color: #F5B54D;
+      border: 1px solid #F5B54D;
+      box-shadow: 0px 1px 4px rgba(0,0,0,0.2);
+  }
+
+  .active-not() {
+    background: #ffd899;
+    color: #F5B54D;
+    border: 1px solid #F5B54D;
+    box-shadow: none;
+  }
+
+  &-operator.not:active {
+    .active-not;
+  }
+
+  .selected &-operator.not {
+    .active-not
+  }
+
   &-operator.and {
       background: #f3e8f2;
       color: #a378b5;
