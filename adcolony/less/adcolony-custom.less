@@ -2000,7 +2000,7 @@ ul.ac-compact-list {
     .active-or;
   }
 
-  // CHOOSE EITHER NORMAL OR TALL
+  // CHOOSE EITHER NORMAL OR TALL OR SMALL
   // NORMAL sized component boxes without number count
   &-box {
       height: 100px;
@@ -2059,7 +2059,58 @@ ul.ac-compact-list {
   //END
 
 
-  //TALL COMPONENT BOXES WITH NUMBER COUNT
+  //TALL/SMALL COMPONENT BOXES WITH NUMBER COUNT
+
+  &-box-small {
+      height: 60px;
+      margin-right: 15px;
+      float: left;
+      text-align: center;
+      font-family: "Proxima Nova";
+  }
+
+  &-box-small:hover {
+      cursor: pointer;
+  }
+
+  &-component-small {
+      height: 50px;
+      width: 50px;
+
+      font-size: 50px;
+
+      background: #e5f2ff;
+      border: 1px solid #B5D3F5;
+      border-radius: 2px;
+
+      box-shadow: 0px 1px 3px rgba(0,0,0,0.12);
+
+  }
+
+  &-component-small:hover {
+      background: #fdfeff;
+      border: 1px solid #99ccff;
+      box-shadow: 0px 1px 4px rgba(0,0,0,0.2);
+      transition: all .2s;
+  }
+
+  &-component-small:active {
+      background: #d5e9ff;
+      box-shadow: none;
+      border: 1px solid #9cccfd;
+      transition: all 0s;
+  }
+
+  &-component-small &-label {
+      font-size: 30px;
+      line-height: 50px;
+      color: #4C91E1;
+  }
+  &-component-small &-counter{
+      font-size: 12px;
+      line-height: 12px;
+      color: #B4CDEA;
+  }
 
   &-box-tall {
       height: 120px;
@@ -2104,15 +2155,35 @@ ul.ac-compact-list {
 
   &-component-tall &-label {
       font-size: 50px;
-      line-height: 12px;
+      line-height: 50px;
       color: #4C91E1;
   }
   &-component-tall &-counter{
-      font-size: 12px;
-      line-height: 0px;
+      font-size: 18px;
+      line-height: 36px;
       color: #B4CDEA;
   }
   //END
+
+  // Viewer box
+  &-viewer-box {
+      background-color: #4C91E1;
+      height: 60px;
+      border-radius: 3px;
+      text-align: center;
+      font-family: "Proxima Nova";
+  }
+  &-viewer-box-inlay {
+      padding: 5px 5px 5px 5px;
+  }
+
+  &-viewer-box-inlay &-operator {
+      margin-top: 9px;
+  }
+  &-viewer-box-inlay &-parenthesis {
+      line-height: 50px;
+      font-size: 50px;
+  }
 }
 
 /** Chosen.js overrides **/
